@@ -1,0 +1,5128 @@
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Chương III: MÃ THỐNG KÊ TỐI ƯU
+
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi     ni        Dạng mã nhị phân của pi   Từ mã
+U1    0.34    0      2         0                         00
+U2    0.2     0.34   3         0.01010111                010
+U3    0.19    0.54   3         0.10001010                100
+U4    0.1     0.73   4         0.10111010                1011
+U5    0.07    0.83   4         0.11010100                1101
+U6    0.04    0.9    5         0.11100110                11100
+U7    0.03    0.94   6         0.11110000                111100
+U8    0.02    0.97   6         0.11111000                111110
+U9    0.01    0.99   7         0.11111101                1111110
+
+
+
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=              =0,8279
+
+                                                                             1
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                       GVHD: NGUYỄN THỊ LAN ANH
+
+__________________________________________________________________
+
+Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+Bài tập: Ma trận sinh của bộ mã tuyến tính (6,3) trên trường GF(2) là:
+
+
+               G=
+
+
+   a. Biểu diễn G dưới dạng chuẩn Gch.
+
+   b. Liệt kê các từ mã có được từ G và Gch.
+
+   c. Có bao nhiêu từ mã có trọng số hamming là 1,2,3,4,5,6,7.
+
+
+
+                                           Giải
+
+   a.   Biểu diễn G dưới dạng chuẩn Gch.
+
+
+        Gch=
+
+
+   b.   Liệt kê các từ mã của G và Gch.
+
+
+
+        Vector mang
+                           v= a.G          w(v)        v’=a.Gch          w(v’)
+           tin a
+            000           000000            0          000000             0
+            001           110110            4          001111             4
+            010           110001            3          010110             3
+            011           000111            3          011001             3
+            100           011010            3          100011             3
+            101           101100            3          101100             3
+            110           101011            4          110101             4
+            111           011101            4          111010             4
+
+
+
+                                                                                 2
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+  c. Cả hai bộ mã trên đều có
+
+       1 từ mã có trọng số là 0
+
+       0 từ mã có trọng số là 1
+
+       0 từ mã có trọng số là 2
+
+       4 từ mã có trọng số là 3
+
+       3 từ mã có trọng số là 4
+
+       0 từ mã có trọng số là 5
+
+       0 từ mã có trọng số là 6
+
+
+
+
+__________________________________________________________________
+
+Chương V: MÃ VÒNG
+
+       Bài tập: Cho mã vòng (n,k)=(7,4)có ma trận sinh là g(x)=x3+x+1. Liệt kê
+       tất cả các từ mã của bộ mã và cho biết bộ mã có khả năng sửa sai bao nhiêu
+       bit?
+                                          Giải
+  a.   Cho d= (0001) ta tính được:
+
+        V1=0001000+dư số
+
+        V1=0001000+011=0001011
+
+       Quay vòng từ mã v1 ta sẽ được thêm 6 từ mã nữa:
+       V2=1000101
+
+       V3=1100010
+
+       V4=0110001
+
+       V5=1011000
+
+                                                                                3
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+        V6=0101100
+
+        V7=0010110
+
+        Cho d=(0011) ta tính được:
+        Vδ=0011000+dư số
+        Vδ=0011000+101=00111101
+        Quay vòng từ mã vδ ta sẽ được thêm 6 từ mã nữa:
+        V9 =1001110
+
+        V10 =0100111
+
+        V11=1010011
+
+        V13 =1110100
+
+        V14=0111010
+
+        Cho d=(1111000) ta tinh được:
+
+        V15=1111000+dư số
+
+        V15=1111000+111=1111111
+
+        Cho d=(0000) ta tính được:
+
+        V0=0000000 + dư số
+
+   b.   Ta có thể tính dễ dàng trọng số Hamming của bộ mã là trọng số nhỏ nhất
+        của từ mã khác không : H(V)=3 nên bộ mã có khả năng sửa được tất các
+        mẫu sai 1bít.
+
+
+                       BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+Chương 2: Lượng Tin
+
+Trong một trò sổ số vui người ta sổ 10 chữ số từ 0 đến 9.
+
+
+                                                                                 4
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+Xác suất trúng của mỗi nhóm lá như nhau.
+
+   a. Tính lượng tin riêng của tin: “số trúng giải là số 9”
+
+   b. Tính lượng tin tương hỗ giữa tin: “số trúng giải là số 9” so với tin: “số trúng giải là
+      số chia hết cho 3”.
+
+   c. Trong 10 tin trên gọi U={u1, u2, u3, u4, u5, u6} với ui là tin “số i trung giải”
+      (i=0,1,.....,6).
+
+   Tìm lượng tin trung bình của tập tin U.
+
+                                              Giải
+
+   a. Gọi p(9) là xác suất số 9 trúng giải ta có:
+
+              p(9) =       = 0.1
+
+      Vậy I(9) =
+
+   b. Gọi p(0-3-6-9) là xác suất trúng giải chia hết cho 3.
+
+      Ta có              p(0-3-6-9) =
+
+      Mặc khác I(9/0-3-6-9) =                                 =
+
+
+                               =
+
+              Vậy: I(9;0-3-6-9) = I(9)-I(9/0-3-6-9)
+
+                                    =
+
+                                    = 1.322
+
+   c. Lượng tin trung bình của tập tin U:
+
+              I(U) =                    =-               =                = 2.325
+
+
+
+
+                                                                                           5
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                           GVHD: NGUYỄN THỊ LAN ANH
+
+Chương 3: Mã Thống Kê Tối Ưu
+
+Cho nguồn tin U có sơ đồ thống kê như sau:
+
+    ui       u1      u2       u3        u4          u5-6    u7-9   u10-18   u19
+    p(ui)    0.338   0.32     0.13      0.1         0.018   0.01   0.005    0.01
+
+Dùng mã Huffman kết hợp mã đều để mã hóa nguồn tin trên với cơ số mã m=3. Tính ntb
+và tính kinh tế của từ mã:
+
+                                            Giải
+
+Sơ đồ mã hóa theo phương pháp mã hóa Huffman:
+
+                        ui     p(ui)   ni          Từ mã
+                        u1     0.338   1           0
+                        u2     0.32    1           1
+                        u3     0.13    2           20
+                        u4     0.1     2           21
+                        u5     0.018   4           2210
+                        u6     0.018   4           2211
+                        u7     0.01    4           2200
+                        u8     0.01    4           2201
+                        u9     0.01    4           2202
+                        u10    0.005   5           22200
+                        u11    0.005   5           22201
+                        u12    0.005   5           22202
+                        u13    0.005   5           22210
+                        u14    0.005   5           22211
+                        u15    0.005   5           22212
+                        u16    0.005   5           22220
+                        u17    0.005   5           22221
+                        u18    0.005   5           22222
+                        u19    0.001   4           2212
+
+Phương pháp mã hóa như sau:
+          • Bước 1: sắp xếp các tin có xác suất theo thứ tự giảm dần.
+          • Bước 2: ghép 3 tin có xác suất nhỏ nhất, trở thành tin phụ mới
+          • Bước 3: lặp lại giống bước 1( sắp xếp các tin theo xác suất giảm dần
+          • Bước 4: ghép 3 tin có xác suất nhỏ nhất trở thành tin phụ mới (cách trình
+bày này lập đi lập lại cho đến khi còn 1 tin cuối cùng).
+
+
+                                                                                   6
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+Độ dài trung bình tư mã:       ntb =
+
+Entropy của tập tin:           H(U) = -
+
+Chỉ số kinh tế của bộ mã: p =              =       = 0.9913
+
+
+
+Chương 4: Mã Khối Mã Chống Nhiễu
+
+Ma trận sinh của bộ mã tuyến tính (7,3) trên trường GF(2) là:
+
+
+        G =
+
+
+   d. Biểu diễn G dưới dạng chuẩn Gch.
+
+   e. Xác định ma trận thử Hch.
+
+   f. Liệt kê các từ mã có được từ G và Gch.
+
+   g. Xác định khoảng cách Hamming của bộ mã này.
+
+
+                                                   Giải
+
+
+
+   d.
+
+
+          Gch =
+
+
+
+
+   e. Ta có            Hch = [-PT.In-k]
+
+
+
+                  1    0   1    1      0   0   0
+
+
+                                                                                7
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+
+      Hch =   0   1   1    0   1   0   0
+
+              1   1   1    0   0   1   0
+
+              1   1   0    0   0   0   1
+
+
+
+  f. Liệt kê các từ mã của G và Gch.
+
+
+
+     Vector mang
+                 v= a.G                w(v)           v’=a.Gch     w(v’)
+     tin a
+     000         0000000               0              0000000      0
+     001         1011100               4              0011110      4
+     010         0101110               4              0100111      4
+     011         1110010               4              0111001      4
+     100         0010111               4              1001011      4
+     101         1001011               4              1010101      4
+     110         0111001               4              1101100      4
+     111         1100101               4              1110010      4
+
+
+  g. Cả hai bộ mã trên đều có D=4 là trọng số Hamming nhỏ nhất của các từ mã khác
+     không của chúng.
+
+
+
+Chương 5: Mã Vòng
+
+
+
+     Đa thức sinh của bộ mã vòng hamming là: g(x)=1+x3+x4
+
+  a. Tìm đa thức thử h(x) của bộ mã này.
+
+  b. Thiết kế mạch mã hóa thực hiện qua h(x).
+
+  c. Xác định các bit thử và từ mã nhận được tương ứng với chuỗi bit mang tin
+     d=(10000001011).
+
+
+
+                                              Giải
+
+                                                                               8
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+   a. Bộ mã hamming có (n,k) = (2n-k-1,k) nên:
+
+                        n = 2n-k-1 = 24-1 = 15.
+
+         Từ công thức:          h(x) = (xn+1)/g(x)
+
+         Ta tính được: h(x) =
+
+   b. Khi d = (10000001011) hay d(x) =                           thì:
+
+         v(x) = d(x).xn-k + dư số của
+
+
+                =                          + số dư của
+
+                =(                                   )
+
+         Trong đó x3+1 tương ứng với chuỗi bit 1001 là các bit thử và từ mã nhận được
+         tương ứng với v(x) = (                          ) là v = (100000101110010).
+
+
+
+                         BÀI TẬP MÔN LÝ THUYẾT THÔNG TIN.
+
+CHƯƠNG 1: LƯỢNG TIN
+
+ĐỀ BÀI: Xác định entropy khi đổ súc sắc. Giả sử súc sắc được chế tạo sao cho xác xuất
+suất hiện của bất kỳ mặt nào cũng tỉ lệ với số chấm trên mặt súc sắc.
+
+GIẢI:
+
+Gọi P(xi) là xác suất của các mặt súc sắc. Với i=(1,2,3,4,5,6)
+
+Entropy khi đổ súc sắc:
+           6
+H(x) =    ∑1
+               P(xi). I(xi)
+
+           1          1   2       2   3       3   4       4   5       5   6       6
+     =−       .log 2 ( ) - log 2 ( ) - log 2 ( ) - log 2 ( ) - log 2 ( ) - log 2 ( )
+           21         21 21       21 21       21 21       21 21       21 21       21
+
+     = 0.209 + 0.323 + 0.401 + 0.455 + 0.492 + 0.516
+                                                                                        9
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                           GVHD: NGUYỄN THỊ LAN ANH
+
+        = 2.396 (bit)
+
+CHƯƠNG 2: MÃ THỐNG KÊ TỐI ƯU
+
+ĐỀ BÀI: Lập một bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+Ui              U1        U2         U3    U4    U5       U6       U7         U8    U9
+P(ui)           .34       .2         .19   .1    .07      .04      .03        .02   .01
+
+
+Bằng mã nhị phân (m = 2) theo phương pháp Shannon. Tính độ dài trung bình của từ mã
+và tính kinh tế của bộ mã.
+
+GIẢI:
+
+Sơ đồ mã hóa theo phương pháp Shannon:
+
+ui                P(ui)        Pi           ni         Dạng nhị phân của Pi     Từ mã
+U1                .34          0            2          0                        00
+U2                .2           .34          3          0.010                    010
+U3                .19          .54          3          0.100                    100
+U4                .1           .73          4          0.1011                   1011
+U5                .07          .83          4          0.1101                   1101
+U6                .04          .9           5          0.11100                  11100
+U7                .03          .94          6          0.111100                 111100
+U8                .02          .97          6          0.111110                 111110
+U9                .01          .99          7          0.1111110                1111110
+
+
+Độ dài trung bình của từ mã:
+          9
+ntb = ∑ ni p (ui ) = 3.1
+         i =1
+
+
+Entropy của tập tin:
+                      9
+H (U ) = − ∑ p (u i ) log 2 p (u i) = 2.5644
+                  i =1
+
+
+Tính kinh tế của bộ mã:
+
+
+
+
+                                                                                          10
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+     H (U ) 2.5644
+ρ=         =       = 0.8279
+      ntb     3.1
+
+
+
+
+                   BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+                              Chương 2: Lượng Tin
+  Xem các con bài của bộ bài 52 lá tạo thành 1 nguồn tin rời rạc. Tính entropy của một
+  lá bài rút ngẫu nhiên. Giả sử bỏ qua nước của con bài để bây giờ U={ Ace, 2, 3, 4, 5,
+  6, 7, 8, 9, 10, Jack, Qeen, King}. Tính entropy của một lá bài rút ngẫu nhiên trong
+  trường hộp này, trong trường hợp U=(bài có hình, bài không hình).
+
+  Giải
+
+  d. H(U)=                           với p(ui)=   (i=1, 2, 3,.......,52)
+
+             =-                          =-52          =5.700
+
+  e. H(U)=                           với p(ui)=   (i=1, 2, 3,.......,13)
+
+             =-                          =-13          =3.700
+
+
+
+  f. Gọi uh là tin bài có hình thì p(uh)=
+
+
+     Gọi uoh là tin con bài không hình thì p(uoh)=
+
+     Vậy H(U)= p(uh)I(uh)+p(uoh)I(uoh)
+
+             =- p(uh)         )-p(      )
+
+
+                                                                                      11
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+            =-         -            = 0.779
+
+
+
+
+                                 Chương 5: Mã Vons
+
+
+     Đa thức sinh của bộ am vòng hamming là:
+
+                  g(x)=1+x3+x4
+
+  d. Tìm đa thức thử h(x) của bộ am này.
+
+  e. Thiết kế mạch am hóa thực hiện qua h(x).
+
+  f. Xác định các bit thử và từ am nhận được tương ứng với chuỗi bit mang tin
+     d=(10000001011).
+
+
+
+     Giải
+
+
+  c. Bộ am hamming có (n,k)=(2n-k-1,k) nên:
+
+                  n=2n-k-1=24-1=15.
+
+     Từ công thức:         h(x)=(xn+1)/g(x)
+
+     Ta tính được: h(x)=
+
+  d. Khi d=(10000001011) hay d(x)=                    thì:
+
+     v(x)=d(x).xn-k+ dư số của
+
+
+
+                                                                                12
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                         GVHD: NGUYỄN THỊ LAN ANH
+
+
+              =                     + số dư của
+
+              =(                             )
+
+      Trong đó x3+1 tương ứng với chuỗi bit 1001 là các bit thử và từ am nhận được
+      tương ứng với v(x)= (                             ) là v=(100000101110010).
+
+
+
+                     BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương 2: Lượng Tin.
+                                         =
+
+Chương 3: Mã Thống Kế Tối Ưu.
+
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui      U1       U2      U3       U4     U5     U6   U7    U8       U9
+P(u)    0.34     0.2     0.19     0.1    0.07   0.04 0.03  0.02     0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình
+của từ mã ntbvà tính kinh tế của từ mã:p=H(U)/Ntb
+Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi      ni     Dạng mạ nhị phân của pi      Từ mã
+U1    0.34    0       2      0                            00
+U2    0.2     0.34    3      0.01010111                   010
+U3    0.19    0.54    3      0.10001010                   100
+U4    0.1     0.73    4      0.10111010                   1011
+U5    0.07    0.83    4      0.11010100                   1101
+U6    0.04    0.9     5      0.11100110                   11100
+U7    0.03    0.94    6      0.11110000                   111100
+U8    0.02    0.97    6      0.11111000                   111110
+U9    0.01    0.99    7      0.11111101                   1111110
+
+Độ dài trung bình tư mã: NTB=
+
+
+                                                                                     13
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                  GVHD: NGUYỄN THỊ LAN ANH
+
+Entropy của tập tin:     H(u)=
+
+Chỉ số kinh tế của bộ mã: p=           =0,8279
+
+
+
+
+Chương 4: Mã Chống Nhiếu : Mã Khối
+
+
+Chương 5: Mã Vòng.
+
+Bài tập: cho mã vòng (n,k)=(7,4) có ma trận sinh là g(x)=x3+x+1. Liệt kê tất cả
+các từ mã của bộ mã và cho biết bộ mã có khả năng sửa sai bao nhiêu bít.
+
+Giải
+
+A.cho d= (0001) ta tính được:
+
+V1=0001000+dư số
+
+V1=0001000+011=0001011
+
+Quay vòng từ mãv1 ta sẽ đượcthêm 6 từ mã nữa:
+V2=1000101
+
+V3=1100010
+
+V4=0110001
+
+V5=1011000
+
+V6=0101100
+
+V7=0010110
+
+Cho d=(0011)ta tính được:
+Vδ=0011000+dư số
+Vδ=0011000+101=00111101
+Quay vòng từ mã vδ ta sẽ đượcthêm 6 từ mã nữa:
+
+                                                                              14
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+V9 =1001110
+
+V10 =0100111
+
+V11=1010011
+
+V13 =1110100
+
+V14=0111010
+
+Cho d=(1111000) ta tinh được:
+
+V15=1111000+dư sô
+
+V15=1111000+111=1111111
+
+Cho d=(0000) ta tính được:
+
+V0=0000000+dư số
+
+B. ta có thể tính rễ ràng trọng số hamming của bộ mã là trọng số nhở nhất của từ
+mã khác không : H(V)=3 nên bộ mã có khả năng sửa được tất các mẫu sai 1bít.
+
+__________________________________________________________________
+
+               Chương III: MÃ THỐNG KÊ TỐI ƯU
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi     ni      Dạng mã nhị phân của pi     Từ mã
+U1    0.34    0      2       0                           00
+U2    0.2     0.34   3       0.01010111                  010
+U3    0.19    0.54   3       0.10001010                  100
+
+                                                                                   15
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                         GVHD: NGUYỄN THỊ LAN ANH
+
+U4        0.1    0.73   4       0.10111010                1011
+U5        0.07   0.83   4       0.11010100                1101
+U6        0.04   0.9    5       0.11100110                11100
+U7        0.03   0.94   6       0.11110000                111100
+U8        0.02   0.97   6       0.11111000                111110
+U9        0.01   0.99   7       0.11111101                1111110
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=                 =0,8279
+__________________________________________________________________
+
+             Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+Bài tập: Ma trận sinh của bộ mã tuyến tính (6,3) trên trường GF(2) là:
+
+
+                 G=
+
+
+     h. Biểu diễn G dưới dạng chuẩn Gch.
+
+     i. Liệt kê các từ mã có được từ G và Gch.
+
+     j. Có bao nhiêu từ mã có trọng số hamming là 1,2,3,4,5,6,7.
+
+
+
+                                             Giải
+
+     h.   Biểu diễn G dưới dạng chuẩn Gch.
+
+
+          Gch=
+
+
+     i.   Liệt kê các từ mã của G và Gch.
+
+
+                                                                            16
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                  GVHD: NGUYỄN THỊ LAN ANH
+
+        Vector mang
+                           v= a.G       w(v)        v’=a.Gch        w(v’)
+           tin a
+            000            000000        0           000000           0
+            001            110110        4           001111           4
+            010            110001        3           010110           3
+            011            000111        3           011001           3
+            100            011010        3           100011           3
+            101            101100        3           101100           3
+            110            101011        4           110101           4
+            111            011101        4           111010           4
+
+
+     j. Cả hai bộ mã trên đều có
+
+        1 từ mã có trọng số là 0
+
+       0 từ mã có trọng số là 1
+
+       0 từ mã có trọng số là 2
+
+       4 từ mã có trọng số là 3
+
+       3 từ mã có trọng số là 4
+
+       0 từ mã có trọng số là 5
+
+       0 từ mã có trọng số là 6
+
+__________________________________________________________________
+
+                           Chương V: MÃ VÒNG
+
+
+                      BÀI TẬP MÔN LÝ THUYẾT THÔNG TIN.
+
+CHƯƠNG 1: LƯỢNG TIN.
+
+1.      Trong một trò chơi xổ số vui người ta xổ 10 chữ số từ 0 đến 9.
+             Xác xuất trúng của mỗi số là như nhau.
+             a. Tính lượng tin riêng của tin : “ số trúng giải là số 9”.
+             b. Tính lượng tin tương hỗ giữa tin : “số trúng giải là 9” so
+
+                                                                             17
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+     với tin :”số trúng giải là số chia hết cho 3”.
+            c. Trong 10 tin trên gọi U=(u1,u2,u3,u4,u4,u5,u6) với ui là tin
+     “số i trúng giải” (i=0,1,…,6).
+            Tìm lượng tin trung bình của tập tin U.
+                                        Bài làm
+     a. Gọi p(9) là xác suất số 9 trúng giải ta có
+
+           p(9) = 1/10= 0.1
+
+     vậy I(9)= -log p(9)= log 10= 3.322
+
+     b. Gọi p(0-3-6-9) là xác suất để số trúng giải chia hết cho 3, ta có:
+
+           p(0-3-6-9) = 4/10= 0.4
+
+     Mặt khác : I (9/0-3-6-9) = - log p(9/0-3-6-9)
+
+                                       p (9 / 0 − 3 − 6 − 9)
+                             = − log
+                                         p (0 − 3 − 6 − 9)
+
+
+                                       1/ 10
+                             = − log          = l og4
+                                       4 / 10
+
+     Vậy     I(9; 0-3-6-9) = I(9) – I(9/0-3-6-9)
+                                              10
+                           = log10− log4= log = 1.322
+                                               4
+
+c. Lượng tin trung bình của tập tin U :
+                       6                              6
+                                                       1  1
+                   ∑
+            I (U) =p (u )I (u )i        i      =− ∑ log
+                      i =0                        i=0 10 10
+                                                 1
+                                               = .7.log10
+                                                10
+CHƯƠNG 2: MÃ THỐNG KÊ TỐI
+
+
+
+
+                                                                              18
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+ Trong kênh truyền tin nhị phân có nhiễu nguồn X = {x0,x1} có p(x0)
+= 0.4 và p(x1) = 0.6. Xác suất truyền tin sai nhầm p(y0/x1) = p(y1/x0) =
+0.1, xác suất truyền tin đúng p(y0/x0) = p(y1/x1) = 0.9, với Y = {y0,y1}
+
+a/ Tính H(Y)
+
+b/ Tính H(Y/X)
+
+c/ Tính I(X;Y)
+
+Bài làm:
+
+a/ H(Y) = p(y0)I(y0) + p(y1)I(y1)
+
+  Áp dụng công thức p( x) = ∑
+                            ∀i
+                               p ( x, y i )
+
+
+  Ta có: P(y0) = p(y0,x0) + p(y0,x1)
+
+                       = p(y0) p(y0/x0) + p(x1) p(y0/x1)
+
+                       = 0,4.0,9 + 0,6.0,1
+
+                       = 0,42
+
+              P(y1) = p(y1,x0) + p(y1,x1)
+
+                       = p(x0) p(y1/x0) + p(x1) p(y1/x1)
+
+                       = 0,4.0,1 + 0,6.0,9
+
+                       = 0,58
+
+              H(Y) = -0,42log0,42 – 0,58log0,58
+
+                       =0,8915
+
+b/ H (Y / X ) = ∑
+                XY
+                   P ( x, y ) I ( y , x )
+
+
+                       = p(x 0,y0) I(y0/x0) + p(x0,y1) I(y1/x0) + p(x1,y0) I(y0/x1) +
+p(x1,y1) I(y1/x1)
+
+ Mà: p(x0,y0) = p(x0) p(y0/x0) = 0,4.0,9 = 0,36
+
+        p(x0,y1) = p(x0) p(y1/x0) = 0,4.0,1 = 0,04
+
+                                                                                  19
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+        p(x1,y0) = p(x1) p(y0/x1) = 0,6.0,1 = 0,06
+
+        p(x1,y1) = p(x1) p(y1/x1) = 0,6.0,9 = 0,54
+
+        I(y0/x0) = -log p(y0/x0) = -log0,9 = log10/9
+
+        I(y1/x0) = -log p(y1/x0) = -log0,1 = log10
+
+        I(y0/x1) = -log p(y0/x1) = -log0,1 = log10
+
+        I(y1/x1) = -log p(y1/x1) = -log0,9 = log10/9
+
+Nên: H(Y/X) = 0,36log10/9 + 0,04log10 + 0,06log10 + 0,54log10/9
+
+                     = 0.469
+
+c/ I ( X ; Y ) = ∑
+                 XY
+                    p ( x, y ) I ( x; y )
+
+
+                       = p(x 0,y0) I(x0;y0) + p(x0,y1) I(x0;y1) + p(x1,y0) I(x1;y0) +
+p(x1,y1)I(x1;y1)
+
+ Mà: I(x0;y0) = I(y0;x0) = I(y0) - I(y0/x0) = log p(y0/x0)/p(y0) = log0,9/0,42
+
+                  I(x 0;y1) = I(y1;x0) = I(y1) - I(y1/x0) = log p(y1/x0)/ p(y1) =
+log0,1/0,58
+
+                  I(x 1;y0) = I(y0;x1) = I(y0) - I(y0/x1) = log p(y0/x1)/ p(y0) =
+log0,1/0,42
+
+                  I(x 1;y1) = I(y1;x1) = I(y1) - I(y1/x1) = log p(y1/x1)/ p(y1) =
+log0,9/0,58
+
+Vậy I(X;Y) = 0,36log0,9/0,42 + 0.04log0,1/0,58 + 0,06log0,1/0,42 +
+0,54log0,9/0,58
+
+                    = 0,512
+
+                 BÀI TẬP LÝ THUYẾT THÔNG TIN
+__________________________________________________________________
+
+                    Chương III: MÃ THỐNG KÊ TỐI ƯU
+
+                                                                                  20
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi     ni        Dạng mã nhị phân của pi   Từ mã
+U1    0.34    0      2         0                         00
+U2    0.2     0.34   3         0.01010111                010
+U3    0.19    0.54   3         0.10001010                100
+U4    0.1     0.73   4         0.10111010                1011
+U5    0.07    0.83   4         0.11010100                1101
+U6    0.04    0.9    5         0.11100110                11100
+U7    0.03    0.94   6         0.11110000                111100
+U8    0.02    0.97   6         0.11111000                111110
+U9    0.01    0.99   7         0.11111101                1111110
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=              =0,8279
+__________________________________________________________________
+
+            Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+__________________________________________________________________
+
+                          Chương V: MÃ VÒNG
+
+
+                     BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương II
+
+
+                                                                         21
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                              GVHD: NGUYỄN THỊ LAN ANH
+
+Xem các con bài của bộ bài 52 lá tạo thành 1 nguồn tin rời rạc, Tính Entropy của 1 lá bài
+rút ngẫu nhiên. Giả sử bỏ qua nước của con bài để bây giờ U={ Ace, 2,3,4,5,6,7,8,9,10,Jack,
+Queen, King}. Tính Entropy của 1 lá bài rút ngẫu nhiên trong trường hợp này, trong
+trường hợp U={ bài có hình, bài ko hình}
+
+Giải:
+
+H(U)=i=152puiIui với p(ui)=1/52 ( i= 1,2,3,….52)
+
+=-i=152p(ui)log pui =-52.1/52 log (1/52)= log52 = 5700
+
+b) H(U)=i=113puiIui với p(ui)=1/13 ( i= 1,2,3,….13)
+
+=-i=113p(ui)Iui =-13.1/13 log (1/13)= log13 = 3700
+
+c) Gọi uh là tin bài có hình thì p(uh)=3/13
+
+Gọi uoh là tin bài có hình thì p(uoh)=10/13
+
+Vậy H(U)= p(uh)I (uh)+ p(uoh)I (uoh)
+
+=- p(uh)log p(uh)- )- p(uoh)log (uoh)
+
+= 313log 313- 1013log1013
+
+=0,779
+
+Chương III
+
+Lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+Ui        u1     u2    u3      u4       u5      u6    u7    u8       u9
+
+P(ui) .34        .2    .19     .1       .07     .04   .03   .02      .01
+
+Bằng mã nhị phân the phương pháp shannon. Tính độ dài trung bình của từ mã ntb
+và tính kinh tế của từ mã p=H(U)/ ntb
+
+Giải:
+
+
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+     Ui        P(ui)   Pi       ni            Dạng nhị phân của Pi          Từ Mã
+
+
+                                                                                         22
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+U1           .34   0        2     0                             00
+
+U2           .2    .34      3     0,01010111                    010
+
+U3           .19   .54      3     0,10001010                    100
+
+U4           .1    .73      4     0,10111010                    1011
+
+U5           .07   .83      4     0,11010100                    1101
+
+U6           .04   .9       5     0,11100110                    11100
+
+U7           .03   .94      6     0,11110000                    111100
+
+U8           .02   .97      6     0,11111000                    111110
+
+U9           .01   .99      7     0,11111101                    1111110
+
+
+Độ dài trung bình từ mã : ntb= i=19ni pui=3.1
+Entropy của tập tin : H(U)=-i=19puilogui=2,5664
+
+Chỉ số kinh tế của bộ mã:   ρ= H(U)/ ntb=2.5664/3.1=0,8279
+     Chương V
+
+     Chứng minh rằng trong 1 bộ mã vòng khi sai E(x) có thể dò được thì mẫu sai
+     Ei(x) chuyển dịch vòng I bit so với E(x) cũng có thể dò được
+
+
+
+     Giải:
+
+     Nếu Ei(x) là 1 mẫu sai ko phát hiện được thì Ei(x) là 1 từ mã. Từ đây theo đn
+     của mã vòng thì E(x) cũng là 1 từ mã.Khi đó vì mã vòng là mã tuyến tính nên 1
+     từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành 1 từ mã v’(x)
+     và không phát hiện sai được. Điều này mâu thuẫn với giả thiết là E(x) là mẫu
+     sai phát hiện được.
+
+                        BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+                                                                                   23
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                           GVHD: NGUYỄN THỊ LAN ANH
+
+Bài 8 : chứng minh rằng
+
+
+
+
+Bài giải :
+
+
+
+
+= H(X) + H(Y/X) (đpcm)
+
+Bài 9 : Giả sử có một nguồn tin rời rạc xuất hiện p(u) khi u   U. Với mỗi tin u chọn 1 từ mã có
+
+độ dài l(u) thỏa :
+
+Chứng minh rằng độ dài trung bình
+
+
+
+
+Thỏa
+
+
+
+Bài giải:
+
+                                                                                            24
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+Theo đề bài với mọi u ta có:
+
+
+
+
+Vì p(u)>0 nên bất đẳng thức trên tương đương với:
+
+
+
+
+Cộng tất cả các bất đẳng thức của từng tin u theo vế:
+
+
+
+
+Hay
+
+Chương III :MÃ THỐNG KÊ TỐI ƯU
+
+BÀI 1: cho bộ mã có cơ số mã m = 4 như sau:
+
+U={3,23,11,123,10}
+
+   a. Vẽ cây mã và đồ hình kết cấu của bộ mã U
+
+   b. Vẽ mặt tọa độ mã
+
+   c. Lập 1 bộ mã hệ thống 6 từ mã có các tổ hợp sơ đẳng. Vẽ đồ hình kết cấu của bộ mã vừa
+      lặp
+
+   Bài giải:
+
+   a. Cây mã :
+
+       ----------------------------------------------------------------------------------------------------Mức 0
+
+                                                 2        1
+
+       ---------------------------------------------------------------------------------------------------Mức 1
+
+                                          3               1    2 0
+
+       --------------------------------------------------------------------------------------------------Mức 2
+
+                                                                   3
+
+                                                                                                             25
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                             GVHD: NGUYỄN THỊ LAN ANH
+
+        ---------------------------------------------------------------------------------------------------Mức 3
+
+        Đồ hình kết cấu :                              0
+
+                                             3         0
+                                         1
+
+                                         0
+
+     b. Mặt tọa độ mã:
+
+                              ui             ni            pi
+
+                              3              1             3
+
+                             23              2             14
+
+                             11              2             5
+
+                             123             3             57
+
+                             10              2             1
+
+
+
+     c. Tổ hợp sơ đẳng : 23,123,10
+
+        Tổ hợp cuối : 3,11
+
+        Bộ mã hệ thống có 6 từ mã :u1 =233, u2=1233, u3=101011, u4=2311, u5=12311,
+        u6=102311
+
+
+
+Bài 5 : lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui         u1          u2           u3            u4            u5       u6     u7           u8         u9
+
+P(ui)     .34         .2           .19            .1            .07      .04    .03         .02         .01
+
+Bằng mã nhị phân m=2, theo phương pháp Shannon,tính đọ dài trung bình của từ mã ntb và tính
+theo kinh tế của từ mã :
+
+
+
+
+                                                                                                              26
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                      GVHD: NGUYỄN THỊ LAN ANH
+
+          Bài giải :
+
+          Sơ đồ mã hóa theo phương pháp Shannon:
+
+ui           P(ui)        Pi         ni        Dạng nhị phân của Pi                    Từ Mã
+
+u1           .34          0          2         0                                       00
+
+u2           .2           .34        3         0.01010111                              010
+
+u3           .19          .54        3         0.10001010                              100
+
+u4           .1           .73        4         0.1011010                               1011
+
+u5           .07          .83        4         0.11010100                              11 01
+
+u6           .04          .9         5         0.11100110                              11100
+
+u7           .03          .94        6         0.11110000                              111100
+
+u8           .02          .97        6         0.11111000                              111110
+
+u9           .01          .99        1         0.11111101                              1111110
+
+
+
+Đọ dài trung bình từ mã :
+
+
+
+Etropy của tập tin:
+
+Chỉ số kinh tế của bộ mã :
+
+Bài 7 : cho nguồn tin U có sơ đồ thống kê như sau:
+
+     ui                u1                 u2         u3                                u14
+
+     P(ui)           .5                  .25        .315         .31       . 0157      .0156
+
+Dung mã Huffman kết hợp mã đều để mã hóa nguồn tin trên với cơ số mã m=2
+
+Bài giải:
+
+                                P(ui)                       Sơ đồ mã hóa       Từ mã
+
+                                .5                                             0
+
+
+
+                                                                                                 27
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+                     .25                                         10
+
+                     .315                                        11000
+
+                     .31                                         11001
+
+                     .31                                         11010
+
+                     .31                                         11011
+
+                     . 0157                                      111000
+
+                     . 0157                                      111001
+
+                     . 0157                                      111010
+
+                     . 0157                                      111011
+
+                     . 0157                                      111100
+
+                     . 0157                                      111101
+
+                     . 0157                                      111110
+
+                     .0156                                       111111
+
+
+
+
+Chương IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+
+
+Bài 3 : ma trận Sinh của bộ mã tuyến tính (7,3) trên đường GF (2) là :
+
+
+
+
+      a.Biểu diễn G dưới dạng chuẩn Gch
+
+      b.Xác định ma trận thử Hch
+
+      c. Liệt kê các từ mã có được từ G và Gch
+
+      d. Xác định khoảng cách Hamming của bộ mã này
+
+
+
+                                                                          28
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+    bài giải:
+
+    a.Lấy cột 7 làm cột 1,cột 1 làm cột 3 ta có ma trận Sinh Gch:
+
+
+
+
+    b.Ta có :Hch [-PTIn-k] =
+
+
+
+
+    c.Liệt kê các từ mã của G và Gch:
+
+     Vector mang          V=a.G          w(v)           v’=a.Gch    W(v’)
+         tin a
+
+         000             0000000           0           0000000       0
+
+         001             1011100           4           0011110       4
+
+         010             0101110           4           0100111       4
+
+         011             1110010           4           0111001       4
+
+         100             0010111           4           1001011       4
+
+         101             1001011           4           1010101       4
+
+         110             0111001           4           1101100       4
+
+
+
+                                                                            29
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+             111           1100101           4            1110010             4
+
+
+
+
+     a. Cả 2 bộ mã trên đều có D=4 là trọng số Hamming nhỏ nhất của các từ mã
+        khác không của chúng
+
+
+
+Chương 5 : MÃ VÒNG
+
+Bài 1: chứng minh rằng đa thức sinh g(x) của 1 bộ mã vòng là ước số của xn+1
+
+Bài giải:
+
+Giả sử
+
+                                         cũng là 1 đa thức mã.Khi đó:
+
+
+
+Và
+
+Từ đây :
+
+Hay
+
+Tức là                (đpcm)
+
+
+
+Bài 5 : chứng minh rằng trong 1 bộ mã vòng khi mẫu sai E(x) có thể dò được thì
+mẫu sai E(i)(x) chuyển dịch vòng i bit so với E(x) cũng có thể dò được
+
+Bài giải:
+
+Ta chứng minh bằng phản chứng.
+
+Nếu E(i)(x) là 1 mẫu sai không phát hiện được thì E(i)(x) là 1 từ mã. Từ đây theo định
+nghĩa của mã vòng thì E(x) cũng là 1 từ mã. Khi đó vì mã vòng là mã tuyến tính nên
+1 từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành 1 từ mã v’(x) và
+không phát hiện sai được. Điều nay mẫu thuẫn với giả thiết là E(x) là mẫu sai phát
+hiện được.
+
+
+
+                      BÀI TẬP LÝ THUYẾT THÔNG TIN
+                                                                                    30
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Bài tập: Xem các con bài của bộ bài 52 lá tạo thành một nguồn tin rời rạc.
+Tính entropy của một lá bài rút ngẫu nhiên. Giả sử bỏ qua nước của con bài
+để bây giờ U={Ace,2,3,4,5,6,7,8,9,10, Jack, Queen, King}. Tính entropy của
+một lá bài rút ngẫu nhiên trong trường hợp này, trong trường hợp U={bài có
+hình, bài không có hình}
+Giải:
+Câu a:
+H(U)=                  với       =   (i= 1,2,…,52)
+
+
+    =
+
+    =-52
+
+    =        52
+
+    =5.7
+
+
+Câu b:
+H(U)=                  với       =   (i= 1,2,…,13)
+
+
+    =
+
+    =-13
+
+
+                                                                       31
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+
+       =      13
+
+       =3.7
+
+
+Câu c:
+
+Gọi           =
+
+Gọi        là tin bài không có hình     =
+
+Vậy:          H(U) =              +
+
+
+
+
+                     =
+
+                    =
+
+                    = 0.779
+
+
+
+
+              CHƯƠNG III: MÃ THỐNG KÊ TỐI ƯU
+
+
+
+
+Bài tập: Lập một bộ mã cho nguồn tin U có sơ đồ thống kê:
+
+
+
+
+           0.34     0.2   0.19    0.1   0.07    0.04   0.03   0.02   0.01
+
+                                                                        32
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2              GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Bằng mã nhị phân (m=2)theo phương pháp Fano. Tính độ dài trung bình của
+từ mã ntbvà tính kinh tế của từ mã: =H(U)
+
+
+
+
+Giải:
+
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+
+
+                                                    Từ mã
+        0.34   0       0                            00             2
+        0.2    0       1                            01             2
+        0.19   1       0    0                       100            3
+        0.1    1       0    1                       101            3
+        0.07   1       1    0                       110            3
+        0.04   1       1    1   0                   1110           4
+        0.03   1       1    1   1      0            11110          5
+        0.02   1       1    1   1      1        0   111110         6
+        0.01   1       1    1   1      1        1   111111         6
+
+
+
+Độ dài trung bình tư mã:                  =
+
+Entropy của tập tin:                H(U)=                     =2.5664
+
+
+Chỉ số kinh tế của bộ mã:             =                 = 0.9685
+
+
+
+                                                                       33
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+        CHƯƠNG IV: MÃ CHỐNG NHIỄU – MÃ KHỐI
+
+
+Bài tập: Một không gian vector được tạo bởi mọi tổ hợp tuyến tính của tập
+hợp các vector:
+  = 1101000
+
+  = 0110100
+
+  = 0100011
+
+  = 1110010
+
+  = 1010001
+
+  a. Các vector b có độc lập tuyến tính không?
+  b. Tìm số chiều và cơ hệ của không gian vector này
+
+
+Giải:
+
+
+
+Câu a: Các vector               phụ thuộc tuyến tính vì:
+
+                        =0
+
+
+
+
+                                                                       34
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Câu b:
+
+Gọi       là hệ số
+
+Giả sử tồn tại                     sao cho:
+
+                                    =0
+
+       1101000)+           (0110100)+     0100011) +    (1110010) = (0000000)
+
+              =0
+
+                              =0
+
+             =0
+
+      =0
+
+      =0
+
+              =0
+
+      =0
+
+      =      =       =      =0
+
+Vậy                      độc lập tuyến tính, có thể biểu diễn tuyến tính theo
+              nên không gian vector có 4 chiều và một cơ hệ của nó là
+
+
+                                                                           35
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+<              >.
+
+
+
+
+                         CHƯƠNG V: MÃ VÒNG
+
+
+Bài tập:Xét bộ mã vọng (7,3) có đa thức sinh g(x)= 1+   +   +   . Cho v =
+(0011101) là một từ mã của bộ mã (7,3). Tìm tất cả các từ mã bằng cách
+dùng đẳng thức sau:
+
+[v(i)T]=S[v(i-1)]T, i= 1,n-1
+Với v(k) là từ mã thứ k và:
+
+
+
+
+S=
+
+
+
+
+Giải:
+                                                                      36
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Trước hết đặt : v(1)= (0011101)
+
+
+
+
+[v(2)]T=                               [v(1)]T
+
+
+
+
+       =
+
+
+
+
+       =
+
+
+
+
+Vậy v(2)= (1001110). Tương tự ta xác định được:
+v(3)= (0100111)
+
+
+                                                                  37
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+v(4)= (1010011)
+v(5)= (1101001)
+v(7)= (1110100)
+v(8)= (0111010)
+Cuối cùng bộ mã có từ mã tầm thường:
+v(0)= (0000000)
+
+
+
+
+                                                                  38
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                                                      39
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+              BÀI TẬP LÝ THUYẾT THÔNG TIN
+                          Chương II: LƯỢNG TIN
+               Chương III: MÃ THỐNG KÊ TỐI ƯU
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi     ni        Dạng mã nhị phân của pi   Từ mã
+U1    0.34    0      2         0                         00
+U2    0.2     0.34   3         0.01010111                010
+U3    0.19    0.54   3         0.10001010                100
+U4    0.1     0.73   4         0.10111010                1011
+U5    0.07    0.83   4         0.11010100                1101
+U6    0.04    0.9    5         0.11100110                11100
+U7    0.03    0.94   6         0.11110000                111100
+U8    0.02    0.97   6         0.11111000                111110
+U9    0.01    0.99   7         0.11111101                1111110
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=              =0,8279
+__________________________________________________________________
+
+         Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+__________________________________________________________________
+                                                                         40
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                               GVHD: NGUYỄN THỊ LAN ANH
+
+
+                                 Chương V: MÃ VÒNG
+
+
+                            BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+                                             
+
+                                      Chương 2 lượng tin
+
+
+
+                                 Chương 3:Mã thống kê tối ưu:
+
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui        U1        U2       U3        U4        U5        U6         U7         U8          U9
+P(u)      0.34      0.2      0.19      0.1       0.07      0.04       0.03       0.02        0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của từ mã ntbvà tính kinh tế
+của từ mã:p=H(U)/Ntb
+                                              Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui      P(ui)   Pi          ni      Dạng mạ nhị phân của pi           Từ mã
+U1      0.34    0           2       0                                 00
+U2      0.2     0.34        3       0.01010111                        010
+U3      0.19    0.54        3       0.10001010                        100
+U4      0.1     0.73        4       0.10111010                        1011
+U5      0.07    0.83        4       0.11010100                        1101
+U6      0.04    0.9         5       0.11100110                        11100
+U7      0.03    0.94        6       0.11110000                        111100
+U8      0.02    0.97        6       0.11111000                        111110
+U9      0.01    0.99        7       0.11111101                        1111110
+
+Độ dài trung bình tư mã:NTB=
+
+Entropy của tập tin:H(u)=
+
+Chỉ số kinh tế của bộ mã:p=             =0,8279
+
+
+
+
+                                                                                                  41
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+                                Chương 4:mã chống nhiếu:mã khối
+
+
+Bài tập ma trận sinh của bộ mã tuyến tính (6,3)có dạng chuẩ1n là
+
+
+
+a.tìm ma trận thử hch của bộ mã.
+b.liệt kê tất cả các từ mã của bộ mã trên và xác định khoảng cách hamming của bộ mã.
+c.xác định hàm cấu trúc trọng số mã A(z) và xác định hàm số cấu trủ trọng số mã của bộ mã trực giao
+sinh ra từ ma trận HCH làB (z) bằng hai phương pháp:trực tiếp và gian tiếp qua A(z).
+d.lập bảng sắp chuẩncủa bộ mã này với chú ý rằng bảng có chứa mấu sai 2 bít và tính syndrome của tất cả
+các mẫu sai có thể sửa sai được.
+e,thiết lập mạch mã hõa,mạch tinhsyndrome và mạch sửa sai của bộ mã.
+                                                    GIẢI
+
+a             Hch=(-pT,IN-K)=
+
+
+
+
+                                            HTch=
+
+
+b liệt kê các từ mã:
+
+                  Vector mang tin a       V= aGch           W(v)
+                  000                     000 000           0
+                  001                     001 010           2
+                  010                     010 111           4
+                  011                     011 101           4
+                  100                     100 100           2
+                  101                     101 110           4
+                  110                     110 011           4
+                  111                     111 001           4
+Vậy khoảng cách hamming của bộ mã D=2 là trọng số hamming nhở nhất của các từ mã khác không.
+
+
+C: Dựa vào bảng liệt kê ta có:
+       A(z)=1+2z2=5z4
+       Xác định trực tiếp b(z):
+       Ta liẹt kê các tu8ừ mã của5 bộ mã sinh ra bởi hch
+
+                        Vector mang tin a       V= aGch              W(v)
+                        000                     000 000              0
+                        001                     010 001              2
+                        010                     011 010              3
+                        011                     001 011              3
+
+                                                                                                    42
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+                   100                       110   100            3
+                   101                       100   101            3
+                   110                       101   110            4
+                   111                       111   111            6
+
+    Vậy B(z)=1+z2+4z3+z4+z6
+
+                                    Chương 5:mã vòng:
+    Bài tập:cho mã vòng (n,k)=(7,4)có ma trận sinh là g(x)=x3+x+1. Liệt kê tất cả các từ mã của bộ
+    mã và cho biết bộ mã có khả năng sửa sai bao nhiêu bít.
+                                                 GIẢI
+    A.cho d= (0001) tatính được:
+    V1=0001000+dư số
+    V1=0001000+011=0001011
+    Quay vòng từ mãv1 ta sẽ đượcthêm 6 từ mã nữa:
+    V2=1000101
+
+    V3=1100010
+
+    V4=0110001
+
+    V5=1011000
+
+    V6=0101100
+
+    V7=0010110
+
+    Cho d=(0011)ta tính được:
+    Vδ=0011000+dư số
+    Vδ=0011000+101=00111101
+    Quay vòng từ mã vδ ta sẽ đượcthêm 6 từ mã nữa:
+    V9 =1001110
+
+    V10 =0100111
+
+    V11=1010011
+
+    V13 =1110100
+
+    V14=0111010
+
+    Cho d=(1111000) ta tinh được:
+
+    V15=1111000+dư sô
+
+    V15=1111000+111=1111111
+
+    Cho d=(0000) ta tính được:
+
+                                                                                                 43
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                               GVHD: NGUYỄN THỊ LAN ANH
+
+       V0=0000000+dư số
+
+b,ta có thể tính rễ ràng trọng số hamming của bộ mã là trọng số nhở nhất của từ mã khác không : H(V)=3
+nên bộ mã có khả năng sửa được tất các mẫu sai 1bít
+
+                       BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+
+                       BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+
+                                    Chương 5: Mã Vons
+
+
+       Đa thức sinh của bộ am vòng hamming là:
+
+                       g(x)=1+x3+x4
+
+   g. Tìm đa thức thử h(x) của bộ am này.
+
+   h. Thiết kế mạch am hóa thực hiện qua h(x).
+
+   i. Xác định các bit thử và từ am nhận được tương ứng với chuỗi bit mang tin
+      d=(10000001011).
+
+
+
+       Giải
+
+
+
+   e. Bộ am hamming có (n,k)=(2n-k-1,k) nên:
+
+
+                                                                                                    44
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+                     n=2n-k-1=24-1=15.
+
+       Từ công thức:         h(x)=(xn+1)/g(x)
+
+       Ta tính được: h(x)=
+
+   f. Khi d=(10000001011) hay d(x)=                       thì:
+
+       v(x)=d(x).xn-k+ dư số của
+
+
+             =                         + số dư của
+
+             =(                                 )
+
+       Trong đó x3+1 tương ứng với chuỗi bit 1001 là các bit thử và từ am nhận được
+       tương ứng với v(x)= (                             ) là v=(100000101110010).
+
+
+
+                         BÀI TẬP MÔN LÝ THUYẾT THÔNG TIN
+
+CHƯƠNG 1: LƯỢNG TIN
+
+
+
+
+                    BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+
+Chương 3: Mã Thống Kê Tối Ưu
+Lập một bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui        u1        u2       u3     u4   u5       u6       u7       u8        u9
+P(ui)     0.34      0.2      0.19   0.1  0.07     0.04     0.03     0.02      0.01
+Bằng mã nhị phân (m=2) theo phương pháp shannon. Tính độ dài trung bình của từ mã
+ntbvà tính kinh tế của từ mã: p=H(U)/ntb
+
+Giải
+
+
+                                                                                      45
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+ui    p(ui) Pi       ni     Dạng mạ nhị phân của Pi                         Từ mã
+u1    0.34 0         2      0                                               00
+u2    0.2     0.34 3        0.01010111                                      010
+u3    0.19 0.54 3           0.10001010                                      100
+u4    0.1     0.73 4        0.10111010                                      1011
+u5    0.07 0.83 4           0.11010100                                      1101
+u6    0.04 0.9       5      0.11100110                                      11100
+u7    0.03 0.94 6           0.11110000                                      111100
+u8    0.02 0.97 6           0.11111000                                      111110
+u9    0.01 0.99 7           0.11111101                                      1111110
+
+Chọn ni thỏa điều kiện 2-ni<p(ui)<21-ni
+
+Độ dài trung bình tư mã:         ntb=
+
+entropy của tập tin:             H(U)=-
+Chỉ số kinh tế của bộ mã: p=               =        =0.8279
+
+
+
+
+                     BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương 1 : Tin và lượng tin
+Bài 2.9 / tr 36
+
+Cho tập tin U={ ui } với ui=xiyizi ( i = 1,2,3,4,5)
+
+i                 1             2               3               4               5               6
+Ui                010           011             100             101             110             111
+P(ui)             0.25          0.25            0.125           0.125           0.125           0.125
+
+
+Gọi tin a là tin ui= u3 = 100, gọi tin b là tin xi=1 ,gọi tin c là tin yi=0 . Tính I(a) , I(a;b) , I(a;c)
+
+Giải
+I(a) = - log 2 0.125
+
+>> I(a) = - log(0.125)/log(2)
+
+                                                                                                            46
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+          =3
+
+I(a;b) = I (a) – I(a/b)
+
+        = -log p(u3) + log p( u3/ u3,u4,u5,u6)
+
+        = 3 + log 2 0.125/0.125*4
+
+>> I= 3+log(0.125/4/0.125)/log(2)
+
+     =1
+
+I(a;c) = I (a) – I(a/c)
+
+        = -log p(u3) + log p( u3/ u3,u4)
+
+        = 3 + log 2 0.125/0.125*2
+
+>> I= 3+log(0.125/2/0.125)/log(2)
+
+     =2
+
+Chương 2 : Mã hóa nguồn tin
+Bài 5 / tr
+
+Lập một bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui           U1        U2         U3        U4    U5       U6     U7        U8        U9
+
+P(ui)        0.34      0.2        0.19      0.1   0.07     0.04   0.03      0.02      0.01
+
+
+
+        Bằng mã nhị phân (m=2) theo phương pháp Fano . Tính độ dài trung bình của từ mã ntb
+và tính kinh tế của từ mã p=H(u)/ ntb
+
+Giải
+
+
+
+
+                                                                                              47
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+
+Ui           P(ui)        Lần 1      Lần 2   Lần 3   Lần 4   Lần 5    Lần 6   ni        Từ mã
+
+U1           0.34         0          0                                        2         00
+
+U2           0.2          0          1                                        2         01
+
+U3           0.19         1          0       0                                3         100
+
+U4           0.1          1          0       1                                3         101
+
+U5           0.07         1          1       0                                3         110
+
+U6           0.04         1          1       1       0                        4         1110
+
+U7           0.03         1          1       1       1       0                5         11110
+
+U8           0.02         1          1       1       1       1        0       6         111110
+
+U9           0.01         1          1       1       1       1        1       6         111111
+
+
+
+Độ dài trung bình của từ mã ntb là:
+
+                     ntb = ∑ ni pi
+                 = (0.34*2) + (0.2*2) + (0.19*3) + (0.1*3) + (0.07*3) +(0.04*4) +(0.03*5)
++(0.02*6) + (0.01*6)
+
+                       = 2.65
+
+                     H(u) = - ∑ pi log2 pi
+            = - [ (0.34*log2 0.34)+(0.2*log2 0.2)+(0.19*log2 0.19)+(0.1*log2 0.1)+(0.07*log2
+0.07)+(0.04*log2 0.04)+(0.03*log2 0.03)+(0.02*log2 0.03)+(0.01*log2 0.01) ]
+
+                     H(u) = 2.5664
+
+        Chỉ số kinh tế của bộ mã : p = H(u) / ntb = 2.5664 / 2.65 = 0.9684
+
+Chương 3 : Mã hóa kênh truyền ( mã khối Hamming)
+Bài 2 / tr
+
+Cho ma trân sinh của bộ mã tuyến tính C (6,3) trên trường Galois
+
+        G=0           1    1    0    1   0
+
+
+                                                                                               48
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                              GVHD: NGUYỄN THỊ LAN ANH
+
+            1    1   0    0   0    1
+
+            1    1   0    1   1    0
+
+Tính Gch
+
+Có bao nhiêu từ mã có trọng số Hamming 0,1,2,3,4,5,6,7
+
+Giải
+Lấy cột 3 làm cột 1, cột 6 làm cột 2 và cột 4 làm cột 3 ta có ma trận sinh Gch như sau :
+
+Gch =   1   0    0   0    1   1
+
+        0   1    0   1    1   0
+
+        0   0    1   1    1   1
+
+Liệt kê các từ mã có được từ ma trận sinh G và ma trận sinh chuẩn tắc Gch
+
+Vector mang tin           V=aG                 W(v)              V’ = a Gch            W(v’)
+       a
+
+000                  000000                0                 000000              0
+
+001                  110110                4                 001111              4
+
+010                  110001                3                 010110              3
+
+011                  000111                3                 011001              3
+
+100                  011010                3                 100011              3
+
+101                  101100                3                 101100              3
+
+110                  101011                4                 110101              4
+
+111                  011101                4                 111010              4
+
+
+
+Vậy bộ mã có
+
+                1 từ mã có trọng số là 0
+
+                0 từ mã có trọng số là 1
+
+                0 từ mã có trọng số là 2
+
+                4 từ mã có trọng số là 3
+
+                                                                                               49
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+               3 từ mã có trọng số là 4
+
+               0 từ mã có trọng số là 5
+
+               0 từ mã có trọng số là 6
+
+               0 từ mã có trọng số là 7
+
+Chương 3 : Mã vòng
+Bài 2 / tr
+
+Cho bộ mã vòng (7,4) có đa thức sinh là :
+
+G(x) = x3+x2+1
+
+    a. Tìm đa thức thử h(x) của bộ mã này
+
+    b. Giả sử nhận được tổ hợp u(x) = x6+x5+x2+1 . Xác định đa thức syndrome của u(x)
+
+        Giải
+        a.Ta có công thức h(x) = xn+1 / g(x) và ta tính được
+
+               h(x) = x7+1 / x3+x2+1 = x4+ x3+x2+1
+
+               vậy h(x) = x4+ x3+x2+1
+
+        b.Già sử nhận được đa thức u(x) = x6+x5+x2+1 , khi đó đa thức syndrome của nó :
+
+               Su(x) = số dư của ( u(x) / g(x) ) = số dư của (x6+x5+x2+1 / x3+x2+1) = 0
+
+        Vậy đa thức syndrome của u(x) là su(x) = 0
+
+
+
+
+                                                                                          50
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                     BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương 1 : Tin và lượng tin
+Bài 2.9 / tr 36
+
+Cho tập tin U={ ui } với ui=xiyizi ( i = 1,2,3,4,5)
+
+i                 1             2               3               4               5               6
+Ui                010           011             100             101             110             111
+P(ui)             0.25          0.25            0.125           0.125           0.125           0.125
+
+
+Gọi tin a là tin ui= u3 = 100, gọi tin b là tin xi=1 ,gọi tin c là tin yi=0 . Tính I(a) , I(a;b) , I(a;c)
+
+Giải
+I(a) = - log 2 0.125
+
+>> I(a) = - log(0.125)/log(2)
+
+        =3
+
+I(a;b) = I (a) – I(a/b)
+
+
+                                                                                                            51
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+        = -log p(u3) + log p( u3/ u3,u4,u5,u6)
+
+        = 3 + log 2 0.125/0.125*4
+
+>> I= 3+log(0.125/4/0.125)/log(2)
+
+     =1
+
+I(a;c) = I (a) – I(a/c)
+
+        = -log p(u3) + log p( u3/ u3,u4)
+
+        = 3 + log 2 0.125/0.125*2
+
+>> I= 3+log(0.125/2/0.125)/log(2)
+
+     =2
+
+Chương 2 : Mã hóa nguồn tin
+Bài 5 / tr
+
+Lập một bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui           U1        U2         U3        U4    U5       U6     U7        U8        U9
+
+P(ui)        0.34      0.2        0.19      0.1   0.07     0.04   0.03      0.02      0.01
+
+
+
+        Bằng mã nhị phân (m=2) theo phương pháp Fano . Tính độ dài trung bình của từ mã ntb
+và tính kinh tế của từ mã p=H(u)/ ntb
+
+Giải
+
+
+
+
+                                                                                              52
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+
+Ui           P(ui)        Lần 1      Lần 2   Lần 3   Lần 4   Lần 5    Lần 6   ni        Từ mã
+
+U1           0.34         0          0                                        2         00
+
+U2           0.2          0          1                                        2         01
+
+U3           0.19         1          0       0                                3         100
+
+U4           0.1          1          0       1                                3         101
+
+U5           0.07         1          1       0                                3         110
+
+U6           0.04         1          1       1       0                        4         1110
+
+U7           0.03         1          1       1       1       0                5         11110
+
+U8           0.02         1          1       1       1       1        0       6         111110
+
+U9           0.01         1          1       1       1       1        1       6         111111
+
+
+
+Độ dài trung bình của từ mã ntb là:
+
+                     ntb = ∑ ni pi
+                 = (0.34*2) + (0.2*2) + (0.19*3) + (0.1*3) + (0.07*3) +(0.04*4) +(0.03*5)
++(0.02*6) + (0.01*6)
+
+                       = 2.65
+
+                     H(u) = - ∑ pi log2 pi
+            = - [ (0.34*log2 0.34)+(0.2*log2 0.2)+(0.19*log2 0.19)+(0.1*log2 0.1)+(0.07*log2
+0.07)+(0.04*log2 0.04)+(0.03*log2 0.03)+(0.02*log2 0.03)+(0.01*log2 0.01) ]
+
+                     H(u) = 2.5664
+
+        Chỉ số kinh tế của bộ mã : p = H(u) / ntb = 2.5664 / 2.65 = 0.9684
+
+Chương 3 : Mã hóa kênh truyền ( mã khối Hamming)
+Bài 2 / tr
+
+Cho ma trân sinh của bộ mã tuyến tính C (6,3) trên trường Galois
+
+        G=0           1    1    0    1   0
+
+
+                                                                                               53
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                              GVHD: NGUYỄN THỊ LAN ANH
+
+            1    1   0    0   0    1
+
+            1    1   0    1   1    0
+
+Tính Gch
+
+Có bao nhiêu từ mã có trọng số Hamming 0,1,2,3,4,5,6,7
+
+Giải
+Lấy cột 3 làm cột 1, cột 6 làm cột 2 và cột 4 làm cột 3 ta có ma trận sinh Gch như sau :
+
+Gch =   1   0    0   0    1   1
+
+        0   1    0   1    1   0
+
+        0   0    1   1    1   1
+
+Liệt kê các từ mã có được từ ma trận sinh G và ma trận sinh chuẩn tắc Gch
+
+Vector mang tin           V=aG                 W(v)              V’ = a Gch            W(v’)
+       a
+
+000                  000000                0                 000000              0
+
+001                  110110                4                 001111              4
+
+010                  110001                3                 010110              3
+
+011                  000111                3                 011001              3
+
+100                  011010                3                 100011              3
+
+101                  101100                3                 101100              3
+
+110                  101011                4                 110101              4
+
+111                  011101                4                 111010              4
+
+
+
+Vậy bộ mã có
+
+                1 từ mã có trọng số là 0
+
+                0 từ mã có trọng số là 1
+
+                0 từ mã có trọng số là 2
+
+                4 từ mã có trọng số là 3
+
+                                                                                               54
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+               3 từ mã có trọng số là 4
+
+               0 từ mã có trọng số là 5
+
+               0 từ mã có trọng số là 6
+
+               0 từ mã có trọng số là 7
+
+Chương 3 : Mã vòng
+Bài 2 / tr
+
+Cho bộ mã vòng (7,4) có đa thức sinh là :
+
+G(x) = x3+x2+1
+
+    c. Tìm đa thức thử h(x) của bộ mã này
+
+    d. Giả sử nhận được tổ hợp u(x) = x6+x5+x2+1 . Xác định đa thức syndrome của u(x)
+
+        Giải
+        a.Ta có công thức h(x) = xn+1 / g(x) và ta tính được
+
+               h(x) = x7+1 / x3+x2+1 = x4+ x3+x2+1
+
+               vậy h(x) = x4+ x3+x2+1
+
+        b.Già sử nhận được đa thức u(x) = x6+x5+x2+1 , khi đó đa thức syndrome của nó :
+
+               Su(x) = số dư của ( u(x) / g(x) ) = số dư của (x6+x5+x2+1 / x3+x2+1) = 0
+
+        Vậy đa thức syndrome của u(x) là su(x) = 0
+
+
+
+
+                                                                                          55
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+            BÀI TẬP LÝ THUYẾT THÔNG TIN
+                          Chương II: LƯỢNG TIN
+Bài tập: Giả sử có một nguồn tin rời rạc với xác suất xuất hiện p<u> khi u thuộc
+U, với mỗi tin u, chọn một từ mã có dộ dài 1(u) thỏa:
+                         Log(1/p(u))<l(u)<log(1/p(u))+1
+Chứng minh rằng độ dài trung bình:
+                              <1(u)>=
+Thỏa H(u)<<1(u)><H(u)+1
+                                       Giải
+      Theo đề bài với mọi u ta có:
+
+
+      Ví p(u)     nên bất đẳng thức trên tương đương với:
+            P(u)
+      Cộng tất cả các bất đẳng thức của trường tin u vế theo vế:
+
+
+
+      Hay H(u)     l(u)     H(u)+1
+                                                                               56
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+__________________________________________________________________
+
+               Chương III: MÃ THỐNG KÊ TỐI ƯU
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui    P(ui)   Pi     ni        Dạng mã nhị phân của pi   Từ mã
+U1    0.34    0      2         0                         00
+U2    0.2     0.34   3         0.01010111                010
+U3    0.19    0.54   3         0.10001010                100
+U4    0.1     0.73   4         0.10111010                1011
+U5    0.07    0.83   4         0.11010100                1101
+U6    0.04    0.9    5         0.11100110                11100
+U7    0.03    0.94   6         0.11110000                111100
+U8    0.02    0.97   6         0.11111000                111110
+U9    0.01    0.99   7         0.11111101                1111110
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=              =0,8279
+__________________________________________________________________
+
+         Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+__________________________________________________________________
+
+                          Chương V: MÃ VÒNG
+
+
+                                                                         57
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                 GVHD: NGUYỄN THỊ LAN ANH
+
+
+                           Chương II : LƯỢNG TIN
+Bài 8 : Chứng minh rằng
+
+Bài giải :
+
+
+
+
+= H(X) + H(Y/X) (đpcm)
+
+
+
+
+             CHƯƠNG III: MÃ THỐNG KÊ TỐI ƯU
+Bài tập: Lập một bộ mã cho nguồn tin U có sơ đồ thống kê:
+
+
+
+
+         0.34        0.2   0.19   0.1   0.07   0.04   0.03   0.02   0.01
+
+Bằng mã nhị phân (m=2)theo phương pháp Fano. Tính độ dài trung bình của
+từ mã ntbvà tính kinh tế của từ mã: =H(U)
+
+
+
+
+Giải:
+
+                                                                       58
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+
+
+                                                    Từ mã
+      0.34   0         0                            00            2
+      0.2    0         1                            01            2
+      0.19   1         0    0                       100           3
+      0.1    1         0    1                       101           3
+      0.07   1         1    0                       110           3
+      0.04   1         1    1     0                 1110          4
+      0.03   1         1    1     1      0          11110         5
+      0.02   1         1    1     1      1      0   111110        6
+      0.01   1         1    1     1      1      1   111111        6
+
+
+
+Độ dài trung bình tư mã:                    =
+
+Entropy của tập tin:
+
+                                H(U)=                  =2.5664
+
+
+Chỉ số kinh tế của bộ mã:               =              = 0.9685
+
+
+
+
+       CHƯƠNG IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+
+                       CHƯƠNG V: MÃ VÒNG
+                                                                      59
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+Bài tập:Xét bộ mã vọng (7,3) có đa thức sinh g(x)= 1+   +   +   . Cho v =
+(0011101) là một từ mã của bộ mã (7,3). Tìm tất cả các từ mã bằng cách
+dùng đẳng thức sau:
+
+[v(i)T]=S[v(i-1)]T, i= 1,n-1
+Với v(k) là từ mã thứ k và:
+
+
+
+
+S=
+
+
+
+
+Giải:
+
+Trước hết đặt : v(1)= (0011101)
+
+
+
+
+[v(2)]T=                               [v(1)]T
+
+
+
+                                                                      60
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+      =
+
+
+
+
+      =
+
+
+
+
+Vậy v(2)= (1001110). Tương tự ta xác định được:
+v(3)= (0100111)
+v(4)= (1010011)
+v(5)= (1101001)
+v(7)= (1110100)
+v(8)= (0111010)
+Cuối cùng bộ mã có từ mã tầm thường:
+v(0)= (0000000)
+
+
+                  BÀI TẬP MÔN LÝ THUYẾT THÔNG TIN.
+
+CHƯƠNG 1: LƯỢNG TIN
+
+
+
+CHƯƠNG 3: MÃ KHỐI
+                                                                  61
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+                               Chương II : LƯỢNG TIN
+
+Bài 8 : chứng minh rằng
+
+Bài giải :
+
+
+
+
+= H(X) + H(Y/X) (đpcm)
+
+
+
+                          Chương III :MÃ THỐNG KÊ TỐI ƯU
+
+
+
+Bài 5 : lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+ui        u1         u2       u3      u4        u5       u6       u7         u8       u9
+
+P(ui)    .34         .2      .19      .1        .07      .04      .03       .02      .01
+
+
+
+Bằng mã nhị phân m=2, theo phương pháp Shannon,tính đọ dài trung bình của từ mã ntb và tính
+theo kinh tế của từ mã :
+
+
+
+
+Bài giải :
+
+
+                                                                                           62
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Sơ đồ mã hóa theo phương pháp Shannon:
+
+      ui        P(ui)       Pi    ni     Dạng nhị phân của Pi        Từ Mã
+
+       u1       .34         0     2      0                           00
+
+       u2       .2          .34   3      0.01010111                  010
+
+       u3       .19         .54   3      0.10001010                  100
+
+       u4       .1          .73   4      0.1011010                   1011
+
+       u5       .07         .83   4      0.11010100                  11 01
+
+       u6       .04         .9    5      0.11100110                  11100
+
+       u7       .03         .94   6      0.11110000                  111100
+
+       u8       .02         .97   6      0.11111000                  111110
+
+       u9       .01         .99   1      0.11111101                  1111110
+
+
+
+Độ dài trung bình từ mã :
+
+Etropy của tập tin:
+
+Chỉ số kinh tế của bộ mã :
+
+                      Chương IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+Bài 3 : ma trận Sinh của bộ mã tuyến tính (7,3)       trên đường GF (2) là :
+
+
+
+
+       a.Biểu diễn G dưới dạng chuẩn Gch
+
+       b.Xác định ma trận thử Hch
+
+       c. Liệt kê các từ mã có được từ G và Gch
+
+       d. Xác định khoảng cách Hamming của bộ mã này
+
+
+                                                                               63
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+     bài giải:
+     a.Lấy cột 7 làm cột 1,cột 1 làm cột 3 ta có ma trận Sinh Gch:
+
+
+
+
+     b.Ta có :Hch [-PTIn-k] =
+
+
+
+
+     c.Liệt kê các từ mã của G và Gch:
+
+     Vector mang           V=a.G          w(v)           v’=a.Gch    W(v’)
+         tin a
+
+          000             0000000           0           0000000       0
+
+          001             1011100           4           0011110       4
+
+          010             0101110           4           0100111       4
+
+          011             1110010           4           0111001       4
+
+          100             0010111           4           1001011       4
+
+          101             1001011           4           1010101       4
+
+          110             0111001           4           1101100       4
+
+          111             1100101           4           1110010       4
+
+
+
+
+  b. Cả 2 bộ mã trên đều có D=4 là trọng số Hamming nhỏ nhất của các từ mã
+     khác không của chúng
+
+
+
+
+                                                                             64
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                             GVHD: NGUYỄN THỊ LAN ANH
+
+                                  Chương 5 : MÃ VÒNG
+
+
+Bài 5 : chứng minh rằng trong 1 bộ mã vòng khi mẫu sai E(x) có thể dò được thì
+mẫu sai E(i)(x) chuyển dịch vòng i bit so với E(x) cũng có thể dò được
+
+Bài giải:
+Ta chứng minh bằng phản chứng.
+
+Nếu E(i)(x) là 1 mẫu sai không phát hiện được thì E(i)(x) là 1 từ mã. Từ đây theo định
+nghĩa của mã vòng thì E(x) cũng là 1 từ mã. Khi đó vì mã vòng là mã tuyến tính nên
+1 từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành 1 từ mã v’(x) và
+không phát hiện sai được. Điều nay mẫu thuẫn với giả thiết là E(x) là mẫu sai phát
+hiện được.
+
+
+
+                                Chương II: LƯỢNG TIN
+
+
+Bài 6: Trong kênh truyền tin nhị phân có nhiễu nguồn X =
+
+{x0,x1} có p(x0) = 0.4 và p(x1) = 0.6. Xác suất truyền tin sai nhầm p(y0/x1) = p(y1/x0) =
+0.1, xác suất truyền tin đúng p(y0/x0) = p(y1/x1) = 0.9, với Y = {y0,y1}
+
+a/ Tính H(Y)
+
+b/ Tính H(Y/X)
+
+c/ Tính I(X;Y)
+
+Bài làm:
+
+a/ H(Y) = p(y0)I(y0) + p(y1)I(y1)
+
+ Áp dụng công thức p( x) = ∑
+                           ∀i
+                              p ( x, y i )
+
+
+ Ta có: P(y0) = p(y0,x0) + p(y0,x1)
+
+                 = p(y0) p(y0/x0) + p(x1) p(y0/x1)
+
+                 = 0,4.0,9 + 0,6.0,1
+
+
+                                                                                      65
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                               GVHD: NGUYỄN THỊ LAN ANH
+
+                   = 0,42
+
+           P(y1) = p(y1,x0) + p(y1,x1)
+
+                   = p(x0) p(y1/x0) + p(x1) p(y1/x1)
+
+                   = 0,4.0,1 + 0,6.0,9
+
+                   = 0,58
+
+           H(Y) = -0,42log0,42 – 0,58log0,58
+
+                   =0,8915
+
+b/ H (Y / X ) = ∑
+                XY
+                   P ( x, y ) I ( y , x )
+
+
+               = p(x0,y0) I(y0/x0) + p(x0,y1) I(y1/x0) + p(x1,y0) I(y0/x1) + p(x1,y1) I(y1/x1)
+
+ Mà: p(x0,y0) = p(x0) p(y0/x0) = 0,4.0,9 = 0,36
+
+       p(x0,y1) = p(x0) p(y1/x0) = 0,4.0,1 = 0,04
+
+       p(x1,y0) = p(x1) p(y0/x1) = 0,6.0,1 = 0,06
+
+       p(x1,y1) = p(x1) p(y1/x1) = 0,6.0,9 = 0,54
+
+       I(y0/x0) = -log p(y0/x0) = -log0,9 = log10/9
+
+       I(y1/x0) = -log p(y1/x0) = -log0,1 = log10
+
+       I(y0/x1) = -log p(y0/x1) = -log0,1 = log10
+
+       I(y1/x1) = -log p(y1/x1) = -log0,9 = log10/9
+
+Nên: H(Y/X) = 0,36log10/9 + 0,04log10 + 0,06log10 + 0,54log10/9
+
+                 = 0.469
+
+c/ I ( X ; Y ) = ∑
+                 XY
+                    p ( x, y ) I ( x; y )
+
+
+              = p(x0,y0) I(x0;y0) + p(x0,y1) I(x0;y1) + p(x1,y0) I(x1;y0) + p(x1,y1)I(x1;y1)
+
+ Mà: I(x0;y0) = I(y0;x0) = I(y0) - I(y0/x0) = log p(y0/x0)/p(y0) = log0,9/0,42
+
+       I(x0;y1) = I(y1;x0) = I(y1) - I(y1/x0) = log p(y1/x0)/ p(y1) = log0,1/0,58
+
+                                                                                                 66
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+        I(x1;y0) = I(y0;x1) = I(y0) - I(y0/x1) = log p(y0/x1)/ p(y0) = log0,1/0,42
+
+        I(x1;y1) = I(y1;x1) = I(y1) - I(y1/x1) = log p(y1/x1)/ p(y1) = log0,9/0,58
+
+Vậy I(X;Y) = 0,36log0,9/0,42 + 0.04log0,1/0,58 + 0,06log0,1/0,42 + 0,54log0,9/0,58
+
+                 = 0,512
+
+
+
+
+                           Chương III: MÃ THỐNG KÊ TỐI ƯU
+
+
+Bài 5: Lập một bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui         u1        u2        u3        u4         u5       u6        u7        u8    u9
+P(ui)      .34       .2        .19       .1         .07      .04       .03       .02   .01
+
+
+
+Bằng mã nhị phân(m = 2)theo phương pháp Shannon. Tính độ dài trung binh2cua3 từ mã
+ntbvà tính kinh tế của từ mã.
+
+Bài làm:
+
+Sơ đồ mã hóa theo phương pháp mã hóa Shannon:
+
+ui         P(ui)      Pi            ni        Dạng nhị phân của pi      Từ mã
+u1         .34        0             2         0                         00
+u2         .2         .34           3         0,01010111                010
+u3         .19        .54           3         0,10001010                100
+u4         .1         .73           4         0,10111010                1011
+
+
+                                                                                             67
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+u5            .07        .83    4            0,11010100             1101
+u6            .04        .9     5            0,11100110             11100
+u7            .03        .94    6            0,11110000             111100
+u8            .02        .97    6            0,11111000             111110
+u9            .01        .99    7            0,11111101             1111110
+
+
+                                     9
+Độ dài trung bình từ mã: ntb = ∑ ni p(u i ) = 3,1
+                                    i =1
+
+
+                                     9
+Entropy của tập tin: H (U ) = −∑ p (u i ) log 2 p(u i ) = 2,5664
+                                    i =1
+
+
+                                    H (U )       2,5644
+Chỉ số kinh tế của bộ mã: ρ = n              =
+                                                   3,1
+                                                        = 0,8279
+                                tb
+
+
+
+
+                    Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+
+Bài 2: Ma trận của bộ mã tuyến tính (6,3) trên trường GF (2) được cho bởi:
+
+
+
+     0     1 1 0 1 0
+G = 1      1 0 0 0 1
+              
+      1   1  0 1 1 0
+a/ Hãy biểu diễn G dưới dạng chuẩnGch
+
+                                                                                    68
+            11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                         GVHD: NGUYỄN THỊ LAN ANH
+
+b/ Liệt kê các từ mã có được từ 2 ma trận sinh G và Gch
+
+c/ Co1bao nhiêu từ mã có trọng số hamming là 0,1,2,3,4,5,6?
+
+Bài làm:
+
+a/ Lấy cột 3 làm cột 1, cột 6 làm cột 2 và cột 4 làm cột 3 ta có ma trận sinh Gch
+
+
+
+       1     0 0 0 1 1
+       
+Gc = h  0    1 0 1 1 0
+                
+        0   0 1 1 1 1
+b/ Liệt kê các từ mã có được từ ma trận sinh G và ma trận sinh Gch
+
+Vector mang tin a           V = aG        W(v)          V’ = aGch               W(v’)
+000                         000000        0             000000                  0
+001                         110110        4             001111                  4
+010                         110001        3             010110                  3
+011                         000111        3             011001                  3
+100                         011010        3             011001                  3
+101                         101100        3             101100                  3
+110                         101011        4             110101                  4
+111                         011101        4             111010                  4
+
+
+
+c/ Cả 2 bộ mã đều có:
+
+       1 từ mã có trọng số là 0
+
+       0 từ mã có trọng số là 1
+
+
+                                                                                        69
+              11/13/2011
+ĐẶNG QUANG HUY - D09VTH2      GVHD: NGUYỄN THỊ LAN ANH
+
+  0 từ mã có trọng số là 2
+
+   4 từ mã có trọng số là 3
+
+   3 từ mã có trọng số là 4
+
+   0 từ mã có trọng số là 5
+
+   0 từ mã có trọng số là 6
+
+
+
+
+                                                         70
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                             Chương V: MÃ VÒNG
+
+
+Bài 2: Chứng minh rằng trong 1 bộ mã vòng khi mẫu sai E(x) có thể dò được thì mẫu sai
+E(i)(x) chuyển dịch vòng I bit so với E(x) cũng có thể dò được.
+
+Bài làm:
+
+ Chứng minh bằng phản chứng.
+
+  Nếu E(i)(x)là một mẫu sai không phát hiện được thì E(i)(x) là một từ mã. Từ đây theo
+định nghĩa của mã vòng thì E(x) cũng là một từ mã. Khi đó vì mã vòng là mã tuyến tính
+nên một từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành một từ mã
+v’(x) và không phát hiện sai được. Điều này mâu thuẫn với giả thiết là E(x) là mẫu sai
+phát hiện được.
+
+                    BÀI TẬP MÔN LÝ THUYẾT THÔNG TIN.
+
+CHƯƠNG 1: LƯỢNG TIN
+
+CHƯƠNG 3: MÃ KHỐI
+
+=
+
+
+
+
+                                                                                   71
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Chương II : LƯỢNG TIN
+
+BÀI 2: Với nguồn tin rời rạc gồm 2 ký tự U = {a1,a2} và p(a1) = p
+
+Chứng minh rằng H(U) = H(p) = p log (1/p) + log 1/(1-p) lớn nhất khi p= ½
+
+Bài giải:
+
+Xét hàm số : f(x) = log = - log
+
+Có     f’( ) = -log e (ln          ) = -log e (ln   )
+
+       f ’’( ) =
+
+trong khoảng       (0,1] có f’’(                             .
+
+Vậy với a,b
+
+
+
+
+Dấu đẳng thức xảy ra khi và chỉ khi a = b
+
+Cho a = p và b = 1-p ta được :
+
+
+
+
+=
+
+
+Vậy H(U) =
+
+
+
+
+Bài 8 : chứng minh rằng
+
+
+
+                                                                                   72
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                           GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Bài giải :
+
+
+
+
+= H(X) + H(Y/X) (đpcm)
+
+Bài 9 : Giả sử có một nguồn tin rời rạc xuất hiện p(u) khi u   U. Với mỗi tin u chọn 1 từ mã có
+
+độ dài l(u) thỏa :
+
+Chứng minh rằng độ dài trung bình
+
+
+
+
+Thỏa
+
+
+
+Bài giải:
+
+Theo đề bài với mọi u ta có:
+
+
+
+                                                                                            73
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Vì p(u)>0 nên bất đẳng thức trên tương đương với:
+
+
+
+
+Cộng tất cả các bất đẳng thức của từng tin u theo vế:
+
+
+
+
+Hay
+
+Chương III :MÃ THỐNG KÊ TỐI ƯU
+
+BÀI 1: cho bộ mã có cơ số mã m = 4 như sau:
+
+U={3,23,11,123,10}
+
+   d. Vẽ cây mã và đồ hình kết cấu của bộ mã U
+
+   e. Vẽ mặt tọa độ mã
+
+   f. Lập 1 bộ mã hệ thống 6 từ mã có các tổ hợp sơ đẳng. Vẽ đồ hình kết cấu của bộ mã vừa
+      lặp
+
+   Bài giải:
+
+   d. Cây mã :
+
+       ----------------------------------------------------------------------------------------------------Mức 0
+
+                                                 2        1
+
+       ---------------------------------------------------------------------------------------------------Mức 1
+
+                                          3               1    2 0
+
+       --------------------------------------------------------------------------------------------------Mức 2
+
+                                                                   3
+
+       ---------------------------------------------------------------------------------------------------Mức 3
+
+                                                                                                             74
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                            GVHD: NGUYỄN THỊ LAN ANH
+
+        Đồ hình kết cấu :                             0
+
+                                            3         0
+                                        1
+
+                                        0
+
+     e. Mặt tọa độ mã:
+
+                             ui             ni            pi
+
+                             3              1             3
+
+                             23             2             14
+
+                             11             2             5
+
+                            123             3             57
+
+                             10             2             1
+
+
+
+     f. Tổ hợp sơ đẳng : 23,123,10
+
+        Tổ hợp cuối : 3,11
+
+        Bộ mã hệ thống có 6 từ mã :u1 =233, u2=1233, u3=101011, u4=2311, u5=12311,
+        u6=102311
+
+
+
+Bài 5 : lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui         u1        u2            u3            u4            u5       u6    u7     u8    u9
+
+P(ui)     .34        .2           .19            .1            .07      .04   .03   .02    .01
+
+Bằng mã nhị phân m=2, theo phương pháp Shannon,tính đọ dài trung bình của từ mã ntb và tính
+theo kinh tế của từ mã :
+
+
+
+
+        Bài giải :
+
+
+                                                                                                 75
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                       GVHD: NGUYỄN THỊ LAN ANH
+
+          Sơ đồ mã hóa theo phương pháp Shannon:
+
+ui           P(ui)        Pi          ni        Dạng nhị phân của Pi                    Từ Mã
+
+u1           .34          0           2         0                                       00
+
+u2           .2           .34         3         0.01010111                              010
+
+u3           .19          .54         3         0.10001010                              100
+
+u4           .1           .73         4         0.1011010                               1011
+
+u5           .07          .83         4         0.11010100                              11 01
+
+u6           .04          .9          5         0.11100110                              11100
+
+u7           .03          .94         6         0.11110000                              111100
+
+u8           .02          .97         6         0.11111000                              111110
+
+u9           .01          .99         1         0.11111101                              1111110
+
+
+
+Đọ dài trung bình từ mã :
+
+
+
+Etropy của tập tin:
+
+Chỉ số kinh tế của bộ mã :
+
+Bài 7 : cho nguồn tin U có sơ đồ thống kê như sau:
+
+     ui              u1                    u2         u3                                u14
+
+     P(ui)           .5                   .25        .315         .31       . 0157      .0156
+
+Dung mã Huffman kết hợp mã đều để mã hóa nguồn tin trên với cơ số mã m=2
+
+Bài giải:
+
+                                P(ui)                        Sơ đồ mã hóa       Từ mã
+
+                                .5                                              0
+
+                                .25                                             10
+
+
+
+                                                                                                  76
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+                     .315                                        11000
+
+                     .31                                         11001
+
+                     .31                                         11010
+
+                     .31                                         11011
+
+                     . 0157                                      111000
+
+                     . 0157                                      111001
+
+                     . 0157                                      111010
+
+                     . 0157                                      111011
+
+                     . 0157                                      111100
+
+                     . 0157                                      111101
+
+                     . 0157                                      111110
+
+                     .0156                                       111111
+
+
+
+
+Chương IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+
+
+Bài 3 : ma trận Sinh của bộ mã tuyến tính (7,3) trên đường GF (2) là :
+
+
+
+
+      a.Biểu diễn G dưới dạng chuẩn Gch
+
+      b.Xác định ma trận thử Hch
+
+      c. Liệt kê các từ mã có được từ G và Gch
+
+      d. Xác định khoảng cách Hamming của bộ mã này
+
+
+
+      bài giải:
+
+                                                                          77
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+    a.Lấy cột 7 làm cột 1,cột 1 làm cột 3 ta có ma trận Sinh Gch:
+
+
+
+
+    b.Ta có :Hch [-PTIn-k] =
+
+
+
+
+    c.Liệt kê các từ mã của G và Gch:
+
+     Vector mang          V=a.G          w(v)           v’=a.Gch    W(v’)
+         tin a
+
+         000             0000000           0           0000000       0
+
+         001             1011100           4           0011110       4
+
+         010             0101110           4           0100111       4
+
+         011             1110010           4           0111001       4
+
+         100             0010111           4           1001011       4
+
+         101             1001011           4           1010101       4
+
+         110             0111001           4           1101100       4
+
+         111             1100101           4           1110010       4
+
+
+                                                                            78
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+     c. Cả 2 bộ mã trên đều có D=4 là trọng số Hamming nhỏ nhất của các từ mã
+        khác không của chúng
+
+
+
+Chương 5 : MÃ VÒNG
+
+Bài 1: chứng minh rằng đa thức sinh g(x) của 1 bộ mã vòng là ước số của xn+1
+
+Bài giải:
+
+Giả sử
+
+                                         cũng là 1 đa thức mã.Khi đó:
+
+
+
+Và
+
+Từ đây :
+
+Hay
+
+Tức là                (đpcm)
+
+
+
+Bài 5 : chứng minh rằng trong 1 bộ mã vòng khi mẫu sai E(x) có thể dò được thì
+mẫu sai E(i)(x) chuyển dịch vòng i bit so với E(x) cũng có thể dò được
+
+Bài giải:
+
+Ta chứng minh bằng phản chứng.
+
+Nếu E(i)(x) là 1 mẫu sai không phát hiện được thì E(i)(x) là 1 từ mã. Từ đây theo định
+nghĩa của mã vòng thì E(x) cũng là 1 từ mã. Khi đó vì mã vòng là mã tuyến tính nên
+1 từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành 1 từ mã v’(x) và
+không phát hiện sai được. Điều nay mẫu thuẫn với giả thiết là E(x) là mẫu sai phát
+hiện được.
+
+
+
+                      BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương III
+                                                                                    79
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                   GVHD: NGUYỄN THỊ LAN ANH
+
+Lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+Ui      u1    u2     u3   u4     u5   u6   u7    u8     u9
+
+P(ui) .34 .2         .19 .1      .07 .04 .03 .02 .01
+
+Bằng mã nhị phân the phương pháp shannon. Tính độ dài trung
+bình của từ mã ntb và tính kinh tế của từ mã p=H(U)/ntb
+
+Giải:
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui      P(u    Pi    ni       Dạng nhị phân          Từ Mã
+         i)                      của Pi
+U1      .34   0      2    0                     00
+
+U2      .2    .34 3       0,01010111            010
+
+U3      .19   .54 3       0,10001010            100
+
+U4      .1    .73 4       0,10111010            1011
+
+U5      .07   .83 4       0,11010100            1101
+
+U6      .04   .9     5    0,11100110            11100
+
+U7      .03   .94 6       0,11110000            111100
+
+U8      .02   .97 6       0,11111000            111110
+
+U9      .01   .99 7       0,11111101            1111110
+
+
+
+Độ dài trung bình từ mã :ntb=                   =3.1
+
+Entropy của tập tin : H(U)=                   =2,5664
+
+Chỉ số kinh tế của bộ mã:     ᵨ= H(U)/ntb=2.5664/3.1=0,8279
+Chương IV
+
+                                                                      80
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                GVHD: NGUYỄN THỊ LAN ANH
+
+     Chương V
+
+     Chứng minh rằng trong 1 bộ mã vòng khi sai E(x) có thể dò
+     được thì mẫu sai Ei(x) chuyển dịch vòng I bit so với E(x) cũng có
+     thể dò được
+
+     Giải:
+
+     Nếu Ei(x) là 1 mẫu sai ko phát hiện được thì Ei(x) là 1 từ mã. Từ
+     đây theo đn của mã vòng thì E(x) cũng là 1 từ mã.Khi đó vì mã
+     vòng là mã tuyến tính nên 1 từ mã v(x) bất kỳ sau khi chịu tác
+     động sai của E(x) sẽ biến thành 1 từ mã v’(x) và không phát
+     hiện sai được. Điều này mâu thuẫn với giả thiết là E(x) là mẫu
+     sai phát hiện được.
+
+
+
+
+                                   Chương II : LƯỢNG TIN
+BÀI 2:
+
+Với nguồn tin rời rạc gồm 2 ký tự U = {a1,a2} và p(a1) = p
+
+Chứng minh rằng H(U) = H(p) = p log (1/p) + log 1/(1-p) lớn nhất khi p= ½
+
+Bài giải:
+
+Xét hàm số : f(x) = log = - log
+
+Có     f’( ) = -log e (ln          ) = -log e (ln   )
+
+       f ’’( ) =
+
+trong khoảng       (0,1] có f’’(                             .
+
+Vậy với a,b
+
+
+
+                                                                                   81
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Dấu đẳng thức xảy ra khi và chỉ khi a = b
+
+Cho a = p và b = 1-p ta được :
+
+
+
+
+=
+
+
+Vậy H(U) =
+
+
+
+
+                          Chương III :MÃ THỐNG KÊ TỐI ƯU
+
+BÀI 1:
+cho bộ mã có cơ số mã m = 4 như sau:
+
+U={3,23,11,123,10}
+
+    g. Vẽ cây mã và đồ hình kết cấu của bộ mã U
+
+    h. Vẽ mặt tọa độ mã
+
+    i. Lập 1 bộ mã hệ thống 6 từ mã có các tổ hợp sơ đẳng. Vẽ đồ hình kết cấu của bộ mã vừa
+       lặp
+
+    Bài giải:
+
+    g. Cây mã :
+
+       ----------------------------------------------------------------------------------------------------Mức 0
+
+                                                 2        1
+
+       ---------------------------------------------------------------------------------------------------Mức 1
+
+                                          3               1    2 0
+
+       --------------------------------------------------------------------------------------------------Mức 2
+
+
+                                                                                                             82
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                     GVHD: NGUYỄN THỊ LAN ANH
+
+                                                                     3
+
+         ---------------------------------------------------------------------------------------------------Mức 3
+
+         Đồ hình kết cấu :                        0
+
+                                            3     0
+                                        1
+
+                                        0
+
+   h. Mặt tọa độ mã:
+
+                               ui           ni        pi
+
+                               3            1          3
+
+                              23            2         14
+
+                              11            2          5
+
+                              123           3         57
+
+                              10            2          1
+
+
+
+   i. Tổ hợp sơ đẳng : 23,123,10
+
+         Tổ hợp cuối : 3,11
+
+         Bộ mã hệ thống có 6 từ mã :u1 =233, u2=1233, u3=101011, u4=2311, u5=12311,
+         u6=102311
+
+                      Chương IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+                                       Chương V : MÃ VÒNG
+
+
+Bài 1: chứng minh rằng đa thức sinh g(x) của 1 bộ mã vòng là ước số của xn+1
+
+Bài giải:
+
+Giả sử
+
+                                                      cũng là 1 đa thức mã.Khi đó:
+
+
+
+                                                                                                              83
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                       GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Và
+
+Từ đây :
+
+Hay
+
+Tức là                (đpcm)
+
+
+
+                        BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+
+                 BÀI TẬP LÝ THUYẾT THÔNG TIN
+                               Chương II: LƯỢNG TIN
+                  Chương III: MÃ THỐNG KÊ TỐI ƯU
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui       U1       U2       U3      U4     U5     U6   U7      U8      U9
+P(u)     0.34     0.2      0.19    0.1    0.07   0.04 0.03    0.02    0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của
+từ mã ntb và tính kinh tế của từ mã: p=H(U)/Ntb.
+                                        Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui       P(ui)   Pi      ni      Dạng mã nhị phân của pi   Từ mã
+U1       0.34    0       2       0                         00
+U2       0.2     0.34    3       0.01010111                010
+U3       0.19    0.54    3       0.10001010                100
+U4       0.1     0.73    4       0.10111010                1011
+U5       0.07    0.83    4       0.11010100                1101
+U6       0.04    0.9     5       0.11100110                11100
+                                                                          84
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                       GVHD: NGUYỄN THỊ LAN ANH
+
+U7      0.03   0.94    6        0.11110000                  111100
+U8      0.02   0.97    6        0.11111000                  111110
+U9      0.01   0.99    7        0.11111101                  1111110
+
+Độ dài trung bình từ mã: NTB=
+
+Entropy của tập tin: H(u)=
+
+Chỉ số kinh tế của bộ mã: p=                 =0,8279
+__________________________________________________________________
+
+             Chương IV: MÃ CHỐNG NHIỄU: MÃ KHỐI
+
+__________________________________________________________________
+
+                           Chương V: MÃ VÒNG
+
+
+                      BÀI TẬP LÝ THUYẾT THÔNG TIN
+Chương II
+
+Chương III
+
+Lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+Ui      u1     u2     u3   u4     u5    u6     u7      u8   u9
+
+P(ui) .34 .2          .19 .1      .07 .04 .03 .02 .01
+
+Bằng mã nhị phân the phương pháp shannon. Tính độ dài trung
+bình của từ mã ntb và tính kinh tế của từ mã p=H(U)/ntb
+
+Giải:
+
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+ Ui     P(u    Pi     ni     Dạng nhị phân              Từ Mã
+
+
+                                                                          85
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+       i)                         của Pi
+U1    .34   0     2    0                                 00
+
+U2    .2    .34 3      0,01010111                        010
+
+U3    .19   .54 3      0,10001010                        100
+
+U4    .1    .73 4      0,10111010                        1011
+
+U5    .07   .83 4      0,11010100                        1101
+
+U6    .04   .9    5    0,11100110                        11100
+
+U7    .03   .94 6      0,11110000                        111100
+
+U8    .02   .97 6      0,11111000                        111110
+
+U9    .01   .99 7      0,11111101                        1111110
+
+
+
+Độ dài trung bình từ mã :ntb=                           =3.1
+
+Entropy của tập tin : H(U)=                           =2,5664
+
+Chỉ số kinh tế của bộ mã:   ᵨ= H(U)/ntb=2.5664/3.1=0,8279
+
+
+     BÀI TẬP LÝ THUYẾT THÔNG TIN
+                            -----------------o0o-----------------
+
+
+
+
+CHƯƠNG I:
+
+                      HỆ THỐNG THÔNG TIN
+
+
+                                                                             86
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                              GVHD: NGUYỄN THỊ LAN ANH
+
+CHƯƠNG II:
+
+                                      LƯỢNG TIN
+
+
+
+
+BÀI 6:          Trong kênh truyền tin nhị phân có nhiễu nguồn X={x0,x1} có p(x0)=0.4 và
+p(x1)=0.6. Xác suất truyền tin sai nhầm p(y0, x1)=p(y1, x0)=0.1, Xác suất truyền tin đúng
+p(y0, x0)= p(y1, x1)=0.9 với Y= (y0, y1).
+
+a.Tính H(Y).
+
+b.Tính H(Y/X).
+
+c.Tính I(X;Y).
+
+
+
+Giải.
+   a. H(Y) = p(y0)I(y0) + p(y1)I(y1)
+
+
+
+
+Áp dụng công thức :
+
+
+Ta có p(y0)= p(y0, x0)+ p(y0, x1) = p( x0) p(y0 /x0)+ p( x1) p(y0 /x1)=0.4*0.9+0.6*0.1=0.42
+
+
+
+p(y1)= p(y1, x0)+ p(y1, x1)= p( x0) p(y1 /x0)+ p( x1) p(y1 /x1)=0.4*0.1+0.6*0.9=0.58
+
+
+
+H(Y)=-0.42log0.42-0.58log0.58=0.8915
+
+
+
+
+                                                                                              87
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+
+  b. H(Y/X) =
+
+
+                = p(x0, y0) I(y0 / x0) + p(x0, y1) I(y1 / x0)+ p(x1, y0) I(y0 / x1)+ p(x1, y1) I(y1 /x1)
+
+     Mà
+
+     p(x0, y0)= p(x0 ) p(y0 /x0)=0.4*0.9=0.36
+
+     p(x0, y1)= p(x0 ) p(y1 / x0)=0.4*0.1=0.04
+
+     p(x1, y0)= p(x1 ) p(y0 /x1)=0.6*0.1=0.06
+
+     p(x1, y1)= p(x1 ) p(y1 / x1)=0.6*0.9=0.54
+
+
+
+     I(y0 /x0)= - log p(y0 /x0)= - log 0.9 = log (10/9)
+
+     I(y1 /x0)= - log p(y1 /x0)= - log 0.1 = log 10
+
+     I(y0 /x1)= - log p(y0 /x1)= - log 0.1 = log 10
+
+     I(y01/x1)= - log p(y1 /x1)= - log 0.9 = log (10/9)
+
+
+
+     Nên H(Y/X) = 0.36log (10/9) + 0.04*log10 + 0.06*log10 + 0.54*log(10/9) = 0.469
+
+
+
+  c. I(X/Y) =
+
+              = p(x0, y0) I(x0 ;y0) + p(x0, y1) I(x0 ;y1) + p(x1, y0) I(x1 ;y0) + p(x1, y1) I(x1;y1)
+
+     Mà
+
+     I(x0 ;y0) = I(y0 ;x0)= I(y0)- I(y0 ;x0) = log (p(y0 ;x0)/ p(y0))=log(0.9/0.42)
+
+
+
+     I(x0 ;y1) = I(y1 ;x0)= I(y1)- I(y1 ;x0) = log (p(y1 ;x0)/ p(y1))=log(0.1/0.58)
+
+     I(x1 ;y0) = I(y0 ;x1)= I(y0)- I(y0 ;x1) = log (p(y0 ;x1)/ p(y0))=log(0.1/0.42)
+
+     I(x1;y1) = I(y1 ;x1)= I(y1)- I(y1 ;x1) = log (p(y1 ;x1)/ p(y1))=log(0.9/0.58)
+
+
+
+
+                                                                                                           88
+     11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                 GVHD: NGUYỄN THỊ LAN ANH
+
+         Vậy I(X;Y) = 0.36*log(0.9/0.42) + 0.04*log(0.1/0.58) + 0.06*log(0.1/042) +
+         0.54*log(0.9/0.58) = 0.512
+
+
+
+
+CHƯƠNG III:
+
+                           MÃ THỐNG KÊ TỐI ƯU
+
+
+Câu 2:       Với bộ mã gốc {00,01,100,1010,10110} phân thành 3 tổ hợp sơ đẳng 00,01,100
+và hai tổ hợp cuối 1010 và 10110 để thành lập mã hệ thống có tính prefix. Hãy xác định
+G(nj) với nj = 1,2,3,……,9.
+
+Giải:
+Theo đề bài:
+
+n1=2, n2=2, n3=3, i=3
+
+λ1 =4, λ2 =4, k=2.
+
+Áp dụng công thức:
+
+G(nj)= g(nj- λ1) + g(nj- λ2)+…..+ g(nj- λ1)+ g(nj- λk)
+
+Ta được: G(nj)= g(nj- 4) + g(nj- 5)           (1)
+
+Mặc khác: g(nj)= g(nj- n1) + g(nj- n2) + g(nj- n3)
+
+   Hay       g(nj)= g(nj- 2) + g(nj- 2) + g(nj- 3)
+                                                                                      89
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                        GVHD: NGUYỄN THỊ LAN ANH
+
+           g(nj)= 2*g(nj- 2) + g(nj- 3)   (2)
+
+Vậy
+
+g(1)=2g(-1)+g(-2)=0
+
+g(2)=2g(0)+g(-1)=2
+
+g(3)=2g(1)+g(0)=1
+
+g(4)=2g(2)+g(1)=4
+
+g(5)=2g(3)+g(2)=4
+
+Từ đây theo (1):
+
+G(1)= g(-3) + g(-4)=0
+
+G(2)= g(-2) + g(-3)=0
+
+G(3)= g(-1) + g(-2)=0
+
+G(4)= g(0) + g(-1)=1
+
+G(5)= g(1) + g(0)=1
+
+G(6)= g(2) + g(1)=2
+
+G(7)= g(3) + g(2)=3
+
+G(8)= g(4) + g(3)=5
+
+G(9)= g(5) + g(4)=8
+
+
+
+
+                                                                           90
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+CHƯƠNG IV:
+
+                  MÃ CHỐNG NHIỄU (MÃ KHỐI)
+
+
+Câu 1:       Một không gian vectơ được tạo bởi mọi tổ hợp tuyến tính của tập hợp các
+vectơ sau:
+
+b0=1101000
+
+b1=0110100
+
+b2=0100011
+
+b3=1110010
+
+b4=1010001
+
+   a. Các vêctơ b ở trên có độc lập tuyến tính hay không?
+
+   b. Tìm số chiều và cơ hệ của không gian vectơ này.
+
+Giải:
+   1. a. Các vectơ b0, b1, b2, b3, b4 phụ thuộc tuyến tính vì dễ thấy:
+
+
+                                                                                       91
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                               GVHD: NGUYỄN THỊ LAN ANH
+
+    0 b0 +0b1 + b2+b3+b4=0
+
+    b.Bây giờ giả sử tồn tại λ0 ,λ1, λ2, λ3 sao cho:
+
+    λ0b0 + λ1b1+ λ2b2+ λ3b3=0
+
+
+    ↔ λ (1101000)+ λ (0110100)+ λ (0100011)+ λ (1110010)=(0000000)
+            0               1              2               3
+
+
+
+
+    → λ0+ λ3=0
+
+    λ0+ λ1 + λ2+ λ3=0
+
+    λ0+ λ3=0
+
+    λ0=0
+
+    λ1=0
+
+    λ2+ λ3=0
+
+    λ2=0
+
+
+    → λ0= λ1= λ2= λ3=0
+
+    Vậy b0, b1, b2 ,b3 độc lập tuyến tính, b4 có thể biểu diễn tuyến tính theo b0, b1, b2, b3 nên
+    không gian vectơ có 4 chiều dài và một cơ hệ của nó là < b0, b1,b2, b3>.
+
+
+
+
+                                                                                                    92
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                                                      93
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+    CHƯƠNG V:
+
+                                       MÃ VÒNG
+
+
+    Câu 8:       Cho bộ mã vòng (n,k)=(7,4) có ma trận sinh là g(x)=x3+x+1. Liệt kê tất
+    cả các từ mã của bộ mã và cho biết bộ mã có khả năng sửa được các mẫu sai bao
+    nhiêu bit.
+
+
+
+
+    Giải:
+
+
+    8. a. Cho d=(0001) ta tính được:
+
+    v1=0001000 + dư số (0001000/1011)
+
+    v1=0001000 + 011=0001011
+
+    Quay vòng từ mã v1 ta sẽ được them 6 từ mã nữa:
+
+    v2=1000101
+
+    v3=1100010
+
+    v4=0110001
+
+    v5=1011000
+
+    v6=0101100
+
+
+                                                                                     94
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+       v7=0010110
+
+       Cho d=(0011) ta tính được:
+
+       v8=0011000 + dư số(0011000/1011)
+
+       v8=0011000 + 101=0011101
+
+       Quay vòng từ mã v8 ta sẽ được thêm 6 từ mã nữa;
+
+       v9=1001110
+
+       v10=0100111
+
+       v11=1010011
+
+       v12=1101001
+
+       v13=1110100
+
+       v14=0111010
+
+       Cho d=(11110) ta tính được.
+
+       V15=1111000 + dư số(1111000/1011)
+
+       V15=1111000 + 111=1111111
+
+       Cho d=(0000) ta tính được:
+
+       V0=0000000 + dư số(1111000/1011)
+
+       V0=0000000 + 000=0000000
+
+b.Ta có thể tính được dễ dàng trọng số Hamming của bộ mã là trọng số nhỏ nhất của các từ mã
+khác không: H(V) = 3 nên bộ mã có khả năng sửa được tất cả các mẫu sai 1 bit.
+
+
+
+
+                                                                                          95
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                     BÀI TẬP
+                                                      96
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+
+        LÝ THUYẾT THÔNG TIN
+
+
+
+
+CHƯƠNG 2: LƯỢNG TIN
+
+
+1. Cho tập tin U = {ui} với ui = xi yi zi
+
+                                                                       97
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                GVHD: NGUYỄN THỊ LAN ANH
+
+    i            1          2           3         4        5       6        7        8
+
+   ui         000        001         010        011       100     101      110      111
+
+ p(ui)       0.25       0.25         0.125    0.0625    0.0625   0.0625   0.0625   0.0625
+
+
+
+Gọi tin ui = u6 = 101                        là tin a
+
+          xi = 1                             là tin b
+
+          xi = 1 , xi = 0                    là tin c
+
+          xi = 1 , yi = 0 , zi = 1           là tin d
+
+Tính I(a) , I(a,b) , I(a,c) , I(a,d).
+
+
+
+                                               Bài làm:
+
+
+
+I(a) = I(u6) = - log p(u6)
+
+        = - log 1/16 = log 1/16
+
+I(a,b) = I(u6 ; xi=1)
+
+         = I(u6) - I(u6/ xi=1)
+
+
+         = log
+
+
+
+         = log
+
+
+
+         = log
+
+
+
+         = log
+
+
+
+         = log
+
+
+
+                                                                                            98
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2            GVHD: NGUYỄN THỊ LAN ANH
+
+
+       = log
+
+
+
+       = log
+
+
+       = log 4
+
+
+
+I(a,c) = I(u6 ; xi=1,yi=0)
+
+       = I(u6) - I(u6/ xi=1,yi=0)
+
+
+       = log
+
+
+
+       = log
+
+
+
+       = log
+
+
+
+       = log
+
+
+
+       = log
+
+
+       = log 8
+
+
+
+I(a,d) = I(u6) - I(u6) = 0
+
+
+
+
+                                                               99
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                       GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+CHƯƠNG 3: MÃ THỐNG KÊ TỐI ƯU
+
+
+
+1. Lập một bộ mã cho nguồn tin U có thống kê như sau:
+
+   ui        u1      u2           u3    u4     u5       u6        u7    u8          u9
+
+  p(ui)    0.34      0.2         0.19   0.1   0.07     0.04   0.03     0.02      0.01
+
+
+
+Bằng mã nhị phân (m=2) theo phương pháp Shannon. Tính độ dài trung bình của từ
+mã ntb và tính kinh tế của từ mã:
+
+ρ = H(U)/ ntb
+
+
+
+                                         Bài làm:
+
+
+
+Sơ đồ mã hóa theo phương pháp mã hóa Shannon:
+
+   ui       p(ui)           pi          ni     Dạng nhị phân của pi         Từ mã
+
+  u1        0.34            0           2                0             00
+
+  u2         0.2           0.34         3            0,01010111        010
+
+  u3        0.19           0.54         3            0,10001010        100
+
+  u4         0.1           0.73         4            0,10111010        1011
+
+  u5        0.07           0.83         4            0,11010100        1101
+
+  u6        0.04           0.9          5            0,11100110        11100
+
+  u7        0.03           0.94         6            0,11110000        111100
+
+  u8        0.02           0.97         6            0,11111000        111110
+
+  u9        0.01           0.99         7            0,11111101        1111110
+
+
+
+
+                                                                                         100
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                         GVHD: NGUYỄN THỊ LAN ANH
+
+Độ dài trung bình của từ mã: ntb =
+
+Entropy của tập tin: H(U) = -
+
+Chỉ số kinh tế của bộ mã: ρ =
+
+
+
+
+2. Cho nguồn tin U có sơ đồ thống kê như sau:
+
+    ui               u1        u2         u3           u4+ u 6       u7+ u13    U14
+
+  p(ui)            0.5        0.25       0.315          0.31         0.0157    0.0156
+
+
+
+Dùng mã Huffman kết hợp mã đều để mã hóa nguồn tin trên với cơ số mã m = 2.
+
+
+
+                                         Bài làm:
+
+
+
+Sơ đồ mã hóa theo phương pháp mã hóa Fano:
+
+  ui         p(ui)                             Từ mã                             ni
+
+  u1         0.34         0          0                                           2
+
+  u2         0.2          0          1                                           2
+
+  u3         0.19         1          0     0                                     3
+
+  u4         0.1          1          0     1                                     3
+
+  u5         0.07         1          1     0                                     3
+
+  u6         0.04         1          1     1           0                         4
+
+  u7         0.03         1          1     1           1         0               5
+
+  u8         0.02                    1     1           1         1         0     6
+                          1
+  u9         0.01                          1           1         1         1     6
+                          1          1
+
+
+                                                                                        101
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Độ dài trung bình của từ mã: ntb =
+
+Entropy của tập tin: H(U) = -
+
+Chỉ số kinh tế của bộ mã: ρ =
+
+
+
+
+CHƯƠNG 5: MÃ VÒNG
+
+
+
+
+1. Cho bộ mã vòng (7,4) có đa thức sinh là:
+
+             g(x) = x3+ x2+ 1
+
+   a. Tìm đa thức thử H(x) của bộ mã này.
+
+   b. Giả sử nhận được tổ hợp u(x) = x6+ x5+ x2+ 1. Xác định đa thức syndrome
+      của u(x).
+
+
+
+                                     Bài làm:
+
+
+
+                                                                                102
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+     a. Từ công thức:
+
+                h(x) =
+
+
+        ta tính được h(x) =          = x4+ x3 +x2+ 1
+
+     b. Giả sử nhận được đa thức u(x) = x6+ x5+ x2+ 1, khi đó đa thức syndrome của
+        nó :
+
+        Su(x) = số dư của        = số dư của            =0
+
+        Vậy đa thức syndrome của u(x) là Su(x) = 0.
+
+
+
+
+                          BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+
+                              Chương 3:Mã thống kê tối ưu:
+
+Bài tập: Lập một bộ mã cho nguồn tin u có sơ đồ thống kê như sau.
+
+Ui         U1       U2      U3     U4       U5      U6         U7       U8        U9
+P(u)       0.34     0.2     0.19   0.1      0.07    0.04       0.03     0.02      0.01
+Bằng mã nhị phân (m=2)theo phương pháp shannon. Tính độ dài trung bình của từ mã ntbvà
+tính kinh tế của từ mã:p=H(U)/Ntb
+                                         Giải
+Sơ đồ mã hóa theo phương pháp mã hóa shannon:
+
+Ui      P(ui)   Pi       ni       Dạng mạ nhị phân của pi       Từ mã
+U1      0.34    0        2        0                             00
+U2      0.2     0.34     3        0.01010111                    010
+U3      0.19    0.54     3        0.10001010                    100
+U4      0.1     0.73     4        0.10111010                    1011
+U5      0.07    0.83     4        0.11010100                    1101
+U6      0.04    0.9      5        0.11100110                    11100
+
+
+                                                                                     103
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+U7     0.03    0.94    6        0.11110000                       111100
+U8     0.02    0.97    6        0.11111000                       111110
+U9     0.01    0.99    7        0.11111101                       1111110
+
+Độ dài trung bình tư mã:NTB=
+
+Entropy của tập tin:H(u)=
+
+Chỉ số kinh tế của bộ mã:p=            =0,8279
+
+
+
+Chương 5:mã vòng:
+      Bài tập:cho mã vòng (n,k)=(7,4)có ma trận sinh là g(x)=x3+x+1. Liệt kê tất cả các từ mã
+      của bộ mã và cho biết bộ mã có khả năng sửa sai bao nhiêu bít.
+                                               GIẢI
+A.cho d= (0001) tatính được:
+
+V1=0001000+dư số
+
+V1=0001000+011=0001011
+
+       Quay vòng từ mãv1 ta sẽ đượcthêm 6 từ mã nữa:
+       V2=1000101
+
+       V3=1100010
+
+       V4=0110001
+
+       V5=1011000
+
+       V6=0101100
+
+       V7=0010110
+
+       Cho d=(0011)ta tính được:
+       Vδ=0011000+dư số
+       Vδ=0011000+101=00111101
+       Quay vòng từ mã vδ ta sẽ đượcthêm 6 từ mã nữa:
+       V9 =1001110
+
+       V10 =0100111
+
+       V11=1010011
+
+       V13 =1110100
+
+       V14=0111010
+
+
+                                                                                          104
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                          GVHD: NGUYỄN THỊ LAN ANH
+
+       Cho d=(1111000) ta tinh được:
+
+       V15=1111000+dư sô
+
+       V15=1111000+111=1111111
+
+       Cho d=(0000) ta tính được:
+
+       V0=0000000+dư số
+
+b,ta có thể tính rễ ràng trọng số hamming của bộ mã là trọng số nhở nhất của từ mã khác
+không : H(V)=3 nên bộ mã có khả năng sửa được tất các mẫu sai 1bít
+
+
+              Trong các bài tập logarit được tính theo cơ số 2.
+
+                           Bài 1-Chương LƯỢNG TIN
+
+
+
+1.     Trong một trò chơi xổ số vui người ta xổ 10 chữ số từ 0 đến
+       9.
+             Xác xuất trúng của mỗi số là như nhau.
+             a. Tính lượng tin riêng của tin : “ số trúng giải là số 9”.
+             b. Tính lượng tin tương hỗ giữa tin : “số trúng giải là 9”
+       so với tin :”số trúng giải là số chia hết cho 3”.
+             c. Trong 10 tin trên gọi U=(u1,u2,u3,u4,u4,u5,u6) với ui là
+       tin “số i trúng giải” (i=0,1,…,6).
+             Tìm lượng tin trung bình của tập tin U.
+                                          Bài làm
+       a. Gọi p(9) là xác suất số 9 trúng giải ta có
+
+              p(9) = 1/10= 0.1
+
+       vậy I(9)= -log p(9)= log 10= 3.322
+
+     b. Gọi p(0-3-6-9) là xác suất để số trúng giải chia hết cho 3,
+ta có:
+
+              p(0-3-6-9) = 4/10= 0.4
+
+       Mặt khác : I (9/0-3-6-9) = - log p(9/0-3-6-9)
+                                                                                          105
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                       GVHD: NGUYỄN THỊ LAN ANH
+
+
+                                        p (9 / 0 − 3 − 6 − 9)
+                              = − log
+                                          p (0 − 3 − 6 − 9)
+
+
+                                        1/ 10
+                              = − log          = l og4
+                                        4 / 10
+
+       Vậy     I(9; 0-3-6-9) = I(9) – I(9/0-3-6-9)
+                                               10
+                            = log10− log4= log = 1.322
+                                                4
+
+
+c. Lượng tin trung bình của tập tin U :
+                        6                              6
+                                                        1  1
+                    ∑
+             I (U) =p (u )I (u )i        i      =− ∑ log
+                       i =0                        i=0 10 10
+                                                  1
+                                                = .7.log10
+                                                 10
+
+
+
+
+             Bài 2 – Chương MÃ CHỐNG NHIỄU
+
+
+
+
+  2.      Ma trận sinh của bộ giải mã tuyến tính (6,3) trên đường GF
+          (2) được cho bởi :
+
+                                                                          106
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                              0     1 1 0 1 0 
+                         G =  1    1 0 0 0 1 
+                               1   1 0 1 1 0 
+                                     M
+
+
+
+
+    a. Hãy biểu diễn G dưới dạng chuẩn Gch.
+    b. Liệt kê các từ mã có được từ 2 ma trận sinh G và Gch .
+    c. Có bao nhiêu từ mã có trọng số Hamming là
+       0,1,2,3,4,5,6,7
+                              Bài làm
+
+
+
+    a.   Lấy cột 3 làm cột 1,cột 6 làm cột 2 và cột 4 làm cột 3 ta
+         có ma trận sinh Gch :
+                             1 0 0 0 1 1
+                        G = 0 1 0 1 1 0
+                             0 0 1 1 1 1
+
+
+
+
+    b.   Liệt kê các từ mã có được từ ma trận sinh G và ma trận
+         sinh Gch :
+
+
+            Vector        V=aG         w(v)    v’= a.Gch   w(v’)
+           mang tin a
+                 000     000000         0       000000      0
+
+                 001     110110         4       001111      4
+
+                 010     110001         3       010110      3
+
+
+                                                                       107
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+                 011   000111      3       011001     3
+
+                 100   011010      3       100011     3
+
+                 101   101100      3       101100     3
+
+                 110   101011      4       110101     4
+
+                 111   011101      4       111010     4
+
+
+
+
+    c. Cả 2 bộ mã đều có :
+
+       1 từ mã có trọng số là 0
+
+
+       0 từ mã có trọng số là 1
+
+
+       0 từ mã có trọng số là 2
+
+
+       4 từ mã có trọng số là 3
+
+
+       3 từ mã có trọng số là 4
+
+
+       0 từ mã có trọng số là 5
+
+
+       0 từ mã có trọng số là 6.
+
+
+
+
+                                                                  108
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2         GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+          Bài 9 –Chương MÃ THỐNG KÊ TỐI ƯU
+
+
+
+    3. Cho nguồn tin có sơ đồ thống kê như sau :
+                                                            109
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2             GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+      Dùng mã Fano để mã hóa nguồn tin trên với cơ số mã m =
+3. Tính ntb và tính kinh tế từ mã :
+
+          P = H(U) / ntb
+
+
+
+                           Bài làm
+
+
+
+    Sơ đồ mã hóa bằng bộ mã Fano :
+
+
+
+
+                                                                110
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2               GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                                     19
+                              ntb = ∑ni p u( i =) 1.618
+                                     i =0
+    Độ dài trung bình từ mã :
+
+
+
+
+                                      19
+                            H (U ) = −∑ p( ui ) log p( ui ) =1.597
+    Entropy của tập tin :             i=0
+
+
+
+
+                                                                     111
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2          GVHD: NGUYỄN THỊ LAN ANH
+
+
+                               H (U ) 1.597
+                           ρ=        =     =   0.987
+    Chỉ số kinh tế của bộ mã :  n tb   1.618
+
+
+
+
+                                                             112
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                       Bài 1 – Chương MÃ VÒNG
+
+
+
+       4. Chứng minh rằng đa thức sinh g(x) của một mã vòng là
+     ước số của xn +1
+
+
+
+       Giả sử v(x) = v1xn-1 + v2xn-2 + … +vn-1x + vn là một đa thức
+mã khi đó v’(x) = vnxn-1 + v1xn-2 + … +vn-2x + vn-1 cũng là một đa
+thức mã . Khi đó :
+
+       v(x) = v1xn-1 + v2xn-2 + … +vn-1x + vn M g(x)
+
+và     v’(x) = vnxn-1 + v1xn-2 + … +vn-2x + vn-1 M g(x)
+
+       Từ đây : xv’(x) – v(x) = vnxn – vn M g(x)
+
+       Hay :          xn – 1 M g(x)
+
+       Đây là điều cần chứng minh.
+
+
+
+
+                                                                      113
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+Chương II : LƯỢNG TIN
+
+BÀI 2: Với nguồn tin rời rạc gồm 2 ký tự U = {a1,a2} và p(a1) = p
+
+Chứng minh rằng H(U) = H(p) = p log (1/p) + log 1/(1-p) lớn nhất khi p= ½
+
+Bài giải:
+
+Xét hàm số : f(x) = log = - log
+
+Có     f’( ) = -log e (ln          ) = -log e (ln   )
+
+       f ’’( ) =
+
+trong khoảng       (0,1] có f’’(                             .
+
+Vậy với a,b
+
+
+
+
+Dấu đẳng thức xảy ra khi và chỉ khi a = b
+
+Cho a = p và b = 1-p ta được :
+
+
+
+
+=
+
+
+Vậy H(U) =
+
+
+
+
+Bài 8 : chứng minh rằng
+
+
+
+
+                                                                                   114
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Bài giải :
+
+
+
+
+= H(X) + H(Y/X) (đpcm)
+
+Bài 9 : Giả sử có một nguồn tin rời rạc xuất hiện p(u) khi u   U. Với mỗi tin u chọn 1 từ mã có
+
+độ dài l(u) thỏa :
+
+Chứng minh rằng độ dài trung bình
+
+
+
+
+Thỏa
+
+
+
+Bài giải:
+
+Theo đề bài với mọi u ta có:
+
+
+
+
+Vì p(u)>0 nên bất đẳng thức trên tương đương với:
+
+
+                                                                                           115
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                   GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+Cộng tất cả các bất đẳng thức của từng tin u theo vế:
+
+
+
+
+Hay
+
+Chương III :MÃ THỐNG KÊ TỐI ƯU
+
+BÀI 1: cho bộ mã có cơ số mã m = 4 như sau:
+
+U={3,23,11,123,10}
+
+   j. Vẽ cây mã và đồ hình kết cấu của bộ mã U
+
+   k. Vẽ mặt tọa độ mã
+
+   l. Lập 1 bộ mã hệ thống 6 từ mã có các tổ hợp sơ đẳng. Vẽ đồ hình kết cấu của bộ mã vừa
+      lặp
+
+   Bài giải:
+
+   j. Cây mã :
+
+       ----------------------------------------------------------------------------------------------------Mức 0
+
+                                                 2        1
+
+       ---------------------------------------------------------------------------------------------------Mức 1
+
+                                          3               1    2 0
+
+       --------------------------------------------------------------------------------------------------Mức 2
+
+                                                                   3
+
+       ---------------------------------------------------------------------------------------------------Mức 3
+
+       Đồ hình kết cấu :                        0
+
+                                          3     0
+                                      1
+
+                                      0
+                                                                                                           116
+       11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                         GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+     k. Mặt tọa độ mã:
+
+                              ui             ni        pi
+
+                               3             1         3
+
+                              23             2         14
+
+                              11             2         5
+
+                              123            3         57
+
+                              10             2         1
+
+
+
+     l. Tổ hợp sơ đẳng : 23,123,10
+
+        Tổ hợp cuối : 3,11
+
+        Bộ mã hệ thống có 6 từ mã :u1 =233, u2=1233, u3=101011, u4=2311, u5=12311,
+        u6=102311
+
+
+
+Bài 5 : lập 1 bộ mã cho nguồn tin U có sơ đồ thống kê như sau:
+
+ui         u1            u2             u3        u4        u5       u6    u7     u8           u9
+
+P(ui)     .34         .2               .19        .1        .07      .04   .03   .02         .01
+
+Bằng mã nhị phân m=2, theo phương pháp Shannon,tính đọ dài trung bình của từ mã ntb và tính
+theo kinh tế của từ mã :
+
+
+
+
+        Bài giải :
+
+        Sơ đồ mã hóa theo phương pháp Shannon:
+
+ui        P(ui)      Pi            ni        Dạng nhị phân của Pi                      Từ Mã
+
+u1        .34        0             2         0                                         00
+
+u2        .2         .34           3         0.01010111                                010
+                                                                                                    117
+        11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                                     GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+u3           .19        .54         3         0.10001010                              100
+
+u4           .1         .73         4         0.1011010                               1011
+
+u5           .07        .83         4         0.11010100                              11 01
+
+u6           .04        .9          5         0.11100110                              11100
+
+u7           .03        .94         6         0.11110000                              111100
+
+u8           .02        .97         6         0.11111000                              111110
+
+u9           .01        .99         1         0.11111101                              1111110
+
+
+
+Đọ dài trung bình từ mã :
+
+
+
+Etropy của tập tin:
+
+Chỉ số kinh tế của bộ mã :
+
+Bài 7 : cho nguồn tin U có sơ đồ thống kê như sau:
+
+     ui            u1                   u2         u3                                 u14
+
+     P(ui)         .5                   .25       .315          .31       . 0157      .0156
+
+Dung mã Huffman kết hợp mã đều để mã hóa nguồn tin trên với cơ số mã m=2
+
+Bài giải:
+
+                              P(ui)                        Sơ đồ mã hóa       Từ mã
+
+                              .5                                              0
+
+                              .25                                             10
+
+                              .315                                            11000
+
+                              .31                                             11001
+
+                              .31                                             11010
+
+
+                                                                                                118
+          11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                     GVHD: NGUYỄN THỊ LAN ANH
+
+                     .31                                         11011
+
+                     . 0157                                      111000
+
+                     . 0157                                      111001
+
+                     . 0157                                      111010
+
+                     . 0157                                      111011
+
+                     . 0157                                      111100
+
+                     . 0157                                      111101
+
+                     . 0157                                      111110
+
+                     .0156                                       111111
+
+
+
+
+Chương IV : MÃ CHỒNG NHIỄU: MÃ KHỐI
+
+
+
+
+Bài 3 : ma trận Sinh của bộ mã tuyến tính (7,3) trên đường GF (2) là :
+
+
+
+
+      a.Biểu diễn G dưới dạng chuẩn Gch
+
+      b.Xác định ma trận thử Hch
+
+      c. Liệt kê các từ mã có được từ G và Gch
+
+      d. Xác định khoảng cách Hamming của bộ mã này
+
+
+
+      bài giải:
+
+                                                                          119
+      11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                    GVHD: NGUYỄN THỊ LAN ANH
+
+    a.Lấy cột 7 làm cột 1,cột 1 làm cột 3 ta có ma trận Sinh Gch:
+
+
+
+
+    b.Ta có :Hch [-PTIn-k] =
+
+
+
+
+    c.Liệt kê các từ mã của G và Gch:
+
+     Vector mang          V=a.G          w(v)           v’=a.Gch    W(v’)
+         tin a
+
+         000             0000000           0           0000000       0
+
+         001             1011100           4           0011110       4
+
+         010             0101110           4           0100111       4
+
+         011             1110010           4           0111001       4
+
+         100             0010111           4           1001011       4
+
+         101             1001011           4           1010101       4
+
+         110             0111001           4           1101100       4
+
+         111             1100101           4           1110010       4
+
+
+                                                                            120
+    11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                      GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+     d. Cả 2 bộ mã trên đều có D=4 là trọng số Hamming nhỏ nhất của các từ mã
+        khác không của chúng
+
+
+
+Chương 5 : MÃ VÒNG
+
+Bài 1: chứng minh rằng đa thức sinh g(x) của 1 bộ mã vòng là ước số của xn+1
+
+Bài giải:
+
+Giả sử
+
+                                         cũng là 1 đa thức mã.Khi đó:
+
+
+
+Và
+
+Từ đây :
+
+Hay
+
+Tức là                (đpcm)
+
+
+
+Bài 5 : chứng minh rằng trong 1 bộ mã vòng khi mẫu sai E(x) có thể dò được thì
+mẫu sai E(i)(x) chuyển dịch vòng i bit so với E(x) cũng có thể dò được
+
+Bài giải:
+
+Ta chứng minh bằng phản chứng.
+
+Nếu E(i)(x) là 1 mẫu sai không phát hiện được thì E(i)(x) là 1 từ mã. Từ đây theo định
+nghĩa của mã vòng thì E(x) cũng là 1 từ mã. Khi đó vì mã vòng là mã tuyến tính nên
+1 từ mã v(x) bất kỳ sau khi chịu tác động sai của E(x) sẽ biến thành 1 từ mã v’(x) và
+không phát hiện sai được. Điều nay mẫu thuẫn với giả thiết là E(x) là mẫu sai phát
+hiện được.
+
+
+
+                      BÀI TẬP LÝ THUYẾT THÔNG TIN
+
+
+                                                                                  121
+         11/13/2011
+ĐẶNG QUANG HUY - D09VTH2                            GVHD: NGUYỄN THỊ LAN ANH
+
+
+
+
+                           Chương 5: Mã Vòng
+
+
+    Gỉa sử g(x) là đa thức sinh của một bộ mã vòng có độ dài từ mã n.Chứng minh
+    rằng nếu n là số nguyên nhỏ nhất sao cho xn + 1 chia hết cho g(x) thì trọng số
+    Hamming của bộ mã không nhỏ hơn 3.
+
+
+
+
+    GIẢI
+
+
+
+    Ta chứng minh bài toán bằng phương pháp chứng minh phàn chứng.Giả sử bộ mã
+    như vậy có trọng số Hamming nhỏ hơn 3,tức là bằng 1 hoặc 2.
+
+    a. Trường hợp trọng số Hamming bằng 1 thì tồn tại một từ mã v(x) sao cho
+         w(v)=1.Khi đó trong từ mã v chỉ có duy nhất một ký tự bằng 1,giả sử đó là vi.
+         Vậy:
+
+                           Vi(x) = vixn-i : g(x)
+
+                           Khi đó g(x) không thể là ước số của xn + 1
+
+    b.       Trường hợp trọng số Hamming bằng 2 thì tồn tại một từ mã v(x) sao cho
+         w(v) = 2. Khi đó trong từ mã v có 2 ký tự bằng 1, giả sử đó là vi và vj. Có thể
+         giả sử i > j và dĩ nhiên n > i > j.Vậy:
+
+                   vi(x)= vixn-i + vjxn-j = xn-i + xn-j : g(x)
+
+     Hay:          xn-i (xi-j + 1) : g(x)
+
+    Từ đây:       xi-j + 1 : g(x) trong khi i-j < n mâu thuẫn với giả thiết ban đầu n là số
+    nhỏ nhất sao cho xn + 1 : g(x).
+
+            Vậy trọng số Hamming của bộ mã phải luôn lớn hơn hoặc bằng 3.
+
+
+
+
+                                                                                        122
+    11/13/2011
+

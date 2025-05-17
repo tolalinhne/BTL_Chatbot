@@ -1,0 +1,11292 @@
+
+Information Theory
+Mike Brookes
+E4.40, ISE4.51, SO20
+J an 2008
+2
+Lectures
+Entropy Properties
+1 Entropy - 6
+2 Mutual Information – 19
+Losless Coding
+3 Symbol Codes -30
+4 Optimal Codes - 41
+5 Stochastic Processes - 55
+6 Stream Codes – 68
+Channel Capacity
+7 Markov Chains - 83
+8 Typical Sets - 93
+9 Channel Capacity - 105
+10 J oint Typicality - 118
+11 Coding Theorem - 128
+12 Separation Theorem – 135
+Continuous Variables
+13 Differential Entropy - 145
+14 Gaussian Channel - 159
+15 Parallel Channels – 172
+Lossy Coding
+16 Lossy Coding - 184 
+17 Rate Distortion Bound – 198
+Revision
+18 Revision - 212
+19
+20
+J an 2008
+3
+Claude Shannon
+• “The fundamental problem of communication is that 
+of reproducing at one point either exactly or 
+approximately a message selected at another 
+point.” (Claude Shannon 1948)
+• Channel Coding Theorem: 
+It is possible to achieve near perfect communication 
+of information over a noisy channel
+1916 - 2001
+• In this course we will:
+– Define what we mean by information
+– Show how we can compress the information in a 
+source to its theoretically minimum value and show 
+the tradeoff between data compression and distortion.
+– Prove the Channel Coding Theorem and derive the 
+information capacity of different channels.
+J an 2008
+4
+Textbooks
+Book of the course:
+• Elements of Information Theory by T M Cover & J  A 
+Thomas, Wiley 2006, 978-0471241959 £30 (Amazon)
+Alternative book – a denser but entertaining read that 
+covers most of the course + much else:
+• Information Theory, Inference, and Learning Algorithms, 
+D MacKay, CUP, 0521642981 £28 or free at 
+http://www.inference.phy.cam.ac.uk/mackay/itila/
+Assessment: Exam only – no coursework.
+Acknowledgement: Many of the examples and proofs in these notes are taken from the course textbook “Elements of 
+Information Theory” by T M Cover & J  A Thomas and/or the lecture notes by Dr L Zheng based on the book.   
+J an 2008
+5
+Notation
+• Vectors and Matrices
+– v=vector, V=matrix, O=elementwise product
+• Scalar Random Variables
+– x = R.V, x = specific value, X = alphabet
+• Random Column Vector of length N
+– x= R.V, x = specific value, X
+N
+= alphabet
+– x
+i
+and x
+i
+are particular vector elements
+• Ranges
+– a:b denotes the range a, a+1, …, b
+J an 2008
+6
+Discrete Random Variables
+• A random variable x takes a value x from 
+the alphabet X with probability p
+x
+(x). The 
+vector of probabilities is p
+x
+.
+Examples:
+X = [1;2;3;4;5;6], p
+x
+= [
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+]
+“english text”
+X = [a; b;…, y; z; <space>]
+p
+x
+= [0.058; 0.013; …; 0.016; 0.0007; 0.193]
+Note: we normally drop the subscript from p
+x
+if unambiguous
+p
+X
+is a “probability mass vector”
+J an 2008
+7
+Expected Values
+• If g(x) is real valued and defined on X then
+∑
+∈
+=
+X x
+  x g x p g E ) ( ) ( ) (x
+x
+Examples:
+X = [1;2;3;4;5;6], p
+x
+= [
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+; 
+1
+/
+6
+]
+58 . 2 )) ( ( log
+338 0 ) 1 . 0 sin(
+17 15
+5 3
+2
+2 2 2
+= −
+  =
+  + = =
+  = =
+x
+x
+x
+x
+p E
+  . E
+  . E
+  . E
+μ σ
+μ
+This is the “entropy” of X
+often write E for E
+X
+J an 2008
+8
+Shannon Information Content
+• The Shannon Information Content of an 
+outcome with probability p is –log
+2
+p
+• Example 1: Coin tossing
+– X = [Heads; Tails], p = [½; ½], SIC= [1; 1] bits
+• Example 2: Is it my birthday ?
+– X = [No; Yes], p = [
+364
+/
+365
+; 
+1
+/
+365
+],
+SIC= [0.004; 8.512] bits
+Unlikely outcomes give more information
+J an 2008
+10
+Minesweeper
+• Where is the bomb ?
+• 16 possibilities – needs 4 bits to specify
+Guess Prob SIC
+1. No
+15
+/
+16
+0.093 bits
+J an 2008
+11
+Entropy
+The entropy,
+–   H(x) = the average Shannon Information Content of x
+–   H(x) = the average information gained by knowing its value
+– the average number of “yes-no” questions needed to find x is in 
+the range [H(x),H(x)+1)
+x x x
+x x   p p
+2 2
+log )) ( ( log ) (
+  T
+p E H   − = − =
+H(X ) depends only on the probability vector p
+X
+not on the alphabet X, 
+so we can write H(p
+X
+)
+We use log(x) ≡ log
+2
+(x) and measure H(x) in bits
+– if you use log
+e
+it is measured in nats
+– 1 nat = log
+2
+(e) bits = 1.44 bits
+•
+x
+  e
+dx
+  x d x
+x
+2 2
+2
+log log
+) 2 ln(
+) ln(
+) ( log   = =
+J an 2008
+12
+Entropy Examples
+(1) Bernoulli Random Variable
+X = [0;1], p
+x
+=[1–p; p]
+Very common – we write H(p) to
+mean H([1–p; p]).
+(2) Four Coloured Shapes
+X = [¤; Þ; 4; =], p
+x
+= [½; ¼; 
+1
+/
+8
+; 
+1
+/
+8
+]
+p p p p H log ) 1 log( ) 1 ( ) (   − − − − = x
+bits 75 . 1 3 3 ¼ 2 ½ 1
+) ( )) ( log( ) ( ) (
+8
+1
+8
+1
+  = × + × + × + × =
+  − = =
+  ∑
+  x p x p H H
+x
+x   p
+0 0.2 0.4 0.6 0.8 1
+0
+0.2
+0.4
+0.6
+0.8
+1
+p
+H
+(
+p
+)
+J an 2008
+13
+Bernoulli Entropy Properties
+X = [0;1], p
+x
+=[1–p; p]
+e p p p H
+  p p p H
+  p p p p p H
+log ) 1 ( ) (
+log ) 1 log( ) (
+log ) 1 log( ) 1 ( ) (
+1 1   − −
+− − =
+′ ′
+  − − = ′
+  − − − − =
+Quadratic Bounds
+) 1 , min( 2
+½) ( 4 1 ) (
+½) ( 89 . 2 1
+½) ( log 2 1 ) (
+2
+2
+2
+p p
+p p H
+  p
+p e p H
+− ≥
+  − − ≥
+  − − =
+  − − ≤
+Proofs in problem sheet
+0 0.2 0.4 0.6 0.8 1
+0
+0.2
+0.4
+0.6
+0.8
+1
+Bounds on H(p)
+p
+H
+(
+p
+)
+ 
+ 
+1-2.89(p-0.5)
+2
+H(p)
+1-4(p-0.5)
+2
+2min(p,1-p)
+J an 2008
+14
+J oint and Conditional Entropy
+J oint Entropy: H(x,y)
+¼ 0 x=1
+¼ ½ x=0
+y=1 y=0 p(x,y)
+bits 5 . 1 ¼ log ¼ 0 log 0 ¼ log ¼ ½ log ½
+) , ( log ) , (
+= − − − − =
+  − = y x y x   p E H
+Conditional Entropy : H(y| x)
+bits 689 . 0 1 log ¼ 0 log 0 log ¼ log ½
+) | ( log ) | (
+3
+1
+3
+2
+  = − − − − =
+  − = x y x y   p E H
+Note: 0 log 0 = 0
+1 0 x=1
+1
+/
+3
+2
+/
+3
+x=0
+y=1 y=0 p(y|x)
+Note: rows sum to 1
+J an 2008
+15
+Conditional Entropy – view 1
+¼
+¾
+p(x)
+¼ 0 x=1
+¼ ½ x=0
+y=1 y=0 p(x, y)
+Additional Entropy:
+{   }   {   }
+bits 689 . 0 (¼) ,¼) 0 (½,¼, ) ( ) , (
+) ( log ) , ( log
+) | ( log ) | (
+) ( ) , ( ) | (
+= − = − =
+  − − − =
+  − =
+  ÷ =
+H H H H
+  p E p E
+  p E H
+  p p p
+x y x
+x y x
+x y x y
+x y x x y
+H(Y|X) is the average additional information in Y when you know X
+H(y |x)
+H(x ,y)
+H(x)
+J an 2008
+16
+Conditional Entropy – view 2
+Average Row Entropy:
+(   ) bits 689 . 0 ) 0 ( ¼ ) ( ¾ | ) (
+) | ( log ) | ( ) ( ) | ( log ) | ( ) (
+) | ( log ) , ( ) | ( log ) | (
+3
+1
+,
+,
+= × + × = = =
+− = − =
+− = − =
+∑
+  ∑   ∑ ∑
+  ∑
+∈
+∈   ∈
+H H x H x p
+x y p x y p x p x y p x y p x p
+x y p y x p p E H
+x
+x   y y x
+y x
+X
+X   Y
+x y
+x y x y
+H(1)
+H(1/3)
+H(y | x=x)
+¼
+¾
+p(x)
+¼ 0 x=1
+¼ ½ x=0
+y=1 y=0 p(x, y)
+Take a weighted average of the entropy of each row using p(x) as weight
+J an 2008
+17
+Chain Rules
+• Probabilities
+• Entropy
+The log in the definition of entropy converts products of 
+probability into sums of entropy
+) ( ) | ( ) , | ( ) , , ( x x y y x z z y x   p p p p   =
+∑
+=
+  −
+=
++ + =
+n
+i
+  i i n
+  H H
+H H H H
+1
+1 : 1 : 1
+) | ( ) (
+) ( ) | ( ) , | ( ) , , (
+x x x
+x x y y x z z y x
+J an 2008
+18
+Summary
+• Entropy:
+– Bounded
+• Chain Rule:
+• Conditional Entropy: 
+– Conditioning reduces entropy
+)) ( ( log ) ( )) ( ( log ) (
+2 2
+  x p E x p x p H
+  X
+x
+  − = − =
+∑
+∈X
+x
+| | log ) ( 0   X ≤ ≤ x H
+) ( ) | ( ) , ( x x y y x   H H H   + =
+) ( ) | ( y x y   H H   ≤
+♦ = inequalities not yet proved
+♦
+(   )
+∑
+∈
+= − =
+X x
+  x H x p H H H | ) ( ) ( ) , ( ) | ( y x y x x y
+♦
+H(x |y)   H(y |x)
+H(x ,y)
+H(x)
+  H(y)
+J an 2008
+19
+Lecture 2
+• Mutual Information
+– If x and y are correlated, their mutual information is the average 
+information that y gives about x
+• E.g. Communication Channel: x transmitted but y received
+• J ensen’s Inequality
+• Relative Entropy
+– Is a measure of how different two probability mass vectors are
+• Information Inequality and its consequences
+– Relative Entropy is always positive
+• Mututal information is positive
+• Uniform bound
+• Conditioning and Correlation reduce entropy
+J an 2008
+20
+Mutual Information
+The mutual information is the average 
+amount of information that you get about x
+from observing the value of y
+) ; ( ) ; ( x y y x   I I   =
+) , ( ) ( ) ( ) | ( ) ( ) ; ( y x y x y x x y x   H H H H H I   − + = − =
+Use “;” to avoid ambiguities between I(x;y,z) and I(x,y;z)
+Information in x Information in x when you already know y
+Mutual information is 
+symmetrical
+  H(x |y)   H(y |x)
+H(x ,y)
+H(x)
+  H(y)
+I(x ;y)
+J an 2008
+21
+Mutual Information Example
+• If you try to guess y you have a 50% 
+chance of being correct.
+• However, what if you know x ?
+– Best guess:
+H(x |y)
+=0.5
+  H(y |x)
+=0.689
+H(x ,y)=1.5
+H(x)=0.811
+  H(y)=1
+I(x ;y)
+=0.311
+¼ 0 x=1
+¼ ½ x=0
+y=1 y=0 p(x,y)
+311 . 0 ) ; (
+5 . 1 ) , ( , 1 ) ( , 811 . 0 ) (
+) , ( ) ( ) (
+) | ( ) ( ) ; (
+=
+  = = =
+  − + =
+  − =
+y x
+y x y x
+y x y x
+y x x y x
+I
+  H H H
+  H H H
+  H H I
+choose y = x
+– If x =0 (p=0.75) then 66% correct prob
+– If x =1 (p=0.25) then 100% correct prob
+– Overall 75% correct probability
+J an 2008
+22
+Conditional Mutual Information
+Conditional Mutual Information
+Note: Z conditioning applies to both X and Y
+) | , ( ) | ( ) | (
+) , | ( ) | ( ) | ; (
+z y x z y z x
+z y x z x z y x
+H H H
+  H H I
+− + =
+  − =
+∑
+=
+  −
+=
++ + =
+n
+i
+  i i n
+  I I
+I I I I
+1
+1 : 1 : 1
+2 1 3 1 2 1 3 2 1
+) | ; ( ) ; (
+) , | ; ( ) | ; ( ) ; ( ) ; , , (
+x y x y x
+x x y x x y x y x y x x x
+Chain Rule for Mutual Information
+J an 2008
+23
+Review/Preview
+• Entropy:
+– Always positive
+)) ( ( log ) ( )) ( ( log ) (
+2 2
+  x p E x p x p - H
+  X
+x
+  − = =
+∑
+∈X
+x
+0 ) (   ≥ x H
+) ( ) ( ) | ( ) ( ) , ( y x x y x y x   H H H H H   + ≤ + =
+0 ) ; (
+) ( ) ( ) , (
+= ⇔
+  + =
+y x
+x y y x
+I
+  H H H
+) , ( ) ( ) ( ) | ( ) ( ) ; ( y x y x x y y x y   H H H H H I   − + = − =
+0 ) ; ( ) ; (   ≥ = x y y x   I I
+) ( ) | ( y x y   H H   ≤
+♦ = inequalities not yet proved
+♦
+♦
+♦
+♦
+H(x |y)   H(y |x)
+H(x ,y)
+H(x)
+  H(y)
+I(x ;y)
+• Chain Rule:
+– Conditioning reduces entropy
+• Mutual Information: 
+– Positive and Symmetrical
+– x and y independent ⇔
+J an 2008
+24
+Convex & Concave functions
+f(x) is strictly convex over (a,b) if 
+– every chord of f(x) lies above f(x)
+–  f(x) is concave ⇔–f(x) is convex
+Concave is like this
+1 0 ), , ( ) ( ) 1 ( ) ( ) ) 1 ( (   < < ∈ ≠ ∀ − + < − +   λ λ λ λ λ   b a v u v f u f v u f
+) , ( 0
+2
+2
+b a x
+dx
+f d
+∈ ∀ >
+] 0 [ log , , ,
+4 2
+≥ x x x e x x
+  x
+] 0 [ , log   ≥ x x x
+x
+• Examples
+– Strictly Convex: 
+– Strictly Concave: 
+– Convex and Concave: 
+– Test:                                      ⇒ f(x) is strictly convex
+“convex” (not strictly) uses “≤” in definition and “≥” in test
+J an 2008
+25
+J ensen’s Inequality
+J ensen’s Inequality: (a) f(x) convex ⇒ Ef(x) ≥ f(Ex)
+(b) f(x) strictly convex ⇒ Ef(x) > f(Ex) unless x constant
+Proof by induction on |X|
+– |X|=1: ) ( ) ( ) (
+1
+x f E f f E   = = x x
+∑ ∑
+  −
+= =
+  −
+− + = =
+1
+1 1
+) (
+1
+) 1 ( ) ( ) ( ) (
+  k
+i
+  i
+k
+i
+k k k
+k
+i
+  i i
+  x f
+p
+p
+p x f p x f p f E x
+Assume J I is true 
+for |X|=k–1
+These sum to 1
+Can replace by “>” if f(x) is strictly convex unless p
+k
+∈{0,1} or x
+k
+= E(x| x∈{x
+1:k-1
+})
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+−
+− + ≥
+  ∑
+−
+=
+1
+1
+1
+) 1 ( ) (
+  k
+i
+  i
+k
+i
+k k k
+  x
+p
+p
+f p x f p
+(   ) x E f x
+p
+p
+p x p f
+  k
+i
+  i
+k
+i
+k k k
+  =
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+−
+− + ≥
+  ∑
+−
+=
+1
+1
+1
+) 1 (
+– |X|=k:
+J an 2008
+26
+J ensen’s Inequality Example
+Mnemonic example:
+f(x) = x
+2
+: strictly convex
+X = [–1; +1]
+p = [½; ½]
+E x = 0
+f(E x)=0
+E f(x) = 1 > f(E x)
+-2 -1 0 1 2
+0
+1
+2
+3
+4
+x
+f
+(
+x
+)
+J an 2008
+27
+Relative Entropy
+Relative Entropy or Kullback-Leibler Divergence
+between two probability mass vectors p and q
+(   ) ) ( ) ( log
+) (
+) (
+log
+) (
+) (
+log ) ( ) || ( x x
+x
+x
+H q E
+q
+p
+E
+x q
+  x p
+x p D
+x
+  − − = = =
+∑
+∈
+  p p
+q p
+X
+where E
+p
+denotes an expectation performed using probabilities p
+D(p||q) measures the “distance” between the probability 
+mass functions p and q. 
+We must have p
+i
+=0 whenever q
+i
+=0 else D(p||q)=∞
+Beware: D(p||q) is not a true distance because:
+– (1) it is asymmetric between p, q and
+– (2) it does not satisfy the triangle inequality.
+J an 2008
+28
+Relative Entropy Example
+X = [1 2 3 4 5 6]
+T
+[   ]
+[   ]
+424 . 0 161 . 2 585 . 2 ) ( ) log ( ) || (
+35 . 0 585 . 2 935 . 2 ) ( ) log ( ) || (
+161 . 2 ) (
+2
+1
+10
+1
+10
+1
+10
+1
+10
+1
+10
+1
+585 . 2 ) (
+6
+1
+6
+1
+6
+1
+6
+1
+6
+1
+6
+1
+= − = − − =
+  = − = − − =
+  = ⇒ =
+= ⇒ =
+q p q
+p q p
+q q
+p p
+q
+p
+H p E D
+  H q E D
+H
+H
+x
+x
+J an 2008
+29
+Information Inequality
+Information (Gibbs’) Inequality:
+• Define  
+• Proof
+0 ) || (   ≥ q p D
+X A   ⊆ > = } 0 ) ( : {   x p x
+0 1 log ) ( log ) ( log
+) (
+) (
+) ( log
+) (
+) (
+log ) (
+) (
+) (
+log ) ( ) || (
+= = ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+≤ ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+=
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+≤
+= − = −
+∑ ∑ ∑
+∑ ∑
+∈ ∈ ∈
+∈ ∈
+X A A
+A A
+x x x
+x x
+x q x q
+x p
+ x q
+x p
+x p
+ x q
+x p
+x q
+  x p
+x p D   q p
+If  D(p||q)=0: Since log( ) is strictly concave we have equality in the 
+proof only if q(x)/p(x), the argument of log, equals a constant.
+But                                       so the constant must be 1 and p ≡ q 1 ) ( ) (
+  ∑ ∑
+  ∈ ∈
+  = =
+X X   x x
+  x q x p
+J an 2008
+30
+Information Inequality Corollaries
+• Uniform distribution has highest entropy
+– Set q = [|X|
+–1
+, …, |X|
+–1
+]
+T
+giving H(q)=log|X| bits
+{   } 0 ) ( | | log ) ( ) ( log ) || (   ≥ − = − − =   p p q p
+  p
+  H H q E D   X x
+• Mutual Information is non-negative
+0 ) || (
+) ( ) (
+) , (
+log ) , ( ) ( ) ( ) ; (
+,
+  ≥ ⊗ =
+= − + =
+y x y x
+y x
+y x
+y x y x x y
+p p p D
+  p p
+p
+E H H H I
+with equality only if p(x,y) ≡ p(x)p(y) ⇔ x and y are independent.
+J an 2008
+31
+More Corollaries
+• Conditioning reduces entropy
+) ( ) | ( ) | ( ) ( ) ; ( 0 y x y x y y y x   H H H H I   ≤ ⇒ − = ≤
+• Independence Bound
+∑ ∑
+  = =
+  −
+  ≤ =
+  n
+i
+  i
+n
+i
+  i i n
+  H H H
+1 1
+1 : 1 : 1
+) ( ) | ( ) ( x x x x
+with equality only if x and y are independent.
+with equality only if all x
+i
+are independent.
+E.g.: If all x
+i
+are identical H(x
+1:n
+) = H(x
+1
+)
+J an 2008
+32
+Conditional Independence Bound
+• Conditional Independence Bound
+• Mutual Information Independence Bound
+∑ ∑
+  = =
+  −
+  ≤ =
+  n
+i
+  i i
+n
+i
+  n i i n n
+  H H H
+1 1
+: 1 1 : 1 : 1 : 1
+) | ( ) , | ( ) | ( y x y x x y x
+If all x
+i
+are independent or, by symmetry, if all y
+i
+are independent:
+∑ ∑ ∑
+  = = =
+  = − ≥
+− =
+n
+i
+  i i
+n
+i
+  i i
+n
+i
+  i
+n n n n n
+I H H
+H H I
+1 1 1
+: 1 : 1 : 1 : 1 : 1
+) ; ( ) | ( ) (
+) | ( ) ( ) ; (
+y x y x x
+y x x y x
+E.g.: If n=2 with x
+i
+i.i.d. Bernoulli (p=0.5) and y
+1
+=x
+2
+and y
+2
+=x
+1
+, 
+then I(x
+i
+;y
+i
+)=0 but I(x
+1:2
+; y
+1:2
+) = 2 bits.
+J an 2008
+33
+Summary
+• Mutual Information
+0
+) (
+) (
+log ) || (   ≥ =
+x
+x
+q
+p
+E D
+  p
+q p
+∑ ∑
+  = =
+  ≤ ≤
+  n
+i
+  i i n n
+n
+i
+  i n
+  H H H H
+1
+: 1 : 1
+1
+: 1
+) | ( ) | ( ) ( ) ( y x y x x x
+) ( ) | ( ) ( ) ; ( x y x x y x   H H H I   ≤ − =
+indep are or  if
+  i i
+n
+i
+  i i n n
+  I I y x y x y x
+  ∑
+=
+≥
+1
+: 1 : 1
+) ; ( ) ; (
+• J ensen’s Inequality:   f(x) convex ⇒ Ef(x) ≥ f(Ex)
+• Relative Entropy:
+–   D(p||q) = 0 iff p ≡ q
+• Corollaries
+– Uniform Bound: Uniform p maximizes H(p)
+–   I(x ; y) ≥ 0 ⇒Conditioning reduces entropy
+– Indep bounds:
+J an 2008
+34
+Lecture 3
+• Symbol codes
+– uniquely decodable
+– prefix
+• Kraft Inequality
+• Minimum code length
+• Fano Code
+J an 2008
+35
+Symbol Codes
+• Symbol Code: C is a mapping X→D
++
+– D
++
+= set of all finite length strings from D
+– e.g. {E, F, G} →{0,1}
++ 
+: C(E)=0, C(F)=10, C(G)=11
+• Extension: C
++
+is mapping X
++
+ →D
++
+formed by 
+concatenating C(x
+i
+) without punctuation
+•e.g. C
++
+(EFEEGE) =01000110
+• Non-singular: x
+1
+≠ x
+2
+ ⇒ C(x
+1
+) ≠ C(x
+2
+)
+• Uniquely Decodable: C
++
+is non-singular
+– that is C
++
+(x
++
+) is unambiguous
+J an 2008
+36
+Prefix Codes
+• Instantaneous or Prefix Code:
+No codeword is a prefix of another
+• Prefix ⇒ Uniquely Decodable ⇒ Non-singular
+Examples:
+U P
+PU
+U P
+PU
+U P
+– C(E,F,G,H) = (0, 1, 00, 11)
+– C(E,F) = (0, 101)
+– C(E,F) = (1, 101)
+– C(E,F,G,H) = (00, 01, 10, 11)
+– C(E,F,G,H) = (0, 01, 011, 111)
+J an 2008
+37
+Code Tree
+Prefix code: C(E,F,G,H) = (00, 11, 100, 101)
+1
+0
+0
+0
+1
+1
+E
+F
+G
+H
+0
+1
+–  D branches at each node
+– Each node along the path to 
+a leaf is a prefix of the leaf
+⇒ can’t be a leaf itself
+– Some leaves may be unused
+all used ⇒
+111011000000→FHGEE
+Form a D-ary tree where D = |D|
+1 of multiple a is 1 | |   − −   D X
+J an 2008
+38
+Kraft Inequality (binary prefix)
+• Label each node at depth l with 2
+–l
+1
+0
+0
+0
+1
+1
+E
+F
+G
+H
+0
+1
+½
+½
+¼
+¼
+¼
+¼
+1
+/
+8
+1
+/
+8
+1
+• Each node equals the sum of 
+all its leaves
+• Codeword lengths:
+l
+1
+, l
+2
+, …, l
+|X|
+ ⇒
+1 2
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+• Equality iff all leaves are utilised
+• Total code budget = 1
+Code 00 uses up ¼ of the budget
+Code 100 uses up 
+1
+/
+8
+of the budget
+Same argument works with D-ary tree
+J an 2008
+40
+Kraft Inequality
+If uniquely decodable C has codeword lengths
+l
+1
+, l
+2
+, …, l
+|X|
+, then
+Proof: Let
+1
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+D
+, N l M D S
+  i
+i
+l
+i
+any  for then     and   max
+| |
+1
+  = =
+∑
+=
+−
+X
+(   )
+∑∑ ∑ ∑
+  =   =   =
++ + + −
+=
+−
+=
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+=
+| |
+1
+| |
+1
+| |
+1
+| |
+1
+1 2
+2 1
+X   X   X X
+i   i   i
+l l l
+N
+i
+l N
+N
+N
+i i i
+i
+D D S
+  
+
+If S > 1 then S
+N 
+> NM for some N. Hence S ≤ 1
+∑
+∈
+−
+  +
+=
+N
+C
+D
+X x
+x)} ( length{
+∑
+=
++ −
+= =
+  NM
+l
+l
+C l D
+1
+| )} ( length{ : |   x x
+∑
+=
+−
+≤
+  NM
+l
+l l
+D D
+1
+  NM
+NM
+l
+  = =
+∑
+=1
+1
+J an 2008
+41
+Converse to Kraft Inequality
+If              then ∃ a prefix code with
+codeword lengths l
+1
+, l
+2
+, …, l
+|X|
+Proof:
+– Assume l
+i
+ ≤ l
+i+1
+and think of codewords as 
+base-D decimals 0.d
+1
+d
+2
+…d
+li
+– Let codeword                    with l
+k
+digits
+–
+– So c
+j
+cannot be a prefix of c
+k
+because they differ in 
+the first l
+j
+digits.
+1
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+D
+∑
+−
+=
+−
+=
+1
+1
+k
+i
+l
+k
+  i
+D c
+⇒ non-prefix symbol codes are a waste of time
+j
+i
+  l
+j
+k
+j i
+l
+j k
+  D c D c c k j
+  −
+−
+=
+−
++ ≥ + = <
+  ∑
+1
+  have we any  For 
+J an 2008
+42
+Kraft Converse Example
+Suppose l = [2; 2; 3; 3; 3] ⇒
+1 875 . 0 2
+| 5
+1
+  ≤ =
+∑
+=
+−
+i
+l
+i
+110 0.75 = 0.110
+2
+3
+101 0.625 = 0.101
+2
+3
+100 0.5 = 0.100
+2
+3
+01 0.25 = 0.01
+2
+2
+00 0.0 = 0.00
+2
+2
+Code l
+k
+  ∑
+−
+=
+−
+=
+1
+1
+k
+i
+l
+k
+  i
+D c
+Each c
+k
+is obtained by adding 1 to the LSB of the previous row
+For code, express c
+k
+in binary and take the first l
+k
+binary places
+J an 2008
+44
+Minimum Code Length
+If l(x) = length(C(x)) then C is optimal if
+L
+C
+=E l(X) is as small as possible.
+Uniquely decodable code ⇒ L
+C 
+≥ H(X)/log
+2
+D
+Proof:
+) ( log ) ( log / ) (
+2
+x x x   p E l E D H L
+  D C
+  + = −
+We define q by
+with equality only if c=1 and D(p||q) = 0 ⇒ p = q ⇒ l(x) = –log
+D
+(x)
+1    where ) (
+) ( ) ( 1
+≤ = =
+  ∑
+  − − −
+x
+x l x l
+D c D c x q
+(   )   (   ) ) ( log ) ( log ) ( log log
+) (
+x x x
+x
+p cq E p D E
+  D D D
+l
+D
+  + − = + − =
+  −
+c
+q
+p
+E
+  D D
+log
+) (
+) (
+log   −
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+=
+x
+x
+(   ) (   ) 0 log || 2 log   ≥ − =   c D
+D
+  q p
+J an 2008
+45
+Fano Code
+Fano Code (also called Shannon-Fano code)
+1. Put probabilities in decreasing order
+2. Split as close to 50-50 as possible; repeat with each half
+0.20
+0.19
+0.17
+0.15
+0.14
+a
+b
+c
+d
+e
+0
+1
+0.06
+0.05
+0.04
+f
+g
+h
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+0
+1
+00
+010
+011
+100
+101
+110
+1110
+1111
+H(p) = 2.81 bits
+L
+SF
+= 2.89 bits
+Always
+Not necessarily optimal: the 
+best code for this p actually 
+has  L = 2.85 bits
+1 ) (
+) min( 2 1 ) ( ) (
++ ≤
+  − + ≤ ≤
+p
+p p p
+H
+H L H
+  F
+J an 2008
+46
+Summary
+• Kraft Inequality for D-ary codes:
+– any uniquely decodable C has
+– If                then you can create a prefix code
+1
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+D
+1
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+D
+• Uniquely decodable ⇒ L
+C 
+≥ H(X)/log
+2
+D
+• Fano code
+– Order the probabilities, then repeatedly split in half to 
+form a tree. 
+– Intuitively natural but not optimal
+J an 2008
+47
+Lecture 4
+• Optimal Symbol Code
+– Optimality implications
+– Huffman Code
+• Optimal Symbol Code lengths
+– Entropy Bound
+• Shannon Code
+J an 2008
+48
+Huffman Code
+An Optimal Binary prefix code must satisfy:
+1. (else swap codewords)
+j i j i
+  l l x p x p   ≤ ⇒ > ) ( ) (
+2. The two longest codewords have the same length
+(else chop a bit off the longer codeword)
+3.   ∃ two longest codewords differing only in the last bit
+(else chop a bit off all of them)
+Huffman Code construction
+1. Take the two smallest p(x
+i
+) and assign each a 
+different last bit. Then merge into a single symbol.
+2. Repeat step 1 until only one symbol remains
+J an 2008
+49
+Huffman Code Example
+X = [a, b, c, d, e], p
+x
+= [0.25  0.25  0.2  0.15  0.15]
+0.25
+0.25
+0.2
+0.15
+0.15
+0.25
+0.25
+0.2
+0.3
+0.25
+0.45
+0.3
+0.55
+0.45
+1.0 a
+b
+c
+d
+e
+0
+1
+0
+0
+0
+1
+1
+1
+Read diagram backwards for codewords:
+C(X) = [00  10  11  010  011], L
+C
+= 2.3, H(x) = 2.286
+For D-ary code, first add extra zero-probability symbols until 
+|X|–1 is a multiple of D–1 and then group D symbols at a time
+J an 2008
+51
+Huffman Code is Optimal Prefix Code
+p
+2
+=[0.55 0.45],
+c
+2
+=[0 1], L
+2
+=1
+Huffman traceback gives codes for progressively larger 
+alphabets:
+We want to show that all these codes are optimal including C
+5
+p
+3
+=[0.25 0.45 0.3],
+c
+3
+=[00 1 01], L
+3
+=1.55
+p
+4
+=[0.25 0.25 0.2 0.3],
+c
+4
+=[00 10 11 01], L
+4
+=2
+p
+5
+=[0.25 0.25 0.2 0.15 0.15],
+c
+5
+=[00 10 11 010 011], L
+5
+=2.3
+0.25
+0.25
+0.2
+0.15
+0.15
+0.25
+0.25
+0.2
+0.3
+0.25
+0.45
+0.3
+0.55
+0.45
+1.0 a
+b
+c
+d
+e
+0
+1
+0
+0
+0
+1
+1
+1
+J an 2008
+52
+Suppose one of these codes is sub-optimal:
+–   ∃m>2 with c
+m
+the first sub-optimal code (note     is definitely 
+optimal)
+Huffman Optimality Proof
+Note: Huffman is just one out of many possible optimal codes
+2
+c
+m
+c′
+m
+c′
+1 −
+′
+m
+c
+– An optimal  must have L
+C'm
+ < L
+Cm
+– Rearrange the symbols with longest codes in      so the two 
+lowest probs p
+i
+and p
+j
+differ only in the last digit (doesen’t
+change optimality)
+– Merge x
+i
+and x
+j
+to create a new code  as in Huffman 
+procedure
+–   L 
+C'm–1 
+=L 
+C'm
+– p
+i
+– p
+j
+since identical except 1 bit shorter with prob
+p
+i
++ p
+j
+– But also L 
+Cm–1 
+=L 
+Cm
+– p
+i
+– p
+j
+hence L 
+C'm–1
+ < L
+Cm–1
+which 
+contradicts assumption that c
+m
+is the first sub-optimal code
+J an 2008
+53
+How short are Optimal Codes?
+Huffman is optimal but hard to estimate its length.
+If l(x) = length(C(x)) then C is optimal if
+L
+C
+=E l(x) is as small as possible.
+We want to minimize                  subject to
+1.
+2. all the l(x) are integers
+Simplified version:
+Ignore condition 2 and assume condition 1 is satisfied with equality.
+∑
+∈X x
+  x l x p ) ( ) (
+1
+) (
+≤
+∑
+∈
+−
+X x
+x l
+D
+less restrictive so lengths may be shorter than actually possible ⇒ lower bound
+J an 2008
+54
+Optimal Codes (non-integer l
+i
+)
+• Minimize                subject to
+∑
+=
+| |
+1
+) (
+X
+i
+  i i
+  l x p
+0        ) (
+| |
+1
+| |
+1
+  =
+∂
+∂
++ =
+  ∑ ∑
+  =
+−
+=
+  i
+i
+l
+i
+  i i
+l
+J
+D l x p J
+  i
+set and     Define
+  X X
+λ
+) ln( / ) ( 0 ) ln( ) (   D x p D D D x p
+l
+J
+i
+l l
+i
+i
+i i
+λ λ   = ⇒ = − =
+∂
+∂
+  − −
+1
+| |
+1
+  =
+∑
+=
+−
+X
+i
+l
+i
+D
+(   )
+  (   )
+D
+H
+D
+p E
+p E l E l
+  D i
+2 2
+2
+log
+) (
+log
+) ( log
+) ( log ) ( ,
+x x
+x x   =
+−
+= − = these with
+no uniquely decodable code can do better than this (Kraft inequality)
+l
+i
+= –log
+D
+(p(x
+i
+))
+⇒ = ⇒ =
+∑
+=
+−
+) ln( / 1 1
+| |
+1
+  D D
+i
+l
+i
+λ
+X
+      also
+Use lagrange multiplier:
+J an 2008
+55
+Shannon Code
+Round up optimal code lengths:
+•  l
+i
+are bound to satisfy the Kraft Inequality (since the
+optimum lengths do)
+⎡   ⎤
+) ( log
+  i D i
+  x p l   − =
+  or           
+∑ ∑
+  −
+=
+−
+=
+−
+= =
+1
+1
+1
+1
+) (
+k
+i
+  i k
+k
+i
+l
+k
+  x p c D c
+  i
+1
+log
+) (
+log
+) (
+2 2
+  + < ≤
+D
+X H
+L
+D
+X H
+C
+(since we added <1
+to optimum values)
+Note: since Huffman code is optimal, it also satisfies these limits
+• Hence prefix code exists:
+put l
+i
+into ascending order and set
+to l
+i
+places
+• Average length: 
+equally good
+since
+  i
+l
+i
+  D x p
+  −
+≥ ) (
+J an 2008
+56
+Shannon Code Examples
+Example 1
+(good)
+⎡   ⎤
+bits 08 . 0 ) (   bits, 06 . 1
+] 7 1 [ log
+] 64 . 6 0145 . 0 [ log
+] 01 . 0 99 . 0 [
+2
+2
+= =
+= − =
+  = −
+  =
+x
+x x
+x
+x
+H L
+C
+p l
+p
+p
+Example 2
+(bad)
+⎡   ⎤
+bits 75 . 1 ) (   bits, 75 . 1
+] 3 3 2 1 [ log
+] 3 3 2 1 [ log
+] 125 . 0 125 . 0 25 . 0 5 . 0 [
+2
+2
+= =
+= − =
+  = −
+  =
+x
+x x
+x
+x
+H L
+C
+p l
+p
+p
+We can make H(x)+1 bound tighter by encoding longer blocks as a super-symbol
+Dyadic probabilities
+(obviously stupid to use 7)
+J an 2008
+57
+Shannon versus Huffman
+Shannon
+0.36
+0.34
+0.25
+0.05
+0.36
+0.34
+0.3
+0.36
+0.64
+1.0 a
+b
+c
+d
+0
+0
+0
+1
+1
+1
+⎡   ⎤
+bits 15 . 2
+] 5 2 2 2 [ log
+] 32 . 4 2 56 . 1 47 . 1 [ log
+bits 78 . 1 ) ( ] 05 . 0 25 . 0 34 . 0 36 . 0 [
+2
+2
+=
+= − =
+  = −
+  = ⇒ =
+S
+S
+L
+H
+x
+x
+x
+x
+p l
+p
+p
+Huffman
+bits 94 . 1
+] 3 3 2 1 [
+=
+=
+H
+H
+L
+l
+Individual codewords may be longer in 
+Huffman than Shannon but not the average
+J an 2008
+58
+Shannon Competitive Optimality
+•  l(x) is length of a uniquely decodable code
+• is length of Shannon code
+then
+⎡   ⎤
+) ( log ) (   x p x l
+S
+  − =
+(   )
+  c
+S
+  c l l p
+  −
+≤ − ≤
+1
+2 ) ( ) ( x x
+⎡   ⎤
+(   )   (   ) ) ( 1 ) ( log ) ( ) ( log ) (   A ∈ = + − − < ≤ − − ≤   x p c p l p c p l p x x x x
+No other symbol code can do much better than Shannon code most of the time
+Kraft inequality
+} 2 ) ( : { Define
+1 ) (   + − −
+< =
+  c x l
+x p x A   x with especially short l(x)
+Proof:
+) 1 ( ) ( ) 1 ( 1 ) (
+2 2 2 2
+  − − − − − + − −
+≤ = ≤
+  ∑ ∑
+  c
+x
+x l c
+x
+c x l
+∑ ∑ ∑
+  ∈
++ − −
+∈ ∈
+  < ∈ ≤ =
+A A A
+  A
+x
+c x l
+x x
+  x x p x p
+1 ) (
+2 ) | ) ( max( ) (
+now over all x
+J an 2008
+59
+Dyadic Competitive optimality
+If p is dyadic ⇔ log p(x
+i
+) is integer, ∀i
+then
+  (   )   (   ) ) ( ) ( ) ( ) ( x x x x
+  S S
+  l l p l l p   > ≤ <
+0 1 1 2 1
+) (
+= + − ≤ + − =
+  ∑
+  −
+x
+x l
+with equality iff l(x) ≡ l
+S
+(x)
+Kraft inequality
+equality iff i=0 or 1
+sgn() property
+dyadic ⇒ p=2
+–l
+Rival code cannot be shorter than 
+Shannon more than half the time. 
+⇒ Shannon is optimal 
+Proof:
+– Define sgn(x)={–1,0,+1} for {x<0, x=0, x>0}
+– Note: sgn(i) ≤ 2
+i 
+–1 for all integers i
+(   )   (   )   (   )
+∑
+  − = < − >
+x
+  S S S
+  x l x l x p l l p l l p ) ( ) ( sgn ) ( ) ( ) ( ) ( ) ( x x x x
+(   )
+  ∑ ∑
+  − − −
++ − = − ≤
+x
+x l x l x l
+x
+x l x l
+  S S S
+x p
+) ( ) ( ) ( ) ( ) (
+2 2 1 1 2 ) (
+equality @ A ⇒ l(x) = l
+S
+(x) – {0,1} but l(x) < l
+S
+(x)
+would violate Kraft @ B since Shannon has Σ=1
+A
+B
+J an 2008
+60
+Shannon with wrong distribution
+If the real distribution of x is p but you assign Shannon 
+lengths using the distribution q what is the penalty ?
+Answer: D(p||q)
+⎡   ⎤
+  (   )
+∑ ∑
+  − < − =
+i
+  i i
+i
+  i i
+  q p q p X l E log 1 log ) (
+Therefore
+1 ) || ( ) ( ) ( ) || ( ) (   + + < ≤ +   q p p q p p   D H l E D H x
+Proof of lower limit
+is similar but
+without the 1
+If you use the wrong distribution, the penalty is D(p||q)
+Proof:
+∑
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+− + =
+i
+  i
+i
+i
+i
+  p
+q
+p
+p log log 1
+) ( ) || ( 1   p q p   H D   + + =
+J an 2008
+61
+Summary
+• Any uniquely decodable code:
+D
+H
+H l E
+  D
+2
+log
+) (
+) ( ) (
+x
+x x   = ≥
+⎡   ⎤
+i D i
+  p l log − = 1 ) ( ) ( ) (   + ≤ ≤ x x x
+  D D
+  H l E H
+1 ) ( ) ( ) (   + ≤ ≤ x x x
+  D D
+  H l E H • Fano Code:
+– Intuitively natural top-down design
+• Huffman Code:
+– Bottom-up design
+– Optimal ⇒ at least as good as Shannon/Fano
+• Shannon Code:
+– Close to optimal and easier to prove bounds
+Note: Not everyone agrees on the names of Shannon and Fano codes
+J an 2008
+62
+Lecture 5
+• Stochastic Processes
+• Entropy Rate
+• Markov Processes
+• Hidden Markov Processes
+J an 2008
+63
+Stochastic process
+Stochastic Process {x
+i
+} = x
+1
+, x
+2
+, …
+Entropy:
+Entropy Rate:
+– Entropy rate estimates the additional entropy per new sample.
+– Gives a lower bound on number of code bits per sample.
+– If the x
+i
+are not i.i.d. the entropy rate limit may not exist.
+Examples:
+– x
+i
+i.i.d. random variables:
+– x
+i
+indep, H(x
+i
+) = 0 1 00 11 0000 1111 00000000 …no convergence
+∞ = + + =
+often
+1 2 1
+) | ( ) ( }) ({   … x x x x   H H H
+  i
+exists limit  if ) (
+1
+lim ) (
+: 1 n
+n
+  H
+n
+H x
+∞ →
+= X
+) ( ) (
+  i
+H H x = X
+J an 2008
+64
+Lemma: Limit of Cesàro Mean
+Proof:
+  b a
+n
+b a
+  n
+k
+  k n
+  → ⇒ →
+  ∑
+=1
+1
+• Choose             and find          such that  
+0 > ε
+0
+N
+0
+½ | |   N n b a
+n
+  > ∀ < −   ε
+] , 1 [ |) max(| 2
+0
+1
+0 1
+  N r b a N N
+  r
+  ∈ − =
+  −
+for       ε
+∑ ∑ ∑
+  + =
+−
+=
+−
+=
+−
+− + − = − > ∀
+  n
+N k
+  k
+N
+k
+  k
+n
+k
+  k
+  b a n b a n b a n N n
+1
+1
+1
+1
+1
+1
+1
+0
+0
+The partial means of a
+k
+are called Cesàro Means
+• Set
+• Then 
+(   )   (   ) ε ε ½ ½
+1
+1
+1
+0 0
+1
+1
+  n n N N N N
+  − − −
++ ≤
+ε ε ε   = + = ½ ½
+J an 2008
+65
+Stationary Process
+Stochastic Process {x
+i
+} is stationary iff
+X ∈ ∀ = = =
+  +   i n n k n n
+  a n k a p a p , , ) ( ) (
+: 1 ) : 1 ( : 1 : 1
+x x
+If {x
+i
+} is stationary then H(X) exists and
+) | ( lim ) (
+1
+lim ) (
+1 : 1 : 1   −
+∞ → ∞ →
+  = =
+  n n
+n
+n
+n
+  H H
+n
+H x x x X
+Proof: ) | ( ) | ( ) | ( 0
+2 : 1 1
+) b (
+1 : 2
+) a (
+1 : 1   − − − −
+  = ≤ ≤
+  n n n n n n
+  H H H x x x x x x
+Hence H(x
+n
+|x
+1:n-1
+) is +ve, decreasing ⇒ tends to a limit, say b
+(a) conditioning reduces entropy, (b) stationarity
+) ( ) | (
+1
+) (
+1
+) | (
+1
+1 : 1 : 1 1 : 1
+  X H b H
+n
+H
+n
+b H
+  n
+k
+  k k n k k
+  = → = ⇒ →
+  ∑
+=
+  − −
+x x x x x
+Hence from Cesàro Mean lemma:
+J an 2008
+66
+Block Coding
+If x
+i
+is a stochastic process
+– encode blocks of n symbols
+– 1-bit penalty of Shannon/Huffman is now shared 
+between n symbols 
+1
+: 1
+1
+: 1
+1
+: 1
+1
+) ( ) ( ) (
+  − − − −
++ ≤ ≤   n H n l E n H n
+  n n n
+x x x
+If entropy rate of x
+i
+exists (⇐ x
+i
+is stationary)
+) ( ) ( ) ( ) (
+: 1
+1
+: 1
+1
+X X   H l E n H H n
+  n n
+  → ⇒ →
+  − −
+x x
+The extra 1 bit inefficiency becomes insignificant for large blocks
+J an 2008
+67
+Block Coding Example
+•   n=1
+code
+prob
+sym
+1 0
+0.1 0.9
+B A
+1
+1
+=
+−
+l E n
+•   n=2
+11
+0.09
+AB
+100
+0.09
+BA
+code
+prob
+sym
+101 0
+0.01 0.81
+BB AA
+645 . 0
+1
+=
+−
+l E n
+•   n=3
+…
+…
+…
+101
+0.081
+AAB
+10010
+0.009
+BBA
+code
+prob
+sym
+10011 0
+0.001 0.729
+BBB AAA
+583 . 0
+1
+=
+−
+l E n
+2 4 6 8 10 12
+0.4
+0.6
+0.8
+1
+n
+-
+1
+E
+ 
+l
+n
+469 . 0 ) (   =
+i
+x H
+X = [A;B], p
+x
+=[0.9; 0.1]
+J an 2008
+68
+Markov Process
+Discrete-valued Stochastic Process {x
+i
+} is
+• Independent iff   p(x
+n
+|x
+0:n–1
+)=p(x
+n
+)
+• Markov iff   p(x
+n
+|x
+0:n–1
+)=p(x
+n
+|x
+n–1
+)
+1
+3   4
+2
+t
+12
+t
+13
+  t
+24
+t
+14
+t
+34
+t
+43
+Independent Stochastic Process is easiest to deal with, Markov is next easiest
+– time-invariant iff p(x
+n
+=b|x
+n–1
+=a) = p
+ab
+indep of n
+– Transition matrix: T = {t
+ab
+}
+• Rows sum to 1: T1 = 1 where 1 is a vector of 1’s
+• p
+n
+= T
+T
+p
+n–1
+• Stationary distribution: p
+$
+= T
+T
+p
+$
+J an 2008
+69
+Stationary Markov Process
+If a Markov process is
+a) irreducible: you can go from any a to any b
+in a finite number of steps
+• irreducible iff (I+T
+T
+)
+|X|–1
+has no zero entries
+b) aperiodic: ∀a, the possible times to go from 
+a to a have highest common factor = 1
+$ $
+  p p T   =
+T
+T T
+n
+n
+] 1 1 1 [
+$
+   = →
+∞ →
+  1 1p T     where
+then it has exactly one stationary distribution, p
+$
+.
+–   p
+$
+is the eigenvector of T
+T
+with λ = 1:
+–
+J an 2008
+71
+H(p
+1
+)=0,    H(p
+1
+ | p
+0
+)=0
+Chess Board
+Random Walk
+• Move ¯; '¯u^ equal prob
+•  p
+1
+= [1 0 …0]
+T
+–  H(p
+1
+) = 0
+•  p
+$
+= 
+1
+/
+40
+× [3 5 3 5 8 5 3 5 3]
+T
+–  H(p
+$
+) = 3.0855
+•
+–
+) log( ) | ( lim ) (
+,
+,
+, $, 1   j i
+j i
+  j i i n n
+n
+  t t p H H
+  ∑
+− = =
+  −
+∞ →
+x x X
+2365 . 2 ) (   = X H
+Time-invariant and p
+1
+= p
+$
+ ⇒ stationary
+J an 2008
+72
+Chess Board Frames
+H(p
+1
+)=0,    H(p
+1
+ | p
+0
+)=0 H(p
+2
+)=1.58496,    H(p
+2
+ | p
+1
+)=1.58496 H(p
+3
+)=3.10287,    H(p
+3
+ | p
+2
+)=2.54795 H(p
+4
+)=2.99553,    H(p
+4
+ | p
+3
+)=2.09299
+H(p
+5
+)=3.111,    H(p
+5
+ | p
+4
+)=2.30177 H(p
+6
+)=3.07129,    H(p
+6
+ | p
+5
+)=2.20683 H(p
+7
+)=3.09141,    H(p
+7
+ | p
+6
+)=2.24987 H(p
+8
+)=3.0827,    H(p
+8
+ | p
+7
+)=2.23038
+J an 2008
+73
+ALOHA Wireless Example
+M users share wireless transmission channel
+– For each user independently in each timeslot:
+• if its queue is non-empty it transmits with prob q
+• a new packet arrives for transmission with prob p
+– If two packets collide, they stay in the queues
+– At time t, queue sizes are x
+t
+ = (n
+1
+, …, n
+M
+)
+• {x
+t
+} is Markov since p(x
+t
+) depends only on x
+t–1
+Transmit vector is y
+t
+:
+– {y
+t
+} is not Markov since p(y
+t
+) is determined by x
+t
+but is not 
+determined by y
+t–1
+. {y
+t
+} is called a Hidden Markov Process.
+⎩
+⎨
+⎧
+>
+=
+= =
+0
+0 0
+) 1 (
+,
+,
+,
+t i
+t i
+t i
+x q
+  x
+y p
+J an 2008
+75
+ALOHA example
+x:
+TX enable, e:
+y:
+y = (x>0)e is a deterministic function of the Markov [x; e]
+Waiting Packets TX en
+©   C   C   
+O   C   O   C   C
+
+3     2     1     2     1     0     1     2
+0     1     1     1     1     2     2     1
+1     0     0     1     1     1     1     1
+1     1     0     0     1     1     0     0
+1     0     0     1     1     0     1     1
+0     1     0     0     1     1     0     0
+J an 2008
+76
+Hidden Markov Process
+If {x
+i
+} is a stationary Markov process and y=f(x) then
+{y
+i
+} is a stationary Hidden Markov process.
+What is entropy rate H(Y) ?
+) (     ) ( ) | (
+1 : 1
+  Y Y   H H H
+  n
+n n
+  ∞ →
+−
+  → ≥ and y y
+) (   and   ) ( ) , | (
+1 1 : 1
+  Y Y   H H H
+n
+n n
+∞ →
+−
+  → ≤ x y y
+(1)
+(2)
+So H(Y) is sandwiched between two quantities which converge 
+to the same value for large n.
+Proof of (1) and (2) on next slides
+– Stationarity ⇒
+– Also
+J an 2008
+77
+Hidden Markov Process – (1)
+Proof (1):   ) ( ) , | (
+1 1 : 1
+  Y H H
+  n n
+  ≤
+−
+x y y
+) ( ) | (
+1 : 0
+  Y H H
+k
+n k n k
+  ∞ →
+− + +
+  → = y y
+x markov
+y=f(x)
+conditioning reduces entropy
+y stationary
+k H H
+  k n n n n
+  ∀ =
+  − − −
+) , | ( ) , | (
+1 : 1 : 1 1 1 : 1
+x y y x y y
+) , | ( ) , , | (
+1 : 1 : 1 : 1 : 1 : 1   k n k n k k n n
+  H H
+  − − − − − −
+  = = x y y y x y y
+k H
+  n k n
+  ∀ ≤
+  − −
+) | (
+1 :
+y y
+J ust knowing x
+1
+in addition to y
+1:n–1
+reduces the conditional entropy to 
+below the entropy rate.
+J an 2008
+78
+Hidden Markov Process – (2)
+Proof (2):
+  ) ( ) , | (
+1 1 : 1
+  Y H H
+  n
+n n
+∞ →
+−
+  → x y y
+def
+n
+of I(A;B)
+The influence of x
+1
+on y
+n
+decreases over time.
+0 ) (
+) | ; ( ) | ( ) , | (
+1 : 1 1 1 : 1 1 1 : 1
+− →
+  − =
+∞ →
+− − −
+Y H
+  I H H
+n
+n n n n n n
+y y x y y x y y
+) ; ( ) | ; (
+: 1 1
+1
+1 : 1 1   k
+k
+n
+  n n
+  I I y x y y x   =
+∑
+=
+  −
+Note that
+0 ) | ; (
+1 : 1 1
+∞ →
+−
+  →
+n
+n n
+I y y x
+Hence
+) (
+1
+x H ≤
+chain rule
+bounded sum of
+non-negative terms
+So def
+n
+of I(A;B)
+J an 2008
+79
+Summary
+• Entropy Rate:
+) (
+1
+lim ) (
+: 1 n
+n
+  H
+n
+H x
+∞ →
+= X
+) | ( lim ) (
+1 : 1 −
+∞ →
+=
+  n n
+n
+  H H x x X
+) log( ) | ( ) (
+,
+,
+, $, 1   j i
+j i
+  j i i n n
+  t t p H H
+  ∑
+− = =
+  −
+x x X
+) | ( ) ( ) , | (
+1 : 1 1 1 : 1   − −
+  ≤ ≤
+  n n n n
+  H H H y y x y y   Y
+with both sides tending to H(Y)
+if it exists
+– {x
+i
+} stationary: 
+– {x
+i
+} stationary Markov:
+– y = f(x): Hidden Markov:
+J an 2008
+80
+Lecture 6
+• Stream Codes
+• Arithmetic Coding
+• Lempel-Ziv Coding
+J an 2008
+81
+Huffman: Good and Bad
+Good
+– Shortest possible symbol code
+1
+log
+) (
+log
+) (
+2 2
+  + ≤ ≤
+D
+H
+L
+D
+H
+S
+x x
+Bad
+– Redundancy of up to 1 bit per symbol
+•Expensive if H(x) is small
+•Less so if you use a block of N symbols
+•Redundancy equals zero iff p(x
+i
+)=2
+–k(i)
+ ∀i
+– Must recompute entire code if any symbol 
+probability changes
+•A block of N symbols needs |X|
+N
+pre-calculated 
+probabilities
+J an 2008
+82
+• To encode x
+r
+, transmit enough 
+binary places to define the 
+interval (Q
+r–1
+, Q
+r
+)
+unambiguously.
+Arithmetic Coding
+• Take all possible blocks of N
+symbols and sort into lexical 
+order, x
+r
+for r=1: |X|
+N
+• Calculate cumulative 
+probabilities in binary:
+X=[a b], p=[0.6 0.4], N=3
+Code
+0 , ) (
+0
+ = =
+∑
+≤
+  Q p Q
+r i
+  i r
+  x
+r
+l
+r
+m
+  −
+2
+r
+l
+r
+l
+r r
+  Q m m Q
+  r r
+≤ + < ≤
+  − −
+−
+2 ) 1 ( 2
+1
+• Use first l
+r
+places of
+where l
+r
+is least integer with
+J an 2008
+83
+bab
+bba
+bbb
+Q5 =0.7440 =0.101111
+Q6 =0.8400 =0.110101
+Q7 =0.9360 =0.111011
+m6=1100 
+m7=11011
+m8=1111 
+• The interval corresponding to x
+r
+has width 
+Arithmetic Coding – Code lengths
+r
+d
+r r r
+  Q Q x p
+  −
+Δ
+−
+ = − = 2 ) (
+1
+⎡   ⎤
+) ( 2 ) ( ½ 1
+  r
+k
+r r r r r r
+  x p x p d k d d k
+  r
+≤ < ⇒ + < ≤ ⇒ =
+  −
+⎡   ⎤
+  r r
+  k
+r r r
+k
+r
+  m Q Q m
+  −
+− −
+  ≤ ⇒ = 2 2
+1 1
+r
+k
+r
+  Q m
+  r
+≤ +
+  −
+2 ) 1 (
+⎡   ⎤
+  r r r
+  l
+r r
+l
+r r
+l
+r r r
+  m Q m Q m k l
+  −
+−
+−
+−
+  ≤ < − ⇒ = + = 2 2 ) 1 ( 2   redefine and 1
+1 1
+r r r
+k l
+r
+l
+r
+  Q x p Q m m
+  r r r
+= + < + − = +
+  −
+− − −
+) ( 2 2 ) 1 ( 2 ) 1 (
+1
+2 ) log( 2 1   + − = + < + ≤
+  r r r r
+  p d k l
+6
+4
+6 6
+2 13 , 12 , 4   Q m k   < × = =
+  −
+7
+5
+7 7
+7
+4
+7 7
+2 28 , 27 , 5
+2 15 , 14 , 4
+Q m l
+  Q m k
+≤ × = = ⇒
+  > × = =
+−
+−
+  ×
+-
+-
+bits 38 . 3 096 . 0 log ) ( log
+7 , 6 7 , 6
+  = − = − =   x p d
+• Define
+• Set
+• If                               then set l
+r
+= k
+r
+; otherwise
+– set
+– now                               
+• We always have
+– Always within 2 bits of the optimum code for the block
+Q
+r–1
+rounded up to k
+r
+bits
+(k
+r
+is Shannon len)
+J an 2008
+84
+Arithmetic Coding - Advantages
+• Long blocks can be used
+– Symbol blocks are sorted lexically rather than in probability 
+order
+– Receiver can start decoding symbols before the entire code has 
+been received
+– Transmitter and receiver can work out the codes on the fly
+• no need to store entire codebook
+• Transmitter and receiver can use identical finite-
+precision arithmetic 
+– rounding errors are the same at transmitter and receiver
+– rounding errors affect code lengths slightly but not transmission 
+accuracy
+J an 2008
+85
+a
+b
+aa
+ab
+ba
+bb
+aaa
+aab
+aba
+abb
+baa
+bab
+bba
+bbb
+aaaa
+aaab
+aaba
+aabb
+abaa
+abab
+abba
+abbb
+baaa
+baab
+baba
+babb
+bbaa
+bbab
+bbba
+0.0000 =0.000000
+0.1296 =0.001000
+0.2160 =0.001101
+0.3024 =0.010011
+0.3600 =0.010111
+0.4464 =0.011100
+0.5040 =0.100000
+0.5616 =0.100011
+0.6000 =0.100110
+0.6864 =0.101011
+0.7440 =0.101111
+0.8016 =0.110011
+0.8400 =0.110101
+0.8976 =0.111001
+0.9360 =0.111011
+0.9744 =0.111110
+Arithmetic Coding Receiver
+X=[a b], p=[0.6 0.4]
+Q
+r
+probabilities
+1 1 0 0 1 1 1
+b
+bab
+babbaa
+Each additional bit received 
+narrows down the possible 
+interval.
+J an 2008
+86
+Transmitter Send Receiver
+Input Min Max Min Test Max Output
+00000000 11111111 00000000 10011001 11111111
+b 10011001 11111111 1 10011001
+a 10011001 11010111
+b 10111110 11010111
+b 11001101 11010111 10 10011001 b
+a 11001101 11010011 10011001 11010111 11111111
+a 11001101 11010000
+a 11001101 11001111 011 11010111 a
+10011001 10111110 11010111 b
+b 11001110 11001111 1 10111110 11001101 11010111 b
+11001101 11010011 11010111 a
+11001101 11010000 11010011  a
+11001101 11001111 11010000
+… … … … … … …
+Arithmetic Coding/Decoding
+• Min/Max give the limits of the input or output interval; identical in transmitter and receiver.
+• Blue denotes transmitted bits - they are compared with the corresponding bits of the receiver’s test 
+value and Red bit show the first difference. Gray identifies unchanged words.
+J an 2008
+87
+Arithmetic Coding Algorithm
+Input Symbols: X = [a   b], p = [p   q]
+[min , max] = Input Probability Range
+Note: only keep untransmitted bits of min and max
+Coding Algorithm:
+Initialize [min ,  max] = [000…0  ,  111…1]
+For each input symbol, s
+If s=a then max=min+p(max–min) else min=min+p(max–min)
+while min andmax have the same MSB
+transmit MSB and set min=(min<<1) andmax=(max<<1)+1
+end while
+end for
+• Decoder is almost identical. Identical rounding errors ⇒ no symbol errors.
+• Simple to modify algorithm for |X|>2 and/or D>2.
+• Need to protect against range underflow when [x y] = [011111…, 100000…].
+J an 2008
+88
+Adaptive Probabilities
+Number of guesses for next letter (a-z, space):
+o r a n g e s a n d l e mo n s
+17 7 8 4 1 1 2 1 1 5 1 1 1 1 1 1 1 1
+We can change the input symbol probabilities 
+based on the context (= the past input sequence)
+n
+x
+p
+  i
+n i
+n
++
+  = +
+=
+  < ≤
+1
+) ( count 1
+1
+b
+Example: Bernoulli source with unknown p. Adapt p based 
+on symbol frequencies so far:
+X = [a b],   p
+n
+= [1–p
+n
+  p
+n
+],
+J an 2008
+89
+Adaptive Arithmetic Coding
+Coder and decoder only need to calculate the probabilities along the 
+path that actually occurs
+a
+b
+aa
+ab
+ba
+bb
+aaa
+aab
+aba
+abb
+baa
+bab
+bba
+bbb
+aaaa
+aaab
+aaba
+aabb
+abaa
+abab
+abba
+abbb
+baaa
+baab
+baba
+babb
+bbaa
+bbab
+bbba
+bbbb
+0.0000 =0.000000
+0.2000 =0.001100
+0.2500 =0.010000
+0.3000 =0.010011
+0.3333 =0.010101
+0.3833 =0.011000
+0.4167 =0.011010
+0.4500 =0.011100
+0.5000 =0.011111
+0.5500 =0.100011
+0.5833 =0.100101
+0.6167 =0.100111
+0.6667 =0.101010
+0.7000 =0.101100
+0.7500 =0.110000
+0.8000 =0.110011
+1.0000 =0.000000
+p
+1
+= 0.5
+p
+2
+= 
+1
+/
+3
+or 
+2
+/
+3
+p
+3
+= ¼ or ½ or ¾
+p
+4
+= …
+n
+x
+p
+  i
+n i
+n
++
+  = +
+=
+  < ≤
+1
+) ( count 1
+1
+b
+J an 2008
+90
+Lempel-Ziv Coding
+Memorize previously occurring substrings in the input data
+– parse input into the shortest possible distinct ‘phrases’
+– number the phrases starting from 1 (0 is the empty string)
+1011010100010…
+12_3_4__5_6_7
+– each phrase consists of a previously occurring phrase
+(head) followed by an additional 0 or 1 (tail)
+– transmit code for head followed by the additional bit for tail
+01001121402010…
+– for head use enough bits for the max phrase number so far:
+100011101100001000010…
+– decoder constructs an identical dictionary
+prefix codes are underlined
+J an 2008
+91
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+00   φ 1 1
+01 1 00 0
+10 0
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+00   φ 1 1
+01 1 00 0
+10 0 011 11
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+00   φ 1 1
+01 1 00 0
+10 0 011 11
+11 11
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+00   φ 1 1
+01 1 00 0
+10 0 011 11
+11 11 101 01
+Lempel-Ziv Example
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+φ 1 1
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0   φ 1 1
+1 1 00 0
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00 0010 10
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00 0010 10
+111 10
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00 0010 10
+111 10
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00 0010 10
+111 10
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+000   φ 1 1
+001 1 00 0
+010 0 011 11
+011 11 101 01
+100 01 1000 010
+101 010 0100 00
+110 00 0010 10
+111 10 1010 0100
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001
+Input = 1011010100010010001001010010
+Dictionary Send Decode
+0000   φ 1 1
+0001 1 00 0
+0010 0 011 11
+0011 11 101 01
+0100 01 1000 010
+0101 010 0100 00
+0110 00 0010 10
+0111 10 1010 0100
+1000 0100 10001 01001
+1001 01001 10010 010010
+Improvement
+• Each head can only 
+be used twice so at 
+its second use we 
+can:
+– Omit the tail bit
+– Delete head from 
+the dictionary and 
+re-use dictionary 
+entry
+J an 2008
+92
+LempelZiv Comments
+Dictionary D contains K entries D(0), …, D(K–1). We need to send M=ceil(log K) bits to 
+specify a dictionary entry. Initially K=1, D(0)= φ = null string and M=ceil(log K) = 0 bits.
+Input Action
+1 “1” ∉D so send “1” and set D(1)=“1”. Now K=2 ⇒ M=1.
+0 “0” ∉D so split it up as “φ”+”0” and send “0” (since D(0)= φ) followed by “0”. 
+Then set D(2)=“0” making K=3 ⇒ M=2.
+1 “1” ∈ D so don’t send anything yet – just read the next input bit.
+1 “11” ∉D so split it up as “1” + “1” and send “01” (since D(1)= “1” and M=2) 
+followed by “1”. Then set D(3)=“11” making K=4 ⇒ M=2.
+0 “0” ∈ D so don’t send anything yet – just read the next input bit.
+1 “01” ∉D so split it up as “0” + “1” and send “10” (since D(2)= “0” and M=2) 
+followed by “1”. Then set D(4)=“01” making K=5 ⇒ M=3.
+0 “0” ∈ D so don’t send anything yet – just read the next input bit.
+1 “01” ∈ D so don’t send anything yet – just read the next input bit.
+0 “010” ∉D so split it up as “01” + “0” and send “100” (since D(4)= “01” and 
+M=3) followed by “0”. Then set D(5)=“010” making K=6 ⇒ M=3.
+So far we have sent 1000111011000 where dictionary entry numbers are in red.
+J an 2008
+93
+Lempel-Ziv properties
+• Widely used
+– many versions: compress, gzip, TIFF, LZW, LZ77, …
+– different dictionary handling, etc
+• Excellent compression in practice
+– many files contain repetitive sequences
+– worse than arithmetic coding for text files
+• Asymptotically optimum on stationary ergodic 
+source (i.e. achieves entropy rate)
+– {X
+i
+} stationary ergodic ⇒
+• Proof: C&T chapter 12.10
+– may only approach this for an enormous file
+1 ) ( ) ( sup lim
+: 1
+1
+  prob with X H X l n
+  n
+n
+  ≤
+−
+∞ →
+J an 2008
+94
+Summary
+• Stream Codes
+– Encoder and decoder operate sequentially
+•no blocking of input symbols required
+– Not forced to send ≥1 bit per input symbol
+•can achieve entropy rate even when H(X)<1
+• Require a Perfect Channel
+– A single transmission error causes multiple 
+wrong output symbols
+– Use finite length blocks to limit the damage
+J an 2008
+95
+Lecture 7
+• Markov Chains
+• Data Processing Theorem
+– you can’t create information from nothing
+• Fano’s Inequality
+– lower bound for error in estimating X from Y
+J an 2008
+96
+Markov Chains
+If we have three random variables: x, y, z
+) ( ) | ( ) , | ( ) , , (   x p x y p y x z p z y x p   =
+they form a Markov chain x→y→z if
+) ( ) | ( ) | ( ) , , ( ) | ( ) , | (   x p x y p y z p z y x p y z p y x z p   = ⇔ =
+A Markov chain x→y→z means that
+– the only way that x affects z is through the value of y
+) , | ( ) | ( 0 ) | ; ( y x z y z y z x   H H I   = ⇔ =
+– if you already know y, then observing x gives you no additional 
+information about z, i.e.
+– if you know y, then observing z gives you no additional 
+information about x.
+A common special case of a Markov chain is when z = f(y)
+J an 2008
+97
+Markov Chain Symmetry
+Iff x→y→z
+) | ( ) | (
+) (
+) | ( ) , (
+) (
+) , , (
+) | , (
+) a (
+y z p y x p
+y p
+  y z p y x p
+y p
+  z y x p
+y z x p   = = =
+) | ( ) , | ( (a)   y z p y x z p   =
+Also x→y→z iff z→y→xsince
+) , | (
+) , (
+) , , (
+) , (
+) ( ) | , (
+) , (
+) ( ) | (
+) | ( ) | (
+(a)
+z y x p
+  z y p
+  z y x p
+z y p
+  y p y z x p
+z y p
+  y p y z p
+y x p y x p
+=
+= = =
+Hence x and z are conditionally independent given y
+Markov chain property is symmetrical
+) | ( ) | ( ) | , ( (a)   y z p y x p y z x p   =
+J an 2008
+98
+Data Processing Theorem
+If  x→y→z then I(x ;y) ≥ I(x ; z)
+– processing y cannot add new information about x
+) | ; ( ) ; ( ) ; (
+0 ) | ; (
+(a)
+z y x z x y x
+y z x
+I I I
+I
++ =
+ =
+   hence
+   but  
+(a) I(x ;z)=0 iff x and z are independent; Markov ⇒ p(x,z |y)=p(x |y)p(z |y)
+If x→y→z then I(x ;y) ≥ I(x ; y | z)
+– Knowing z can only decrease the amount x tells you about y
+Proof:
+) | ; ( ) ; ( ) | ; ( ) ; ( ) , ; ( z y x z x y z x y x z y x   I I I I I   + = + =
+) | ; ( ) ; ( ) ; ( ) ; ( z y x y x z x y x   I I I I   ≥ ≥    and     so
+J an 2008
+99
+Non-Markov: Conditioning can increase I
+Noisy Channel: z =x +y
+– X=Y=[0,1]
+T
+  p
+X
+=p
+Y
+=[½,½]
+T
+– I(x ;y)=0 since independent
+x z
+y
++
+¼ 11
+¼ 10
+¼ 01
+¼ 00 XY
+2 1 0
+  Z
+If you know z, then x and y are no longer independent
+H(x |z) = H(y|z) = H(x, y|z) 
+= 0×¼+1×½+0×¼ = ½
+since in each case z≠1 ⇒ H()=0
+I(x; y|z) = H(x |z)+H(y |z)–H(x, y |z)
+= ½+½–½ = ½
+– but I(x ;y | z)=½
+J an 2008
+100
+Long Markov Chains
+If x
+1
+→ x
+2
+ → x
+3 
+→ x
+4 
+→ x
+5 
+→ x
+6
+then Mutual Information increases as you 
+get closer together:
+– e.g. I(x
+3
+, x
+4
+) ≥ I(x
+2
+, x
+4
+) ≥ I(x
+1
+, x
+5
+) ≥ I(x
+1
+, x
+6
+)
+J an 2008
+101
+Sufficient Statistics
+If pdf of x depends on a parameter θ and you extract a 
+statistic T(x) from your observation,
+then ) ; ( )) ( ; ( ) ( x x x x   θ θ θ   I T I T   ≤ ⇒ → →
+)) ( | ( ) ), ( | (
+) (
+) ; ( )) ( ; ( ) (
+x x x x
+x x
+x x x x
+T p T p
+  T
+  I T I T
+= ⇔
+  → → → ⇔
+  = ⇔ → → →
+θ
+  θ θ
+  θ θ θ θ
+∑
+=
+=
+  n
+i
+  i n
+T
+1
+: 1
+) ( x x
+  (   )
+  ⎪
+⎩
+⎪
+⎨
+⎧
+≠
+=
+= = =
+∑
+∑
+∑
+  −
+k x
+  k x C
+k x X p
+i
+i k n
+i n n
+  if
+  if
+0
+, |
+1
+: 1 : 1
+x θ
+independent of θ ⇒ sufficient
+T(x) is sufficient for θ if the stronger condition:
+Example: x
+i
+~ Bernoulli(θ ),
+J an 2008
+102
+Fano’s Inequality
+If we estimate x from y, what is ?
+x x y
+  ^
+)
+ˆ
+( x x ≠ = p p
+e
+(   )
+(   )
+(   )
+  (   )
+(   ) 1 | | log
+1 ) | (
+1 | | log
+) ( ) | (
+1 | | log ) ( ) | (
+(a)
+−
+−
+≥
+−
+−
+≥ ⇒
+− + ≤
+X X
+X
+y x y x
+y x
+H p H H
+p
+p p H H
+e
+e
+e e
+Proof: Define a random variable 0 : 1 ? )
+ˆ
+( x x e   ≠ =
+e e e
+  p p p H ) 1 | log(| ) 1 ( 0 ) (   − + − × + ≤   X
+(a) the second form is 
+weaker but easier to use
+chain rule
+H≥0; H(e |y)≤H(e)
+H(e)=H(p
+e
+)
+Fano’s inequality is used whenever you need to show that errors are inevitable
+) , | ( ) | ( ) , | ( ) | ( ) | , ( y e x y e y x e y x y x e   H H H H H   + = + =
+) , | ( ) ( 0 ) | ( y e x e y x   H H H   + ≤ + ⇒
+e e
+  p e H p e H H ) 1 , | ( ) 1 )( 0 , | ( ) (   = + − = + = y x y x e
+J an 2008
+103
+Fano Example
+X = {1:5}, p
+x
+=[0.35, 0.35, 0.1, 0.1, 0.1]
+T
+Y = {1:2} if x ≤2 then y =x with probability 6/7 
+while if x >2 then y =1 or 2 with equal prob.
+Our best strategy is to guess 
+– p
+x |y=1
+=[0.6, 0.1, 0.1, 0.1, 0.1]
+T
+– actual error prob: 
+Fano bound:
+  (   )
+3855 . 0
+) 4 log(
+1 771 . 1
+1 | | log
+1 ) | (
+=
+−
+=
+−
+−
+≥
+X
+y x H
+p
+e
+Main use: to show when error free transmission is impossible since p
+e
+> 0
+y x =
+ˆ
+4 . 0 =
+e
+p
+J an 2008
+104
+Summary
+• Markov:
+• Data Processing Theorem: if  x→y→z then
+–   I(x ; y) ≥ I(x ; z)
+–   I(x ; y) ≥ I(x ; y| z)
+• Fano’s Inequality: if 
+can be false if not Markov
+then   x y x
+ˆ
+→ →
+(   )   (   ) | | log
+1 ) | (
+1 | | log
+1 ) | (
+1 | | log
+) ( ) | (
+X X X
+  −
+≥
+−
+−
+≥
+−
+−
+≥
+y x y x y x   H H p H H
+p
+  e
+e
+0 ) | ; ( ) | ( ) , | (   = ⇔ = ⇔ → → y z x z y x   I y z p y x z p
+weaker but easier to use since independent of p
+e
+J an 2008
+105
+Lecture 8
+• Weak Law of Large Numbers
+• The Typical Set
+– Size and total probability
+• Asymptotic Equipartition Principle
+J an 2008
+106
+Strong and Weak Typicality
+X = {a, b, c, d}, p = [0.5 0.25 0.125 0.125]
+–log p = [1 2 3 3]  ⇒  H(p) = 1.75 bits
+Sample eight i.i.d. values
+• strongly typical ⇒ correct proportions
+aaaabbcd –log p(x) = 14 = 8×1.75
+• [weakly] typical ⇒ log p(x) =  nH(x)
+aabbbbbb –log p(x) = 14 = 8×1.75
+• not typical at all ⇒ log p(x) ≠  nH(x)
+dddddddd –log p(x) = 24
+Strongly Typical ⇒ Typical
+J an 2008
+107
+Convergence of Random Numbers
+• Convergence
+ε ε   < − > ∀ ∃ > ∀ ⇒ →
+∞ →
+| | , such that  , 0 y x y x
+  n
+n
+n
+  m n m
+(   ) 0 | | , 0
+prob
+→ > − > ∀ ⇒ →   ε ε y x y x
+  n n
+  P
+Note: y can be a constant or another random variable
+ε log 1 choose
+½] [½; , 2
+–
+− =
+  = ± =
+m
+  p
+n
+n
+x
+Example:
+0 ) | (| , small any  for 
+] ; 1 [ }, 1 ; 0 {
+1
+1 1
+⎯ ⎯ → ⎯ = >
+− = ∈
+∞ → −
+− −
+n
+n
+n
+n x p
+n n p x
+ε ε
+Example:
+• Convergence in probability (weaker than convergence)
+J an 2008
+108
+Weak law of Large Numbers
+Given i.i.d. {x
+i
+} ,Cesáro mean
+–
+As n increases, Var s
+n
+gets smaller and the values 
+become clustered around the mean
+∑
+=
+=
+  n
+i
+  i n
+n
+1
+1
+x s
+2 1 1
+Var Var   σ μ
+  − −
+= = = =   n n E E
+  n n
+x s x s
+(   ) 0 | | , 0
+prob
+∞ →
+→ > − > ∀ ⇔
+→
+n
+n
+n
+P   ε μ ε
+μ
+s
+s
+The “strong law of large numbers” says that convergence 
+is actually almost sure provided that X has finite variance
+WLLN:
+J an 2008
+109
+Proof of WLLN
+• Chebyshev’s Inequality
+2
+1
+Var and where
+1
+σ μ   = = =
+ ∑
+=
+  i i
+n
+i
+  i n
+  E
+n
+x x x s
+(   )   (   )
+(   )   (   ) ε μ ε ε μ
+μ μ
+ε μ ε μ
+  > − = ≥ − ≥
+− = − =
+∑ ∑
+  ∑
+> − > −
+∈
+y p y p y p y
+y p y E
+y y y y
+y
+2
+| :|
+2
+| :|
+2
+2 2
+) ( ) (
+) ( Var
+Y
+y y
+• WLLN
+(   ) 0 Var
+2
+2
+∞ →
+→ = ≤ > −
+  n
+n n
+n
+p
+  σ
+ε μ ε s s
+μ
+prob
+→
+n
+s Hence
+Actually true even if σ = ∞
+For any choice of ε
+J an 2008
+110
+Typical Set
+x
+n
+is the i.i.d. sequence {x
+i
+} for 1 ≤ i ≤ n
+– Prob of a particular sequence is
+–
+– Typical set: 
+Example:
+– x
+i
+Bernoulli with p(x
+i
+=1)=p
+– e.g. p([0 1 1 0 0 0])=p
+2
+(1–p)
+4
+– For p=0.2, H(X)=0.72 bits
+– Red bar shows T
+0.1
+(n)
+∏
+=
+=
+  n
+i
+  i
+p p
+1
+) ( ) ( x x
+) ( ) ( log ) ( log x nH x p E n p E
+  i
+ = − = −   x
+{   } ε
+ε
+  < − − ∈ =
+  −
+) ( ) ( log :
+1 ) (
+x H p n T
+  n n
+x x   X
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=1, p=0.2, e=0.1, p
+T
+=0%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=2, p=0.2, e=0.1, p
+T
+=0%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=4, p=0.2, e=0.1, p
+T
+=41%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=8, p=0.2, e=0.1, p
+T
+=29%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=16, p=0.2, e=0.1, p
+T
+=45%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=32, p=0.2, e=0.1, p
+T
+=62%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=64, p=0.2, e=0.1, p
+T
+=72%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=128, p=0.2, e=0.1, p
+T
+=85%
+J an 2008
+111
+1111, 1101, 1010, 0100, 0000 00110011, 00110010, 00010001, 00010000, 00000000 0010001100010010, 0001001010010000, 0001000100010000, 
+0000100001000000, 0000000010000000
+1, 0 11, 10, 00
+Typical Set Frames
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=1, p=0.2, e=0.1, p
+T
+=0%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=2, p=0.2, e=0.1, p
+T
+=0%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=4, p=0.2, e=0.1, p
+T
+=41%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=8, p=0.2, e=0.1, p
+T
+=29%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=16, p=0.2, e=0.1, p
+T
+=45%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=32, p=0.2, e=0.1, p
+T
+=62%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=64, p=0.2, e=0.1, p
+T
+=72%
+-2.5 -2 -1.5 -1 -0.5 0
+N
+-1
+log p(x)
+N=128, p=0.2, e=0.1, p
+T
+=85%
+J an 2008
+112
+Typical Set: Properties
+1. Individual prob: 
+2. Total prob: 
+3. Size: 
+ε
+ε
+  n nH p T
+  n
+± − = ⇒ ∈ ) ( ) ( log
+) (
+x x x
+ε ε
+  ε   N n T p
+  n
+> − > ∈ for     1 ) (
+) (
+x
+ε ε ε
+  ε ε
+  < > − − > ∀ ∃ > ∀
+= − → − = −
+−
+=
+− −
+∑
+) ) ( ) ( log ( s.t. 0 Hence
+) ( ) ( log ) ( log ) ( log
+1
+prob
+1
+1 1
+x
+x
+H p n p N n N
+H x p E x p n p n
+  i
+n
+i
+  i
+x
+x
+  2 2 ) 1 (
+) ) ( ( ) ( ) ) ( (   ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+≤ < −
+x x   H n n
+N n
+H n
+T
+) ( ) ) ( ( ) ) ( (
+2 2 ) ( ) ( 1
+) ( ) (
+n H n
+T
+H n
+T
+  T p p
+n n
+  ε
+ε ε
+ε ε
++ −
+∈
++ −
+∈
+  = ≥ ≥ =
+  ∑ ∑ ∑
+x x
+x x x
+  x x
+) ( ) ) ( ( ) ) ( ( ) (
+2 2 ) ( 1 , f.l.e.
+) (
+n H n
+T
+H n n
+T T p n
+n
+  ε
+ε ε
+ε
+ε
+ε
+  − −
+∈
+− −
+= ≤ ∈ < −
+  ∑
+x x
+x
+x
+Proof 2:
+Proof 3a:
+Proof 3b:
+J an 2008
+113
+Asymptotic Equipartition Principle
+• for any ε and for n > N
+ε
+“Almost all events are almost equally surprising”
+•
+  ε
+ε
+  − > ∈ 1 ) (
+) (n
+T p x and
+elements
+) ) ( (
+2
+  ε +
+≤
+x H n
+) (n
+T
+ε
+∈ x
+) (n
+T
+ε
+∉ x
+(   )
+(   )
+1
+2 log
+log ) ( 2
+−
++ + + =
+  + + + ≤
+n H n
+  n H n
+X
+  X
+ε ε
+  ε ε
+ε n nH p   ± − = ) ( ) ( log x x
+Coding consequence
+– : ‘0’ + at most 1+n(H+ε) bits 
+– : ‘1’ + at most 1+nlog|X| bits
+–  L = Average code length
+|X|
+n
+elements
+J an 2008
+114
+Source Coding & Data Compression
+For any choice of δ > 0, we can, by choosing block 
+size, n, large enough, do either of the following:
+• make a lossless code using only H(x)+δ bits per symbol 
+on average:
+• make a code with an error probability < ε using H(x)+ δ
+bits for each symbol 
+– just code T
+ε
+using n(H+ε+n
+–1
+) bits and use a random wrong code 
+if x∉T
+ε
+(   )
+1
+2 log
+  −
++ + + ≤   n H n L   X ε ε
+J an 2008
+115
+From WLLN, if                                then for any n and ε
+(   )
+2
+) ( log Var   σ = −
+  i
+x p
+(   )
+2
+2
+) (
+2
+1
+2
+) ( ) ( log
+1
+ε
+σ σ
+ε ε
+  ε
+n
+T p
+n
+H x p
+n
+p
+  n
+n
+i
+  i
+  ≤ ∉ ⇒ ≤
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+> − −
+∑
+=
+  x X
+Choose  (   )   ε ε σ
+  ε ε
+  − > ∈ ⇒ =
+  −
+1
+) ( 3 2   n
+T p N   x
+For this choice of N
+ε
+, if x∈T
+ε
+(n)
+So within T
+ε
+(n)
+,  p(x) can vary by a factor of
+2 2
+2
+2
+  −
+ε σ
+2 2
+) ( ) ( ) ( log
+  −
+± − = ± − =   ε σ ε x x   nH n nH p x
+Within the Typical Set, p(x) can actually vary a great deal when ε is small
+(   ) ? that  ensures What  ε
+ε ε
+  − > ∈ 1
+) (n
+T p N   x
+ε
+ε
+  small for  radidly  increases N
+Chebyshev
+J an 2008
+116
+Smallest high-probability Set
+T
+ε
+(n)
+is a small subset of X
+n
+containing most of the 
+probability mass. Can you get even smaller ?
+ε) n(H n
+S
+2 ) ( ) (
+2
+  −
+<
+x
+(   )   (   )   (   )
+) ( ) ( ) ( ) ( ) (   n n n n n
+T S p T S p S p
+  ε ε
+  ∩ ∈ + ∩ ∈ = ∈   x x x
+Answer: No
+ε
+ε ε
+  = < >
+  − log
+, 0
+2 2
+  n
+N n for 
+ε
+N n > for 
+For any 0 < ε < 1, choose N
+0
+= –ε
+–1
+log ε , then for any 
+n>max(N
+0
+,N
+ε
+) and any subset S
+(n)
+satisfying 
+(   )
+) ( ) (
+) ( max
+) (
+n
+T
+n
+T p p S
+  n
+  ε
+ε
+  ∈ + <
+∈
+  x x
+x
+ε
+ε ε
++ <
+  − − − ) ( ) 2 (
+2 2
+  H n H n
+ε ε
+ε
+2 2   < + =
+  −n
+J an 2008
+117
+Summary
+• Typical Set
+– Individual Prob
+– Total Prob
+– Size
+• No other high probability set can be much 
+smaller than 
+• Asymptotic Equipartition Principle
+– Almost all event sequences are equally surprising
+ε
+ε
+  n nH p T
+  n
+± − = ⇒ ∈ ) ( ) ( log
+) (
+x x x
+ε ε
+  ε   N n T p
+  n
+> − > ∈ for     1 ) (
+) (
+x
+  2 2 ) 1 (
+) ) ( ( ) ( ) ) ( (   ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+≤ < −
+x x   H n n
+N n
+H n
+T
+) (n
+T
+ε
+J an 2008
+118
+Lecture 9
+• Source and Channel Coding
+• Discrete Memoryless Channels
+– Symmetric Channels
+– Channel capacity
+•Binary Symmetric Channel
+•Binary Erasure Channel
+•Asymmetric Channel
+J an 2008
+119
+Source and Channel Coding
+• Source Coding
+– Compresses the data to remove redundancy
+• Channel Coding
+– Adds redundancy to protect against channel 
+errors
+Compress Decompress Encode Decode
+Noisy
+Channel
+Source Coding
+Channel Coding
+In Out
+J an 2008
+120
+Discrete Memoryless Channel
+• Input: x∈X, Output y∈Y
+• Time-Invariant Transition-Probability Matrix
+– Hence
+– Q: each row sum = 1, average column sum = |X||Y|
+–1
+• Memoryless: p(y
+n
+|x
+1:n
+, y
+1:n–1
+) = p(y
+n
+|x
+n
+)
+• DMC = Discrete Memoryless Channel
+(   )   (   )
+i j
+j i
+  x y p   = = = x y
+x y
+|
+,
+|
+Q
+x x y y
+  p Q p
+  T
+|
+=
+Noisy
+Channel
+x y
+J an 2008
+121
+Binary Channels
+• Binary Symmetric Channel
+– X = [0 1], Y = [0 1]
+• Binary Erasure Channel
+– X = [0 1], Y = [0 ? 1]
+• Z Channel
+– X = [0 1], Y = [0 1]
+Symmetric: rows are permutations of each other; columns are permutations of each other
+Weakly Symmetric: rows are permutations of each other; columns have the same sum
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+−
+−
+f f
+  f f
+1
+1
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+−
+−
+f f
+f f
+1 0
+0 1
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+− f f 1
+0 1
+x
+0
+1
+0
+1
+y
+x
+0
+1
+0
+1
+y
+x
+0
+1
+0
+? y
+1
+J an 2008
+122
+Weakly Symmetric Channels
+Weakly Symmetric:
+1. All columns of Q have the same sum =|X||Y|
+–1
+– If x is uniform (i.e. p(x) = |X|
+–1
+) then y is uniform
+1 1 1 1
+) | ( ) ( ) | ( ) (
+  − − −
+∈
+−
+∈
+  = × = = =
+  ∑ ∑
+  Y Y X X X
+X X   x x
+  x y p x p x y p y p
+) ( ) ( ) ( ) | ( ) ( ) | (
+: , 1 : , 1
+  Q Q   H x p H x H x p H
+x x
+  = = = =
+  ∑ ∑
+  ∈ ∈   X X
+x y x y
+where Q
+1,:
+is the entropy of the first (or any other) row of the Q matrix
+Symmetric: 1. All rows are permutations of each other
+2. All columns are permutations of each other
+Symmetric ⇒ weakly symmetric
+2. All rows are permutations of each other
+– Each row of Q has the same entropy so
+J an 2008
+123
+Channel Capacity
+• Capacity of a DMC channel:
+– Maximum is over all possible input distributions p
+x
+– ∃ only one maximum since I(x ;y) is concave in p
+x
+for fixed p
+y|x
+– We want to find the p
+x
+that maximizes I(x ;y)
+) ; ( max y x
+x
+I C
+p
+=
+) ; ( max
+1
+: 1 : 1
+) (
+: 1
+  n n
+n
+I
+n
+C
+n
+y x
+x
+p
+=
+(   )   (   ) Y X log , log min ) ( ), ( min 0   ≤ ≤ ≤ y x   H H C
+♦ = proved in two pages time
+♦
+H(x |y)   H(y |x)
+H(x ,y)
+H(x)
+  H(y)
+I(x ;y)
+• Capacity for n uses of channel:
+– Limits on C:
+J an 2008
+124
+0
+0.2
+0.4
+0.6
+0.8
+1 0
+0.2
+0.4
+0.6
+0.8
+1 -0.5
+0
+0.5
+1
+Channel Error Prob (f)
+I(X;Y)
+Input Bernoulli Prob (p)
+Mutual Information Plot
+Binary Symmetric Channel
+Bernoulli Input   f
+0
+1
+0
+1
+y x
+f
+1–f
+1–f
+1–p
+p
+) ( ) 2 (
+) | ( ) ( ) ; (
+f H p pf f H
+  H H I
+− + − =
+  − = y x y y x
+J an 2008
+125
+Mutual Information Concave in p
+X
+Mutual Information I(x;y) is concave in p
+x
+for fixed p
+y|x
+) | ; ( ) ; ( ) | ; ( ) ; ( ) ; , ( z y x y z x y z y x y z x   I I I I I   + = + =
+U
+V
+  X
+Z   Y
+p(Y|X)
+1
+0
+so but    0 ) , | ( ) | ( ) | ; (   = − = z x y x y x y z   H H I
+) ; ( ) 1 ( ) ; ( y v y u   I I   λ λ   − + =
+Special Case: y=x ⇒ I(x; x)=H(x) is concave in p
+x
+¤ = Deterministic
+) | ; ( ) ; ( z y x y x   I I   ≥
+) 0 | ; ( ) 1 ( ) 1 | ; (   = − + = = z y x z y x   I I   λ λ
+Proof: Let u and v have prob mass vectors u and v
+– Define z: bernoulli random variable with p(1) = λ
+– Let x = u if z=1 and x=v if z=0 ⇒ p
+x
+=λu+(1–λ)v
+J an 2008
+126
+Mutual Information Convex in p
+Y|X
+Mutual Information I(x ;y) is convex in p
+y|x
+for fixed p
+x
+x v x u x y | | |
+) 1 (   p p p   λ λ   − + =
+) | ; ( ) ; (
+) ; ( ) | ; ( ) , ; (
+y z x y x
+z x z y x z y x
+I I
+  I I I
++ =
+  + =
+so but   0 ) | ; ( and   0 ) ; (   ≥ = y z x z x   I I
+) | ; ( ) ; ( z y x y x   I I   ≤
+  ¤ = Deterministic
+Proof (b) define u, v, x etc:
+–
+) 0 | ; ( ) 1 ( ) 1 | ; (   = − + = = z y x z y x   I I   λ λ
+) ; ( ) 1 ( ) ; ( v x u x   I I   λ λ   − + =
+J an 2008
+127
+n-use Channel Capacity
+We can maximize I(x;y) by maximizing each I(x
+i
+;y
+i
+)
+independently and taking x
+i
+to be i.i.d.
+– We will concentrate on maximizing I(x; y) for a single channel use
+) | ( ) ( ) ; (
+: 1 : 1 : 1 : 1 : 1   n n n n n
+  H H I x y y y x   − =
+For Discrete Memoryless Channel:
+with equality if x
+i
+are independent ⇒ y
+i
+are independent
+Chain; Memoryless
+Conditioning
+Reduces
+Entropy
+∑ ∑ ∑
+  = = =
+  = − ≤
+  n
+i
+  i i
+n
+i
+  i i
+n
+i
+  i
+  I H H
+1 1 1
+) ; ( ) | ( ) ( y x x y y
+∑ ∑
+  = =
+  −
+  − =
+  n
+i
+  i i
+n
+i
+  i i
+  H H
+1 1
+1 : 1
+) | ( ) | ( x y y y
+J an 2008
+128
+Capacity of Symmetric Channel
+∴ Information Capacity of a BSC is 1–H(f)
+f
+0
+1
+0
+1
+y x
+f
+1–f
+1–f
+) ( | | log ) ( ) ( ) | ( ) ( ) ; (
+: , 1 : , 1
+  Q Q   H H H H H I   − ≤ − = − =   Y y x y y y x
+with equality iff input distribution is uniform
+If channel is weakly symmetric:
+For a binary symmetric channel (BSC):
+– |Y| = 2
+–   H(Q
+1,:
+) = H(f)
+–   I(x;y) ≤ 1 – H(f)
+∴ Information Capacity of a WS channel is log|y|–H(Q
+1,:
+)
+J an 2008
+129
+Binary Erasure Channel (BEC)
+since a fraction f of the bits are lost, the capacity is only 1–f
+and this is achieved when x is uniform
+x
+0
+1
+0
+? y
+1
+f
+f
+1–f
+1–f
+) | ( ) ( ) ; ( y x x y x   H H I   − =
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+−
+−
+f f
+f f
+1 0
+0 1
+since max value of H(x) = 1
+with equality when x is uniform
+H(x |y) = 0 when y=0 or y=1
+f H H ) ( ) ( x x − =
+0 ) 1 ( ) ( ?) ( 0 ) 0 ( ) (   × = − = − × = − = y x y y x   p H p p H
+f − ≤1
+) ( ) 1 ( x H f − =
+J an 2008
+130
+Asymmetric Channel Capacity
+Let p
+x
+= [a  a  1–2a]
+T
+ ⇒ p
+y
+=Q
+T
+p
+x
+= p
+x
+f
+0: a
+1: a
+0
+1
+  y x
+  f
+1–f
+1–f
+2: 1–2a 2
+⎟
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎜
+⎝
+⎛
+−
+−
+=
+1 0 0
+0 1
+0 1
+f f
+  f f
+Q
+To find C, maximize I(x ;y) = H(y) – H(y |x) 
+(   )   (   ) ) ( 2 2 1 log 2 1 log 2   f aH a a a a I   − − − − − =
+Note:
+d(log x) = x
+–1
+log e
+Examples:   f = 0 ⇒H(f) = 0 ⇒ a = 
+1
+/
+3
+ ⇒ C = log 3 = 1.585 bits/use
+f = ½ ⇒H(f) = 1 ⇒ a = ¼ ⇒ C = log 2 = 1 bits/use
+(   )   (   )
+) ( 2 ) 1 ( ) 2 1 ( ) ( 2 ) | (
+2 1 log 2 1 log 2 ) (
+f aH H a f aH H
+  a a a a H
+= − + =
+  − − − − =
+x y
+y
+(   )  (   )   (   ) a a a a C
+  f H
+2 1 log 2 1 2 log 2
+) (
+− − − − = ⇒
+0 ) ( 2 ) 2 1 log( 2 log 2 log 2 log 2   = − − + + − − =   f H a e a e
+da
+dI
+(   ) ) ( 2 log
+2 1
+log
+1
+f H a
+a
+ a
+= − =
+−
+  −
+(   )
+1
+) (
+2 2
+  −
++ = ⇒
+  f H
+a
+(   ) a 2 1 log   − − =
+J an 2008
+131
+Lecture 10
+• J ointly Typical Sets
+• J oint AEP
+• Channel Coding Theorem
+– Random Coding
+– J ointly typical decoding
+J an 2008
+132
+Significance of Mutual Information
+– An average input sequence x
+1:n
+corresponds to about 2
+nH(y|x)
+typical output sequences
+– There are a total of 2
+nH(y)
+typical output sequences
+– For nearly error free transmission, we select a number of input 
+sequences whose corresponding sets of output sequences hardly 
+overlap
+– The maximum number of distinct sets of output sequences is
+2
+n(H(y)–H(y|x)) 
+= 2
+nI(y ;x)
+Noisy
+Channel
+x
+1:n
+y
+1:n
+2
+nH(x)
+  2
+nH(y|x)
+2
+nH(y)
+• Consider blocks of n symbols:
+Channel Coding Theorem: for large n can transmit at any rate < C with negligible errors 
+J an 2008
+133
+J ointly Typical Set
+xy
+n
+is the i.i.d. sequence {x
+i
+,y
+i
+} for 1 ≤ i ≤ n
+– Prob of a particular sequence is
+–
+– J ointly Typical set:
+∏
+=
+=
+  N
+i
+  i i
+  y x p p
+1
+) , ( ) , (   y x
+) , ( ) , ( log ) , ( log y x nH y x p E n p E
+  i i
+  = − = −   y x
+{
+} ε
+ε
+ε
+ε
+< − −
+  < − −
+  < − − ∈ =
+−
+−
+−
+) , ( ) , ( log
+, ) ( ) ( log
+, ) ( ) ( log : ,
+1
+1
+1 ) (
+y x
+y
+x
+H p n
+H p n
+H p n J
+  n n
+y x
+y
+x y x   XY
+J an 2008
+134
+J ointly Typical Example
+Binary Symmetric Channel
+f
+0
+1
+0
+1
+y x
+f
+1–f
+1–f
+(   )
+(   )
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+= =
+= =
+2 . 0 05 . 0
+15 . 0 6 . 0
+, 35 . 0 65 . 0
+25 . 0 75 . 0 , 2 . 0
+xy y
+x
+P p
+p
+T
+T
+f
+J ointly Typical example (for any ε):
+x = 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+y = 1 1 1 1 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+all combinations of x and y have exactly the right frequencies
+J an 2008
+135
+J ointly Typical Diagram
+Dots represent 
+jointly typical 
+pairs (x,y)
+Inner rectangle 
+represents pairs 
+that are typical 
+in x or y but not 
+necessarily 
+jointly typical
+2
+nlog|X|
+2
+nH(x)
+2
+nlog|Y|
+2
+nH(Y)
+2
+nH(y|x)
+2
+nH(x|y)
+Typical in both x, y: 2
+n(H(x)+H(y))
+All sequences: 2
+nlog(|X||Y|)
+J
+o
+i
+n
+t
+l
+y
+ 
+t
+y
+p
+i
+c
+a
+l
+:
+ 
+2
+n
+H
+(
+x
+,
+y
+)
+• There are about 2
+nH(x)
+typical x’s in all
+• Each typical y is jointly typical with about 2
+nH(x|y)
+of these typical x’s
+• The jointly typical pairs are a fraction 2
+–nI(x ;y)
+of the inner rectangle 
+• Channel Code: choose x’s whose J .T. y’s don’t overlap; use J .T. for decoding
+Each point defines both an x sequence and a y sequence
+J an 2008
+136
+J oint Typical Set Properties
+1. Indiv Prob:
+2. Total Prob: 
+3. Size:
+  (   )
+  ε ε
+  ε   N n J p
+  n
+> − > ∈ for 1 ,
+) (
+y x
+(   )   (   ) ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+  ≤ < −
+) , ( ) ( ) , (
+2 2 ) 1 (
+y x y x   H n n
+N n
+H n
+J
+Proof 2: (use weak law of large numbers)
+(   )
+(   )
+3 2 1 3 2
+1
+1 1
+, , max ,
+3
+) ( ) ( log ,
+N N N N N N
+H p n p N n N
+=
+< > − − > ∀
+  −
+ε
+ε
+ε
+set  and conditions other  for  choose Similarly 
+that  such Choose x x
+(   )   ε
+ε
+  n nH p J
+  n
+± − = ⇒ ∈ ) , ( , log ,
+) (
+y x y x y x
+(   ) ε
+ε ε
+ε
+ε
+ε
+  − −
+∈
+∈
+  = ≤ < −
+  ∑
+) , ( ) (
+,
+) (
+,
+2 ) , ( max ) , ( 1
+) (
+) (
+y x H n n
+J
+n
+J
+  J p J p
+  n
+n
+y x y x
+y x
+y x
+∀n
+n>N
+ε
+Proof 3:
+(   ) ε
+ε ε
+ε
+ε
++ −
+∈
+∈
+  = ≥ ≥
+ ∑
+) , ( ) (
+,
+) (
+,
+2 ) , ( min ) , ( 1
+) (
+) (
+y x H n n
+J
+n
+J
+  J p J p
+  n
+n
+y x y x
+y x
+y x
+J an 2008
+137
+J oint AEP
+If p
+x'
+=p
+x
+and p
+y'
+=p
+y
+with x' and y' independent:
+(   )
+  (   )
+  (   )
+ε
+ε
+ε
+ε
+ε   N n J p
+  I n n I n
+> ≤ ∈ ≤ −
+  − − + −
+for 
+3 ) , ( ) ( 3 ) , (
+2 ' , ' 2 ) 1 (
+y x y x
+y x
+Proof: |J| × (Min Prob) ≤ Total Prob ≤ |J| × (Max Prob)
+(   )
+(   )
+ε
+ε
+ε ε
+ε
+  ε
+N n
+p p J J p
+I n
+J
+n n
+n
+> − ≥
+≥ ∈
++ −
+∈
+for    
+3 ) ; (
+' , '
+) ( ) (
+2 ) 1 (
+) ' ( ) ' ( min ' , '
+) (
+y x
+y x y x
+y x
+(   )
+  ∑ ∑
+  ∈ ∈
+  = = ∈
+) ( ) (
+' , ' ' , '
+) (
+) ' ( ) ' ( ) ' , ' ( ' , '
+n n
+J J
+n
+p p p J p
+ε ε
+ε
+y x y x
+y x y x y x
+(   )
+(   )   (   )   (   )   (   ) ε ε ε ε
+ε ε
+ε
+3 ) ; ( ) ( ) ( ) , (
+' , '
+) ( ) (
+2 2 2 2
+) ' ( ) ' ( max ' , '
+) (
+− − − − − − +
+∈
+= ≤
+≤ ∈
+y x y x y x   I n H n H n H n
+J
+n n
+p p J J p
+  n
+  y x y x
+y x
+J an 2008
+138
+Channel Codes
+• Assume Discrete Memoryless Channel with known Q
+y|x
+• An (M,n) code is
+– A fixed set of M codewords x(w)∈X
+n
+for w=1:M
+– A deterministic decoder g(y)∈1:M
+(  ) (   ) (   )   (   )
+∑
+∈
+  ≠
+= ≠ =
+n
+  w g w
+  w p w w g p
+Y y
+y
+x y
+) (
+) ( |   δ λ   y
+∑
+=
+=
+  M
+w
+  w
+n
+e
+M
+P
+1
+) (
+1
+λ
+w
+M w
+n
+λ λ
+≤ ≤
+=
+1
+) (
+max
+δ
+C
+= 1 if C is true or 0 if it is false
+• Error probability
+– MaximumError Probability
+– Average Error probability
+J an 2008
+139
+Achievable Code Rates
+• The rate of an (M,n) code: R=(log M)/n bits/transmission
+• A rate, R, is achievable if
+– ∃ a sequence of             codes for n=1,2,…
+– max prob of error λ
+(n)
+→0 as n→∞
+– Note: we will normally write            to mean
+⎡   ⎤
+(   ) n
+nR
+, 2
+(   ) n
+nR
+, 2
+  ⎡   ⎤
+(   ) n
+nR
+, 2
+• The capacity of a DMC is the sup of all achievable rates
+• Max error probability for a code is hard to determine
+– Shannon’s idea: consider a randomly chosen code
+– show the expected average error probability is small
+– Show this means ∃ at least one code with small max error prob
+– Sadly it doesn’t tell you how to find the code
+J an 2008
+140
+Channel Coding Theorem
+• A rate R is achievable if R<C and not achievable if R>C
+– If R<C, ∃ a sequence of (2
+nR
+,n) codes with max prob of error 
+λ
+(n)
+→0 as n→∞
+– Any sequence of (2
+nR
+,n) codes with max prob of error λ
+(n)
+→0 as 
+n→∞ must have R ≤ C
+0 1 2 3
+0
+0.05
+0.1
+0.15
+0.2
+Rate R/C
+B
+i
+t
+ 
+e
+r
+r
+o
+r
+ 
+p
+r
+o
+b
+a
+b
+i
+l
+i
+t
+y
+Achievable
+Impossible
+A very counterintuitive result:
+Despite channel errors you can 
+get arbitrarily low bit error 
+rates provided that R<C
+J an 2008
+141
+Lecture 11
+• Channel Coding Theorem
+J an 2008
+142
+Channel Coding Principle
+– An average input sequence x
+1:n
+corresponds to about 
+2
+nH(y|x)
+typical output sequences
+Noisy
+Channel
+x
+1:n
+y
+1:n
+2
+nH(x)
+  2
+nH(y|x)
+2
+nH(y)
+• Consider blocks of n symbols:
+Channel Coding Theorem: for large n, can transmit at any rate R < C with negligible errors 
+– Random Codes: Choose 2
+nR
+random code vectors x(w)
+• their typical output sequences are unlikely to overlap much.
+– J oint Typical Decoding: A received vector y is very 
+likely to be in the typical output set of the transmitted 
+x(w) and no others. Decode as this w.
+J an 2008
+143
+Random (2
+nR
+,n) Code
+• Choose ε ≈ error prob, joint typicality ⇒ N
+ε
+, choose n>N
+ε
+( )
+ ∑   ∑
+=
+−
+=
+C
+  C C E
+  nR
+w
+  w
+nR
+p p
+2
+1
+) ( 2 ) (   λ
+(a) since error averaged over all possible codes is independent of w
+• Choose p
+x
+so that I(x ;y)=C, the information capacity
+• Use p
+x
+to choose a code C with random x(w)∈X
+n
+, w=1:2
+nR
+– the receiver knows this code and also the transition matrix Q
+• Assume (for now) the message W∈1:2
+nR
+is uniformly distributed
+• If received value is y; decode the message by seeing how many 
+x(w)’s are jointly typical with y
+– if x(k) is the only one then k is the decoded message
+– if there are 0 or ≥2 possible k’s then 1 is the decoded message
+– we calculate error probability averaged over all C and all W
+∑∑
+=
+−
+=
+  nR
+w
+  w
+nR
+p
+2
+1
+) ( ) ( 2   C C
+C
+  λ
+) ( ) (
+1
+) (
+C C
+C
+  λ
+∑
+=   p
+a
+(   ) 1 |   = = w E p
+J an 2008
+144
+Channel Coding Principle
+{   }
+  nR n
+w
+  w J w 2 : 1 ), (
+) (
+∈ ∈ = for    
+ε
+y x e
+Noisy
+Channel
+x
+1:n
+y
+1:n
+• Assume we transmit x(1) and receivey
+• Define the events
+• We have an error if either e
+1
+false or e
+w
+true for w ≥ 2
+• The x(w) for w ≠ 1 are independent of x(1) and hence also 
+independent of y. So 
+(   )
+1 any   for    2 ) true (
+3 ) , (
+≠ <
+  − −
+w e p
+  I n
+w
+  ε y x
+J oint AEP
+J an 2008
+145
+Error Probability for Random Code
+• We transmit x(1), receive y and decode using joint typicality
+• We have an error if either e
+1
+false or e
+w
+true for w ≥ 2
+(   )   (   )   (   )
+ ∑
+=
++ ≤ ∪ ∪ ∪ ∪ = =
+  nR
+nR
+w
+  w
+p p W p
+2
+2
+1
+2
+3 2 1
+1 | e e e e e e    E
+• Since average of P
+e
+(n) 
+over all codes is  ≤ 2ε there must be at least 
+one code for which this is true: this code has
+  ε λ 2 2   ≤
+∑
+−
+w
+  w
+nR
+• Now throw away the worst half of the codewords; the remaining 
+ones must all have λ
+w
+ ≤ 4ε. The resultant code has rate R–n
+–1 
+≅ R.
+♦ = proved on next page
+♦
+♦
+(1) J oint typicality
+(2) J oint AEP
+p(A∪B)≤p(A)+p(B)
+(   )   (   ) ε ε
+ε ε
+3 ) ; (
+2
+2
+3 ) ; (
+2 2 2
+  − −
+=
+− −
++ = + ≤
+  ∑
+y x y x   I n nR
+i
+I n
+nR
+(   )
+ε
+ε
+ε ε ε
+  ε
+3
+log
+3 2 2
+3 ) ; (
+− −
+− > − < ≤ + ≤
+  − − −
+R C
+n C R
+R I n
+  and for    
+y x
+J an 2008
+146
+Code Selection & Expurgation
+• Since average of P
+e
+(n) 
+over all codes is  ≤ 2ε there must be at least 
+one code for which this is true.
+M w
+M M M
+w M
+M
+M
+w
+  M
+M
+w
+  w
+M
+w
+  w
+½ 4 4
+½ 2
+½
+½
+½
+1
+½
+1
+½
+1
+1
+1
+1
+> ∀ ≤ ⇒ ≤ ⇒
+≥ ≥ ≥ ≥
+  ∑ ∑ ∑
+  =
+−
+=
+−
+=
+−
+ε λ ε λ
+λ λ λ λ ε
+(   )   (   )
+) (
+,
+1
+) (
+,
+1
+1
+) (
+,
+1
+min min 2
+  n
+i e
+i
+K
+i
+n
+i e
+i
+K
+i
+n
+i e
+  P P K P K   = ≥ ≥
+  ∑ ∑
+  =
+−
+=
+−
+ε
+1 1
+log 2 ½
+  − −
+  − = ′ = ′ ⇒ × = ′   n R M n R n M
+  nR
+uses channel in messages
+K = num of codes
+Proof:
+• Expurgation: Throw away the worst half of the codewords; the 
+remaining ones must all have λ
+w
+≤ 4ε.
+Proof: Assume λ
+w
+are in descending order
+J an 2008
+147
+Summary of Procedure
+• Given R´<C, choose ε<¼(C–R´) and set R=R´+ε ⇒ R<C – 3ε
+{   }
+1
+), 3 /( ) (log , max
+  −
+− − − =   ε ε ε
+ε
+  R C N n see (a),(b),(c) below
+(a)
+(b)
+(c)
+Note: ε determines both error probability and closeness to capacity
+• Set
+• Find the optimum p
+X
+so that I(x ; y) = C
+• Choosing codewords randomly (using p
+X
+) and using joint typicality 
+as the decoder, construct codes with 2
+nR
+codewords
+• Since average of P
+e
+(n) 
+over all codes is  ≤ 2ε there must be at least 
+one code for which this is true. Find it by exhaustive search.
+• Throw away the worst half of the codewords. Now the worst 
+codeword has an error prob ≤ 4ε with rate R´ = R – n
+–1 
+> R – ε
+• The resultant code transmits at a rate R´ with an error probability 
+that can be made as small as desired (but n unnecessarily large).
+• The resultant code transmits at a rate R´ with an error probability 
+that can be made as small as desired (but n unnecessarily large).
+J an 2008
+148
+Lecture 12
+• Converse of Channel Coding Theorem
+– Cannot achieve R>C
+– Minimum bit-error rate
+• Capacity with feedback
+– no gain but simpler encode/decode
+• J oint Source-Channel Coding
+– No point for a DMC
+J an 2008
+149
+Converse of Coding Theorem
+• Fano’s Inequality: if P
+e
+(n)
+is error prob when estimating wfrom y,
+) ( ) (
+1 log 1 ) | (
+  n
+e
+n
+e
+  nRP P H   + = + ≤   W y w
+• Hence
+) ; ( ) | ( ) (   y y w w w   I H H nR   + = =
+• Hence for large n, P
+e
+(n)
+has a lower bound of (R–C)/R if wequiprobable
+– If R>C was achievable for small n, it could be achieved also for large n by 
+concatenation. Hence it cannot be achieved for any n.
+n-use DMC capacity
+Fano
+w w
+ˆ
+→ → →   y x   : Markov
+Definition of I
+) ); ( ( ) | (   y x y w w   I H   + ≤
+) ; ( 1
+) (
+y x I nRP
+  n
+e
+  + + ≤
+nC nRP
+  n
+e
+  + + ≤
+) (
+1
+R
+C R
+R
+  n C R
+P
+n
+n
+e
+  −
+→
+− −
+≥ ⇒
+  ∞ →
+−1
+) (
+J an 2008
+150
+Minimum Bit-error Rate
+Suppose
+– v
+1:nR
+is i.i.d. bits with H(v
+i
+)=1
+– The bit-error rate is   {   }   {   } ) ( )
+ˆ
+(
+  i
+i
+i i
+i
+b
+  p E p E P e v v
+  Δ
+= ≠ =
+) ; (
+: 1 : 1   n n
+I nC y x
+(a)
+≥
+Hence
+(   )
+1
+) ( 1
+  −
+− ≤
+  b
+P H C R
+(a) n-use capacity
+0 1 2 3
+0
+0.05
+0.1
+0.15
+0.2
+Rate R/C
+B
+i
+t
+ 
+e
+r
+r
+o
+r
+ 
+p
+r
+o
+b
+a
+b
+i
+l
+i
+t
+y
+i i i
+v v e
+ˆ
+⊕ =
+)
+ˆ
+; (
+: 1 : 1   nR nR
+I v v
+(b)
+≥ )
+ˆ
+| ( ) (
+: 1 : 1 : 1   nR nR nR
+  H H v v v   − =
+∑
+=
+  −
+− =
+  nR
+i
+  i nR i
+H nR
+1
+1 : 1 : 1
+) ,
+ˆ
+| ( v v v
+  ∑
+=
+− ≥
+  nR
+i
+  i i
+H nR
+1
+)
+ˆ
+| ( v v
+(c)
+{   } (   ) )
+ˆ
+| ( 1
+  i i
+i
+  H E nR v v − =
+{   } (   ) )
+ˆ
+| ( 1
+  i i
+i
+  H E nR v e − =
+(d)
+{   } (   ) ) ( 1
+  i
+i
+  H E nR e − ≥
+(c)
+(   ) ) ( 1
+  b
+P H nR  − =
+(b) Data processing theorem
+(c) Conditioning reduces entropy
+(d) 
+Then
+) / 1 (
+1
+R C H P
+b
+  − ≥
+  −
+(   ) ) ( 1
+,i b
+i
+  P E H nR − ≥
+(e)
+(e) J ensen: E H(x) ≤ H(E x)
+J an 2008
+151
+Channel with Feedback
+• Assume error-free feedback: does it increase capacity ?
+• A (2
+nR
+,n) feedback code is
+– A sequence of mappings x
+i 
+= x
+i
+(w,y
+1:i–1
+) for i=1:n
+– A decoding function
+Noisy
+Channel
+x
+i
+y
+i
+Encoder
+w∈1:2
+nR
+Decoder
+w
+^
+y
+1:i–1
+) (
+ˆ
+: 1n
+g y w =
+0 )
+ˆ
+(
+) (
+⎯ ⎯ → ⎯ ≠ =
+  ∞ → n
+n
+e
+  P P w w
+• A rate R is achievable if ∃ a sequence of (2
+nR
+,n) feedback 
+codes such that
+• Feedback capacity, C
+FB
+≥C, is the sup of achievable rates
+J an 2008
+152
+Capacity with Feedback
+) ; ( ) | ( ) (   y y w w w   I H H nR   + = =
+) | ( ) ( ) ; ( w w   y y y   H H I   − =
+Hence
+since x
+i
+=x
+i
+(w,y
+1:i–1
+)
+since y
+i
+only directly depends on x
+i
+The DMC does not benefit from feedback: C
+FB
+ = C
+cond reduces ent
+Fano
+Noisy
+Channel
+x
+i
+y
+i
+Encoder
+w∈1:2
+nR
+Decoder
+w
+^
+y
+1:i–1
+∑
+=
+  −
+− =
+  n
+i
+  i i
+H H
+1
+1 : 1
+) , | ( ) ( w y y y
+∑
+=
+  −
+− =
+  n
+i
+  i i i
+H H
+1
+1 : 1
+) , , | ( ) ( x w y y y
+∑
+=
+− =
+  n
+i
+  i i
+H H
+1
+) | ( ) ( x y y
+∑ ∑
+  = =
+  − ≤
+  n
+i
+  i i
+n
+i
+  i
+  H H
+1 1
+) | ( ) ( x y y
+  nC I
+n
+i
+  i i
+  ≤ =
+∑
+=1
+) ; ( y x
+nC nRP
+  n
+e
+  + + ≤
+) (
+1
+R
+  n C R
+P
+  n
+e
+1
+) (
+  −
+− −
+≥ ⇒
+J an 2008
+153
+Example: BEC with feedback
+• Capacity is 1–f
+• Encode algorithm
+– If y
+i
+=?, retransmit bit i
+– Average number of transmissions per bit: 
+x
+0
+1
+0
+? y
+1
+f
+f
+1–f
+1–f
+f
+f f
+−
+= + + +
+1
+1
+1
+2
+
+• Average number of bits per transmission = 1–f
+• Capacity unchanged but encode/decode algorithm much 
+simpler.
+J an 2008
+154
+J oint Source-Channel Coding
+• Assume v
+i
+satisfies AEP and |V|<∞
+– Examples: i.i.d.; markov; stationary ergodic
+• Capacity of DMC channel is C
+– if time-varying: 
+Noisy
+Channel
+x
+1:n
+y
+1:n
+Encoder
+v
+1:n
+Decoder
+  ^
+v
+1:n
+0 )
+ˆ
+(
+: 1 : 1
+) (
+⎯ ⎯ → ⎯ ≠ =
+  ∞ → n
+n n
+n
+e
+  P P v v
+) ; ( lim
+1
+y x I n C
+n
+  −
+∞ →
+=
+♦ = proved on next page
+♦
+• J oint Source Channel Coding Theorem:
+∃ codes with iff H(V) < C
+– errors arise from incorrect (i) encoding of V or (ii) decoding of Y
+• Important result: source coding and channel coding 
+might as well be done separately since same capacity
+J an 2008
+155
+Source-Channel Proof (⇐)
+• For n>N
+ε
+there are only 2
+n(H(V)+ε)
+ v’s in the typical 
+set: encode using n(H(V)+ε) bits
+– encoder error < ε
+• Transmit with error prob less than ε so long as 
+H(V)+ ε < C
+• Total error prob < 2ε
+J an 2008
+156
+Source-Channel Proof (⇒)
+Fano’s Inequality: 
+V log 1 )
+ˆ
+| (
+) (
+n P H
+  n
+e
++ ≤ v v
+) ( ) (
+: 1
+1
+n
+H n H v
+−
+≤ V
+entropy rate of stationary process
+definition of I
+Fano + Data Proc Inequ
+Memoryless channel
+Let
+  C H P n
+  n
+e
+  ≤ ⇒ → ⇒ ∞ → ) ( 0
+) (
+V
+Noisy
+Channel
+x
+1:n
+y
+1:n
+Encoder
+v
+1:n
+Decoder
+  ^
+v
+1:n
+)
+ˆ
+; ( )
+ˆ
+| (
+: 1 : 1
+1
+: 1 : 1
+1
+n n n n
+  I n H n v v v v
+  − −
++ =
+(   ) ) ; ( log 1
+: 1 : 1
+1 ) ( 1
+n n
+n
+e
+  I n n P n y x
+− −
++ + ≤   V
+C P n
+  n
+e
+  + + ≤
+  −
+V log
+) ( 1
+J an 2008
+157
+Separation Theorem
+• For a (time-varying) DMC we can design the 
+source encoder and the channel coder 
+separately and still get optimum performance
+• Not true for
+– Correlated Channel and Source
+– Multiple access with correlated sources
+• Multiple sources transmitting to a single receiver
+– Broadcasting channels
+• one source transmitting possibly different information to 
+multiple receivers
+J an 2008
+158
+Lecture 13
+• Continuous Random Variables
+• Differential Entropy
+– can be negative
+– not a measure of the information in x
+– coordinate-dependent
+• Maximum entropy distributions
+– Uniform over a finite range
+– Gaussian if a constant variance
+J an 2008
+159
+Continuous Random Variables
+Changing Variables
+• pdf:                  CDF:
+) (x f
+x
+  ∫
+∞ −
+=
+  x
+dt t f x F ) ( ) (
+x x
+) ( ) (
+1
+y x x y
+  −
+= ⇔ =   g g
+(   )   (   ) ) ( 1 ) ( ) (
+1 1
+y g F y g F y F
+  − −
+− =
+x x y
+or
+x x F x x f 5 . 0 ) ( ) 2 , 0 ( 5 . 0 ) (   = ⇒ ∈ =
+x x
+for
+) 8 , 0 ( 125 . 0 25 . 0 5 . 0 ) ( 25 . 0 4   ∈ = × = ⇒ = ⇒ =   y y f for
+y
+y x x y
+) 16 , 0 ( 125 . 0 ¼ 5 . 0 ) (
+¾ ¾ ¼ 4
+∈ = × = ⇒ = ⇒ =
+  − −
+z z z z f for
+z
+z x x z
+(a)
+(b)
+Suppose
+according to slope of g(x)
+(   )   ( ) ) (
+) (
+) (
+) (
+) (
+1
+1
+1
+y g x
+dy
+dx
+x f
+dy
+ y dg
+y g f
+dy
+y dF
+y f
+  Y   −
+−
+−
+= = = = where
+x x y
+• Examples:
+• For g(x) monotonic: 
+J an 2008
+160
+J oint Distributions Distributions
+J oint pdf:
+Marginal pdf:
+Independence:
+Conditional pdf: 
+) , (
+,
+  y x f
+y x
+∫
+∞
+∞ −
+=   dy y x f x f ) , ( ) (
+,y x x
+) (
+) , (
+) (
+,
+|
+y f
+  y x f
+x f
+y
+y x
+y x
+  =
+) ( ) ( ) , (
+,
+  y f x f y x f
+y x y x
+  = ⇔
+f
+X
+x
+f
+Y
+y
+x
+y
+) 1 , ( ), 1 , 0 ( 1
+,
+  + ∈ ∈ =   y y x y f for 
+y x
+Example:
+) 1 , ( 1
+|
+  + ∈ =   y y x f for 
+y x
+(   ) ) 1 , min( ), 1 , 0 max(
+) 1 , min(
+1
+|
+  x x y
+x x
+f   − ∈
+−
+= for 
+x y
+J an 2008
+161
+Quantised Random Variables
+• Given a continuous pdf f(x), we divide the range of x into 
+bins of width Δ
+– For each i, ∃x
+i
+with
+• Define a discrete random variable Y
+– Y = {x
+i
+} and p
+y
+= {f(x
+i
+)Δ}
+– Scaled,quantised version of f(x) with slightly unevenly spaced x
+i
+∫
+  Δ +
+Δ
+= Δ
+) 1 (
+) ( ) (
+  i
+i
+i
+  dx x f x f
+(   )
+(   )
+) ( log ) ( log ) ( log
+) ( log ) ( log
+) ( log ) ( ) (
+0
+x
+y
+h dx x f x f
+x f x f
+  x f x f H
+i i
+i i
++ Δ − = − Δ − →
+Δ − Δ − =
+  Δ Δ − =
+∫
+∑
+∑
+∞
+∞ − → Δ
+∫
+∞
+∞ −
+− =   dx x f x f h ) ( log ) ( ) (
+x x
+x
+mean value theorem
+• Differential entropy: 
+•
+J an 2008
+162
+Differential Entropy
+Differential Entropy:
+) ( log ) ( log ) ( ) (   x f E dx x f x f h
+x x x
+x   − = − =
+ ∫
+∞
+∞ −
+Δ
+Good News:
+–   h
+1
+(x)–h
+2
+(x) does compare the uncertainty of two continuous 
+random variables provided they are quantised to the same 
+precision
+– Relative Entropy and Mutual Information still work fine
+– If the range of x is normalized to 1 and then x is quantised to n
+bits, the entropy of the resultant discrete random variable is 
+approximately h(x)+n
+Bad News:
+–   h(x) does not give the amount of information in x
+–   h(x) is not necessarily positive
+–   h(x) changes with a change of coordinate system
+J an 2008
+163
+Differential Entropy Examples
+• Uniform Distribution:
+–
+–
+– Note that h(x) < 0 if (b–a) < 1
+) , ( ~   b a U x
+elsewhere and for  0 ) ( ) , ( ) ( ) (
+1
+= ∈ − =
+  −
+x f b a x a b x f
+) log( ) ( log ) ( ) (
+1 1
+a b dx a b a b h
+  b
+a
+  − = − − − =
+  − −
+∫
+x
+) , ( ~
+2
+σ μ N x
+(   )   (   )
+2 2
+½
+2
+) ½( exp 2 ) (
+  −
+−
+− − =   σ μ πσ   x x f
+∫
+∞
+∞ −
+− =   dx x f x f e h ) ( ln ) ( ) (log ) (x
+• Gaussian Distribution:
+–
+–
+(   )
+∫
+∞
+∞ −
+  −
+− − − − =
+2 2 2
+) ½( ) 2 ln( ½ ) ( ) (log   σ μ πσ   x x f e
+(   ) bits e ) 1 . 4 log( 2 log ½
+2
+σ σ π   ≅ =
+(   ) (   )
+2 2 2
+) ( ) 2 ln( ) ½(log   μ σ πσ   − + =
+  −
+x E e
+(   ) 1 ) 2 ln( ) ½(log
+2
++ =   πσ e
+J an 2008
+164
+Multivariate Gaussian
+Given mean, m, and symmetric +ve definite covariance matrix K,
+(   ) ) ( ) ½( exp 2 ) ( ) , ( ~
+1
+½
+: 1
+  m x K m x K x K m N   − − − = ⇔
+  −
+−
+  T
+n
+  f   π x
+(   )   (   )   x K m x K m x x   d f e f h
+  T
+∫
+  − − − − × − =
+  −
+π 2 ln ½ ) ( ) ½( ) ( log ) (
+1
+( )   (   ) (   ) ) ( ) ( 2 ln log ½
+1
+m x K m x K   − − + × =
+  − T
+E e   π
+( )   (   ) (   )
+1
+) )( ( tr 2 ln log ½
+  −
+− − + × =   K m x m x K
+  T
+E e   π
+( )   (   ) (   )
+1
+tr 2 ln log ½
+  −
++ × =   KK K π e   ( )  (   ) n e   + × =   K π 2 ln log ½
+(   )   (   ) K π 2 log ½ log ½   + =
+  n
+e
+(   ) bits K e π 2 log ½ =
+( )   (   ) (   )
+1
+) )( ( tr 2 ln log ½
+  −
+− − + × =   K m x m x K
+  T
+E e   π
+J an 2008
+165
+Other Differential Quantities
+J oint Differential Entropy
+) , ( log ) , ( log ) , ( ) , (
+,
+,
+, ,
+  y x f E dxdy y x f y x f h
+y x
+y x y x y x
+y x   − = − =
+ ∫∫
+) ( ) , ( ) | ( log ) , ( ) | (
+,
+, ,
+y y x y x
+y x y x
+  h h dxdy y x f y x f h
+y x
+− = − =
+ ∫∫
+) ( log ) (
+) (
+) (
+log ) ( ) || (
+x x   g E h
+dx
+x g
+  x f
+x f g f D
+f f
+  − − =
+=
+∫
+) , ( ) ( ) (
+) ( ) (
+) , (
+log ) , ( ) ; (
+,
+,
+,
+y x y x y x
+y x
+y x
+y x
+  h h h dxdy
+y f x f
+  y x f
+y x f I
+y x
+− + = =
+∫∫
+(a) must have f(x)=0 ⇒ g(x)=0
+(b) continuity ⇒ 0 log(0/0) = 0
+Relative Differential Entropy of two pdf’s:
+Mutual Information
+Conditional Differential Entropy
+J an 2008
+166
+Differential Entropy Properties
+Chain Rules ) | ( ) ( ) | ( ) ( ) , ( y x y x y x y x   h h h h h   + = + =
+) | ; ( ) ; ( ) ; , ( x z y z x z y x   I I I   + =
+0 ) || (   ≥ g f D
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+= = −
+  ∫
+∈
+) (
+) (
+log
+) (
+) (
+log ) ( ) || (
+x
+x
+f
+g
+E d
+f
+g
+f g f D
+S x
+x
+x
+x
+x
+Proof: Define } 0 ) ( : {   > =   x x   f S
+J ensen + log() is concave
+all the same as for H()
+Information Inequality:
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+≤
+) (
+) (
+log
+x
+x
+f
+g
+E
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+=
+  ∫
+S
+d
+f
+g
+f   x
+x
+x
+x
+) (
+) (
+) ( log
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+=
+  ∫
+S
+d g   x x) ( log
+0 1 log = ≤
+J an 2008
+167
+Information Inequality Corollaries
+Mutual Information ≥ 0
+0 ) || ( ) ; (
+,
+  ≥ =
+y x y x
+y x   f f f D I
+0 ) ; ( ) | ( ) (   ≥ = − y x y x x   I h h
+∑ ∑
+  = =
+  −
+  ≤ =
+  n
+i
+  i
+n
+i
+  i i n
+  h h h
+1 1
+1 : 1 : 1
+) ( ) | ( ) ( x x x x
+all the same as for H()
+Independence Bound
+Conditioning reduces Entropy
+J an 2008
+168
+Change of Variable
+Change Variable: ) (x y   g =
+(   )
+  dy
+ y dg
+y g f y f
+) (
+) ( ) (
+1
+1
+  −
+−
+=
+x y from earlier
+)) ( log( ) ( y y
+y
+f E h   − =
+Examples:
+– Translation: ) ( ) ( 1 / x y x y   h h dx dy a   = ⇒ = ⇒ + =
+1
+log ) ( ) ( /
+  −
+− = ⇒ = ⇒ =   c h h c dx dy c x y x y
+not the same as for H()
+) det( log ) ( ) (
+: 1 : 1
+  A A   + = ⇒ =   x y   h h
+n n
+x y
+(   )
+  dy
+dx
+E f E log ) ( log   − − = x
+x
+(   )
+  dy
+dx
+E g f E log )) ( ( log
+1
+− − =
+  −
+y
+x
+dy
+dx
+E h log ) (   − = x
+– Vector version:
+– Scaling:
+J an 2008
+169
+Concavity & Convexity
+• Differential Entropy:
+–   h(x) is a concave function of f
+x
+(x) ⇒ ∃ a maximum
+• Mutual Information:
+–   I(x ; y) is a concave function of f
+x
+(x) for fixed f
+y|x
+(y)
+–   I(x ; y) is a convex function of f
+y|x
+(y) for fixed f
+x
+(x)
+U
+V
+X
+Z
+1
+0
+U
+V
+X
+Z Y
+f(y|x)
+1
+0
+U
+V
+Y
+Z
+f(u|x)
+X
+f(v|x)
+1
+0
+) | ( ) ( z x x   H H   ≥
+) ( ) ( z y x y x   | ; I ; I   ≥ ) ( ) ( z y x y x   | ; I ; I   ≤
+Proofs:
+Exactly the same as for the discrete case: p
+z
+= [1–λ, λ]
+T
+J an 2008
+170
+Uniform Distribution Entropy
+What distribution over the finite range (a,b) maximizes the 
+entropy ?
+Answer: A uniform distribution u(x)=(b–a)
+–1
+) || ( 0   u f D ≤
+Proof:
+Suppose f(x) is a distribution for x∈(a,b)
+) ( log ) ( x x   u E h
+  f f
+  − − =
+) log( ) (   a b h
+f
+  − ≤ ⇒ x
+) log( ) (   a b h
+f
+  − + − = x
+J an 2008
+171
+Maximum Entropy Distribution
+What zero-mean distribution maximizes the entropy on
+(–∞, ∞)
+n
+for a given covariance matrix K ?
+Answer: A multivariate Gaussian
+  (   ) x K x K x
+1
+½
+½ exp 2 ) (
+  −
+−
+− =
+  T
+π φ
+) ( log ) ( ) || ( 0   x x   φ φ
+  f f
+  E h f D   − − = ≤
+Since translation doesn’t affect h(X), 
+we can assume zero-mean w.l.o.g.
+E
+f
+xx
+T
+= K
+tr(I)=n=ln(e
+n
+)
+Proof:
+(   ) K e π 2 log ½ =
+(   )   (   ) (   ) x x x
+1
+½ 2 ln ½ log ) (
+  −
+− − − ≤ ⇒   K K
+  T
+f f
+  E e h   π
+(   )   (   )   (   ) (   )
+1
+tr 2 ln log ½
+  −
++ =   K K
+  T
+f
+E e   xx π
+(   )   (   )   ( ) (   ) I K tr 2 ln log ½   + =   π e
+) (x
+φ
+h =
+J an 2008
+172
+Lecture 14
+• Discrete-time Gaussian Channel Capacity
+– Sphere packing
+• Continuous Typical Set and AEP
+• Gaussian Channel Coding Theorem
+• Bandlimited Gaussian Channel
+– Shannon Capacity
+– Channel Codes
+J an 2008
+173
+Capacity of Gaussian Channel
+Discrete-time channel: y
+i
+= x
+i
++ z
+i
+– Zero-mean Gaussian i.i.d. z
+i
+ ~ N(0,N)
+– Average power constraint
++
+X
+i
+  Y
+i
+Z
+i
+P x n
+  n
+i
+  i
+ ≤
+∑
+=
+−
+1
+2 1
+) ; ( max
+2
+y x
+x
+  I C
+P E   ≤
+=
+) | ( ) ( x z x y   + − =   h h
+(a) Translation independence
+N P E E E E E E   + ≤ + + = + =
+2 2 2 2
+) ( ) ( 2 ) ( z z x x z x y   X,Z indep and EZ=0
+Gaussian Limit with
+equality when x~N(0,P)
+The optimal input is Gaussian & the worst noise is Gaussian
+Information Capacity
+– Define information capacity: 
+) | ( ) ( ) ; ( x y y y x   h h I   − =
+) | ( ) (
+) (
+x z y   h h
+a
+− =
+(   )
+1
+1 log ½
+  −
++ =   PN
+) ( ) ( z y   h h   − =
+(   )   eN N P e   π π 2 log ½ 2 log ½   − + ≤
+[   ]
+dB
+6
+1
+N
+N P+
+=
+J an 2008
+174
+Gaussian Channel Code Rate
+• An (M,n) code for a Gaussian Channel with power 
+constraint is
+– A set of M codewords x(w)∈X
+n
+for w=1:M with x(w)
+T
+x(w) ≤ nP ∀w
+– A deterministic decoder g(y)∈0:M where 0 denotes failure
+– Errors:
+) ( ) (   n
+e
+i
+n
+i
+i
+  P : average : max : codeword   λ λ
+0
+) (
+∞ →
+→
+n
+n
+λ
+(   )
+1
+1 log ½
+  −
++ = <   PN C R
++
+z
+Encoder Decoder
+x   y w∈1:2
+nR
+w∈0:2
+nR
+^
+♦ = proved on next pages
+♦
+• Theorem: R achievable iff
+• Rate R is achievable if ∃ seq of (2
+nR
+,n) codes with 
+J an 2008
+175
+• Volume of hypersphere
+• Max number of non-overlapping clouds:   
+Sphere Packing
+• Each transmitted x
+i
+is received as a 
+probabilistic cloud y
+i
+– cloud ‘radius’ =
+  (   )   nN = x y| Var
+(   ) N P n   +
+n
+r ∝
+(   )
+  (   )
+1
+1 log ½
+½
+½
+2
+) (
+  −
++
+=
++
+  PN n
+n
+n
+nN
+nN nP
+• Max rate is ½log(1+PN
+–1
+) 
+• Energy of y
+i
+constrained to n(P+N) so 
+clouds must fit into a hypersphere of 
+radius
+J an 2008
+176
+Continuous AEP
+Typical Set: Continuous distribution, discrete time i.i.d.
+For any ε>0 and any n, the typical set with respect to f(x) is
+{   } ε
+ε
+  ≤ − − ∈ =
+  −
+) ( ) ( log :
+1 ) (
+x h f n S T
+  n n
+x x
+) ( log ) ( log ) (
+) ( ) (
+1
+1
+x f E n f E h
+x x f f
+  n
+i
+  i i
+−
+=
+− = − =
+=
+∏
+x x
+t independen are     since   x
+ε ε
+  ε   N n T p
+  n
+> − > ∈ for     1 ) (
+) (
+x
+) ) ( ( ) ( ) ) ( (
+2 ) Vol( 2 ) 1 (
+  ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+≤ ≤ −
+x x   h n n
+N n
+h n
+T
+Proof: WLLN
+Proof: Integrate 
+max/min prob
+∫
+∈
+=
+A
+d A
+x
+x ) Vol(   where
+Typical Set Properties
+1.
+where    S is the support of f ⇔{x : f(x)>0}
+2.
+J an 2008
+177
+Continuous AEP Proof
+Proof 1: By weak law of large numbers
+) ( ) ( log ) ( log ) ( log
+1
+1
+: 1
+1
+x x x x   h f E f n f n
+  prob n
+i
+  i n
+  = − → − = −
+  ∑
+=
+− −
+(   )   ε ε ε
+  ε ε
+  < > − > ∀ ∃ > ∀ ⇒ → | | , , 0
+prob
+y x y x
+  n n
+  P N n N that  such
+(   )   (   )
+  (   )
+) ( ) ( ) (
+Vol 2 2
+) (
+n X h n
+T
+X h n
+T d
+n
+  ε
+ε ε
+ε
+− − − −
+= ≤
+  ∫
+  x
+∫ ∫
+  ≥ =
+) (
+) ( ) ( 1
+n n
+T S
+d f d f
+ε
+x x x x
+max f(x) within T
+Property 1
+min f(x) within T
+Proof 2b:
+Proof 2a:
+Reminder:
+ε
+ε
+ε   N n d f
+n
+T
+> ≤ −
+  ∫
+for                    
+) (
+) ( 1   x x
+(   )   (   )
+  (   )
+) ( ) ( ) (
+Vol 2 2
+) (
+n X h n
+T
+X h n
+T d
+n
+  ε
+ε ε
+ε
++ − + −
+= ≥
+  ∫
+  x
+J an 2008
+178
+J ointly Typical Set
+J ointly Typical: x
+i
+,y
+i
+i.i.d from ℜ
+2
+with  f
+x,y
+(x
+i
+,y
+i
+)
+{
+} ε
+ε
+ε
+ε
+< − −
+  < − −
+  < − − ℜ ∈ =
+−
+−
+−
+) , ( ) , ( log
+, ) ( ) ( log
+, ) ( ) ( log : ,
+,
+1
+1
+1 2 ) (
+y x
+y
+x
+h f n
+h f n
+h f n J
+Y X
+Y
+X
+n n
+y x
+y
+x y x
+(   )   ε
+ε
+  n nh f J
+  n
+± − = ⇒ ∈ ) , ( , log ,
+,
+) (
+y x
+y x
+  y x y x
+(   )
+  ε ε
+  ε   N n J p
+  n
+> − > ∈ for 1 ,
+) (
+y x
+(   )
+  (   )
+  (   ) ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+≤ ≤ −
+) , ( ) ( ) , (
+2 Vol 2 ) 1 (
+y x y x   h n n
+N n
+h n
+J
+(   )
+  (   )
+  (   ) ε
+ε
+ε
+  ε
+ε
+3 ) ; ( ) ( 3 ) ; (
+2 ' , ' 2 ) 1 (
+  − −
+>
++ −
+≤ ∈ ≤ −
+y x y x   I n n
+N n
+I n
+J p   y x
+Proof of 4.: Integrate max/min f(x´, y´)=f(x´)f(y´), then use known bounds on Vol(J)
+4. Indep x′,y′:
+3. Size:
+2. Total Prob: 
+Properties:
+1. Indiv p.d.:
+J an 2008
+179
+Gaussian Channel Coding Theorem
+R is achievable iff   (   )
+1
+1 log ½
+  −
++ = <   PN C R
+) , 0 ( ~ 2 : 1   ε − = ℜ ∈   P N x w
+  w
+nR n
+w
+  i.i.d. are   where   for    x
+(   )
+  ε
+ε   M n nP p
+  T
+> ≤ ⇒ → > for  0 x x
+ε ε
+  ε   N n J p
+  n
+> < ∉ for     ) , (
+) (
+y x
+) 3 ) ; ( (
+2
+2
+) (
+2 ) 1 2 ( ) , (
+  ε
+ε
+  − −
+=
+  × − ≤ ∈
+∑
+y x I n nR
+j
+n
+i j
+nR
+J p   y x
+(   )
+  ε ε ε ε
+  ε
+ε
+3 ) ; ( 3 2
+3 ) ; ( ) (
+− < ≤ + + ≤
+  − − −
+Y X I R n P
+  R Y X I n n
+  if large for 
+ε λ 6
+) (
+<
+n
+*:Worst codebook half includes x
+i
+: x
+i
+T
+x
+i
+>nP ⇒ λ
+i
+=1
+now max error
+We have constructed a code achieving rate R–n
+–1
+Expurgation: Remove half of codebook*: 
+Total Err
+3. another x J .T. with y
+2. y not J .T. with x
+Errors: 1. Power too big
+Use J oint typicality decoding
+Random codebook: 
+Proof (⇐):
+Choose ε > 0
+J an 2008
+180
+Gaussian Channel Coding Theorem
+Proof (⇒): Assume 
+) ( 0
+1 ) (
+w P n P
+  T - n
+x x x   each for    and   < →
+ε
+(   )
+1
+1 log ½
+  −
++ →   PN
+Data Proc Inequal
+Indep Bound + Translation
+Z i.i.d + Fano, |W|=2
+nR
+max Information Capacity
+) | ( ) ; ( ) (
+: 1 : 1   n n
+  H I H nR y w y w w   + = =
+) | ( ) ; (
+: 1 : 1 : 1   n n n
+  H I y w y x   + ≤
+) | ( ) | ( ) (
+: 1 : 1 : 1 : 1   n n n n
+  H h h y w x y y   + − =
+) | ( ) ( ) (
+: 1 : 1
+1
+  n n
+n
+i
+  i
+  H h h y w z y   + − ≤
+∑
+=
+) (
+1
+1 ) ; (
+  n
+n
+i
+  i i
+  nRP I
+  ε
++ + ≤
+∑
+=
+y x
+(   )
+) (
+1
+1
+1 1 log ½
+  n
+n
+i
+  nRP PN
+  ε
++ + + ≤
+∑
+=
+−
+(   )
+) ( 1 1
+1 log ½
+  n
+RP n PN R
+  ε
++ + + ≤
+  − −
+J an 2008
+181
+Bandlimited Channel
+• Channel bandlimited to f∈(–W,W) and signal duration T
+(   )
+(   ) d bits/secon   P W N W
+  W N P W C
+1 1
+0
+1
+0
+1
+1 log
+2 ) (½ ½ 1 log ½
+− −
+− −
++ =
+  × + =
+Compare discrete time version: ½log(1+PN
+–1
+) bits per channel use
+• Capacity:
+– Signal power constraint = P ⇒Signal energy≤ PT
+• Energy constraint per coefficient: n
+–1
+x
+T
+x<PT/2WT=½W
+–1
+P
+– white noise with double-sided p.s.d. ½N
+0
+becomes
+i.i.d gaussian N(0,½N
+0
+) added to each coefficient
+• Can represent as a n=2WT-dimensional vector space with 
+prolate spheroidal functions as an orthonormal basis
+• Nyquist: Signal is completely defined by 2WT samples
+J an 2008
+182
+Shannon Capacity
+Define:
+• For fixed power, high bandwidth is better – Ultra wideband
+(   ) second per  bits Capacity 
+  energy  bit  Min , power  Noise , Power  Signal
+  variance Noise , variance Signal Hz, Bandwidth
+1 1
+0
+1
+0
+0
+1
+1 log
+½ ½
+− −
+−
+−
++ = =
+  = = = =
+  = = =
+W PN W C
+  PC E W N P
+  N P W W
+b
+(   )   (   ) (   )   e W W W W W C PN W
+  W
+log / 1 log / /
+1
+0 0 0
+1
+0 0
+  ∞ →
+− −
+→ + = ⇒ =
+dB 6 . 1 2 ln
+1
+0 0
+1
+− = → = ⇒
+  ∞ →
+− −
+W
+b
+N E W C
+0 0.5 1 1.5 2
+-10
+0
+10
+20
+30
+Bandwidth/Capacity (Hz/bps)
+E
+b
+/
+N
+0
+ 
+(
+d
+B
+)
+0 2 4 6
+0
+0.5
+1
+1.5
+Bandwidth / W
+0
+C
+a
+p
+a
+c
+i
+t
+y
+ 
+/
+ 
+W
+0
+P constant
+C constant
+J an 2008
+183
+Practical Channel Codes
+Code Classification:
+– Very good: arbitrarily small error up to the capacity
+– Good: arbitrarily small error up to less than capacity
+– Bad: arbitrarily small error only at zero rate (or never)
+Practical Good Codes:
+– Practical: Computation & memory  ∝ n
+k
+for some k
+– Convolution Codes: convolve bit stream with a filter
+• Concatenation, Interleaving, turbo codes (1993)
+– Block codes: encode a block at a time
+• Hamming, BCH, Reed-Solomon, LD parity check (1995)
+Coding Theorem: Nearly all codes are very good
+– but nearly all codes need encode/decode computation ∝ 2
+n
+J an 2008
+184
+Channel Code Performance
+• Power Limited
+– High bandwidth
+– Spacecraft, Pagers
+– Use QPSK/4-QAM
+– Block/Convolution Codes
+Diagram from “An overview of Communications” by J ohn R Barry, TTC = J apanese Technology Telecommunications Council
+• Value of 1 dB for space
+– Better range, lifetime, 
+weight, bit rate
+– $80 M (1999)
+• Bandwidth Limited
+– Modems, DVB, Mobile 
+phones
+– 16-QAM to 256-QAM
+– Convolution Codes
+J an 2008
+185
+Lecture 15
+• Parallel Gaussian Channels
+– Waterfilling
+• Gaussian Channel with Feedback
+J an 2008
+186
+Parallel Gaussian Channels
+•   n gaussian channels (or one channel n times)
+– e.g. digital audio, digital TV, Broadband ADSL
+• Noise is independent z
+i
+~ N(0,N
+i
+)
+• Average Power constraint Ex
+T
+x ≤ P
++
+x
+1
+y
+1
+z
+1
++
+x
+n
+y
+n
+z
+n
+) ; ( max
+: ) (
+  y x
+x x
+  I C
+P E f
+  T
+f
+  ≤
+=
+  x
+• What is the optimal f(x) ?
+•   R<C ⇔ R achievable
+– proof as before
+• Information Capacity:
+J an 2008
+187
+Parallel Gaussian: Max Capacity
+Need to find f(x): 
+(   )
+∑
+=
+−
++ ≤
+  n
+i
+  i i
+N P
+1
+1
+1 log ½
+(b)
+Translation invariance
+x,z indep; Z
+i
+indep
+(a) indep bound;
+(b) capacity limit
+Equality when: (a) y
+i
+indep ⇒ x
+i
+indep; (b) x
+i
+~ N(0, P
+i
+)
+(   )
+∑
+=
+−
++
+n
+i
+  i i
+N P
+1
+1
+1 log ½
+) ; ( max
+: ) (
+  y x
+x x
+  I C
+P E f
+  T
+f
+  ≤
+=
+  x
+We need to find the P
+i
+that maximise 
+) | ( ) ( ) ; (   x y y y x   h h I   − =
+) | ( ) (   x z y   h h   − =
+) ( ) (   z y   h h   − =
+  ∑
+=
+− =
+  n
+i
+  i
+h h
+1
+) ( ) ( z y
+(   )
+∑
+=
+  − ≤
+  n
+i
+  i i
+  h h
+1
+) ( ) ( z y
+(a)
+J an 2008
+188
+Parallel Gaussian: Optimal Powers
+We need to find the P
+i
+that maximise
+– subject to power constraint
+  (   )
+∑
+=
+−
++
+n
+i
+  i i
+N P e
+1
+1
+1 ln ½ ) log(
+1
+½
+  −
+= + ⇒   λ
+i i
+  N P
+P P
+n
+i
+  i
+ =
+∑
+=1
+1
+1 1
+½
+  −
+= =
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+  + = ⇒ =
+  ∑ ∑
+  n
+i
+  i
+n
+i
+  i
+  N P n P P   λ Also
+Water Filling: put most power into 
+least noisy channels to make equal 
+power + noise in each channel
+N
+1
+P
+1
+N
+2
+P
+2
+N
+3
+P
+3
+½λ
+–1
+– use Lagrange multiplier
+(   )
+  ∑ ∑
+  = =
+−
+− + =
+  n
+i
+  i
+n
+i
+  i i
+  P N P J
+1 1
+1
+1 ln ½   λ
+(   ) 0 ½
+1
+= − + =
+∂
+∂
+  −
+λ
+i i
+i
+  N P
+P
+J
+J an 2008
+189
+Very Noisy Channels
+• Must have P
+j
+≥ 0 ∀i
+• If ½λ
+–1
+< N
+j
+then set P
+j
+=0 and 
+recalculate λ
+N
+1
+P
+1
+N
+2
+P
+2
+  N
+3
+½λ
+–1
+Kuhn Tucker Conditions:
+(not examinable)
+– Max f(x) subject to Ax+b=0 and
+concave with for    
+i i
+  g f M i g , : 1 0 ) (   ∈ ≥ x
+Ax x x x
+  T
+M
+i
+  i i
+g f J   λ − − =
+  ∑
+=1
+) ( ) ( ) (   μ
+0 ) ( , 0 , 0 ) ( , , 0 ) (
+0 0 0
+  = ≥ ≥ = + = ∇   x x 0 b Ax x
+  i i i i
+  g g J   μ μ
+– Solution x
+0
+, λ, μ
+i
+iff
+– set
+J an 2008
+190
+Correlated Noise
+• Suppose y= x + z where E zz
+T
+= K
+Z
+and E xx
+T
+= K
+X
+(   )   nP nP E
+  n
+i
+  i
+  ≤ ⇔ ≤
+∑
+=
+  X
+K tr
+1
+2
+x
+I QQ QDQ K   = =
+  T T
+Z
+   with  
+(   )   (   )   (   )
+X
+T
+X X
+T
+K QQ K Q K Q tr tr tr   = =
+(  ) D D I Q K Q tr
+1 −
++ = − =   n P L L
+X
+T
+   where  
+(   )
+  T
+X
+  L   Q D I Q K   − = ⇒
+– Choose 
+– Power constraint is unchanged
+• ⇒ W
+i
+are now independent
+– Now  Q
+T
+y = Q
+T
+x + Q
+T
+z = Q
+T
+x + w
+where E ww
+T
+= E Q
+T
+zz
+T
+Q = E Q
+T
+K
+Z
+Q = D is diagonal
+– Find noise eigenvectors:
+• We want to find K
+X
+to maximize capacity subject to 
+power constraint:
+J an 2008
+191
+Power Spectrum Water Filling
+• If z is from a stationary process 
+then diag(D)  power spectrum
+-0.5 0 0.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+Frequency
+NoiseSpectrum
+-0.5 0 0.5
+0
+0.5
+1
+1.5
+2
+F requenc y
+Trans mit S pec trum
+(   )
+  df
+f N
+  f N L
+C
+  W
+W
+∫
+−
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛   −
++ =
+) (
+0 ), ( max
+1 log ½
+(   ) df f N L P
+  W
+W
+∫
+−
+  − = 0 ), ( max
+∞ →
+→
+n
+– To achieve capacity use waterfilling on 
+noise power spectrum
+  L
+J an 2008
+192
+Gaussian Channel + Feedback
+Does Feedback add capacity ?
++
+x
+i
+y
+i
+z
+i
+Coder
+w
+(   )
+1 : 1
+,
+  −
+=
+  i i i
+  x y w x
+z
+y
+K
+K
+log ½ =
+x
+i
+=x
+i
+(w,y
+1:i–1
+), z = y– x
+z = y – x and translation invariance
+z
+i
+depends only on z
+1:i–1
+⇒ maximize I(w; y) by maximizing h(y) ⇒y gaussian
+⇒ we can take  z and x = y– z jointly gaussian 
+Chain rule
+Chain rule,
+  (   ) bits
+Z
+z   K e h   π 2 log ½ ) (   =
+– White noise – No
+– Coloured noise – Not much
+) | ( ) ( ) ; ( w w   y y y   h h I   − =
+  ∑
+=
+  −
+− =
+  n
+i
+  i i
+h h
+1
+1 : 1
+) , | ( ) ( y w y y
+∑
+=
+  − −
+− =
+  n
+i
+  i i i i
+h h
+1
+1 : 1 : 1 1 : 1
+) , , , | ( ) ( z x y w y y
+∑
+=
+  − −
+− =
+  n
+i
+  i i i i
+h h
+1
+1 : 1 : 1 1 : 1
+) , , , | ( ) ( z x y w z y
+∑
+=
+  −
+− =
+  n
+i
+  i i
+h h
+1
+1 : 1
+) | ( ) ( z z y
+) ( ) (   z y   h h   − =
+J an 2008
+193
+Gaussian Feedback Coder
+x and z jointly gaussian ⇒
+where v is indep of z and
+B is strictly lower triangular since x
+i
+indep of z
+j
+for j>i.
++
+x
+i
+y
+i
+z
+i
+Coder
+w
+  (   )
+1 : 1
+,
+  −
+=
+  i i i
+  x y w x
+) (w v z x   + = B
+Capacity:
+subject to
+| |
+) ( ) (
+log ½ max
+1
+,
+z
+v z
+v   K
+K I B K I B
+B K
++ + +
+=
+  −
+  T
+n
+(   )   nP
+T
+≤ + =
+  v z x
+  K B BK K tr
+hard to solve ®
+v z z x y   + + = + = ) (   I B
+T
+Eyy
+y
+ = K   (   )
+T T T
+E   vv zz   + + + = ) ( ) (   I B I B
+  v z
+  K I B K I B   + + + =
+  T
+) ( ) (
+T
+Exx
+x
+ = K   (   )
+T T T
+E   vv zz   + =   B B
+  v z
+  K B BK   + =
+  T
+| |
+| |
+½ max
+1
+,
+,
+z
+y
+v   K
+K
+B K
+−
+=   n C
+  FB n
+J an 2008
+194
+-1.5 -1 -0.5 0 0.5 1 1.5
+0
+1
+2
+3
+4
+5
+b
+P
+o
+w
+e
+r
+:
+ 
+V
+1
+ 
+V
+2
+ 
+b
+Z
+1
+Gaussian Feedback: Toy Example
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+=
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+= = =
+0
+0 0
+,
+2 1
+1 2
+, 2 , 2
+b
+P n   B K
+Z
+-1.5 -1 -0.5 0 0.5 1 1.5
+0
+5
+10
+15
+20
+25
+b
+d
+e
+t
+(
+K
+Y
+)
+det(K
+y
+)
+P
+bZ1
+P
+V1
+P
+V2
+v z x   + = B
+(   )   (   ) (   )
+v z Y
+  K I B K I B K   + + + =
+  T
+det ) det(
+Goal: Maximize (w.r.t. K
+v
+and b)
+Subject to:
+(   ) 4 tr   ≤ +
+  v z
+v
+K B BK
+K
+T
+  : constraint Power 
+definite positive be must   
+Solution (via numerically search):
+b=0: det(K
+y
+)=16   C=0.604 bits
+Feedback increases C by 16% 
+1 2 2 1 1 z v x v x   b
+P P P P P   + = =
+b=0.69: det(K
+y
+)=20.7   C=0.697 bits
+J an 2008
+195
+Max Benefit of Feedback: Lemmas
+Lemma 1: K
+x+z
++K
+x–z
+= 2(K
+x
++K
+z
+)
+(   )(   )   (   )(   )
+(   )
+(   )   (   )
+z x
+z x z x
+zz xx
+  zz zx xz xx zz zx xz xx
+  z x z x z x z x
+K K
+K K
++ = + =
+  + − − + + + + =
+  − − + + + = +
+  − +
+2 2 2
+  T T
+T T T T T T T T
+T T
+E
+E
+  E E
+Lemma 2: If F,G are +ve definite then det(F+G)≥det(F)
+Conditioning reduces h()
+Translation invariance
+f,g independent
+Hence: det(2(K
+x
++K
+z
+)) = det(K
+x+z
++K
+x–z
+) ≥ det(K
+x+z
+) = det(K
+y
+) 
+(   ) (   ) ) ( ) det( 2 log ½   g f + = +   h e
+  n
+G F π
+) | ( ) | (   g f g g f   h h   = + ≥
+(   ) (   ) ) det( 2 log ½ ) (   F
+n
+e h   π = =   f
+Consider two indep random vectors f~N(0,F), g~N(0,G)
+J an 2008
+196
+Maximum Benefit of Feedback
+Having feedback adds at most ½ bit per transmission
+(   )
+mission bits/trans  
+n
+nP
+  C n   + =
++
++ =
+  −
+≤
+½
+) det(
+det
+log ½ max ½
+1
+) tr(
+z
+z x
+x   K
+K K
+K
+det(kA)=k
+n
+det(A)
+Lemmas 1 & 2:
+det(2(Kx+Kz)) ≥ det(Ky)
+no constraint on B ⇒ ≤
++
+x
+i
+y
+i
+z
+i
+Coder
+w
+) det(
+) det(
+log ½ max
+1
+) tr(
+,
+z
+y
+x   K
+K
+K
+−
+≤
+≤   n C
+nP
+FB n
+(   ) (   )
+) det(
+2 det
+log ½ max
+1
+) tr(
+z
+z x
+x   K
+K K
+K
++
+≤
+  −
+≤
+  n
+nP
+(   )
+) det(
+det 2
+log ½ max
+1
+) tr(
+z
+z x
+x   K
+K K
+K
++
+=
+  −
+≤
+n
+nP
+  n
+Ky =Kx+Kz if no feedback
+J an 2008
+197
+Lecture 16
+• Lossy Coding
+• Rate Distortion
+– Bernoulli Scurce
+– Gaussian Source
+• Channel/Source Coding Duality
+J an 2008
+198
+Lossy Coding
+Distortion function:
+– examples: (i)  (ii)
+x
+1:n
+Encoder
+f( )
+  f(x
+1:n
+)∈1:2
+nR
+Decoder
+g( )
+x
+1:n
+^
+0 ) ˆ , (   ≥ x x d
+2
+) ˆ ( ) ˆ , (   x x x x d
+S
+  − =
+⎩
+⎨
+⎧
+≠
+=
+=
+x x
+  x x
+x x d
+H
+ˆ 1
+ˆ 0
+) ˆ , (
+∑
+=
+−
+Δ
+=
+  n
+i
+  i i
+  x x d n d
+1
+1
+) ˆ , ( ) ˆ , (   x x
+(   )   (   ) )) ( ( ,
+ˆ
+,   x x x x
+x
+  f g d E d E D
+  n
+  = =
+  ∈X
+D f g d E
+  n n
+n
+  n
+  ≤
+∈
+∞ →
+))) ( ( , ( lim   x x
+x X
+Rate distortion pair (R,D) is achievable for source X if
+∃ a sequence f
+n
+() and g
+n
+() such that
+Distortion of Code f
+n
+(),g
+n
+():
+– sequences:
+J an 2008
+199
+Rate Distortion Function
+Rate Distortion function for {x
+i
+} where p(x) is known is
+D d E
+p
+  p I D R
+≤
+=
+)
+ˆ
+, (
+) (
+)
+ˆ
+, ( )
+ˆ
+; ( min ) (
+ˆ
+,
+x x
+x
+x x x x
+x x
+(b)
+correct is (a)
+: that such all over 
+achievable is that  such (R,D) R D R inf ) (   =
+We will prove this next lecture
+If D=0 then we have R(D)=I(x ; x)=H(x)
+– this expression is the Information Rate Distortion function for X
+Theorem:
+J an 2008
+200
+R(D) bound for Bernoulli Source
+Bernoulli: X = [0,1], p
+X
+=[1–p , p] assume p ≤ ½
+– Hamming Distance:
+  x x x x d ˆ ) ˆ , (   ⊕ =
+then   D x x d E   ≤ ) ˆ , (
+monotonic as
+for  so and  
+) ( ) ( )
+ˆ
+(
+½ )
+ˆ
+(
+p H D H H
+  D D p
+≤ ⊕
+  ≤ ≤ ⊕
+x x
+x x
+Conditioning reduces entropy
+⊕ is one-to-one
+Hence R(D) ≥ H(p) – H(D)
+0 0.1 0.2 0.3 0.4 0.5
+0
+0.2
+0.4
+0.6
+0.8
+1
+D
+R
+(
+D
+)
+,
+ 
+p
+=
+0
+.
+2
+,
+0
+.
+5
+p=0.2
+p=0.5
+– For D < p ≤ ½, if  
+– If D≥p, R(D)=0 since we can set g( )≡0
+)
+ˆ
+| ( ) ( )
+ˆ
+; ( x x x x x   H H I   − =
+)
+ˆ
+|
+ˆ
+( ) ( x x x ⊕ − =   H p H
+)
+ˆ
+( ) ( x x ⊕ − ≥   H p H
+) ( ) (   D H p H   − ≥
+J an 2008
+201
+R(D) for Bernoulli source
+We know optimum satisfies R(D) ≥ H(p) – H(D)
+– We show we can find a            that attains this. ) ,
+ˆ
+( x x p
+x
+ˆ
+D
+0
+1
+0
+1
+x
+D
+1–D
+1–D
+x
+^
+1–p
+p
+1–r
+r
+Now choose r to give x the correct 
+probabilities:
+Hence R(D) = H(p) – H(D)
+– Peculiarly, we consider a channel with     as the 
+input and error probability D
+D p
+  D H p H H H I
+= ≠
+  − = − =
+)
+ˆ
+(
+) ( ) ( )
+ˆ
+| ( ) ( )
+ˆ
+; (
+x x
+x x x x x
+  and
+  Now
+1
+) 2 1 )( (
+) 1 ( ) 1 (
+−
+− − = ⇒
+  = − + −
+D D p r
+  p D r D r
+J an 2008
+202
+R(D) bound for Gaussian Source
+• Assume
+2 2
+) ˆ ( ) ˆ , ( ) , 0 ( ~   x x x x d N X   − = and σ
+Translation Invariance
+Conditioning reduces entropy
+Gauss maximizes entropy
+for given covariance
+(   )   D E   ≤ − ≤ −
+2
+)
+ˆ
+(
+ˆ
+Var x x x x require
+D E I   ≤ −
+2
+)
+ˆ
+( )
+ˆ
+; ( x x x x   to subject  minimize to Want 
+I(x ;y) always positive
+•
+)
+ˆ
+| ( ) ( )
+ˆ
+; ( x x x x x   h h I   − =
+)
+ˆ
+|
+ˆ
+( 2 log ½
+2
+x x x − − =   h eσ π
+)
+ˆ
+( 2 log ½
+2
+x x − − ≥   h eσ π
+(   ) (   ) x x
+ˆ
+Var 2 log ½ 2 log ½
+2
+− − ≥   e e   π σ π
+eD e   π σ π 2 log ½ 2 log ½
+2
+− ≥
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+≥ 0 , log ½ max )
+ˆ
+; (
+2
+D
+I
+  σ
+x x
+J an 2008
+203
+R(D) for Gaussian Source
+To show that we can find a                that achieves the bound, we 
+construct a test channel that introduces distortion D<σ
+2
++
+z ~ N(0,D)
+x ~ N(0,σ
+2
+) x ~ N(0,σ
+2
+–D)
+^
+0 0.5 1 1.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+D/σ
+2
+R
+(
+D
+)
+achievable
+impossible
+) , ˆ (   x x p
+)
+ˆ
+| ( ) ( )
+ˆ
+; ( x x x x x   h h I   − =
+)
+ˆ
+|
+ˆ
+( 2 log ½
+2
+x x x − − =   h eσ π
+)
+ˆ
+| ( 2 log ½
+2
+x z h e   − =   σ π
+D
+2
+log ½
+  σ
+=
+2
+2
+) (
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+= ⇒
+  R
+R D
+  σ
+J an 2008
+204
+Lloyd Algorithm
+Problem: Find optimum quantization levels for Gaussian pdf
+10
+0
+10
+1
+10
+2
+-3
+-2
+-1
+0
+1
+2
+3
+Iteration
+Q
+u
+a
+n
+t
+i
+z
+a
+t
+i
+o
+n
+ 
+l
+e
+v
+e
+l
+s
+10
+0
+10
+1
+10
+2
+0
+0.05
+0.1
+0.15
+0.2
+Iteration
+M
+S
+E
+Solid lines are bin boundaries. Initial levels uniform in [–1,+1] .
+Lloyd algorithm: Pick random quantization levels then apply 
+conditions (a) and (b) in turn until convergence.
+b. Each quantization level equals the mean value of its own bin
+a. Bin boundaries are midway between quantization levels
+Best mean sq error for 8 levels = 0.0345σ
+2
+. Predicted D(R) = (σ/8)
+2
+= 0.0156σ
+2
+J an 2008
+205
+Vector Quantization
+To get D(R), you have to quantize many values together
+– True even if the values are independent
+0 0.5 1 1.5 2 2.5
+0
+0.5
+1
+1.5
+2
+2.5
+D =0.035
+Two gaussian variables: one quadrant only shown
+– Independent quantization puts dense levels in low prob areas
+– Vector quantization is better (even more so if correlated)
+0 0.5 1 1.5 2 2.5
+0
+0.5
+1
+1.5
+2
+2.5
+D =0.028
+J an 2008
+206
+Multiple Gaussian Variables
+• Assume x
+1:n
+are independent gaussian sources with 
+different variances. How should we apportion the 
+available total distortion between the sources?
+(   ) (   )   D n d N
+  T
+i i
+  ≤ − − =
+  −
+x x x x x x
+ˆ ˆ
+)
+ˆ
+, ( ) , 0 ( ~
+1 2
+  and σ x
+Mut Info Independence Bound
+for independent x
+i
+R(D) for individual 
+Gaussian
+We must find the D
+i
+that minimize
+ ∑
+=
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+n
+i
+  i
+i
+D
+1
+2
+0 , log ½ max
+  σ
+• Assume
+∑
+=
+≥
+  n
+i
+  i i n n
+  I I
+1
+: 1 : 1
+)
+ˆ
+; ( )
+ˆ
+; ( x x x x
+∑ ∑
+  = =
+  ⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+= ≥
+  n
+i
+  i
+i
+n
+i
+  i
+D
+D R
+1
+2
+1
+0 , log ½ max ) (
+  σ
+J an 2008
+207
+Reverse Waterfilling
+Use a lagrange multiplier:
+nD D
+D
+n
+i
+  i
+n
+i
+  i
+i
+≤
+⎟
+⎟
+⎠
+⎞
+⎜
+⎜
+⎝
+⎛
+∑ ∑
+  = = 1 1
+2
+0 , log ½ max   to subject  Minimize
+  σ
+½logσ
+i
+2
+½logD
+  R
+3
+R
+2
+R
+1
+X
+1
+  X
+2
+  X
+3
+½logσ
+i
+2
+½logD
+0
+  R
+3
+R
+2
+=0
+R
+1
+X
+3
+½logD
+X
+2
+X
+1
+• If σ
+i
+2
+<D then set R
+i
+=0 and increase D
+0
+to 
+maintain the average distortion equal to D
+Choose R
+i
+for equal distortion
+∑ ∑
+  = =
+  + =
+  n
+i
+  i
+n
+i   i
+i
+D
+D
+J 
+1 1
+2
+log ½   λ
+σ
+ 
+0 ½
+1
+= + − =
+∂
+∂
+  −
+λ
+i
+i
+  D
+D
+J
+0
+1
+½   D D
+i
+  = = ⇒
+  −
+λ
+nD nD D
+n
+i
+  i
+  = =
+∑
+=
+0
+1
+  D D = ⇒
+0
+• If x
+i
+are correlated then reverse waterfill
+the eigenvectors of the correlation matrix
+D
+R
+  i
+i
+2
+log ½
+  σ
+=
+J an 2008
+208
+Channel/Source Coding Duality
+Noisy channel
+• Channel Coding
+– Find codes separated enough to 
+give non-overlapping output 
+images.
+– Image size = channel noise
+– The maximum number (highest 
+rate) is when the images just fill 
+the sphere.
+Lossy encode
+Sphere Packing
+Sphere Covering
+• Source Coding
+– Find regions that cover the sphere
+– Region size = allowed distortion
+– The minimum number (lowest rate) 
+is when they just don’t overlap
+J an 2008
+209
+Channel Decoder as Source Coder
+• For                                        , we can find a channel 
+encoder/decoder so that
++
+z
+1:n
+ ~ N(0,D)
+x
+1:n
+ ~ N(0,σ
+2
+)
+Encoder Decoder
+w∈2
+nR
+w∈2
+nR
+^
+y
+1:n
+ ~ N(0,σ
+2
+–D)
+(   ) (   )
+1 2
+1 log ½
+  −
+− + = ≅   D D C R   σ
+D E p
+  i i
+  = − < ≠
+2
+) ( )
+ˆ
+( y x w w   and ε
+(   )   D E E p p
+  i i i i
+  = − ≅ − < ≠ < ≠
+2 2
+) ( )
+ˆ
+( )
+ˆ
+(
+ˆ
+y x x x y x w w   and also ,   ε ε
+We have encoded x at rate R=½log(σ
+2
+D
+–1
+) with distortion D
++
+Z
+1:n
+ ~ N(0,D)
+X
+1:n
+ ~ N(0,σ
+2
+)
+Encoder Decoder
+W
+  Y
+1:n
+Encoder
+  X
+1:n
+^
+W∈2
+nR
+^
+• Reverse the roles of encoder and decoder. Since 
+J an 2008
+210
+High Dimensional Space
+In n dimensions
+– “Vol” of unit hypercube: 1
+– “Vol” of unit-diameter hypersphere:
+– “Area” of unit-diameter hypersphere:
+– >63% of V
+n
+is in shell 
+(   )
+⎩
+⎨
+⎧   −
+=
+  −
+−
+even  
+odd  
+n n
+  n n n
+V
+  n n
+n
+n
+)! /(½ 2
+! / ! ½ ½
+½
+½ ½
+π
+π
+(   )
+  n
+r
+n n
+n
+  nV V r
+dr
+d
+A 2 2
+½
+ = =
+=
+3.7e–68 1.9e–70 100
+5e–2 2.5e–3 10
+2.47 0.31 4
+3.14 0.52 3
+3.14 0.79 2
+2 1 1
+  A
+n
+V
+n
+n
+R r R n   ≤ ≤ −
+  −
+) 1 (
+1
+(   ) 3679 . 0
+1
+= →
+  −
+<
+∞ →
+  e
+n
+n
+1 -
+n - 1    : Proof
+Most of n-dimensional 
+space is in the corners
+J an 2008
+211
+Lecture 17
+• Rate Distortion Theorem
+J an 2008
+212
+Review
+Rate Distortion function for x whose p
+x
+(x) is known is
+x
+1:n
+Encoder
+f
+n
+( )
+  f(x
+1:n
+)∈1:2
+nR
+Decoder
+g
+n
+( )
+x
+1:n
+^
+D d E g f R D R
+  n
+n
+n n
+  ≤ ∃ =
+  ∈
+∞ →
+)
+ˆ
+, ( lim , inf ) (   x x
+x X
+  with that   such  
+D d E x x p I D R   ≤ = )
+ˆ
+, ( ) | ˆ ( )
+ˆ
+; ( min ) (
+ˆ
+,
+x x x x
+x x
+that  such all over 
+0 0.5 1 1.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+D/σ
+2
+R
+(
+D
+)
+achievable
+impossible
+R(D) curve depends on your choice of d(,)
+We will prove this theorem for discrete X
+and bounded d(x,y)≤d
+max
+Rate Distortion Theorem:
+J an 2008
+213
+Rate Distortion Bound
+We want to prove that
+∑
+−
+≥
+i
+  i i
+I n R )
+ˆ
+; (
+1
+0
+x x
+(   ) )
+ˆ
+; ( )
+ˆ
+; (
+  i i i i
+  d E R I x x x x   ≥
+(   )   (   ) ) ( )
+ˆ
+; ( )
+ˆ
+; (
+1
+D R d E R d E R n
+i
+  i i
+  = ≥
+∑
+−
+x x x x
+We prove convexity first and then the rest
+Def
+n
+of R(D)
+Suppose we have found an encoder and decoder at rate R
+0
+with expected distortion D for independent x
+i
+(worst case)
+(   ) )
+ˆ
+; ( ) (
+0
+  x x d E R D R R   = ≥
+– and use convexity to show  
+– We know that
+– We show first that
+J an 2008
+214
+Convexity of R(D)
+λ
+λ
+λ λ
+λ λ
+λ
+  D D D x x d E
+x x p x x p x x p
+  D R
+  R D R D
+  x x p x x p
+p
+  = − + =
+− + =
+2 1
+2 1
+2 2 1 1
+2 1
+) 1 ( ) ˆ , (
+) | ˆ ( ) 1 ( ) | ˆ ( ) | ˆ (
+) (
+) , ( ) , (
+) | ˆ ( ) | ˆ (
+Then
+define we curve   the on
+  and with associated
+are     and   If
+0 0.5 1 1.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+D/σ
+2
+R
+(
+D
+)
+R
+λ
+D
+λ
+(D
+1
+,R
+1
+)
+(D
+2
+,R
+2
+)
+) | ˆ ( )
+ˆ
+; (   x x p I   w.r.t. convex  x x
+p
+1
+and p
+2
+lie on the R(D) curve
+  )
+ˆ
+; ( min ) (
+) |
+ˆ
+(
+x x
+x x
+  I D R
+p
+=
+)
+ˆ
+; ( ) ( x x
+λ
+λ   p
+I D R   ≤
+)
+ˆ
+; ( ) 1 ( )
+ˆ
+; (
+2 1
+x x x x
+  p p
+  I I   λ λ   − + ≤
+) ( ) 1 ( ) (
+2 1
+  D R D R   λ λ   − + =
+J an 2008
+215
+Proof that R ≥ R(D)
+Definition of I(;) 
+bound; Uniform
+x
+i
+indep: Mut Inf
+Independence Bound
+definition of R
+convexity
+original assumption that E(d) ≤ D
+and R(D) monotonically decreasing
+)
+ˆ
+(
+: 1 0   n
+H nR x ≥
+) |
+ˆ
+( )
+ˆ
+(
+: 1 : 1 : 1   n n n
+  H H x x x   − =
+) ;
+ˆ
+(
+: 1 : 1   n n
+I x x =
+∑
+=
+≥
+  n
+i
+  i i
+I
+1
+)
+ˆ
+; ( x x
+(   )   (   )
+∑ ∑
+  =
+−
+=
+  = ≥
+  n
+i
+  i i
+n
+i
+  i i
+  d E R n n d E R
+1
+1
+1
+)
+ˆ
+; ( )
+ˆ
+; ( x x x x
+⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+≥
+  ∑
+=
+−
+  n
+i
+  i i
+d E n nR
+1
+1
+)
+ˆ
+; ( x x   (   ) )
+ˆ
+; (
+: 1 : 1   n n
+d E nR x x =
+) (D nR ≥
+0 ) |
+ˆ
+(   = x x H
+defn of vector d( )
+J an 2008
+216
+Rate Distortion Achievability
+We want to show that for any D, we can find an encoder 
+and decoder that compresses x
+1:n
+to nR(D) bits.
+•   p
+X
+is given
+• Assume we know the             that gives
+x
+1:n
+Encoder
+f
+n
+( )
+  f(x
+1:n
+)∈1:2
+nR
+Decoder
+g
+n
+( )
+x
+1:n
+^
+) | ˆ (   x x p ) ( )
+ˆ
+; (   D R I   = x x
+x
+x
+ˆ
+~
+ˆ
+  p
+i
+First define the typical set we will use, then prove two preliminary results.
+• Encoder: Use joint typicality to design
+– We show that there is almost always a suitable codeword
+• Random Decoder: Choose 2
+nR
+random
+– There must be at least one code that is as good as the average
+J an 2008
+217
+Distortion Typical Set
+Distortion Typical:
+{
+} ε
+ε
+ε
+ε
+ε
+< −
+  < − −
+  < − −
+  < − − × ∈ =
+−
+−
+−
+)
+ˆ
+, ( ) ˆ , (
+)
+ˆ
+, ( ) ˆ , ( log
+, )
+ˆ
+( ) ˆ ( log
+, ) ( ) ( log :
+ˆ
+ˆ ,
+1
+1
+1 ) (
+,
+x x
+x x
+x
+x
+d E d
+H p n
+H p n
+H p n J
+  n n n
+d
+x x
+x x
+x
+x x x   X X
+(   )   ε
+ε
+  n nH p J
+  n
+d
+  ± − = ⇒ ∈ )
+ˆ
+, ( ˆ , log ˆ ,
+) (
+,
+x x x x x x
+(   )
+  ε ε
+  ε   N n J p
+  n
+d
+  > − > ∈ for 1 ˆ ,
+) (
+,
+x x
+(   )   ) x ~p(x,
+i i
+ˆ
+ˆ
+ˆ
+,   i.i.d. drawn X X× ∈ x x
+new condition
+i.i.d. are numbers; large of law weak )
+ˆ
+, (
+  i i
+d x x
+2. Total Prob: 
+1. Indiv p.d.:
+Properties:
+J an 2008
+218
+Conditional Probability Bound
+Lemma:
+  ( )   (   )
+  (   ) ε
+ε
+3 )
+ˆ
+; ( ) (
+,
+2 | ˆ ˆ ˆ ,
+  + −
+≥ ⇒ ∈
+x x I n n
+d
+  p p J   x x x x x
+bounds from def
+n
+of J
+def
+n
+of I
+take max of top and min of bottom
+(   )
+  (   )
+( ) x
+x x
+x x
+p
+p
+p
+, ˆ
+| ˆ   =
+( )
+  (   )
+( ) ( ) x x
+x x
+x
+p p
+p
+p
+ˆ
+, ˆ
+ˆ =
+( )
+  (   )
+(   )   (   ) ε ε
+ε
++ − + −
+− −
+≤
+)
+ˆ
+( ) (
+)
+ˆ
+, (
+2 2
+2
+ˆ
+x x
+x x
+H n H n
+H n
+p x
+( )
+  (   ) ε 3 )
+ˆ
+; (
+2 ˆ
+  +
+=
+x x I n
+p x
+Proof:
+J an 2008
+219
+Curious but necessary Inequality
+Lemma:
+  vm m
+e u uv m v u
+  −
++ − ≤ − ⇒ > ∈ 1 ) 1 ( 0 ], 1 , 0 [ ,
+vm m vm
+e e
+  − −
++ − ≤ − ⇒ ≥ 0 1 ) 0 1 ( 0
+convexity for u,v ∈ [0,1]
+for u,v ∈ [0,1]
+0<u<1:
+u=1:
+Proof: u=0:
+v v
+e v f v e v f
+  − −
+− = ′ ⇒ + − = 1 ) ( 1 ) (   Define
+] 1 , 0 [ 0 ) ( 0 0 ) ( 0 ) 0 (   ∈ ≥ ⇒ > > ′ =   v v f v v f f for  for  and
+(   )
+  vm
+m
+v
+e v e v v
+  − −
+≤ − ⇒ ≤ − ≤ ∈ 1 1 0 ], 1 , 0 [ for  Hence
+m
+v
+  uv u g ) 1 ( ) (   − =   Define
+convex ) ( 0 ) 1 ( ) 1 ( ) (
+2 2
+u g uv v m m x g
+  v
+n
+v
+  ⇒ ≥ − − = ′ ′ ⇒
+  −
+) 1 ( ) 0 ( ) 1 ( ) ( ) 1 (
+  v v v
+m
+ug g u u g uv   + − ≤ = −
+vm vm m
+e u ue u v u u
+  − −
++ − ≤ + − ≤ − + − = 1 1 ) 1 ( 1 ) 1 (
+J an 2008
+220
+Achievability of R(D): preliminaries
+•
+x
+1:n
+Encoder
+f
+n
+( )
+  f(x
+1:n
+)∈1:2
+nR
+Decoder
+g
+n
+( )
+x
+1:n
+^
+} ) | ˆ ( ) ( ) ˆ ( { 0
+) ˆ , ( ); ( )
+ˆ
+; ( ) | ˆ (
+ˆ   ∑
+= = >
+  ≤ =
+x
+  x x p x p x p
+  D x x d E D R I x x p D
+x
+x x
+p define and Choose
+that  such a find and Choose
+δ
+n
+w n
+nR
+w g w
+x
+ˆ
+~ ˆ ) ( 2 : 1   p x   i.i.d. drawn choose each For  = ∈
+w J , w f
+  n
+d w n
+  such no if else that  such 1 ) ˆ ( min ) (
+) (
+,ε
+∈ =   x x x
+) ˆ , (
+,
+  x x
+x
+  d E D
+  g
+=
+δ + = D D – for large n we show                  so there must be one good 
+code
+– over all input vectors x and all random decode functions, g
+• Expected Distortion:
+• Encoder:
+• Decoder:
+J an 2008
+221
+Expected Distortion
+We can divide the input vectors x into two categories:
+D d E
+  D d J , w
+  w
+n
+d w
+≤
+  + < ∈ ∃
+) ˆ , (
+) ˆ , ( ) ˆ (
+) (
+,
+x x
+x x x x
+  since
+  then that  such if   ε
+ε
+We need to show that the expected value of P
+e
+is small 
+b) if no such w exists we must have 
+since we are assuming that d(,) is bounded. Supose
+the probability of this situation is P
+e
+.
+a)
+) ˆ , (
+,
+  x x
+x
+  d E D
+  g
+=   Hence
+max
+) )( 1 (   d P D P
+  e e
+  + + − ≤   ε
+max
+d P D
+  e
++ + ≤   ε
+max
+) ˆ , (   d d
+  w
+ < x x
+J an 2008
+222
+Error Probability
+Define the set of valid inputs for code g
+0 ) ˆ , ( 1 ) ˆ , (
+) (
+,
+  else if Define
+  n
+d
+J K
+  ε
+∈ =   x x x x
+∑   ∑ ∑   ∑
+  ∉ ∉
+  = =
+x   x x
+x x
+) ( : ) (
+) ( ) ( ) ( ) (
+g V g g   g V
+e
+  g p p p g p P
+  {   }
+) (
+,
+)) ( , ( : ) (
+  n
+d
+J w g w g V
+  ε
+∈ ∃ =   x x   with
+∑
+−
+x
+x x x x x
+ˆ
+) ˆ , ( ) ˆ ( 1 ˆ   K p is match not  does random a that  Prob
+nR
+K p
+2
+ˆ
+) ˆ , ( ) ˆ ( 1   ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+ −
+∑
+x
+x x x is match not  does code entire an that  Prob
+∑   ∑
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+ − =
+x   x
+x x x x
+nR
+K p p P
+e
+2
+ˆ
+) ˆ , ( ) ˆ ( 1 ) (   Hence
+We have
+J an 2008
+223
+Achievability for average code
+Since
+  ( )   (   )
+  (   ) ε
+ε
+3 )
+ˆ
+; ( ) (
+,
+2 | ˆ ˆ ˆ ,
+  + −
+≥ ⇒ ∈
+x x I n n
+d
+  p p J   x x x x x
+vm m
+e u uv
+  −
++ − ≤ − 1 ) 1 ( Using
+(   )
+∑   ∑
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+ − ≤
+  + −
+x   x
+x x x x x
+nR
+I n
+K p p
+2
+ˆ
+3 )
+ˆ
+; (
+2 ) ˆ , ( ) | ˆ ( 1 ) (
+  ε x x
+∑   ∑
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+ − =
+x   x
+x x x x
+nR
+K p p P
+e
+2
+ˆ
+) ˆ , ( ) ˆ ( 1 ) (
+(   )
+(   )
+∑   ∑
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+  − + − ≤
+  + −
+x   x
+x x x x x
+ˆ
+3 )
+ˆ
+; (
+2 2 exp ) ˆ , ( ) | ˆ ( 1 ) (
+  nR I n
+K p p
+  ε x x
+nR n nI
+m v K p u 2 ; 2 ; ) ˆ , ( ) | ˆ (
+3 )
+ˆ
+; (
+ˆ
+  = = =
+  − −
+∑
+  ε x x
+x
+x x x x with
+required as   : Note 1 , 0   ≤ ≤   v u
+J an 2008
+224
+Achievability for average code
+δ δ   + ≤ = > ∀   D d E D
+  g
+  made be can Hence ) ˆ , ( , 0
+,
+  x x
+x
+(   )
+(   )
+∑   ∑
+  ⎟
+⎠
+⎞
+⎜
+⎝
+⎛
+  − + − ≤
+  + −
+x   x
+x x x x x
+ˆ
+3 )
+ˆ
+; (
+2 2 exp ) ˆ , ( ) | ˆ ( 1 ) (
+  nR X X I n
+e
+  K p p P
+  ε
+(   )
+(   ) (   )
+ ∑
+− − + =
+  + −
+x x
+x x x x x
+ˆ ,
+3 )
+ˆ
+; (
+) ˆ , ( ) | ˆ ( ) ( 2 2 exp 1   K p p
+nR X X I n   ε
+(   )
+(   )
+ε 3 )
+ˆ
+; (
+ˆ ,
+2 exp ) ˆ , ( ) ˆ , ( 1
+  − −
+− + − =
+  ∑
+  X X I R n
+K p
+x x
+x x x x
+take out terms not involving x
+{   }
+  (   )
+(   )
+ε
+ε
+3 )
+ˆ
+; ( ) (
+,
+2 exp ) ˆ , (
+  − −
+− + ∉ =
+  X X I R n n
+d
+J P   x x
+ε 3 )
+ˆ
+, ( 0   + > ∞ → → x x I nR n   provided as terms both
+0 ⎯ ⎯ → ⎯
+  ∞ → n
+J an 2008
+225
+Achievability
+Hence (R,D) is achievable for any R>R(D)
+δ
+δ δ
++ ≤
+ + ≤ = > ∀
+D d E g
+  D d E D
+  g
+  with one least  at  be must  there
+  made be can Since
+) ˆ , (
+) ˆ , ( , 0
+,
+x x
+x x
+x
+x
+D E
+  n
+X
+n
+  ≤
+∞ →
+) ˆ , ( lim
+: 1
+  x x   is that 
+x
+1:n
+Encoder
+f
+n
+( )
+  f(x
+1:n
+)∈1:2
+nR
+Decoder
+g
+n
+( )
+x
+1:n
+^
+In fact a stronger result is true:
+1 ) ) ˆ , ( ( , ), ( , 0
+∞ →
+→ + ≤ ∃ > > ∀
+  n
+n n
+  D d p g f D R R D   δ δ   x x with and
+J an 2008
+226
+Lecture 18
+• Revision Lecture
+J an 2008
+227
+Summary (1)
+• Entropy:
+– Bounds:
+– Conditioning reduces entropy:
+– Chain Rule:
+• Relative Entropy:
+)) ( ( log ) ( log ) ( ) (
+2 2
+  x p E x p x p H
+  X
+x
+  − = − × =
+∑
+∈X
+x
+X log ) ( 0   ≤ ≤ x H
+) ( ) | ( y x y   H H   ≤
+∑
+  ∑ ∑
+=
+= =
+  −
+≤
+≤ =
+n
+i
+  i i n n
+n
+i
+  i
+n
+i
+  i i n
+H H
+H H H
+1
+: 1 : 1
+1 1
+1 : 1 : 1
+) | ( ) | (
+) ( ) | ( ) (
+y x y x
+x x x x
+(   )   (   ) 0 ) ( / ) ( log ||   ≥ = x x   q p E D
+  p
+q p
+J an 2008
+228
+Summary (2)
+• Mutual Information: 
+– Positive and Symmetrical:
+– x, y indep ⇔
+– Chain Rule:
+0 ) ; ( ) ( ) ( ) , (   = ⇔ + = y x x y y x   I H H H
+(   )
+y x y x
+y x y x
+x y y x y
+p p p || ) , ( ) ( ) (
+) | ( ) ( ) ; (
+,
+D H H H
+  H H I
+= − + =
+  − =
+0 ) ; ( ) ; (   ≥ = x y y x   I I
+∑
+=
+  −
+=
+  n
+i
+  i i n
+  I I
+1
+1 : 1 : 1
+) | ; ( ) ; ( x y x y x
+∑
+∑
+=
+−
+=
+≤ ⇒ =
+≥ ⇒
+n
+i
+  i i n n i i i n i
+n
+i
+  i i n n i
+I I p p
+I I
+1
+: 1 : 1 1 : 1 : 1
+1
+: 1 : 1
+) ; ( ) ; ( ) | ( ) ; | (
+) ; ( ) ; ( t independen
+y x y x x y y x y
+y x y x x
+H(x |y)   H(y |x)
+H(x ,y)
+H(x)
+  H(y)
+I(x ;y)
+J an 2008
+229
+Summary (3)
+• Convexity:   f’’ (x) ≥ 0 ⇒  f(x) convex ⇒ Ef(x) ≥ f(Ex)
+–   H(p) concave in p
+–   I(x ; y) concave in p
+x
+for fixed p
+y|x
+–   I(x ; y) convex in p
+y|x
+for fixed p
+x
+• Markov:
+⇒  I(x ; y) ≥ I(x ; z) and  I(x ; y) ≥ I(x; y| z)
+• Fano:
+• Entropy Rate:
+– Stationary process 
+– Markov Process:
+– Hidden Markov:  
+0 ) | ; ( ) | ( ) , | (   = ⇔ = ⇔ → → y z x z y x   I y z p y x z p
+(   )
+  (   ) 1 | | log
+1 ) | (
+ˆ ˆ
+−
+−
+≥ ≠ ⇒ → →
+X
+y x
+x x x y x
+  H
+p
+) ( lim ) (
+: 1
+1
+n
+n
+  H n H x
+−
+∞ →
+= X
+) | ( ) (
+1 : 1 −
+≤
+  n n
+H H x x X
+) | ( lim ) (
+1 −
+∞ →
+=
+  n n
+n
+  H H x x X
+) | ( ) ( ) , | (
+1 : 1 1 1 : 1   − −
+  ≤ ≤
+  n n n n
+  H H H y y x y y   Y   ∞ → =   n as
+∞ → =   n as
+= if stationary
+J an 2008
+230
+Summary (4)
+• Kraft: Uniquely Decodable ⇒   ⇒ ∃ prefix code
+• Average Length: Uniquely Decodable ⇒  L
+C 
+= E l(x) ≥ H
+D
+(x)
+• Shannon-Fano: Top-down 50% splits. L
+SF 
+≤ H
+D
+(x)+1
+• Shannon:
+• Huffman: Bottom-up design. Optimal.
+– Designing with wrong probabilities, q ⇒ penalty of D(p||q)
+– Long blocks disperse the 1-bit overhead
+• Arithmetic Coding:
+– Long blocks reduce 2-bit overhead
+– Efficient algorithm without calculating all possible probabilities
+– Can have adaptive probabilities
+1
+| |
+1
+  ≤
+∑
+=
+−
+X
+i
+l
+i
+D
+⎡   ⎤
+1 ) ( ) ( log   + ≤ − = x
+D S D x
+  H L x p l
+1 ) (   + ≤ x
+D H
+  H L
+∑
+<
+=
+N N
+i
+  x x
+N
+i
+N
+x p x C ) ( ) (
+J an 2008
+231
+Summary (5)
+• Typical Set
+– Individual Prob
+– Total Prob
+– Size
+– No other high probability set can be much smaller
+• Asymptotic Equipartition Principle
+– Almost all event sequences are equally surprising
+ε
+ε
+  n nH p T
+  n
+± − = ⇒ ∈ ) ( ) ( log
+) (
+x x x
+ε ε
+  ε   N n T p
+  n
+> − > ∈ for     1 ) (
+) (
+x
+  2 2 ) 1 (
+) ) ( ( ) ( ) ) ( (   ε
+ε
+ε
+  ε
+ε
+  +
+>
+−
+≤ < −
+x x   H n n
+N n
+H n
+T
+J an 2008
+232
+Summary (6)
+• DMC Channel Capacity:
+• Coding Theorem
+– Can achieve capacity: random codewords, joint typical decoding
+– Cannot beat capacity: Fano
+• Feedback doesn’t increase capacity but simplifies coder
+• J oint Source-Channel Coding doesn’t increase capacity
+) ; ( max y x
+x
+I C
+p
+=
+J an 2008
+233
+Summary (7)
+• Differential Entropy:
+– Not necessarily positive
+–   h(x+a) = h(x),       h(ax) = h(x) + log|a|,       h(x|y) ≤ h(x) 
+–   I(x; y) = h(x) + h(y) – h(x, y) ≥ 0,    D(f||g)=E log(f/g) ≥ 0
+• Bounds:
+– Finite range: Uniform distribution has max: h(x) = log(b–a)
+– Fixed Covariance: Gaussian has max: h(x) = ½log((2πe)
+n
+|K|)
+• Gaussian Channel
+– Discrete Time: C=½log(1+PN
+–1
+)
+– Bandlimited: C=Wlog(1+PN
+0
+–1
+W
+–1
+)
+• For constant C: 
+– Feedback: Adds at most ½ bit for coloured noise
+) ( log ) ( x x
+x
+f E h   − =
+(   )
+  (   )
+(   ) dB 6 . 1 2 ln 1 2 /
+1
+/ 1
+0
+1 1
+0
+  − = → − = =
+  ∞ →
+− − −
+  −
+W
+C W
+b
+  C W N PC N E
+J an 2008
+234
+Summary (8)
+• Parallel Gaussian Channels: Total power constraint
+– White noise: Waterfilling:
+– Correlated noise: Waterfill on noise eigenvectors
+• Rate Distortion:
+– Bernoulli Source with Hamming d: R(D) = max(H(p
+x
+)–H(D),0)
+– Gaussian Source with mean square d: R(D) = max(½log(σ
+2
+D
+–1
+),0)
+– Can encode at rate R: random decoder, joint typical encoder
+– Can’t encode below rate R: independence bound
+• Lloyd Algorithm: iterative optimal vector quantization
+∑
+  = P P
+i
+(   ) 0 , max
+0   i i
+  N P P   − =
+)
+ˆ
+; ( min ) (
+)
+ˆ
+, ( . .
+| ˆ
+x x
+x x
+x x
+I D R
+D Ed t s   ≤
+=
+ p
