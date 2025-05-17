@@ -1,0 +1,2459 @@
+                                                                       AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                   A     Focused             Approach 
+
+                               Information Theory
+    INFORMATION CONTENT OF SYMBOL (I.E. LOGARITHMIC MEASURE
+    OF INFORMATION)
+    Let us consider a discrete memoryless source (DMS) denoted by X and having alphabet
+    {x1,x2,……….xm}. The information content of a symbol xi denoted by I(xi) is defined by
+                                           1
+                      I(x i )  log b              log b P  x i 
+                                        P  xi 
+
+    Where P(xi) is the probability of occurrence of symbol xi.
+    The unit of I(xi) is the bit (binary unit) if b = 2, Hartley or decit if b = 10, and nat (natural
+    unit) if b = e. It is standard to use b = 2. Here the unit bit (abbreviated “b”) is a measure of
+    information content and is not to be confused with the term `bit’ meaning “binary digit”. The
+    conversion of these units to other units can be achieved by the following relationships.
+                                  Ina log a
+                      log 2 a       
+                                  In2 log 2
+
+    Example
+
+    A source produces one of four possible symbols during each interval having probabilities
+            1          1                  1
+    P(x1 )  , P(x1 )  , P(x3) = P(x4) = . Obtain the information content of each of these
+            2          4                  8
+    symbols.
+
+    Solution
+
+    We know that the information content of each symbol is given as
+                                          1
+                      I(x i )  log 2
+                                        P(x i )
+
+    Thus, we can write
+                                        1
+                      I(x i )  log 2        log 2 (2)  1 bit
+                                        1
+                                          2
+                                          1
+                      I(x 2 )  log 2          log 2 22  2 bits
+                                          1
+                                            4
+                                         1
+                      I(x 3 )  log 2        log 2 23  3 bits
+                                         1
+                                          8
+                                          1
+                      I(x 4 )  log 2         3 bits                                                               Answer
+                                          1
+                                           8
+       SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND        PH: (01332) 266328   Web: www.amiestudycircle.com   1/46
+
+WHATSAPP: +91-9412903929                            AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                         AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                     A     Focused             Approach 
+    Example
+
+                                                                                        1
+    Calculate the amount of information if it is given that P(xi) =                       .
+                                                                                        4
+
+    Solution
+
+    We know that amount of information given as
+                                                                 1
+                                                         log10
+                                               1              P  xi 
+                        I  x i   log 2            
+                                            P  xi        log10 2
+
+    Substituting given value of P(xi) in above equation, we get
+                                     log10 4
+    or                  I  xi              2 bits                                                                 Answer
+                                     log10 2
+
+    Example
+
+    If there are M equally likely and independent symbols, then prove that amount of information
+    carried by each symbol will be,
+               I  x i   N bits
+
+    Where M = 2N and N is an integer.
+
+    Solution
+
+    Since, it is given that all the M symbols are equally likely and independent, therefore the
+                                                     1
+    probability of occurrence of each symbol must be    .
+                                                     M
+    We know that amount of information is given as,
+                                               1
+                        I  x i   log 2                                                                             (i)
+                                            P  xi 
+
+                                                                  1
+    Here, probability of each message is, P(xi) =                   .
+                                                                  M
+    Hence, equation (i) will be
+                       I(xi) = log2 M                                                                                 (ii)
+    Further, we know that M = 2N, hence equation (ii) will be,
+                       I(xi) = log2 2N = N log2 2
+                                       log10 2
+    or                  I  xi   N            N bits
+                                       log10 2
+
+
+         SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND        PH: (01332) 266328   Web: www.amiestudycircle.com   2/46
+
+WHATSAPP: +91-9412903929                                 AMIESTUDYCIRCLE.COM                         INFO@AMIESTUDYCIRCLE.COM
+                                                                              AMIE(I)              STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                          A      Focused           Approach 
+    Example
+
+    If I(xi) is the information carried by symbols x1 and I(x2) is the information carried by
+    message x2, then prove that the amount of information carried compositely due to xi and x2 is
+    I(x1,x2) = I(x1) + I(x2).
+
+    Solution
+
+    We know that the amount of information is expressed as
+                                              1
+                        I(x i )  log 2
+                                           P  xi 
+
+    The individual amounts carried by symbols x1 and x2 are,
+                                              1
+                        I  x1   log 2                                                                                  (i)
+                                             x1 
+                                               1
+    and                 I  x 2   log 2                                                                                 (ii)
+                                            P  x2 
+
+    Here P(x1) is probability of symbol x1 and P(x2) is probability of symbol x2. Since message x1
+    and x2 are independent, the probability of composite message is P(x1) P(x2). Therefore,
+    information carried compositely due to symbols x1 and x2 will be,
+
+                                                         1                   1  1  
+                        I  x1 , x 2   log 2                       log 2           
+                                                                                                     
+                                                 P  x1  P  x 2           P  x1   P  x 2   
+
+                                                 1                    1 
+    or                  I  x1 , x 2   log 2             log 2                 {Since log [AB] = logA + log B}
+                                                 P  x1              P  x2  
+    Using equations (i) and (ii), we can write RHS of above equation as,
+                       I(x1,x2) = I(x1) + I(x2)                                                                Hence Proved
+
+    ENTROPY (i.e., AVERAGE INFORMATION)
+    In a practical communication system, we usually transmit long sequence of symbols from an
+    information sources. Thus, we are more interested in the average information that a source
+    produces than the information content of a single symbol.
+    In order to get the information content of the symbol, we take notice of the fact that the flow
+    of information in a system can fluctuate widely because of randomness involved into the
+    selection of the symbols. Thus, we require to talk about the average information content of
+    the symbols in a long message.
+    Thus, for quantitative representation of average information per symbol we make the
+    following assumptions:
+          (i)      The source is stationary so that the probabilities may remain constant with time.
+
+
+         SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND            PH: (01332) 266328   Web: www.amiestudycircle.com   3/46
+
+WHATSAPP: +91-9412903929                               AMIESTUDYCIRCLE.COM                               INFO@AMIESTUDYCIRCLE.COM
+                                                                            AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                        A     Focused             Approach 
+          (ii)     The successive symbols are statistically independent and come form the source at a
+                   average rate of r symbols per second.
+    The mean value of I(xi) over the alphabet of source X with m different symbols is given by
+                                                     m
+                        H(X)  E  I  x i       Px Ix 
+                                                     i 1
+                                                                  i     i
+
+
+                                       m
+                                 =     P  x  log
+                                       i 1
+                                                i           2   P(x i ) b/symbol
+
+    The quantity H(X) is called the entropy of source X. It is a measure of the average
+    information content per source symbol. The source entropy H(X) can be considered as the
+    average amount of uncertainty within source X that is resolved by use of the alphabet.
+    It may be noted that for a binary source X which generates independent symbols 0 and 1 with
+    equal probability, the source entropy H(X) is
+                                   1       1
+                        H  X    log 2  log 2  1 b/symbol
+                                   2       2
+    The source entropy H(X) satisfies the following relation:
+                        0  H  X   log 2 m
+
+    Where m is the size (number of symbols) of the alphabet of source X.
+
+    Problem
+
+    One of the five possible messages Q1 to Q5 having probabilities 1/2, 1/4, 1/8, 1/16, 1/16
+    respectively is transmitted. Calculate the average information
+    Answer: 1.875 bits/message
+
+    INFORMATION RATE
+    If the time rate at which source X emits symbols, is r (symbol s), the information rate R of the source
+    is given by
+                       R = rH(X) b/s
+    Here R is information rate.
+    H(X) is Entropy or average information
+    and r is rate at which symbols are generated.
+    Information rater is represented in average number of bits of information per second. It is calculated
+    as under:
+
+                                  symbols             information bits 
+                        R   r in          x  H(X) in                  
+                                  sec ond                 symbol       
+    or                 R = information bits/second
+
+
+         SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND           PH: (01332) 266328   Web: www.amiestudycircle.com   4/46
+
+WHATSAPP: +91-9412903929                             AMIESTUDYCIRCLE.COM                                INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused              Approach 
+    Example
+
+    A discrete Memoryless Source (DMS) X has four symbols x1,x2,x3,x4 with probabilities P(x1) = 0.4,
+    P(x2) = 0.3, P(x3) = 0.2, P(x4) = 0.1.
+           (i)    Calculate H(X)
+           (ii)   Find the amount of information contained in the message x1 x2 x1 x3 and x4 x3 x3 x2 and
+                  compare with the H(X) obtained in part (i).
+
+    Solution
+                                      4
+    We have          H(X) =   P  x i  log 2 P(x i )
+                                   i 1
+
+
+    Simplifying, we get
+                     = 0.4 log20.4 - 0.3 log20.3 - 0.2 log0.2 - 0.1 log20.1
+    Solving, we get
+
+
+                     = 1.85 b/symbol                                                                           Ans.
+    (ii)             P(x1 x2 x1 x3)       = (0.4) (0.3) (0.4) (0.2) = 0.0096
+                     I(x1 x2 x1 x3)       = - log2 0.0096 = 6.70 b/symbol                                      Ans.
+    Thus,            I(x1 x2 x1 x2) < 7.4 [= 4H(X)] b/symbol
+                     P(x4 x3 x3 x2) = (0.1) (0.2)2 (0.3) = 0.0012
+                     I(x4 x3 x3 x2) = - log2 0.0012 = 9.70 b/symbol
+    Thus,            I(x4x3x3x2) > 7.4 [= 4H(X)] b/symbol                                                      Ans.
+
+    Example
+
+    Consider a binary memoryless source X with two symbols x1 and x2. Prove that H(X) is
+    maximum when both x1 and x2 equiproable.
+
+    Solution
+
+    Let              P(x1) =  so that P(x2) = 1 - 
+    Thus,            H(X) = -  log2  - (1 - ) log2 (1 - )                            (i)
+                      dH(X)    d
+     or                         [  log 2   (1  ) log 2 (1  )
+                       d     d
+    Using the relation,
+                       d          1        dy
+                         log b y  log b e
+                      dx          y        dx
+
+
+
+       SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   5/46
+
+WHATSAPP: +91-9412903929                        AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                          AMIE(I)              STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A Focused                        Approach 
+                        dH  X                                       1 
+    We get                         log 2   log 2 1     log 2
+                          d                                           
+    Note that, the maximum value of H(X) requires that
+                        dH(X)
+                              0
+                         d
+    This means that
+                        1 
+                             1
+                         
+                              1
+    or                  
+                              2
+    Note that H(X) = 0 when  = 0 or 1.
+                                              1
+    When                P  x1   P  x 2   ,        H(X) is maximum and is given by
+                                              2
+                              1         1
+                        H(x)  log 2 2  log 2 2  1 b/symbol                                                         (ii)
+                              2         2
+                                                                                                           Hence Proved
+
+    Example (AMIE Summer 2006, 10 marks)
+
+    Verify the following expression:
+              0  h(X)  log2m
+    Where m is the size of the alphabet of X.
+
+    Solution
+
+    Proof of the lower bound:
+    Since               0  P  xi   1
+
+                           1                                       1
+                                 1          and        log 2            0
+                        P  xi                                 P  xi 
+
+    The, it follows that
+                                             1
+                        P  x i  log 2            0
+                                          P  xi 
+                                      m
+                                                            1
+    Thus,               H X        P  x  log P  x 
+                                     i 1
+                                               i        2           0                                                (i)
+                                                                i
+
+
+    Next, we note that
+
+
+
+         SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND        PH: (01332) 266328   Web: www.amiestudycircle.com   6/46
+
+WHATSAPP: +91-9412903929                            AMIESTUDYCIRCLE.COM                              INFO@AMIESTUDYCIRCLE.COM
+                                                                                          AMIE(I)                  STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                      A      Focused                Approach 
+                                                   1
+                      P  x i  log 2                    0
+                                                P  xi 
+
+    If and only if P(xi) = 0 or 1. Since
+                         m
+
+                       P  x  1
+                      i 1
+                                      i
+
+
+
+    When P(xi) = 1 then P(xi) = 0 for j  i. Thus, only in this case, H(X) = 0.
+    Proof of the upper bound:
+    Consider two probability distributions [P(xi) = Pi] and [Q(xi) = Qi)] on the alphabet {xi}, i =
+    1,2,… m, such that
+                         m
+
+                      P
+                      i 1
+                             i       1
+
+                         m
+    and               Q
+                      i 1
+                                 i   1                                                                                                   (ii)
+
+    We know that
+                         m
+                                               Qi    1 m         Q
+                       Pi log 2
+                      i 1                     Pi
+                                                         Pi ln Pi
+                                                    ln 2 i 1     i
+
+
+    Next using the inequality
+                     ln    - 1   0                                                                                                   (iii)
+    and noting that the equality holds obly if  = 1, we obtain
+                         m
+                                          Qi         m
+                                                                Qi             m                          m             m
+
+                       P ln P
+                             i                     P  P i            1     Q        i    Pi     Q P  i            i   0
+                      i 1                 i        i 1          i           i 1                       i 1          i 1
+
+
+                                                                                                                       by using Eq. (ii)(iv)
+                         m
+                                               Qi
+    Thus,              P log
+                      i 1
+                             i            2
+                                               Pi
+                                                   0                                                                                     (v)
+
+    Where the equality holds oly if Qi = Pi for all i.
+                                 1
+    Setting           Qi          ,                i = 1,2,……m                                                                           (vi)
+                                 m
+                         m                                m               m
+                                                1
+    We get             Pi log 2
+                      i 1                     Pi m
+                                                       Pi log 2 Pi   Pi log 2 m
+                                                        i 1            i 1
+
+                                                                                      m
+                                                    = H  X   log 2 m   Pi                                                            (vii)
+                                                                                     i 1
+
+                                                    = H(X) - log2 m  0
+    Hence H(X)  log2 m and also the quality holds only if the symbols in X are equiprobable.
+       SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                           PH: (01332) 266328      Web: www.amiestudycircle.com    7/46
+
+WHATSAPP: +91-9412903929                                       AMIESTUDYCIRCLE.COM                                        INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    Example
+
+    A high-resolution black-and-white TV picture consists of about 2 x 106 picture elements and
+    16 different brightness levels. Pictures and repeated at the rate of 32 per second. All picture
+    elements are assumed to be independent, and all levels have equal likelihood of occurrence.
+    Calculate the average rate of information conveyed by this TV picture source.
+
+    Solution
+
+    We have
+                                  16
+                                          1        1
+                      H(X)               log 2    = 4 b/element
+                                  i 1   16       16
+
+                     r = 2 (106) (32) = 64 (106) elements/s
+    Hence, we have
+                     R = r H(X) = 64 (100) (4) = 256 (100) b/s = 256 Mb/s                                      Ans.
+
+    Example
+
+    Consider a telegraph source having two symbols, dot and dash. The dot duration is 0.2 s. The
+    dash duration is 3 times the dot duration. The probability of the dot’s occurring is twice that
+    of the dash, and the time between symbols is 0.2s. Calculating the information rate of the
+    telegraph source.
+
+    Solution
+
+    We have
+                     P(dot) = 2P (dash)
+          P(dot + P(dash) = 3P(dash) = 1
+                                   1
+    Thus,           P(dash) =
+                                   3
+                                   2
+    and              P(dot) =
+                                   3
+    Further, we know that
+                     H(X) = - P(dot) log2 P(dot) - P(dash) log2 P(dash)
+                                = 0.667 (0.585) + 0.333 (1.585) = 0.92 b/symbol
+                         tdot   = 0.2s tdash = 0.6s tspace = 0.2 s
+    Thus, the average time per symbol is
+                     Ts = P(dot) tdot + P(dash) tdash + tspace = 0.5333 s/symbol
+    and the average symbol rate is
+
+
+       SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   8/46
+
+WHATSAPP: +91-9412903929                        AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                    AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                A      Focused            Approach 
+                             1
+                        r      = 1.875 symbols/s
+                             Ts
+
+    Thus, the average information rate of the telegraph source will be
+                       R = r H(X) = 1.875 (0.92) = 1.725 b/s                                                     Ans.
+
+    Example
+
+    A discrete source emits one of five symbols once every millisecond with probabilities
+    1 , 1 , 1 , 1 and 1 respectively. Determine the source entropy and information rate.
+     2 4 8 16           16
+
+    Solution
+
+    We know that the source entropy is given as
+                                    m
+                                                         1
+                        H(X)   P  x i  log 2
+                                   i 1               P  xi 
+                                     5
+                                                         1
+    or                  H  X    P  x i  log 2            bits/symbol
+                                    i 1              P  xi 
+
+                                 1           1           1            1            1
+    or                  H  X   log 2 (2)  log 2 (4)  log 2 (8)  log 2 (16)  log 2 (16)
+                                 2           4           8           16           16
+                              1 1 3 1 1 15
+    or                  H(X)      
+                              2 2 8 4 4  8
+    or                 H(X) = 1.875 bits/symbol
+                               1   1
+    The symbol rate r            3 = 1000 symbols/sec.
+                               Tb 10
+
+    Therefore, the information rate is expressed as
+                       R = r H(X) = 1000 x 1.875
+                       R = 1875 bits/sec.                                                                        Ans.
+
+    Example (AMIE Summer 2012, 5 marks)
+
+    The probabilities of the five possible outcomes of an experiment are given as
+                                   1            1           1                       1
+                        P(x1 )      , P(x 2 )  , P(x 3 )  , P(x 4 )  P(x 5 ) 
+                                   2            4           8                      16
+    Determine the entropy and information rate if there are 16 outcomes per second.
+
+    Solution
+
+    The entropy of the system is given as
+
+
+         SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   9/46
+
+WHATSAPP: +91-9412903929                         AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+                                5
+                                                      1
+                     H  X    P  x i  log 2            bits/symbol
+                               i 1                P  xi 
+
+                              1           1           1            1            1
+    or               H  X   log 2 (2)  log 2 (4)  log 2 (8)  log 2 (16)  log 2 (16)
+                              2           4           8           16           16
+                            1 2 3 4 4    1 1 3 1 1
+    or               H X             
+                            2 4 4 16 16  2 2 8 4 4
+                               4 43 2 2
+    or               H X 
+                                    8
+                               15
+    or               H X       = 1.875 bits/outcome                                                         Ans.
+                                8
+    Now, rate of outcomes r = 16 outcomes/sec.
+                                                                                  15
+    Therefore, the rate of information R will be R = r H(X) = 6 x                    = 30 bits/sec.            Ans.
+                                                                                   8
+
+    Example
+
+    An analog signal band limited to 10 kHz is quantized in 8 levels of of a PCM system with
+    probabilities of 1 , 1 , 1 , 1 , 1 , 1 , 1     and 1 respectively. Find the entropy and
+                       4 5 5 10 10 20 20                 20
+    the rate of information.
+
+    Solution
+
+    We know that according to the sampling theorem, the signal must be sampled at a frequency
+    given as
+                     fs = 10 x 2 kHz = 20 kHz
+    Considering each of the eight quantized levels as a message, the entropy of the source may
+    written as
+             1          1         1          1          1         1          1          1
+    H(X)      log 2 4  log 2 5  log 2 5  log 2 10  log 2 10  log 2 20  log 2 20  log 2 20
+             4          5         5         10         10         20         20         20
+             1          2          7
+    H  X   log 2 4  log 2 5  log 2 20
+             4          5         20
+    H(X) = 2.84 bits/message
+    As the sampling frequency is 20 kHz then the rate at which message is produced, will be
+    given as
+    or               r = 20000 messages/sec.
+    Hence the information rate is
+                     R = r H(X) = 20000 x 2.84
+                     R = 56800 bits/sec.                                                                       Ans.
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   10/46
+
+WHATSAPP: +91-9412903929                       AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    Problem
+
+    An analog signal is band limited to B Hz, sampled at the Nyquist rate and samples are
+    quantized into 4 levels. These four levels are assumed to be purely independent with
+    probabilities of occurrences are
+                     p1 = 1/8, p2 = 2/8, p3 = 3/8, p4 = 2/8
+    Find the information rate of the source.
+    Answer: 3.81 B bits/sec
+
+    THE DISCRETE MEMORYLESS CHANNELS (DMC)
+    Channels Representation
+     A communication channel may be defined as the path or medium through which the symbols
+    flow to the receiver. A discrete memoryless channel (DMC) is a statistical model whit an
+    input X and an output Y as shown in figure given below.
+
+
+
+
+    During each unit of the time (signaling interval), the channel accepts an input symbol from X,
+    and in response it generates an output symbol from Y. The channel is “discrete” when the
+    alphabets of X and Y are both finite. It is “memoryless” when the current output depends on
+    only the current input depends on only the current input and not on any of the previous
+    inputs.
+    A diagram of a DMC with m inputs and n outputs has been illustrated in figure. The input X
+    consists of input symbols x1,x2,…..xm. The a priori probabilities of these source symbols P(xi)
+    are assumed to be known. The outputs Y consists of output symbols y1,y2,….yn. Each
+    possible input-to-output path is indicated along with a conditional probability P  y j x i  ,
+
+    where P  y j x i  is the conditional probability of obtaining output yj given that the input is xi
+    and is called a channel transition probability.
+
+    The Channel Matrix
+    A channel is completely specified by the complete set of transition probabilities.
+    Accordingly, the channel in figure above is often specified by the matrix of transition
+    probabilities  P(Y X)  , is given by
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   11/46
+
+WHATSAPP: +91-9412903929                       AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                      AMIE(I)             STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                   A      Focused          Approach 
+                                        P  y1 x1  P  y 2 x1         .... P  y n x1  
+                                                                                            
+                                        P  y1 x 2  P  y 2 x 2       .... P  y n x 2  
+                      P  Y X                                                                            (1)
+                                        ......           ......         ....     ...... 
+                                        P  y1 x m  P  y 2 x m       .... P  y n x m  
+                                       
+
+    The matrix [P  Y X ] is called the channel matrix. Since each input to the channel results in
+    some output, each row of the channel matrix must to unity, that is,
+                         n
+
+                     Py
+                      j 1
+                              1   x i   1 for all i                                                            (2)
+
+    Now, if the input probabilities P(X) are represented by the row matrix, then we have
+                     [P(X)] = [P(x1) P(x2) … … … … P(xm)]                                                        (3)
+    and the output probabilities P(Y) are represented by the row matrix
+                     [P(Y)] = [P(y1) P(y2) … … … … P(yn)]                                                        (4)
+
+                     [P(Y)] = [P(X)] [ P  y1 x i  ]                                                            (5)
+
+    If P(X) is represented as a diagonal matrix, then we have
+
+                                P  x1     0           ....      0     
+                                                                        
+                                    0     P  x2        ....     ....
+                     [P(X)]d                                                                                  (6)
+                                ....       ....         ....     ....   
+                                                                        
+                                0          0           .... P  x m  
+
+    then             [P(X,Y)] = [P(X)] [ P  Y X  ]                                                             (7)
+
+    If P(X) is represented as a diagonal matrix, then we have
+    Where the (i,j) element of matrix [P(X,Y)] has the form P(xi,yj). The matrix [P(X,Y)] is
+    known as the joint probability matrix, and the element P(xi,yj) is the joint probability of
+    transmitting xi and receiving yj.
+
+    Lossless Channel
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND    PH: (01332) 266328    Web: www.amiestudycircle.com   12/46
+
+WHATSAPP: +91-9412903929                        AMIESTUDYCIRCLE.COM                              INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                   A Focused Approach 
+    A channel describe by a channel matrix with only one non-zero element in each column is
+    called a lossless channel. An example of a lossless channel has been shown in figure and the
+    corresponding channel matrix is given in equations as under:
+                                   3      1             
+                                   4          0    0 0
+                                           4
+                                                        
+                                               1    2
+                     [P  Y X ]   0     0          0                                                       (8)
+                                              3    3    
+                                   0      0   0    0 1 
+                                   
+                                                       
+
+    Deterministic Channel
+
+
+
+
+    A channel described by a channel matrix with only one non-zero element in each row is
+    called a deterministic channel. An example of a deterministic channel has been shown in
+    figure and the corresponding channel matrix is given by equation as under:
+                                  1     0 0
+                                  1     0 0 
+                                  
+                     [P  Y X   0     1 0                                                                  (9)
+                                             
+                                  0     1 0
+                                  0    0 1 
+
+    Noiseless Channel
+
+
+
+
+    A channel is called noiseless if it is both lossless and deterministic. A noiseless channel has
+    been shown in figure. The channel matrix has only one element in each row and in each
+    column, and this element is unity. Note that the input and output alphabets are of the dame
+    size, that is, m = n for the noiseless channel.
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   13/46
+
+WHATSAPP: +91-9412903929                       AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                      AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                  A     Focused             Approach 
+    Binary Symmetric Channel (BSC)
+
+
+
+
+    The binary symmetric channel (BSC) is defined by the channel diagram shown in figure and
+    its channel matrix is given by
+                                          1  p p 
+                            [P  Y X ]                                                                         (10)
+                                           p 1  p
+    The channel has two inputs (x1 = 0, x2 = 1) and two outputs (y1 = 0, y2 = 1). This channel is
+    symmetric because the probability of receiving a 1 if a 0 is sent is the same as the probability
+    of receiving a 0 if a 1 is sent. This common transition probability is denoted by P.
+
+    Example
+
+    Consider a binary channel shown in figure given below:
+
+
+
+
+           (i)        Find the channel matrix of the channel.
+           (ii)       Find P(yi) and P(y2) when P(x1) = P(x2) = 0.5.
+           (iii)      Find the joint probabilities P(x1,y2) and P(x2,y1) when P(x1) = P(x2) = 0.5
+
+    Solution
+
+    (i)            We known that the channel matrix is given by:
+
+                                           P  y1 x1  P  y 2 x1         0.9 0.1
+                            [P  Y X ]                                         
+                                           P  y1 x 2  P  y 2 x 2     0.2 0.8
+
+    (ii)           We know that
+
+                            [P(Y)] = [P(X)] [ P  Y X  ]
+
+                                                 0.9 0.1
+                                    = [0.5 0.5]         
+                                                 0.2 0.8
+                                    = [0.55 0.45]
+                                    = [P(y1) P(y2)]
+                   Hence,     P(y1) = 0.55 and P(y2) = 0.45                                  Ans.
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND       PH: (01332) 266328   Web: www.amiestudycircle.com    14/46
+
+WHATSAPP: +91-9412903929                            AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                           AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                       A         Focused         Approach 
+    (iii)   Again, we have
+
+                     [P(X,Y)] = [P(X)]d [ P  Y X  ]
+
+                                0.5 0                  0.9 0.1   0.45 0.05
+                              =                        0.2 0.8   0.1 0.4 
+                                 0 0.5                                    
+
+                                 P(x1 , y1 ) P(x1 , y 2 ) 
+                              =                             
+                                 P(x 2 , y1 ) P(x 2 , y 2 ) 
+            Hence,            P(x1,y2) = 0.05 and P(x2,y1) = 0.1                                             Ans.
+
+    THE CONDITIONAL AND JOINT ENTROPIES
+    Using the input probabilities P(xi), output probabilities P(yi), transition probabilities
+    P  y j x i  , and joint probabilities P(xi,yj), we can define the following various entropy
+    functions for a channel with m inputs and n outputs:
+                                       m
+                     H(X) =   P(xi) log 2 P(xi)                                                                       (11)
+                                      i 1
+
+                                  n
+                     H(Y) =   P(y j ) log 2 P(y j )                                                                   (12)
+                                 j 1
+
+                                             n       m
+                     H( X|Y ) =                 P(x , y ) log
+                                                           i   j   2   P(x i | y j )                                    (13)
+                                           j 1 i 1
+
+                                             n       m
+                     H( Y|X ) =   P(x i , y j ) log 2 P(y j | x i )                                                  (14)
+                                           j 1 i 1
+
+                                         n       m
+                     H(X,Y) =   P(x i , y j ) log 2 P(x i , y j )                                                    (15)
+                                        j  1 i 1
+
+
+    These entropies can be interpreted as under:
+    H(X) is the average uncertainty of the channel input, and H(Y) is the average uncertainty of
+    the channel output.
+    The conditional entropy H(X|Y) is a measure of the average uncertainty remaining about the
+    channel input after the channel output has been observed.
+    Also, H(Y|X) is sometimes called the equivocation of X with respect to Y.
+    The conditional entropy H(X|Y) is the average uncertainty of the channel output given that X
+    was transmitted. The joint entropy H(X,Y) is the average uncertainty of the communication
+    channel as a whole.
+    Two useful relationships among the above various entropies are as under:
+                     H(X,Y) = H(X|Y) + H(Y)                                                                             (16)
+                     H(X,Y) = H(Y|X) + H(X)                                                                             (17)
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND            PH: (01332) 266328   Web: www.amiestudycircle.com    15/46
+
+WHATSAPP: +91-9412903929                                 AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                              AMIE(I)              STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                            A       Focused        Approach 
+    THE MUTUAL INFORMATION
+    The mutual information denoted by I(X;Y) of a channel is defined by
+                     I(X ; Y) = H(X|Y) - H(Y)                      b/symbol                                               (18)
+    Since H(X) represents the uncertainty about the channel input before the channel output is
+    observed and H(X|Y) represents the uncertainty about the channel input after the channel
+    output is observed, the mutual information I(X ; Y) represents the certainty about the channel
+    input that is resolved by observing the channel output.
+    Properties of (X;Y):
+                     I(X;Y) = I(Y;X)                                                                                      (19)
+                     I(X;Y)  0                                                                                           (20)
+                     I(X;Y) = H(Y) - H(Y|X)                                                                               (21)
+                     I(X;Y) = H(X) + H(Y) - H(X,Y)                                                                        (22)
+
+    Example
+
+    Consider a noiseless channel with m input symbols and m output symbols. Prove that
+                     H(X) = H(Y)                                                                                          .(i)
+    and              H(Y|X) = 0                                                                                           (ii)
+
+    Solution
+
+    For a noiseless channel, the transition probabilities are given by
+                                     1 for i  j
+                     P(y j | x i )                                                                                      (iii)
+                                     0 for i  j
+    Hence,           P(x i , y j )  P(y j | x i ) P(x i )
+
+                                 P(x i ) for i  j
+                               =                                                                                         (iv)
+                                0        for i  j
+                                  m
+    and              P(y j )     P(x , y )  P(x )
+                                 i 1
+                                           i    j             j                   …..(v)
+
+    Thus, using equation (iv) and (v) we have
+                                   m                                        m
+                     H(Y)    P(y j ) log 2 P(y j )    P(x i ) log 2 P(x i )  H(X)
+                                  j 1                                     i 1
+
+
+    Further, we know that
+                                         m     m
+                     H(Y | X)                P(x   i,   y j ) log 2 P  y j | x i 
+                                         j 1 i 1
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND              PH: (01332) 266328   Web: www.amiestudycircle.com     16/46
+
+WHATSAPP: +91-9412903929                             AMIESTUDYCIRCLE.COM                                 INFO@AMIESTUDYCIRCLE.COM
+                                                                                           AMIE(I)              STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                      A      Focused            Approach 
+                                          m              m
+                              =   P(x i )  log 2 P(y j | x i )
+                                         i 1            j 1
+
+                                          m
+                              =   P(x i ) log 2 1  0                                                                     Hence Proved
+                                         i 1
+
+
+
+    Example
+
+    Verify the following expression:
+                     H(X,Y) = H(X|Y) + H(Y)
+
+    Solution
+
+    We know that
+                     P(xi,yj) = P(xi|yj) P(yj)
+                         m
+    and               P(x , y )  P(y )
+                      i 1
+                              i      j              j
+
+
+
+    Also we have
+                                           n       m
+                     H(X, Y)                    P(x , y ) log P(x , y )
+                                                             i             j       i        j
+                                          j 1 i 1
+
+                                              n    m
+                     H(X, Y)                    P(x , y ) log[P(x
+                                                                 i             j       i   | y j ) P(y j )]
+                                           j 1 i 1
+
+                                              n    m
+                     H  X, Y    P  x i , yi  log P  x i | y j 
+                                              j1 i 1
+
+                                    n
+                                       m               
+                                     P  x i , yi   log P  y j 
+                                   j1  i 1           
+                                                                     n
+                     H  X, Y   H  X | Y    P  y j  log P  yi 
+                                                                     j1
+
+
+                     H  X, Y   H  X | Y   H  Y                                                                      Hence proved
+
+    Problem
+
+    Show that        H(X, Y)  H(X)  H(Y / X)
+
+    Example (AMIE S13, W13, 6 marks)
+
+    Prove that H (Y)  H(X/ Y)  H(X)  H(Y/ X)
+
+    Solution
+
+    Mutual information
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                         PH: (01332) 266328     Web: www.amiestudycircle.com   17/46
+
+WHATSAPP: +91-9412903929                                 AMIESTUDYCIRCLE.COM                                          INFO@AMIESTUDYCIRCLE.COM
+                                                                                          AMIE(I)              STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                     A     Focused             Approach 
+                      I ( X ,Y )  H ( X )  H ( X / Y )
+                                                      n     m                 rij
+                                                =     r
+                                                      j 1 i 1
+                                                                  ij   log
+                                                                             pi q j
+
+    where rij  P( X  ai , y  bi )
+
+    Because of symmetry in I(X,Y) expression
+                      I ( X , Y )  I (Y , X )
+    i.e.              H ( X )  H ( X | Y )  H (Y )  H (Y | X )
+    Rearranging       H (Y )  H ( X | Y )  H ( X )  H (Y | X )
+
+    Example (AMIE W94)
+
+    Verify the following expression
+                     I(X;Y)  0
+
+
+    Solution
+
+    We have
+                                           m     n
+                                                                                      P  xi 
+                     I  X; Y    P  x i , y j  log 2                                                                           (i)
+                                           i 1 j1                             P  xi | y j 
+
+    Using Bayes’ rule, we have
+
+                         P  xi           P  xi  P  y j 
+                                       
+                      P  xi | y j            P  xi , y j 
+
+    We can write equation (i) as under:
+
+                                            1 m n                           P  xi  P  y j 
+                     I  X; Y                       P  x i , y j  ln                                                           (ii)
+                                           ln 2 i 1 j1                      P  xi , y j 
+
+    Also, we know that
+                     ln    - 1
+    Therefore, we have
+
+                                            1 m n                     P  xi  P  y j  
+                      I  X; Y  
+                                           ln 2 i 1 j1
+                                                         P  x , y 
+                                                 i j  P  x , y   1
+                                                                              i    j     
+                                            1 m n                             m n
+    or                I  X; Y                i
+                                           ln 2 i 1 j1
+                                                         P  x  P  y j          P  xi , y j                                   (iii)
+                                                                             i 1 j1
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                          PH: (01332) 266328   Web: www.amiestudycircle.com     18/46
+
+WHATSAPP: +91-9412903929                                   AMIESTUDYCIRCLE.COM                                       INFO@AMIESTUDYCIRCLE.COM
+                                                                              AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                            A   Focused             Approach 
+                           m    n                       m            n
+    Since                   P  x  P  y   P  x   P  y   11  1
+                           i 1 j1
+                                         i        j
+                                                       i 1
+                                                                 i
+                                                                     j1
+                                                                              j
+
+
+
+                           m    n               m  n              m
+                                  P  i j     i j    P  x i   1
+                                       x , y             P x , y
+                           i 1 j1            i 1  j1          i 1
+    Equation (iii) reduces to
+                          -I(X;Y)  0
+                          I(X;Y)  0.                                                                           Hence proved.
+
+    Example (AMIE Winter 2010, 14 marks)
+
+    Consider a BSC with P(x1) = .
+          (i)          Show that the mutual information I(X;Y) is given by
+                       I(X;Y) = H(Y) + p log2p + (1 - p) log2(1 - p)
+          (ii)         Calculate I(X;Y) for  = 0.5 and p =0.1.
+          (iii)        Repeat part (ii) for  = 0.5 and p = 0.5, and comment on the result.
+          (iv)         Find channel capacity of BSC.
+          Given figure shows the diagram of the BSC with associated input probabilities.
+
+
+
+
+    Solution
+
+    (i)           We know that
+                                                0  1  P P 
+                            P  X, Y                    
+                                             0 1    P 1  P
+
+                                               1  p            p        
+                            P  X, Y                                   
+                                               1  p  p    1   1  p 
+                                                          P  x1 , y1  P  x1 , y 2  
+                  or                   P  X, Y     P  x , y  P  x , y  
+                                                               2    1        2     2 
+
+
+                  Also, we have
+                          H(X|Y) = - P(x1, y1) log2 P(y1|x1)
+                                      = - P(x1, y2) log2 P(y2|x2)
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND               PH: (01332) 266328   Web: www.amiestudycircle.com   19/46
+
+WHATSAPP: +91-9412903929                                AMIESTUDYCIRCLE.COM                               INFO@AMIESTUDYCIRCLE.COM
+                                                                     AMIE(I)            STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                         A Focused Approach 
+                              -   (x2, y1) log2 P(y1|x2) - P(x2, y2) log2 P(y2|x2)
+
+                              = - (1- ) p log2 p -(1 - )(1 - p) log2(1 - p)
+
+                              - p log2 p -(1 - p) log2(1 - p)
+
+            We know that
+                     I(X;Y) = H(Y) -H(Y|X)
+                              = H(Y) + p log2 p + (1 - p) log2(1 - p)
+    (ii)    When  = 0.5 and p = 0.1, then, we have
+                                                0.9 0.1
+                      P  Y     0.5 0.5             0.5 0.5
+                                                 0.1 0.9 
+            Thus, using
+                     P(y1) = P(y2) = 0.5 we have
+                     H(Y) = -P(y1) log2 P(y1)- P(y2) log2 P(y2)
+                     = - 0.5 log2 0.5 - 0.5 log2 0.5 = 1
+                     p log2 p + (1 - p) log2(1 - p) = 0.1 log20.1 + 0.9 log2 0.9
+                                       = 0.469
+            Thus,             I(X;Y) = 0.469 = 0.531                  Ans.
+    (iii)   When  =0.5 and p = 0.5, we have
+                                                0.5 0.5
+                      P  Y     0.5 0.5            0.5 0.5
+                                                 0.5 0.5
+                     H(Y) = 1
+                     p log2 p + (1 - p) log2(1 - p) log2(1 - p) = 0.5 log2 0.5 + 0.5 log2 0.5
+                     = -1
+            Thus,             I(X;Y) = 1 - 1 = 0
+    (iv)    In part (i), we have proved that
+                     I(X;Y) = H(Y) + p log2 p + (1 - p) log2(1 - p)
+            which is maximum when H(Y) is maximum. Since, the channel output is binary, H(Y)
+            is maximum when each output has a probability of 0.5 and is achieved for equally
+            likely inputs.
+            For this case, H(Y) = 1 and the channel capacity is
+                     C s  1  p log 2 p  (1  p ) log 2 (1  p )
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   20/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                   AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                     A                               Focused             Approach 
+    Example (AMIE W96, Summer 2013, 10 marks)
+
+    A transmitter has an alphabet of four letters (y1, y2, y3, y4) and receiver has an alphabet of
+    three letters {z1, z2, z3, z4}. The joint probability matrix is
+
+                                          z1       z2     z3 
+                                   y1  0.30      0.05  0 
+                                  y   0          0.25  0 
+                     P  y, z    2  
+                                   y3   0        0.15 0.05
+                                                          
+                                   y4   0        0.05 0.15
+
+    Calculate the five entropies H(y), H(z), H(y,z) H(y/z) and H(z/y).
+
+    Solution
+
+                     P  yi    P  yi , z j 
+                                 j
+
+
+                      y      P  yi , zi 
+                     P i                  and z i   P  yi , z j 
+                       zi     Pzj                  i
+
+
+                    P(y1) = P(y1, z1) + P(y1, z2) + P(y1, z3)
+                              = 0.3 + 0.5 + 0 = 0.35
+    Similarly
+                     P(y2) = 0.25
+                     P(y3) = 0.20
+                     P(y4) = 0.20
+                     P(z1) = 0.3
+                     P(z2) = 0.5
+                     P(z3) = 0.2
+
+                       y  P  y1z1  0.3
+                     P 1                1
+                       z1  P  z1    0.3
+
+    Similarly
+                     P(y1/z2) = 0.1
+                     P(y1/z3) = 0
+                     P(y2/z1) = 0
+                     P(y2/z2) = 0.5
+                     P(y2/z3) = 0
+                     P(y3/z1) = 0
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND    PH: (01332) 266328   Web: www.amiestudycircle.com   21/46
+
+WHATSAPP: +91-9412903929                           AMIESTUDYCIRCLE.COM                         INFO@AMIESTUDYCIRCLE.COM
+                                                                                    AMIE(I)                   STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                A       Focused                   Approach 
+                     P(y3/z2) = 0.3
+                     P(y3/z3) = 0.25
+                     P(y4/z1) = 0
+                     P(y4/z2) = 0.1
+                     P(y4/z3) = 0.75
+
+                                                 1 
+                     H  y     P  yi  log                 P  yi  log P  yi 
+                                                  P  yi  
+                               = -(0.35 log 0.35 + 0.25 log 0.25 + 0.2 log 0.2 + 0.2 log 0.2 )
+                               = 1.958871848 bits
+                     H(z) = - (0.3 log 0.3 + 0.5 log 0.5 + 0.2 log 0.2 )
+                             = 1.485475297 bits
+                     H  y | z1      P  y1 | z1  log P  y | z1 
+
+                                        P  y1 | z1  log P  y1 | z1   P  y 2 | z1  log P  y 2 | z1  
+                                                                                                              
+                                          P  y3 | z1  log P  y3 | z1   P  y 4 | z1  log P  y 4 | z1 
+
+                                     = -(1 log 1 + 0 log 0 + 0 log 0 + 0 log 0) = 0
+                                       P  y1 | z 2  log P  y1 | z 2   P  y 2 | z 2  log P  y 2 | z 2  
+                     H  y | z2                                                                                 
+                                         P  y3 | z 2  log P  y3 | z 2   P  y 4 | z 2  log P  y 4 | z 2 
+
+                                  = - (0.1 log 0.1 + 0.5 log 0.5 + 0) = 1.685475296
+    Similarly
+                     H  y | z 3   0.811278124
+
+                     H[y|z] = P(zj).H(y|zi)
+                                = P(z1)H(y|z1) + P(z2)H(y|z2) + P (z3)H(y|z3)
+                               = 1.004993273 bits
+                     I (y, z) = H(y) - H(z|y) = 1.48547297 - 0.953878575 = 0.531596722 bits
+                     H(z|y) =H (z) - I(y, z) = 1.48547297 - 0.953878575 = 0.531596722 bits
+                     I(y, z) = H(y) + H(z) + H(y, z)
+                     H(y, z) = 1.958871848 + 1.485475297 - 0.953878575 = 2.49046857 bits
+
+    Problem
+
+                                     1/ 20   0 
+    Given            [ P ( x, y )]   1/ 5 3 /10 
+                                     
+
+                                     1/ 20 2 / 5 
+    P(x1) = 1/20, P(x2) = ½ and P(x3) = 9/20
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                     PH: (01332) 266328      Web: www.amiestudycircle.com   22/46
+
+WHATSAPP: +91-9412903929                                 AMIESTUDYCIRCLE.COM                                            INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    Find P(Y/X), H(X) and H(Y).
+            1     0 
+    Answer: 2 / 5 3 / 5 ; H(X) = 1.234 bits/channel; H(Y) = 0.881 bits/channel
+           
+                        
+           1/ 9 8 / 9 
+
+    Channel Capacity per Symbol Cs
+    The channel capacity per symbol of a DMC is defined as
+                     Cs  max I(X; Y)           b/symbol                                                       (23)
+                           {P(x i )}
+
+
+    Channel Capacity per Second C
+    If r symbols are being transmitted per second, then the maximum rate of transmission of
+    information per second is r Cs. This is the channel capacity per second and is denoted by
+    C(b/s), i.e.,
+                     C = r Cs b/s                                                                              (24)
+
+    Channel Capacity of Lossless Channel
+    The channel capacity per symbol will be
+                     Cs  max H(X)  log 2 m                                                                   (25)
+                           {P(x i )}
+
+
+    Where m is the number of symbols inX.
+
+    Channel capacity of Deterministic Channel
+    The channel capacity per symbol will be
+                     Cs  max H(Y)  log 2 n                                                                   (26)
+                           {P(x i )}
+
+
+    Where n is the number of symbols in Y.
+
+    Channel capacity of noiseless channel
+    The channel capacity per symbol is
+                     Cs = log2m = log2n                                                                        (27)
+
+    Channel Capacity Of Binary Symmetric Channel (BSC)
+    The channel capacity per symbol is
+                     Cs = 1 + p log2 p + (1 - p) log2 (1 - p)                                                  (28)
+
+    Example
+
+    Find the channel capacity of the binary erasure channel of figure given below
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com    23/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                   AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                               A     Focused             Approach 
+
+
+
+
+    Solution
+
+    Let P(x1) = . Then P(x2) = 1 - 
+
+                                  1  p p   0      P(y1 | x1 ) P(y 2 | x1 ) P(y3 | x1 ) 
+    We have          [P(Y | X)]                =                                          
+                                   0    p 1  p    P(y1 | x 2 ) P(y 2 | x 2 ) P(y3 | x 2 ) 
+    Using eq, (5), we have
+                                         1  p p   0 
+                     [P(Y)]    1   
+                                          0    p 1  p 
+
+                              = [ (1 - p) p (1 - ) (1 - p)]
+                              = [P(y1) P(y2) P(y3)]
+    By using eq.(7), we have
+                                    0             1  p p   0 
+                     P(X, Y)]                      0
+                                 0 1                   p 1  p 
+
+                                  (1  p)    p          0         
+    or               [P(X, Y)]  
+                                  0        (1  )p (1  )(1  p) 
+
+                                  P(x1 , y1 ) P(x1 , y 2 ) P(x1 , y3 ) 
+    or               [P(X, Y)]                                           
+                                  P(x 2 , y1 ) P(x 2 , y 2 ) P(x 2 , y3 ) 
+    In addition , from equation (12) and (14), we can calculate
+                                  3
+                     H(Y)    P(y j ) log 2 P(y j )
+                                 j1
+
+
+                     =   (1  p) log 2 (1  p)  p log 2 p  (1  )(1  p) log 2 [(1  )(1  p)]
+
+                     = (1  p)[ log 2   (1  ) log 2 (1  )]  p log 2 p  (1  p) log 2 1  p) 
+                                        3     2
+    Also, we have H(Y | X)    P(x i , y j ) log 2 P(y j | x i )
+                                       j  1 i 1
+
+
+                     = -  (1 - p) log2 (1 - p) - p log2 p - (1 - ) p log2 p - (1 - ) (1 - p) log2 (1 - p)
+                     = - p log2 p - (1 - p) log2 (1 - p)
+    Thus, by equations 21, we have
+            I(X;Y) = H(Y) - H(Y|X)
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND    PH: (01332) 266328   Web: www.amiestudycircle.com   24/46
+
+WHATSAPP: +91-9412903929                            AMIESTUDYCIRCLE.COM                        INFO@AMIESTUDYCIRCLE.COM
+                                                                      AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                            A Focused Approach 
+                        = (1 - p) [- log2  - (1 - ) log2 (1 - )] = (1 - p) H(X)
+    And by equations (23), we have
+               Cs  max I(X; Y)  max(1  p)H(X)
+                      {p(X)}             {P( x i )}
+
+
+                        = (1  p) max H(X)  1  p                                                                 Ans.
+                                {P( x i )}
+
+
+
+    Problem
+
+    A channel capacity is described by the following channel matrix
+                        1/ 2 1/ 2 0 
+                         0    0 1 
+                        
+        (i)         Draw the channel diagram.
+        (ii)        Find the channel capacity.
+    Answer: (i) See figure. (ii) 1 b/symbol
+
+
+
+
+    DIFFERENTIAL ENTROPY
+    In a continuous channel, an information source produces a continuous signal x(t). The set of
+    possible signals is considered as an ensemble of waveforms generated by some ergodic
+    random process. It is further assumed that x(t) has a finite bandwidth so that x(t) is
+    completely characterized by its periodic sample values. Thus, at any sampling instant, the
+    collection of possible sample values constitutes a continuous random variable X described by
+    it probability density function fX(x).
+    The average amount of information per sample value of x(t) is measured by
+                                   
+                        H(X)     f
+                                   
+                                        X    (x) log 2 f X (x) dx   b/sample                                       (29)
+
+    The entropy H(X) defined by equation (29) is known as the differential entropy of X.
+    The average mutual information in a continuous channel is defined (by analogy with the
+    discrete case) as
+                        I(X;Y) = H(X) - H(X|Y)
+               or       I(X;Y) = H(Y) - H(Y|X)
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND       PH: (01332) 266328   Web: www.amiestudycircle.com    25/46
+
+WHATSAPP: +91-9412903929                              AMIESTUDYCIRCLE.COM                         INFO@AMIESTUDYCIRCLE.COM
+                                                                                   AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                               A     Focused             Approach 
+                                           
+    Where               H(Y)             f
+                                           
+                                                Y   (y) log 2 f Y (y) dy                                                        (30)
+
+                                                
+                        H(X | Y)              f
+                                                
+                                                      XY   (x, y) log 2 f X (x | y) dx dy                                       (31)
+
+                                                 
+                        H(Y | X)               f
+                                                 
+                                                           XY   (x, y) log 2 f Y (y | x) dx dy                                  (32)
+
+
+    Example
+
+    Find the differential entropy H(X) of the uniformly distributed random variable X with
+    probability density function
+
+                          1
+                              for 0  x  a
+                f X (x)   a
+                           0 for otherwise
+
+                                                                      1
+    for (i) a = 1, (ii) a = 2, and (iii) a =
+                                                                      2
+
+    Solution
+
+    Using equation (29), we have
+                           
+                H(X)     f
+                           
+                                    X   (x) log 2 f X (x) dx
+
+                                a
+                                  1      1
+                        =         log 2 dx  log 2 a
+                               a
+                                  a      a
+        (i)        a = 1, H(X) = log2 1 = 0
+        (ii)       a = 2, H(X) = log2 2 = 1
+                        1              1
+        (iii)      a=     , H(X) = log2 = - log22 = - 1
+                        2              2
+    Note that the differential entropy H(X) is not an absolute measure of information .
+
+    Example
+
+    With the different entropy of a random variable X defined by equation
+                                           
+                        H(X)             f
+                                           
+                                                X   (x) log 2 f X (x) dx
+
+    Find the probability density function fX(x) for which H(X) is maximum.
+
+    Solution
+
+    We know that fX(x) must satisfy the following two conditions:
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                    PH: (01332) 266328   Web: www.amiestudycircle.com    26/46
+
+WHATSAPP: +91-9412903929                                        AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                                 AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                             A     Focused             Approach 
+                      
+
+                      f
+                     
+                              X   (x) dx  1                                                                                  (i)
+
+                      
+
+                       (x  ) f                  (x) dx  2
+                                           2
+                                               X                                                                              (ii)
+                     
+
+
+    Where  is the mean of X and 2 it its variance. Since the problem is the maximization of
+    H(X) under constraints of equations (i) and (ii), therefore, we use the method of Lagrange
+    multipliers as under:
+                                                                                                          
+                     G  f X (x), 1 ,  2   H(X)  1   f X (x)dx  1   2    x    f X (x)dx  2 
+                                                                                               2
+
+                                                                                                        
+                          
+                     =      f      X   (x) log 2 f X (x)  1f X (x)   2  x   2  f X (x)  dx  1   2 2 (iii)
+                          
+
+
+    Where the parameters 1 and 2 are the Lagrange multipliers. then the maximization of H(X)
+    requires that
+                        G
+                                 log 2 f X (x)  log 2 e  1   2  x     0
+                                                                               2
+                                                                                                                              (iv)
+                      f X (x)
+
+    Thus             log2 fX(x) - log2 e + 1 + 2 (x - )2
+                                                              1      
+                                                                    2  x  
+                                                                                2
+    or               ln f X (x)   1 
+                                                            log 2 e log 2 e
+
+    Hence, we obtain
+
+                                                      2
+                     f X (x)  exp  1  1  2  x                                                                       (v)
+                                        log 2 e log 2 e  
+    In view of the constraints of equation (i) and (ii), it is required that 2 < 0. Let
+
+                                 
+                     exp  1  1   a
+                              log 2 e 
+
+                      2 
+                               b
+                                    2
+    and              
+                      log  e
+                           2 
+
+
+    Then, equation (v) can be written as
+                                                   2
+                                                       ( x  ) 2
+                     f X (x)  ae  b                                                                                         (vi)
+
+    Substituting equation (vi) into equation (i) and (ii), we get
+                          
+                                                                     n
+                          e
+                                   b 2 (x  )2
+                     a                             dx  a              1                                                     (vii)
+                          
+                                                                    b
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                  PH: (01332) 266328   Web: www.amiestudycircle.com    27/46
+
+WHATSAPP: +91-9412903929                                            AMIESTUDYCIRCLE.COM                      INFO@AMIESTUDYCIRCLE.COM
+                                                                                         AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                     A     Focused             Approach 
+                          
+                                                                               
+                            x  
+                                       2          2
+                                                      (x  )2
+                     a                     e b                     dx  a         2                                                (viii)
+                         
+                                                                              2b3
+
+    Solving equations (vii) (viii) for a and b2, we get
+                                 1            1
+                     a             and b 2  2
+                                2          2
+    Substituting these values in equation (vi), we observe that the desired fX(x) is given by
+                                                       x  2
+                               1                                    2 2 
+                     f X (x)      e                                                                                       Hence proved
+                               2
+    Which is the probability density function of Gaussian random variable X of mean  and
+    variance 2.
+
+    ADDITIVE WHITE GAUSSIAN NOISE (AWGN) CHANNEL
+    Shannon-Hartley Law
+    The capacity C (b/s) of the AWGN channel is given by
+                                          S
+                     C  2BCs  Blog 2 1   b/s
+                                        N
+    where B is channel bandwidth which is fixed and S/N is signal to noise ratio.
+    Above equation is known as Shannon-Hartley law.
+
+    Proof
+    Let a, n and y represent the samples of n(t), A(t) and y(t). Assume that the channel is band
+    limited to "B" Hz.
+    We know that
+                     I (X ;Y )  H (Y )  H (Y / X )
+                                                                                      1
+                     H (Y / X )                            P (x , y ) log                   dxdy
+                                                                                P (y / x )
+                                                                                                       1
+                                              =            
+                                                                    P (x )dx  P ( y / x ) log
+                                                                                                   P (y / x )
+                                                                                                                dy                    (1)
+
+    We know that y  x  n
+    For a given x, y = n + a constant (x)
+    If PN(n) represents the probability density function of "n", then P(y/x) = Pn(y - x).
+                                                          1                                  1
+                       
+                              P ( y / x ).log
+                                                       P (y / x )
+                                                                  dy   Pn ( y  x ) log
+                                                                                        Pn ( y / x )
+                                                                                                       dy                             (2)
+
+    Let               y x  z
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                          PH: (01332) 266328   Web: www.amiestudycircle.com   28/46
+
+WHATSAPP: +91-9412903929                                             AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                   AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                               A     Focused             Approach 
+                    dy  dz
+
+    Hence the above integral reduces to
+                                             1
+                        
+                              Pn (z ).log
+                                            Pn (z )
+                                                    dz  H (n )
+
+    H(n) is nothing but the entropy of noise samples.
+    If the mean squared value of the signal n(t) is S and that of noise n(t) is N, the mean squared
+    value of the output is given by
+
+                      y 2 S N
+
+    Channel capacity
+                     C  max[I (X ;Y )]  max[H (Y )  H (Y / X )]  max[H (Y )  H (N )]
+
+    H(y) is maximum when y is Gaussian and maximum value of H(Y) is f m .log(2 e 2 )
+
+    Where fm is the band limit frequency 2 is mean squares value.
+                    H ( y ) max  B log 2 e (S  N )
+
+                     max[H (n )]  B log 2 e (N )
+
+                    C  B log[2 e (S  N )  B log(2 eN )
+
+                                           2 e (S  N ) 
+                                  = B log                
+                                           2 eN
+
+                                S 
+                    C  B log 1   bits/sec
+                                N 
+
+    Example
+
+    Consider an AWGN channel with 4 KHz bandwidth and the noise power spectral density /2
+    = 10-12 W/Hz. The signal power required at the receiver is 0.1 mW. Calculate the capacity of
+    this channel.
+
+    Solution
+
+    Given B = 4000 Hz; S = 0.1(10-3) W; N = B = 2(10-12)(4000)=8(10-9) W
+
+                      S 0.1(103 )
+    Thus                    9
+                                    1.25(104 )
+                      N 8(10 )
+
+                                   S
+    Now              C  Blog 2 1    4000 log 2 [(1  1.259104 )]  54.44(103 ) b / s
+                                 N
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND    PH: (01332) 266328   Web: www.amiestudycircle.com   29/46
+
+WHATSAPP: +91-9412903929                           AMIESTUDYCIRCLE.COM                         INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    Example
+
+    Calculate the capacity of an AWGN channel with a bandwidth of 1 MHz and S/N ratio of 40
+    dB.
+
+    Solution
+
+    The capacity of AWGN channel is given by
+                                       S   
+                     C   B log 2  1       b / s
+                                   N       
+    where B is channel bandwidth and S/N is signal to noise ratio.
+                              S        S
+    Given            10 log10    40     104 and B  1 MHz
+                              N        N
+
+    Then             C  1.log 2 (1  104 )  13.29 Mb / sec
+
+    Example (AMIE Winter 2009, 10 marks)
+
+    Find the bandwidth of picture signal in TV if the following data is given where TV picture
+    consists of 3 x 105 small picture element. There are 10 distinguishable brightness levels
+    which equally likely to occur. Number of frames transmitted per second = 30 and SNR is
+    equal to 30 dB.
+
+    Solution
+
+                      S
+                         30 dB
+                      N
+                              S 
+                     10 log10    30
+                              N 
+
+                           S 
+    or               log10    3
+                           N 
+
+                     S 
+                       10  1000
+                             3
+
+                     N 
+    Information associated with each picture element
+                     = log210 = (1/0.30103)log10(10) = 3.32 bits/element
+    Information associated with each frame = 3.32 x 3 x 105
+     Information transmitted per second
+                     = 30 x 3.32 x 3 x 105
+                     = max. rate of transmission of information = C
+                    C = 3.32 x 30 x 3 x 105 = 29.9 x 106 bits/sec = 29.9 Mbps
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   30/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                   AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                               A     Focused             Approach 
+                                    S 
+                     C  B log 2 1   bits/sec
+                                  N 
+                     29.9 x 106 = B x (1/0.30103)log10(1001)
+    Solving          W = 3 mHz
+
+    Problem (AMIE Winter 2010, 6 marks)
+
+    Calculate the capacity of an standard 4 kHz telephone channel working in the range of 300 to
+    3400 Hz with a signal to noise ratio of 32 dB.
+    Answer: 32.953 K bits/sec.
+
+    Problem
+
+    A Gaussian channel is band limited to 1 Mhz. If the signal power to noise spectral density S/
+    = 105 Hz, calculate the channel capacity C and the maximum information rate.
+    Answer: 0.1375 M bits/s, Rmax = 1.44(S/) = 0.144 M bits/s
+    Hint: N = B
+
+    CHANNEL CAPACITY OF PCM EQUILISER
+    With maximum sampling rate of 2W samples per second, the maximum rate of information
+    transmission of the PCM system measured in bits per second is
+                     C  2W log 2 L bits / sec.
+
+    With M possible levels, we get L  M n (Mn distinct code words, each codeword contain n
+    bits).
+    Now              C  2Wn log 2 M bits / sec.
+
+    Average transmitted power required to maintain M-ary PCM system operate above error
+    threshold is
+
+                           2     1  2  3  2            M 1  
+                                                                   2
+
+                     S                                           ( )
+                                                                            2
+                                              ....... 
+                           M       2
+                                     2                 2    
+
+                              M 2 1 
+                     = 2N 2         
+                              12 
+    where  is a constant and N = N0B = noise variance
+    Solving for M we get
+                                           1/2
+                             12 S 
+                     M  1  2    
+                           N0 B 
+     Substituting above equation for M in equation for C we get
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND    PH: (01332) 266328   Web: www.amiestudycircle.com   31/46
+
+WHATSAPP: +91-9412903929                         AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+                                      12 S 
+                     C  Wn log 2 1  2    
+                                    N0 B 
+    BW of pulse duration of 1/2nW is B = nW
+     value varies between 1 and 2
+    Using minimum value of  (i.e. 1), we get
+
+                                     12S 
+                     C  B log 2 1  2   
+                                   N0 B 
+
+                                  12 S 
+    or               C  B log 2 1  2 
+                                   N
+
+    THE SOURCE CODING
+    A conversion of the output of a DMS into a sequence of binary symbols (i.e., binary code
+    word) is called source coding. The device that performs this conversion s called the source
+    encoder as shown in above figure.
+
+
+
+
+    An objective of source coding is to minimize the average bit rate required for representation
+    of the source by reducing the redundancy of the information source.
+
+    The Code Length and Code Efficiency
+    Let X be a DMS with finite entropy H(X) and an alphabet {x1, x2, … … xm} with
+    corresponding probabilities of occurrence P(xi) (i = 1, 2, … … m).
+    Let the binary code word assigned to symbol xi by the encoder have length ni, measured in
+    bits. The length of a code word is the number of binary digits in the code word. The average
+    code word length L, per source symbol is given by
+                           m
+                     L   P(x i )n i
+                          i 1
+
+
+    The parameter L represents the average number of bits per source symbol used in the source
+    coding process.
+    Also, the code efficiency  is defined as
+                          L min
+                     
+                           L
+    Where Lmin is the minimum possible value of L. When  approaches unity, the code is said to
+    be efficient.
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   32/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    The code redundancy  is defined as
+                     =1-
+
+    Kraft Inequality
+    Let X be a DMS with alphabet {xi} (i = 1, 2, ……m). Assume that the length of the assigned
+    binary code word corresponding to xi is ni.
+    A necessary and sufficient condition for the existence of an instantaneous binary code is
+                            m
+                     K   2 n i  1
+                           i 1
+
+
+    which is known as Kraft inequality.
+
+    Example
+
+    Consider a DMS X with two symbols x1 and x2 nad P(x1) = 0.9, P(x2) = 0.1. Symbols x1 and
+    x2 are encoded as follows:
+                                                  x1 P(xi) Code
+                                                  x1    0.9       0
+                                                  x2    0.1       1
+    Find the efficiency  and the redundancy  of this code.
+
+    Solution
+
+    We know that the average code length L per symbol is
+                           2
+                     L   P(x i ) n i  (0.9) (1)  (0.1) (1)  1b
+                          i 1
+
+
+    Also we know
+                                     2
+                     H(X)    P(x i ) log 2 P(x i )
+                                    i 1
+
+
+                                  = - 0.9 log2 0.9 - 0.1 log2 0.1 = 0.469 b/symbol
+    Also. the code efficiency  is
+                          H(X)
+                             = 0.469 = 46.9 %
+                           L
+    And, the code redundancy  is given by
+                      = 1 -  = 0.531 = 53.1 %                                                                Ans.
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   33/46
+
+WHATSAPP: +91-9412903929                       AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A       Focused           Approach 
+    Example
+
+    The second-order extension of the DMS X of question 8.25, denoted by X2, is formed by
+    taking the source symbols two at a time. The coding of this extension has been shown in given
+    table. Find the efficiency  and the redundancy  of this extension code.
+                                                  ai       P(a1) Code
+                                               a1 = x1x1   0.81         0
+                                               a2 = x1x2   0.09         10
+                                               a3 = x2x1   0.09       110
+                                               a4 = x2x2   0.01       111
+
+    Solution
+                              4
+    We have          L   P(a i ) n i
+                          i 1
+
+
+    or               L = 0.81 (1) + 0.09 (2) + 0.09 (3) + 0.01 (3) = 1.29 b/symbol
+    The entropy of the second-order extension of X, H(X2), is given by
+                                      4
+                     H(X 2 )    P(a i ) log 2 P(a i )
+                                     i 1
+
+
+                                  = - 0.81 log2 0.81 - 0.09 log2 0.09 - 0.09 log2 0.09 - 0.01 log2 0.01
+                          2
+                     H(X ) = 0.938 b/symbol
+    Therefore, the code efficiency  is
+
+                          H(X 2 ) 0.938
+                                     = 0.727 = 72.7 %
+                            L      1.29
+    Also, the code redundancy  will be
+                      = 1 -  = 0.273 = 27.3 %                                                                Ans.
+    Note that        H(X2) = 2H(X)
+
+    Example
+
+    Verify the following expression:
+                     L  H(X)
+    Where L is the average code word length per symbol and H(X) is the source entropy.
+    Also give formula for code efficiency.
+
+    Solution
+
+    We know that
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   34/46
+
+WHATSAPP: +91-9412903929                        AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                                       AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                                   A     Focused             Approach 
+                         m
+                                             Qi
+                      P log
+                      i 1
+                             i           2
+                                             Pi
+                                                0
+
+    Where the equality holds only if Qi = Pi
+                                 2 ni
+    Let              Qi                                                                                                            (i)
+                                  K
+                                 m
+    Where            K   2 n i                                                                                                   (ii)
+                             i 1
+
+
+    Now, we have
+                         m
+                                         1 m  ni
+                     Q
+                      i 1
+                                 i        2  1
+                                         K i 1
+                                                                                                                                    (iii)
+
+                         m
+                                             2 ni      m
+                                                                          1                  
+    and               Pi log 2              KPi
+                                                       P  log
+                                                               i       2
+                                                                           Pi
+                                                                               n i  log 2 K 
+                      i 1                             i 1                                  
+                                                         m                      m                           m
+                                                 =   Pi log 2 Pi   Pi n i   log 2 K   Pi                                    (iv)
+                                                        i 1                   i 1                        i 1
+
+
+                                                 = H(X) - L - log2 K  0
+    From the Kraft inequality, we have
+                     log2 K  0
+    Thus             H(X) - L  log2 K  0
+    or                               L  H(X)
+    The equality holds when K = 1 and Pi = Qi .                                                                          Hence Proved
+    L can be made as close to H(X) as desired for some suitably chosen code.
+    Thus, with Lmin = H(X), the code efficiency can be rewritten as
+                             H (X )
+                     
+                               L
+
+    ENTROPY CODING
+    The design of a variable length code such that its average code word length approaches the
+    entropy of DMS is often referred to as entropy coding. In this section we present two
+    examples of entropy coding.
+
+    Shannon-Fano Coding
+    An efficient code can be obtained by the following simple procedure, known as Shannon-
+    Fano algorithm:
+          1. List the source symbols in order of decreasing probability.
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                        PH: (01332) 266328   Web: www.amiestudycircle.com     35/46
+
+WHATSAPP: +91-9412903929                                      AMIESTUDYCIRCLE.COM                                  INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                      A Focused Approach 
+        2. Partition the set into two sets that are as close to equiprobables as possible, and assign
+           0 to the upper set 1 to the lower set.
+        3. Continue this process, ach time partitioning the sets with as nearly equal probabilities
+           as possible until further partitioning is not possible.
+        4. An example of Shannon-Fano encoding is shown in Table given below. Note in
+           Shannon-Fano encoding the ambiguity may arise in the choice of approximately
+           equiprobable sets.
+                                           Shannon-Fano Encoding
+
+
+
+
+                     H(X) = 2.36       b/symbol L = 2.38 b/symbol
+
+                          = H(X)          = 0.99
+                                       L
+
+    The Huffman Encoding
+    In general, Huffman encoding results in an optimum code. Thus, it is the code that has the
+    highest efficiency. The Huffman encoding procedure is as follows:
+        1. List the source symbols in order of decreasing probability.
+        2. Combine the probabilities of the two symbols having the lowest probabilities, and
+           reorder the resultant probabilities, this step is called reduction 1. The same procedure
+           is repeated until there are two ordered probabilities remaining.
+        3. Start encoding with the last reduction, which consist of exactly two ordered
+           probabilities. Assign 0 as the first digit in the code words for all the source symbols
+           associated with the first probability; assign 1 to the second probability.
+        4. Now go back and assign 0 and 1 to the second digit for the two probabilities that were
+           combined in the previous reduction step, retaining all assignments made in Step 3.
+        5. Keep regression this way until the first column is reached.
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   36/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                           AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                               A Focused                                         Approach 
+    An example of Huffman encoding is shown in Table given below:
+                                                          Huffman Encoding
+
+
+
+
+                         H(X) = 2.36            b/symbol
+                             L = 2.38           b/symbol
+                              = 0.99
+
+    Example
+
+    A DMS has five equally likely symbols.
+          (i)        Construct a Shannon-Fano code for X, and calculate the efficiency of the code.
+          (ii)       Construct another Shannon-Fano code and compare the results.
+          (iii)      Repeat for the Huffman code and compare the results.
+    Solution
+    (i)           A Shannon-Fano code (by choosing two approximately equiprobable (0.4 verses 0.6)
+                  sets is constructed a flows (see table)
+
+
+
+
+                                      5
+                         H(X)   P(x i ) log 2 P(x i )  5( 0.2) log 2 0.2)  2.32
+                                     i 1
+
+                               5
+                         L    P(x )n
+                              i 1
+                                            i   i    0.2 (2  2  2  3  3)  2.4
+
+                                                         H(X) 2.32
+                  The efficiency  is                           = 0.967 = 96.7 %                                     Ans.
+                                                          L    2.4
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND            PH: (01332) 266328   Web: www.amiestudycircle.com   37/46
+
+WHATSAPP: +91-9412903929                                 AMIESTUDYCIRCLE.COM                           INFO@AMIESTUDYCIRCLE.COM
+                                                                            AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                             A Focused Approach 
+    (ii)           Another Shannon-Fano code [by choosing another two approximately equiprobable
+                   (0.6 verses 0.4) sets ] is constructed as follows (see table)
+                                      xi            P(xi)      Step 1    Step 2      Step3        Step 4
+                                      x1             0.2         0         0                        00
+                                      x2             0.2         0         1             0         010
+                                      x3             0.2         0         1             1         011
+                                      x4             0.2         1         0                        10
+                                      x5             0.2         1         1                        11
+                                  5
+                          L   P(x i ) n i  0.2 (2  3  3  2  2)  2.4
+                               i 1
+
+
+                   Since the average code word length is the same as that for the code of part (a), the
+                   efficiency is the same.
+    (iii)          The Huffman code is constructed as follows (see table)
+
+
+
+
+                                  5
+                          L    P(x ) n
+                               i 1
+                                            i   i    0.2 (2  3  3  2  2)  2.4
+
+    since the average code word length is the same as that for the Shannon-Fano code, the
+    efficiency is also the same.
+
+    Example
+
+    A DMS X has five symbols x1,x2,x3,x4, and x5 with P(x1) = 0.4, P(x2) = 0.19, P(x3) = 0.16,
+    P(x4) = 0.15, and P(x5) = 0.1
+            (i)       Construct a Shannon-Fano code for X, and calculate the efficiency of the code.
+            (ii)      Repeat for the Huffman code and compare the results.
+
+    Solution
+
+    (i)            The Shannon-Fano code is constructed as follows (see table)
+                             xi            P(xi)            Step 1      Step 2        Step 3           Code
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND             PH: (01332) 266328   Web: www.amiestudycircle.com   38/46
+
+WHATSAPP: +91-9412903929                                    AMIESTUDYCIRCLE.COM                         INFO@AMIESTUDYCIRCLE.COM
+                                                                                     AMIE(I)             STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                               A     Focused             Approach 
+                            x1                 0.4                   0           0                              00
+                            x2                0.19                   0           1                              01
+                            x3                016                    1           0                              10
+                            x4                0.15                   1           1               0             110
+                            x5                 0.1                   1           1               1             111
+                                          5
+                         H(X)         P(x ) n
+                                      i 1
+                                                        i     i    0.4(1)  0.19(2)  0.16(2)  0.15(3)  0.1(3)  2.25
+
+                                                  H(X) 2.15
+                  Also                                     0.956 = 9.56 %                             Ans.
+                                                   L    2.25
+    (ii)          The Huffman code is constructed as follows (see table)
+
+
+
+
+                                 5
+                         L    P(x ) n
+                              i 1
+                                              i     i        0.4(1)  0.19  0.16  0.15  0.1(3)  2.2                        Ans.
+
+                  The average code word length of the Huffman code is shorted than that of the
+                  Shannon-Fano code, and thus the efficiency is higher than that of the Shannon-Fano
+                  code.
+
+    Problem
+
+    A DMS X has five symbols x1, x2,…. x5 with respective probabilities 0.2, 0.15, 0.05, 0.1 and
+    0.5.
+           (i)       Construct a Shannon-Fano code for X, and calculate the code efficiency.
+           (ii)      Repeat (i) for the Huffman code.
+    Answer:
+    (i)           Symbols            x1             x2              x3      x4       x5
+                  Code               10             110             1111 1110        0
+    Code efficiency  = 98.6%
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND                    PH: (01332) 266328   Web: www.amiestudycircle.com   39/46
+
+WHATSAPP: +91-9412903929                                          AMIESTUDYCIRCLE.COM                          INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                             A      Focused             Approach 
+    (ii)       Symbols        x1       x2       x3       x4        x5
+               Code           11       100      1011 1010          0
+    Code efficiency  = 98.6%
+
+    CHANNEL CODING
+    Channel encoding has the major function of modifying the binary stream in such a way that
+    errors in the received signal can be detected and corrected. These are basically forward error
+    correction (FEC) techniques as compared to Automatic Repeat Request (ARQ) techniques,
+    where error can be corrected at the receiver without the need to request a retransmission. A
+    channel coded digital communication system is shown in figure
+
+
+
+
+                              Channel Coded Digital Communication System
+    Rb is the input bit rate, Pb is the output bit error probability and BER is the output bit error
+    rate. A polar NRZ transmission bits matched filter detector would result in a bit error
+    probability given by
+
+                             1      Eb
+                      Pb      erfc             for uncoded transmission
+                             2      N0
+
+    which is the same as BER at the output i.e. if Pb = 0.00001. The BER = 1 bit in every 100,000
+    bits on an average with error control coding, the bit input rate Rb will be changed to new
+    transmission bit rate Rb'. At the receiver, the bit error rate at the output of the channel
+    decoder (BER') would be less than bit error probability Pb' at the input of the decoder.
+
+    Error Control Methods
+    As already stated error control (channel coding) is always associated with adding some
+    redundancy to the source encoded digital signal. As we have seen with repetitive codes, it is
+    possible to only detect errors but not correct them. Also the method adds so much redundancy
+    that it is impractical. There are many advanced error control codes that have been developed
+    over the years. But broadly these are classified as:
+              ARQ (Automatic Repeat Request) Codes
+              FEC (Forward Error Control) Codes.
+    ARQ codes are commonly used in network and computer data communications. They
+    combine an error detecting code (such as cyclic redundancy check - CRC code) with a
+    feedback mechanism that provides retransmission of the erroneously received block of data.
+    ARQ codes use various protocols such as stop and wait protocol, go back 'n' (GBN) protocol,
+    selective repeat (SR) protocol etc. which are mostly popular in computer networks.
+    In FEC codes, there is no retransmission of the erroneously received data. Most real time
+    systems where a constant throughput and a very small (or no) delay is the requirement. Since
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   40/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                 A Focused Approach 
+    no feedback is used in FEC codes, these will be designed for the worst channel conditions.
+    The best alternative would be to use a Hybrid scheme which uses both ARQ and FEC
+    techniques depending on the throughput and delay requirement of the system.
+    As there is no retransmission of messages in FEC codes, these coders have to include
+    sufficient redundancy in the code so that errors can be detected and corrected at the receiver
+    end. FEC codes can be classified as .
+           Error concealment codes
+           Linear error correcting codes
+    The error concealment codes are normally employed to detect an error (chick noises in
+    magnetic tapes) and then conceal these by some technique as in the case of audio magnetic
+    tapes. The particular sample that has been detected as erroneous will be concealed by
+    replacing the last correctly received sample. This method is called as word repeat method. In
+    another method, known as interpolation, the erroneous sample will be replaced by an
+    interpolated value or an average value of a set of previously correctly received sample values.
+    The linear error correcting codes are very well organised techniques which are broadly
+    classified as
+           Algebraic codes or Block codes
+           Convolutional codes
+    Algebraic Codes. The algebraic codes or Block Codes as the name suggests, are those in
+    which a particular message word is encoded as a block of message bits and redundant (also
+    called parity or check) bits. The length of the code word is fixed as 'n' bits. If ‘k' is the length
+    of the message word and when the check bits get added, we obtain a code word of length 'n'
+    for each message block of 'k' bits. The conversion from a 'k’ bit message into an ‘n' bit code
+    is generally done by using a generator polynomial. Such a code is called a (n, k) block code.
+    The number of extra/redundant/parity/check bits added is (n - k). There are several types of
+    algebraic block codes. The most commonly used block codes are
+           Parity codes. By adding a parity/check bit (odd or even), we can detect 1 bit errors
+            but 2 bit errors can not be detected. This is called single parity check code. If any
+            code word (say 1100) is transmitted, we just check the received code word for even
+            parity. If 1100 is received as 1101, we see that the received word has an odd number
+            of 1’s and hence we detect an error. But if there were 2 bits that were received by
+            error, it is not possible even to detect. Correction is rules out. If there are k bits in the
+            message, we have 2k distinct message words. If (n – k) parity (extra) bits are added to
+            the k message bits to end up with code words of length n bits where n > k is called a
+            (n, k) block code.
+           Hamming codes
+           Hadamard codes
+           Golay codes
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   41/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                    AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                    A Focused Approach 
+           Cyclic codes. Cyclic codes are subclass of linear block codes. In cyclic codes, each
+            code word of the code is the cyclic shift of the other code word of the same code. If
+            (V0, V1, V2, V3,…… Vn-1) is a code word of a code, then (Vn-1, V0, V1, V2 …. Vn-2) is
+            also a code word of the code. The code polynomial of an (n, k) cyclic code is given as
+                     V(x)  V0  V1x  V2 x 2  .......  Vn 1x n 1 .
+
+            Here all the coefficients of the above polynomial are 0’s and 1’s. A cyclic encoder is
+            shown below:
+
+
+
+
+            Its operation is simple. S1 is kept in position 1 and S2 is closed. The data bits d0, d1,
+            …… dk-1 are then applied into the encoding circuit and into the channel with dk-1 as
+            first bit through the switch kept in the above position (2). After all the data bits have
+            been encountered into the shift register, the shift register contents are equal to the
+            parity bits. Now S2 is opened and S1 is kept in position 2 and the contents of the shift
+            register are shifted into the channel. Then the code word is obtained as
+                     f 0 f1 ....f n  k 1 d 0 d1.....d k 1
+                      
+                         parity bits           data bits
+
+
+            During transmission of cyclic codes, errors do occur. Syndrome decoding can be used
+            to correct these errors. Let the received vector be R(x). If E(x) denotes an error vector
+            and S(x) is the syndrome then
+                                         R(x)
+                     S(x)  Re m.
+                                         g(x)
+                     R(x)  V(x)  E(x)
+
+                                         E(x)
+                    S(x)  Re m.
+                                         g(x)
+            Most efficient code is BCH (Bose Choudhary Hocquenghem) code.
+           Non-binary block codes
+           Concatenated block codes etc.
+    Convolution Codes. In convolution codes, the source generates a continuing message
+    sequence of 1’s and 0’s and the transmitted sequence is generated from this source sequence.
+    The transmitted sequence will not be longer than the message sequence (i.e. no redundant bits
+    are added as in block codes) but error correction capability is achieved by introducing
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND     PH: (01332) 266328   Web: www.amiestudycircle.com   42/46
+
+WHATSAPP: +91-9412903929                               AMIESTUDYCIRCLE.COM                      INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                 A Focused Approach 
+    memory into the system. The transmitted sequence is generated by convolving the source
+    sequence with a fixed binary sequence. Hence these are called convolutional codes.
+
+    Encoding and Decoding of Codes
+        1. Information sequence is segmented into message blocks of k successive bits.
+        2. Each message block is transformed into a larger block of n bits by an encoder as per
+           predetermined set of rules. The (n – k) redundant/additional bits are generated from
+           linear combinations of the message bits.
+        3. Block codes are generated. Generation of block codes starts with selection of parity
+           check matrix or H – matrix.
+        4. Block codes are decoded. The generator matrix which is used in encoding operation
+           and in the parity check matrix H, is now used in decoding operation.
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   43/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    ASSIGNMENT
+    Q.1. (AMIE W05, S09, 4 marks): What do you understand by amount of information? Also define entropy of
+    the source.
+    Q.2. (AMIE S06, 4 marks): Define uncertainty and entropy.
+    Q.3. (AMIE W09, 12, S12, 10 marks): Define rate of information, joint entropy, conditional entropy, mutual
+    information and redundancy.
+    Q.4. (AMIE W08, 12 marks): define entropy of a source. What are the properties of entropy? Define average
+    mutual information over a joint ensemble and explain with an example.
+    Q.5. (AMIE S11, 4 marks): Define entropy of a source. What is conditional entropy.
+    Q.6. (AMIE S05, W12, 06): Define channel capacity? Derive an expression for the capacity of binary
+    symmetric channel.
+    Q.7. (AMIE S08, 6 marks): Derive an expression for the channel capacity of PCM system.
+    Q.8. (AMIE S08, 6 marks): Deduce the expression
+
+                          12 S 
+             C  B log 2  1  2 
+                           N
+    for channel capacity of a PCM equalizer.
+    Q.9. (AMIE S13, 10 marks): Derive the Gaussian channel capacity.
+    Q.10. (AMIE S10, 6 marks): Show that the channel capacity of a channel, disturbed by Gaussian white noise,
+    is given by
+
+                     C  B log 2 (1  S / N ) bits/sec
+    Q.11. (AMIE W08, 10, 8 marks): State Shannon channel coding theorem and explain the concept of "channel
+    capacity".
+    Q.12. (AMIE W07, 12 marks): Define channel capacity and channel efficiency for a discrete noisy channel.
+    Describe the properties of binary symmetric channel and binary erase channel. Derive an expression for channel
+    capacity in terms of sampling conditioning.
+    Q.13. (AMIE S10, 2 marks): What is a binary symmetric channel?
+    Q.14. (AMIE W10, 8 marks): Define channel capacity. Draw the transition probability diagram of a binary
+    symmetric channel and derive an expression for its capacity in terms of probability.
+    Q.15. (AMIE W06, 8 marks): Explain the relation between systems capacity and information content of
+    messages.
+    Q.16. (AMIE W06, 8 marks): Explain the terms: Information, entropy, redundancy, rate of communication.
+    Q.17. (AMIE W07, 8 marks): What is entropy of a source? How can you find maximum entropy of several
+    alphabets? Define code efficiency and redundancy of codes.
+    Q.18. (AMIE W06, 4 marks): What do you understand by channel coding?
+    Q.19. (AMIE S08, 8 marks): State and explain the channel coding theorem. Explain the application of this
+    theorem in binary symmetric channel.
+    Q.20. (AMIE S07, 6 marks): State and explain the aspect of transmission channel which is defined by
+    Shannon-Hartley law. How does noise affect channel capacity.
+    Q.21. (AMIE S12, 5 marks): State and explain Shannon-Hartley theorem.
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   44/46
+
+WHATSAPP: +91-9412903929                       AMIESTUDYCIRCLE.COM                            INFO@AMIESTUDYCIRCLE.COM
+                                                                     AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                                 A     Focused             Approach 
+    Q.22. (AMIE S07, 6 marks): State and describe the three types of error detection codes and explain how they
+    detect data errors. What are the merits and demerits of channel coding? List them.
+    Q.23. (AMIE S09, 8 marks): Find the equation for coding efficiency by using source coding theorem.
+    Q.24. (AMIE S11, 8 marks): What is parity check matrix? How parity check matrix for cyclic codes help in
+    channel coding?
+    Q.25. (AMIE S06, 10 marks): A source emits one of four symbols s0, s1, s2 and s3 with probabilities 1/3, 1/6,
+    1/4 and 1/3 respectively. The successive symbols emitted by the source are statically independent. Calculate the
+    entropy of the source. Derive the formula you use.
+
+              1        1       1
+    Answer:     log 3  log 6  log 4 bits/message
+              3        6       4
+    Q.26. (AMIE S07, 8 marks): A source emits one of six symbols 0, 1,…….5 with probabilities 1/6, 1/8, 1/4,
+    1/6, 1/6, 1/8 respectively. The symbols emitted by the source are statistically independent. Calculate the entropy
+    of the source and derive the same formula.
+
+              1            1           1           1           1           1
+    Answer:     log 2 (6)  log 2 (8)  log 2 (4)  log 2 (6)  log 2 (6)  log 2 (8)
+              6            8           4           6           6           8
+    Q.27. (AMIE S10, 6 marks): A message source produces five symbols with the probabilities of occurrence as
+    1/2, 1/6, 1/6, 1/12 and 1/12. Calculate the entropy of the source.
+    Answer: 1.94 b/symbol
+    Q.28. (AMIE W13, 5 marks): A source is generating four possible symbols with probabilities of 1/8, 1/8, ¼, ½
+    respectively. Find entropy and information rate, if the source is generating 1 symbol/ms.
+    Q.29. (AMIE W05, 10 marks): Consider the two sources S1 and S2 emit x1, x2, x3 and y1, y2, y3 with joint
+    probability p(X,Y) as shown in the matrix form. Calculate H(X), H(Y), H(X|Y) and H(Y|X).
+
+                                          y1        y2      y3 
+                                     x1  3 / 40 1/ 40 1/ 40 
+                      P  x, y    x 2  1/ 20 3 / 20 1/ 20 
+                                     x 3   1/ 8 1/ 8 3 / 8 
+    Answer: 1.298794941 bits, 1.53949107 bits, 1.019901563 bits, 1.260597692 bits
+    Q.30. (AMIE S08, 6 marks): Five symbols of a discrete memoryless source and their probabilities are given
+    below:
+                                           Symbols    Probability      Code Word
+                                              s0          0.4               00
+                                              s1          0.2               10
+                                              s2          0.2               11
+                                              s3          0.1              010
+                                              s4          0.1              011
+    Determine the average code word length and the entropy of the memoryless source.
+    Q.31. (AMIE S11, 6 marks): A binary source emits an independent sequence of "0s" and "1s" with
+    probabilities p and 1 - p, respectively. Evaluate the variation of entropy at p = 0.05 and 1.
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND      PH: (01332) 266328   Web: www.amiestudycircle.com   45/46
+
+WHATSAPP: +91-9412903929                        AMIESTUDYCIRCLE.COM                              INFO@AMIESTUDYCIRCLE.COM
+                                                                  AMIE(I)               STUDY CIRCLE(REGD.)
+    COMMUNICATION ENGINEERING
+    INFORMATION THEORY                                              A     Focused             Approach 
+    Q.32. (AMIE S08, 6 marks): A system has a bandwidth of 4 kHz and a signal to noise ratio of 28 dB at the
+    input of the receiver. If the bandwidth of the channel is doubles while transmitted signal power remains same,
+    determine capacity of the channel.
+    Q.33. (AMIE S10, 6 marks): A source emits seven symbols with probabilities 1/2, 1/4, 1/8, 1/16, 1/64 and 1/64
+    respectively. Determine a Huffman code for it.
+    Q.34. (AMIE S12, 5 marks): For the binary symmetric channel, find the channel capacity for p = 0.9.
+    Q.35. (AMIE W13, 4 marks): Obtain maximum possible entropy for an 8 symbol source.
+    Answer: 3 bits/symbols, Hint: Hmax = log2M
+
+
+
+
+      SECOND FLOOR, SULTAN TOWER, ROORKEE – 247667 UTTARAKHAND   PH: (01332) 266328   Web: www.amiestudycircle.com   46/46
+
+WHATSAPP: +91-9412903929                      AMIESTUDYCIRCLE.COM                             INFO@AMIESTUDYCIRCLE.COM
+
