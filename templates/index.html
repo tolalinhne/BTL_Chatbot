@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Demonstration of ChatGPT API in a Python Flask Application. A Skolo Online course.">
-
-  <title>IBA Chatbot</title>
+  <meta name="description" content="FIT.Subject Chatbot using Flask and AI. A Skolo Online course.">
+  <title>FIT.Subject Chatbot</title>
   <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/iba_logo.png') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1yTLwNiCZhIdCWolQldwq4spHQkgZDqkG">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Georgia&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Manrope', sans-serif;
       margin: 0;
-      background-color: #101626;
-      color: #fff;
+      background-color: #0a0f1f;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
-    /* Thêm style cho sidebar */
+    /* Sidebar */
     .sidebar {
       position: fixed;
       left: 0;
       top: 0;
       height: 100vh;
-      width: 280px;
-      background-color: #0d111c;
-      padding: 15px;
+      width: 260px;
+      background: linear-gradient(180deg, #12172a 0%, #0a0f1f 100%);
+      padding: 20px;
       overflow-y: auto;
       transition: transform 0.3s ease;
       z-index: 1000;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .sidebar::-webkit-scrollbar-track {
+      background: #0a0f1f;
+      border-radius: 10px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+      background: #4a90e2;
+      border-radius: 10px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb:hover {
+      background: #357abd;
     }
     
     .sidebar-hidden {
@@ -47,8 +62,8 @@
       top: 15px;
       left: 15px;
       z-index: 1001;
-      background-color: #202835;
-      color: white;
+      background-color: #1e2a44;
+      color: #ffffff;
       border: none;
       border-radius: 50%;
       width: 40px;
@@ -57,24 +72,26 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.2s ease;
     }
     
     .toggle-sidebar:hover {
-      background-color: #2c3e5a;
+      background-color: #2a3b66;
     }
     
     .main-content {
-      margin-left: 280px;
-      padding: 20px;
+      margin-left: 260px;
+      padding: 30px;
       transition: margin-left 0.3s ease;
+      background: linear-gradient(180deg, #0a0f1f 0%, #12172a 100%);
+      min-height: 100vh;
     }
     
     .main-content-full {
       margin-left: 0;
     }
     
-    /* Danh sách cuộc trò chuyện */
+    /* Conversation List */
     .conversation-list {
       margin-top: 20px;
     }
@@ -88,23 +105,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: #1e2a44;
     }
     
     .conversation-item:hover {
-      background-color: #1a222f;
+      background-color: #2a3b66;
     }
     
     .conversation-item.active {
-      background-color: #2c3e5a;
-      border-left: 3px solid #6393dc;
+      background-color: #3b4b88;
+      border-left: 4px solid #4a90e2;
     }
     
     .conversation-title {
       font-size: 0.9rem;
+      color: #ffffff;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 180px;
+      max-width: 170px;
     }
     
     .conversation-actions {
@@ -119,25 +138,27 @@
     .conversation-action-btn {
       background: none;
       border: none;
-      color: #8e9cb2;
+      color: #a0b1cb;
       font-size: 0.8rem;
       padding: 2px 5px;
       border-radius: 3px;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
     
     .conversation-action-btn:hover {
-      background-color: #253242;
-      color: white;
+      background-color: #2a3b66;
+      color: #ffffff;
     }
     
     .new-chat-btn {
       width: 100%;
-      background-color: #202835;
-      color: white;
-      border: 1px solid #3A4556;
+      background-color: #1e2a44;
+      color: #ffffff;
+      border: 1px solid #4a90e2;
       border-radius: 8px;
       padding: 10px;
+      margin-top: 53px;
       font-size: 0.9rem;
       cursor: pointer;
       transition: background-color 0.2s ease;
@@ -148,10 +169,10 @@
     }
     
     .new-chat-btn:hover {
-      background-color: #2c3e5a;
+      background-color: #2a3b66;
     }
     
-    /* Modal đổi tên */
+    /* Rename Modal */
     .rename-modal {
       display: none;
       position: fixed;
@@ -159,17 +180,18 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0, 0, 0, 0.8);
       z-index: 2000;
       align-items: center;
       justify-content: center;
     }
     
     .rename-modal-content {
-      background-color: #202835;
+      background-color: #1e2a44;
       padding: 20px;
       border-radius: 10px;
       width: 300px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
     
     .rename-form {
@@ -181,9 +203,9 @@
     .rename-input {
       padding: 8px 12px;
       border-radius: 5px;
-      border: 1px solid #3A4556;
-      background-color: #101626;
-      color: white;
+      border: 1px solid #4a90e2;
+      background-color: #0a0f1f;
+      color: #ffffff;
     }
     
     .rename-buttons {
@@ -197,409 +219,236 @@
       border-radius: 5px;
       border: none;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
     
     .rename-cancel {
-      background-color: #3A4556;
-      color: white;
+      background-color: #4a4a4a;
+      color: #ffffff;
     }
     
     .rename-confirm {
-      background-color: #4CAF50;
-      color: white;
+      background-color: #4a90e2;
+      color: #ffffff;
     }
-
-    .skeleton1,
-    .skeleton2,
-    .skeleton3 {
+    
+    /* Skeleton Loading */
+    .skeleton1, .skeleton2, .skeleton3 {
       min-height: 18px;
       padding: 10px;
       border-radius: 4px;
-      background-size: 40px 100%;
-      background-repeat: no-repeat;
-      background-position: left -40px top 0;
-      animation: shine 1s ease infinite;
-    }
+      background: linear-gradient(90deg, #4e5d94 25%, #8b9dc3 50%, #4e5d94 75%);
 
-    .skeleton1 {
-      background-color: #101626;
-      width: 70%;
+      background-size: 200% 100%;
+      animation: shine 1.5s ease infinite;
     }
-
-    .skeleton2 {
-      background-color: #e2e5e7;
-      width: 50%;
-    }
-
-    .skeleton3 {
-      background-color: #e2e5e7;
-      width: 60%;
-    }
-
+    
+    .skeleton1 { width: 70%; }
+    .skeleton2 { width: 50%; }
+    .skeleton3 { width: 60%; }
+    
     @keyframes shine {
-      to {
-        background-position: right -40px top 0;
-      }
+      to { background-position: 200% 0; }
     }
-
-    /* Thêm CSS để hiển thị định dạng văn bản tốt hơn */
+    
+    /* Text Formatting */
     strong {
       font-weight: bold;
-      color: #aaffaa;
-      white-space: nowrap;
-      display: inline-block;
-    }
-
-    em {
-      font-style: italic;
-      color: #aaddff;
+      color: #ffffff;
       white-space: nowrap;
       display: inline-block;
     }
     
-    /* Sửa lỗi hiển thị khi các phần tử định dạng lồng nhau */
+    em {
+      font-style: italic;
+      color: #e6e6e6;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    
     strong em, em strong {
       white-space: nowrap;
       display: inline-block;
     }
-
-    /* Cải thiện hiển thị phân cấp */
-    #typing-demo {
-      line-height: 1.5;
+    
+    .typing-demo {
+      line-height: 1.8;
       max-width: 100%;
+      color: #f3e5f5;
+      font-family: 'Georgia', 'Manrope', sans-serif;
+      font-size: 1rem;
+      word-wrap: break-word;
     }
     
-    /* Làm nổi bật cấu trúc phân cấp */
-    #typing-demo > p,
-    #typing-demo > ul,
-    #typing-demo > ol,
-    #typing-demo > table {
-      margin-bottom: 10px;
-      margin-top: 10px;
+    .typing-demo > p,
+    .typing-demo > ul,
+    .typing-demo > ol,
+    .typing-demo > table {
+      margin-bottom: 12px;
+      margin-top: 12px;
     }
     
-    /* Tăng padding cho tất cả các phần tử có cấp độ */
-    #typing-demo ul,
-    #typing-demo ol {
-      padding-left: 25px;
-      margin: 5px 0;
+    .typing-demo ul,
+    .typing-demo ol {
+      padding-left: 30px;
+      margin: 6px 0;
       list-style-position: outside;
     }
     
-    /* Thêm đường kẻ bên trái cho danh sách để thấy rõ cấp độ */
-    #typing-demo ul li,
-    #typing-demo ol li {
-      border-left: 2px solid #3A4556;
-      padding-left: 8px;
-      margin-bottom: 5px;
-      line-height: 1.4;
-    }
-
-    /* Điều chỉnh dấu đầu dòng cho danh sách không có thứ tự */
-    ul {
-      list-style-type: disc;
+    .typing-demo ul li,
+    .typing-demo ol li {
+      border-left: 2px solid #ab47bc;
+      padding-left: 10px;
+      margin-bottom: 6px;
+      line-height: 1.5;
+      color: #f3e5f5;
     }
     
-    /* Phân cấp dấu đầu dòng cho danh sách không có thứ tự */
-    ul ul {
-      list-style-type: circle;
-      margin-left: 5px !important;
-    }
+    ul { list-style-type: disc; }
+    ul ul { list-style-type: circle; margin-left: 10px !important; }
+    ul ul ul { list-style-type: square; margin-left: 10px !important; }
     
-    ul ul ul {
-      list-style-type: square;
-      margin-left: 5px !important;
-    }
-
-    /* Điều chỉnh dấu đầu dòng cho danh sách có thứ tự */
-    ol {
-      list-style-type: decimal;
-    }
+    ol { list-style-type: decimal; }
+    ol ol { list-style-type: lower-alpha; margin-left: 10px !important; }
+    ol ol ol { list-style-type: lower-roman; margin-left: 10px !important; }
     
-    /* Phân cấp dấu đầu dòng cho danh sách có thứ tự */
-    ol ol {
-      list-style-type: lower-alpha;
-      margin-left: 5px !important;
-    }
-    
-    ol ol ol {
-      list-style-type: lower-roman;
-      margin-left: 5px !important;
-    }
-
-    /* Ngăn các danh sách lồng nhau cách quá xa */
     ul ul, ol ul, ul ol, ol ol {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      border-left: 1px solid #3A4556;
-    }
-
-    /* Cập nhật màu cho tiêu đề sáng hơn */
-    h1, h2, h3 {
-      margin-top: 15px;
-      margin-bottom: 10px;
-      color: #ff7a7a; /* Màu hồng sáng hơn */
+      margin-top: 6px;
+      margin-bottom: 6px;
+      border-left: 1px solid #ab47bc;
     }
     
+    /* Headings */
     h1 {
-      font-size: 1.5em;
-      border-bottom: 1px solid #3A4556;
-      padding-bottom: 5px;
-    }
-    
-    h2 {
-      font-size: 1.3em;
-      border-bottom: 1px dashed #3A4556;
-      padding-bottom: 3px;
-    }
-    
-    h3 {
-      font-size: 1.1em;
-      padding-left: 5px;
-      border-left: 3px solid #ff7a7a;
-    }
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    /* Hiển thị bảng */
-    table {
-      border-collapse: collapse;
-      margin: 10px 0;
-      width: auto;
-      min-width: 50%;
-      max-width: 100%;
-      border: 1px solid #3A4556;
-      table-layout: auto;
-      color: #e6e6e6;
-      font-size: 0.95em;
-    }
-    
-    th, td {
-      padding: 8px 12px;
-      border: 1px solid #3A4556;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      max-width: 300px;
-    }
-    
-    th {
-      background-color: #202835;
-      color: #fff;
-      font-weight: bold;
+      font-size: 1.8em;
+      color: #ffffff;
       text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 10px;
     }
     
-    td {
-      text-align: left;
-      vertical-align: top;
-      color: #e6e6e6;
+    /* Chat Area */
+    .list-group {
+      background-color: transparent;
+      border-radius: 10px;
+      padding: 15px;
     }
     
-    /* Đảm bảo dòng chẵn và lẻ có màu khác nhau đủ tương phản */
-    tr:nth-child(odd) {
-      background-color: #1a222f;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #232d3d;
-    }
-    
-    tr:hover {
-      background-color: #253242;
-    }
-    
-    /* Bảng tùy chỉnh với CSS cải tiến */
-    .custom-table {
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      margin: 15px 0 !important;
-      border: none;
-    }
-    
-    .custom-table th {
-      background-color: #17365d;
-      color: #fff;
-      border: 1px solid #2a4c74;
-      padding: 10px 15px;
-      text-transform: uppercase;
-      font-size: 0.9em;
-      letter-spacing: 0.5px;
-    }
-    
-    .custom-table td {
-      padding: 10px 15px;
-      border: 1px solid #2a4c74;
-      color: #e6e6e6;
-    }
-    
-    .custom-table tr:nth-child(odd) {
-      background-color: #1a2638;
-    }
-    
-    .custom-table tr:nth-child(even) {
-      background-color: #253248;
-    }
-    
-    .custom-table tr:hover {
-      background-color: #2c3e5a;
-    }
-    
-    /* Căn chỉnh cột đầu tiên (thường là cột tiêu đề) */
-    .custom-table td:first-child {
-      font-weight: 500;
-      color: #96c2ff;
-    }
-    
-    /* Đặt kích thước cột dựa trên nội dung */
-    .custom-table {
-      width: auto;
-      min-width: 60%;
-      max-width: 95%;
-      table-layout: auto;
-    }
-    
-    /* Loại bỏ khoảng trắng thừa trước bảng */
-    br + table,
-    br + .custom-table,
-    p + table,
-    p + .custom-table,
-    #typing-demo > table:first-child,
-    #typing-demo > .custom-table:first-child {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-    
-    /* Loại bỏ margin trên của bảng nếu là phần tử đầu tiên trong vùng trả lời */
-    #typing-demo table:first-child,
-    #typing-demo .custom-table:first-child {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-    }
-    
-    /* Loại bỏ margin dưới của phần tử trước bảng */
-    #typing-demo > *:not(table):not(.custom-table):not(br):not(script):not(style):not(link):not(meta):not(head):not(title):not(html):not(body):not(div):not(span):last-child {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    /* Đảm bảo các ô bảng có kích thước tối thiểu */
-    td:empty {
-      padding: 8px;
-      height: 20px;
-    }
-
-    /* Thêm style cho nút conversation management */
-    .conversation-controls {
+    .list-group-item {
+      border: 1px solid #2a3b66;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
-      justify-content: center;
-      margin: 15px auto;
+      align-items: flex-start;
       gap: 10px;
     }
+    
+    .list-group-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-    .btn-conversation {
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
+    .list-group-item.user-message {
+      background-color: #1e2a44;
+      border-left: 4px solid #4a90e2;
+    }
+
+    .list-group-item.assistant-message {
+      background-color: #6a1b9a;
+      border-left: 4px solid #ab47bc;
+    }
+
+    .list-group-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #e6e6e6;
+    }
+
+    .list-group-item img {
+      margin-top: 5px;
+    }
+    
+    /* Chat Input */
+    .input-group {
+      background-color: #1e2a44;
+      border-radius: 10px;
+      padding: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      width: calc(100% - 60px);
+      max-width: 1000px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 260px;
+      right: 30px;
+      transition: left 0.3s ease;
+    }
+
+    .main-content-full .input-group {
+      left: 30px;
+    }
+
+    .form-control {
+      background-color: #12172a;
       border: none;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 0.9rem;
+      flex-grow: 1;
     }
 
-    .btn-new {
-      background-color: #4CAF50;
-      color: white;
+    .form-control:focus {
+      background-color: #12172a;
+      color: #ffffff;
+      box-shadow: none;
     }
 
-    .btn-new:hover {
-      background-color: #3e8e41;
+    #gpt-button {
+      background-color: #4a90e2;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+      white-space: nowrap;
+      min-width: 60px;
     }
 
-    .btn-clear {
-      background-color: #f44336;
-      color: white;
-    }
-
-    .btn-clear:hover {
-      background-color: #d32f2f;
-    }
-
-    /* Style cho session info */
-    .session-info {
-      font-size: 0.8rem;
-      text-align: center;
-      color: #8e9cb2;
-      margin-top: 10px;
-    }
-
-    /* Hiển thị đúng các dòng trong tin nhắn */
-    .mb-0.opacity-75 {
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    
-    /* Điều chỉnh textarea */
-    textarea.form-control {
-      min-height: 38px;
-      max-height: 150px;
-      line-height: 1.5;
-      padding: 8px 12px;
-      transition: height 0.1s ease;
-      overflow-y: auto !important;
-    }
-    
-    /* Thông báo phím tắt */
-    .shortcut-info {
-      font-size: 0.75rem;
-      color: #8e9cb2 !important;
-      text-align: center;
-      margin-top: 4px;
-      background-color: rgba(16, 22, 38, 0.7);
-      border-radius: 4px;
-      padding: 2px 0;
-    }
-    
-    /* Highlight phím tắt */
-    .key-combo {
-      background-color: #202835;
-      padding: 1px 4px;
-      border-radius: 3px;
-      font-family: monospace;
-      margin: 0 2px;
+    #gpt-button:hover {
+      background-color: #357abd;
     }
   </style>
-
 </head>
-
-<body class="w-lg-50 w-md-75 w-sm-100">
+<body class="w-lg-50the w-md-75 w-sm-100">
   <!-- Sidebar toggle button -->
-  <button class="toggle-sidebar" onclick="toggleSidebar()">
-    ☰
-  </button>
+  <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
   
   <!-- Sidebar for conversations -->
   <div class="sidebar" id="sidebar">
-    <h3>IBA Chatbot</h3>
     <a href="/new_conversation" class="new-chat-btn">
-      <span>+ Cuộc trò chuyện mới</span>
+      <span>+ New Conversation</span>
     </a>
     
-    <div class="conversation-list" id="conversation-list">
-      <!-- Conversations will be loaded here -->
-    </div>
+    <div class="conversation-list" id="conversation-list"></div>
   </div>
   
   <!-- Rename Modal -->
   <div class="rename-modal" id="rename-modal">
     <div class="rename-modal-content">
-      <h4>Đổi tên cuộc trò chuyện</h4>
+      <h4 style="color: #ffffff;">Rename Conversation</h4>
       <form id="rename-form" class="rename-form" action="" method="POST">
-        <input type="text" id="rename-input" name="title" class="rename-input" placeholder="Nhập tên mới..." required>
+        <input type="text" id="rename-input" name="title" class="rename-input" placeholder="Enter new name..." required>
         <div class="rename-buttons">
-          <button type="button" class="rename-cancel" onclick="closeRenameModal()">Hủy</button>
-          <button type="submit" class="rename-confirm">Lưu</button>
+          <button type="button" class="rename-cancel" onclick="closeRenameModal()">Cancel</button>
+          <button type="submit" class="rename-confirm">Save</button>
         </div>
       </form>
     </div>
@@ -609,134 +458,80 @@
   <div class="main-content" id="main-content">
     <main class="flex-shrink-0">
       <div>
-        <br>
-        <br>
-        <h1 class="mt-3">Gemini AI Model - Free Chatbot</h1>
-        
-        <!-- Hiển thị thông tin session -->
-        <div class="session-info">
-          {% if session['messages_count'] and session['messages_count'] > 0 %}
-            Đã có {{ session['messages_count'] }} tin nhắn trong cuộc trò chuyện này
-          {% else %}
-            Cuộc trò chuyện mới
-          {% endif %}
-        </div>
-
-        <p>This project is based on the free Gemini API recently released by Google. <span style="font-weight: bold;">60 queries per minute</span>. For more information, visit my <a href="https://github.com/tolalinhne" target="_blank">Profile</a>.</p>
-
-        <br>
-
-        <div id="list-group" style="background-color: #101626;" class="list-group w-auto">
-        </div>
-
-        <div class="input-group w-lg-50 w-md-75 w-sm-100 p-3 fixed-bottom" style="margin: 0 auto; ">
-          <textarea class="form-control" id="chat-input" rows="1"
-            style="background-color: #3A4556; border: #3A4556; color: #fff; resize: none;"></textarea>
+        <h1><strong>FIT.Subject Chatbot</strong></h1>
+        <div id="list-group" class="list-group w-auto"></div>
+        <div class="input-group w-sm-100 p-3 fixed-bottom" style="margin: 20px auto;">
+          <input type="text" class="form-control" id="chat-input">
           <div class="input-group-append">
-            <button id="gpt-button"
-              style="background-color: #140b9d; color: white; border-radius: 0 5px 5px 0;" class="btn">Ask</button>
+            <button id="gpt-button" class="btn">Ask</button>
           </div>
-          <small class="shortcut-info w-100">
-            Nhấn <span class="key-combo">Shift+Enter</span> hoặc <span class="key-combo">Alt+Enter</span> để xuống dòng, <span class="key-combo">Enter</span> để gửi
-          </small>
         </div>
       </div>
     </main>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-  </script>
-
-  <!-- MathJax for beautiful LaTeX rendering -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
       },
       svg: { fontCache: 'global' }
     };
-    // Tự động render lại MathJax sau khi nội dung chat được cập nhật
-    $(document).ajaxSuccess(function() {
-      if (window.MathJax && window.MathJax.typesetPromise) {
-        MathJax.typesetPromise();
-      }
-    });
 
-    // Sử dụng font awesome cho các biểu tượng
     document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">');
     
-    // Hiển thị lịch sử trò chuyện khi trang được tải
     $(document).ready(function() {
-      // Load danh sách cuộc trò chuyện
       loadConversations();
-      
-      // Gửi yêu cầu AJAX để lấy lịch sử trò chuyện hiện tại
       loadCurrentChatHistory();
     });
 
-    // Hiển thị lịch sử trò chuyện hiện tại
     function loadCurrentChatHistory() {
-      // Xóa nội dung chat hiện tại trước khi tải lịch sử mới
       $("#list-group").empty();
-      
       $.ajax({
         type: "GET",
         url: "/get_chat_history",
         success: function(data) {
           if (data && data.history && data.history.length > 0) {
-            // Hiển thị lịch sử trò chuyện
             data.history.forEach(function(item) {
               let userHtml = createUserMessageHtml(item.user);
               let assistantHtml = createAssistantMessageHtml(item.assistant);
-              
               $("#list-group").append(userHtml + assistantHtml);
             });
-            
-            // Cuộn xuống tin nhắn cuối cùng
-            $('html, body').animate({
-              scrollTop: $("#list-group").children().last().offset().top
-            }, 300);
+            if (window.MathJax && window.MathJax.typesetPromise) {
+              MathJax.typesetPromise(["#list-group"]);
+            }
+            $('html, body').animate({ scrollTop: $("#list-group").children().last().offset().top }, 300);
           }
         }
       });
     }
     
-    // Tạo HTML cho tin nhắn người dùng
     function createUserMessageHtml(message) {
-      return `<a style="margin-top:-10px; background-color:#3A4556; border:none; color:white;"
-        class="list-group-item list-group-item-action d-flex gap-3 py-3">
-        <img
-          src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png"
-          alt="user" width="32" height="32"
-          class="rounded-circle flex-shrink-0">
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <p class="mb-0 opacity-75">${message}</p>
+      return `
+        <div class="list-group-item user-message d-flex gap-3 py-3">
+          <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="user" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div><p class="mb-0">${message}</p></div>
           </div>
-        </div>
-      </a>`;
+        </div>`;
     }
     
-    // Tạo HTML cho tin nhắn trợ lý
     function createAssistantMessageHtml(message) {
-      return `<a style="background-color:#202835; border:black;" href="#"
-        class="list-group-item list-group-item-action d-flex gap-3 py-3">
-        <img src="{{ url_for('static', filename='images/iba_logo.png') }}" alt="bot" width="32" height="32"
-          class="rounded-circle flex-shrink-0">
-        <div class="d-flex gap-2 w-100 justify-content-between">
-          <div>
-            <p class="typing-demo mb-0 opacity-75 text-white">${message}</p>
+      return `
+        <div class="list-group-item assistant-message d-flex gap-3 py-3">
+          <img src="{{ url_for('static', filename='images/iba_logo.png') }}" alt="bot" width="32" height="32" class="rounded-circle flex-shrink-0">
+          <div class="d-flex gap-2 w-100 justify-content-between">
+            <div><p class="typing-demo mb-0">${message}</p></div>
           </div>
-        </div>
-      </a><br>`;
+        </div>`;
     }
 
-    // Load danh sách cuộc trò chuyện
     function loadConversations() {
       $.ajax({
         type: "GET",
@@ -745,27 +540,19 @@
           if (data && data.conversations && data.conversations.length > 0) {
             const conversationList = $("#conversation-list");
             conversationList.empty();
-            
             data.conversations.forEach(function(conv) {
               const activeClass = conv.active ? 'active' : '';
-              const title = conv.title || 'Cuộc trò chuyện không tên';
+              const title = conv.title || 'Unnamed Conversation';
               const date = new Date(conv.last_updated);
               const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-              
               const conversationHtml = `
                 <div class="conversation-item ${activeClass}" data-id="${conv.id}">
                   <div class="conversation-title" onclick="switchConversation('${conv.id}')">${title}</div>
                   <div class="conversation-actions">
-                    <button class="conversation-action-btn" onclick="showRenameModal('${conv.id}')">
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button class="conversation-action-btn" onclick="deleteConversation('${conv.id}')">
-                      <i class="fas fa-trash"></i>
-                    </button>
+                    <button class="conversation-action-btn" onclick="showRenameModal('${conv.id}')"><i class="fas fa-edit"></i></button>
+                    <button class="conversation-action-btn" onclick="deleteConversation('${conv.id}')"><i class="fas fa-trash"></i></button>
                   </div>
-                </div>
-              `;
-              
+                </div>`;
               conversationList.append(conversationHtml);
             });
           }
@@ -773,19 +560,16 @@
       });
     }
     
-    // Chuyển đổi giữa các cuộc trò chuyện
     function switchConversation(id) {
       window.location.href = `/switch_conversation/${id}`;
     }
     
-    // Xóa cuộc trò chuyện
     function deleteConversation(id) {
-      if (confirm('Bạn có chắc chắn muốn xóa cuộc trò chuyện này?')) {
+      if (confirm('Are you sure you want to delete this conversation?')) {
         window.location.href = `/delete_conversation/${id}`;
       }
     }
     
-    // Hiển thị modal đổi tên
     function showRenameModal(id) {
       const modal = $("#rename-modal");
       const form = $("#rename-form");
@@ -793,16 +577,13 @@
       modal.css("display", "flex");
     }
     
-    // Đóng modal đổi tên
     function closeRenameModal() {
       $("#rename-modal").css("display", "none");
     }
     
-    // Bật/tắt sidebar
     function toggleSidebar() {
       const sidebar = $("#sidebar");
       const mainContent = $("#main-content");
-      
       if (sidebar.hasClass("sidebar-hidden")) {
         sidebar.removeClass("sidebar-hidden");
         mainContent.removeClass("main-content-full");
@@ -812,101 +593,53 @@
       }
     }
 
-    // Xử lý sự kiện click cho nút Ask
-    $("#gpt-button").click(function () {
+    $("#gpt-button").click(function() {
       var question = $("#chat-input").val();
-      if (!question.trim()) return;  // Không gửi nếu câu hỏi trống
-      
+      if (!question.trim()) return;
       let userHtml = createUserMessageHtml(question);
       $("#list-group").append(userHtml);
-      
       let loadingHtml = `
-      <!-- code here -->
-          <div class="py-3" id="ok-good">
-            <h2 class="skeleton1"></h2>
-            <h2 class="skeleton2"></h2>
-            <h2 class="skeleton3"></h2>
-          </div>`;
-      
+        <div class="list-group-item assistant-message d-flex gap-3 py-3" id="ok-good">
+          <div class="skeleton1"></div>
+          <div class="skeleton2"></div>
+          <div class="skeleton3"></div>
+        </div>`;
       let responseDiv = $('<div id="response"></div>');
       $("#list-group").append(responseDiv);
       responseDiv.html(loadingHtml);
-      
       $("#chat-input").val("");
-  
       if ($("#ok-good").length) {
-        $('html, body').animate({
-          scrollTop: $("#ok-good").offset().top
-        }, 100);
+        $('html, body').animate({ scrollTop: $("#ok-good").offset().top }, 100);
       }
-  
       $.ajax({
         type: "POST",
         url: "/",
-        data: {
-          'prompt': question
-        },
-        success: function (data) {
-          let assistantHtml = `<a style="background-color:#202835; border:black;" href="#"
-              class="list-group-item list-group-item-action d-flex gap-3 py-3">
-              <img src="{{ url_for('static', filename='images/iba_logo.png') }}" alt="bot" width="32" height="32"
-                class="rounded-circle flex-shrink-0">
+        data: { 'prompt': question },
+        success: function(data) {
+          let assistantHtml = `
+            <div class="list-group-item assistant-message d-flex gap-3 py-3">
+              <img src="{{ url_for('static', filename='images/iba_logo.png') }}" alt="bot" width="32" height="32" class="rounded-circle flex-shrink-0">
               <div class="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                  <p id="typing-demo" class="mb-0 opacity-75 text-white"></p>
-                </div>
+                <div><p class="typing-demo mb-0">${data}</p></div>
               </div>
-            </a><br>`;
-  
+            </div>`;
           responseDiv.html('');
           $("#list-group").append(assistantHtml);
-          
-          // Hiển thị toàn bộ nội dung HTML ngay lập tức
-          $("p#typing-demo:last").html(data);
-          
-          // Cuộn trang xuống để hiển thị câu trả lời
-          $('html, body').animate({
-            scrollTop: $("p#typing-demo:last").offset().top
-          }, 300);
-          
-          // Cập nhật danh sách cuộc trò chuyện sau khi gửi tin nhắn đầu tiên
-          setTimeout(function() {
-            loadConversations();
-          }, 1000);
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            MathJax.typesetPromise(["#list-group"]);
+          }
+          $('html, body').animate({ scrollTop: $("#list-group").children().last().offset().top }, 300);
+          setTimeout(function() { loadConversations(); }, 1000);
         }
       });
     });
 
-    // Bổ sung gửi câu hỏi khi nhấn Enter và xuống dòng khi nhấn Alt+Enter hoặc Shift+Enter
-    $("#chat-input").on('keydown', function (e) {
-      // Auto resize textarea khi nhập nhiều dòng
-      this.style.height = 'auto';
-      this.style.height = (this.scrollHeight) + 'px';
-      
-      // Debug để xem các phím được nhấn
-      console.log("Key pressed:", e.which, "Alt:", e.altKey, "Shift:", e.shiftKey);
-      
-      if (e.which === 13) { // Phím Enter
-        if (e.altKey || e.shiftKey) {
-          // Alt+Enter hoặc Shift+Enter: Thêm xuống dòng
-          console.log("Inserting new line");
-          // Không sử dụng cách chèn thủ công, để trình duyệt xử lý mặc định
-          return true; // Cho phép xử lý mặc định của trình duyệt
-        } else {
-          // Enter (không có Alt hoặc Shift): Gửi tin nhắn
-          console.log("Sending message");
-          e.preventDefault();
-          $("#gpt-button").click();
-          return false;
-        }
+    $("#chat-input").keypress(function(e) {
+      if (e.which === 13 && !e.shiftKey) {
+        e.preventDefault();
+        $("#gpt-button").click();
       }
-    });
-    
-    // Đặt focus vào input khi trang được tải
-    $(document).ready(function() {
-      $("#chat-input").focus();
     });
   </script>
 </body>
-
 </html>

@@ -817,3 +817,255 @@
 2025-05-17 13:59:43,017 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:43] "POST / HTTP/1.1" 200 -
 2025-05-17 13:59:43,118 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:43] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
 2025-05-17 13:59:44,081 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:44:57,940 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 14:44:57,940 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 14:45:04,455 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 14:45:04,455 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 14:45:04,458 - werkzeug - INFO -  * Restarting with stat
+2025-05-17 14:45:11,710 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 14:45:11,711 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 14:45:17,660 - werkzeug - WARNING -  * Debugger is active!
+2025-05-17 14:45:17,671 - werkzeug - INFO -  * Debugger PIN: 106-618-583
+2025-05-17 14:45:17,770 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:17] "GET / HTTP/1.1" 200 -
+2025-05-17 14:45:18,667 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:45:18,675 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:18] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 14:46:23,357 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:23] "POST / HTTP/1.1" 200 -
+2025-05-17 14:46:23,414 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:23] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-17 14:46:24,418 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:24] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:46:47,138 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 14:46:47,152 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET / HTTP/1.1" 200 -
+2025-05-17 14:46:47,616 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:46:47,618 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:52,647 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:52] "GET / HTTP/1.1" 200 -
+2025-05-17 15:05:53,318 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:05:53,321 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:53,893 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:05:56,266 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:05:56,287 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET / HTTP/1.1" 200 -
+2025-05-17 15:05:56,564 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:05:56,567 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:56,733 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:15,504 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:15] "POST / HTTP/1.1" 200 -
+2025-05-17 15:06:16,556 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:16] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:53,478 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET / HTTP/1.1" 200 -
+2025-05-17 15:06:53,974 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:53,975 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:06:54,036 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:54,144 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:58,184 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:06:58,210 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET / HTTP/1.1" 200 -
+2025-05-17 15:06:58,636 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:58,639 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:06:58,690 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:07:00,167 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "[32mGET /switch_conversation/94874450-11f9-4254-b53a-6617ad18d521 HTTP/1.1[0m" 302 -
+2025-05-17 15:07:00,192 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET / HTTP/1.1" 200 -
+2025-05-17 15:07:00,602 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:07:00,607 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:07:02,782 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:02] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:07:02,808 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:02] "GET / HTTP/1.1" 200 -
+2025-05-17 15:07:03,367 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:07:03,371 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:07:03,429 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:07:16,158 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:16] "POST / HTTP/1.1" 200 -
+2025-05-17 15:07:17,200 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:17] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:15:19,412 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET / HTTP/1.1" 200 -
+2025-05-17 15:15:19,613 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:15:19,615 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:15:19,668 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:19,986 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:41,357 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:41] "POST / HTTP/1.1" 200 -
+2025-05-17 15:15:41,395 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:42,407 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:42] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:20:41,042 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET / HTTP/1.1" 200 -
+2025-05-17 15:20:41,201 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:20:41,204 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:20:41,287 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:20:41,464 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:08,749 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:08,916 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:08,918 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:08,949 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,019 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,638 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:09,799 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:09,801 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:09,835 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,922 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:11,065 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:21:11,078 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:11,232 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:11,234 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:48,831 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:48] "POST / HTTP/1.1" 200 -
+2025-05-17 15:21:51,244 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:51] "POST / HTTP/1.1" 200 -
+2025-05-17 15:21:51,302 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:51] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:52,303 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:52] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:54,087 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET / HTTP/1.1" 200 -
+2025-05-17 15:26:54,725 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:54,726 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:26:54,765 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:26:54,917 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:26:55,958 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:55] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:26:55,974 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:55] "GET / HTTP/1.1" 200 -
+2025-05-17 15:26:56,163 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:56] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:56,168 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:56] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:27:11,773 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:11] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:11,799 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:11] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:27:12,809 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:29,369 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:29] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:30,395 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:35,895 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:35] "[32mGET /switch_conversation/486dc352-d555-4616-a139-080ea163961f HTTP/1.1[0m" 302 -
+2025-05-17 15:27:35,913 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:35] "GET / HTTP/1.1" 200 -
+2025-05-17 15:27:36,110 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:36,113 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:27:36,150 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:27:58,018 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:58] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:59,061 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:59] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:28:18,786 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "[32mGET /switch_conversation/62020209-61c8-4be8-a94b-5f1544cfe70c HTTP/1.1[0m" 302 -
+2025-05-17 15:28:18,814 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET / HTTP/1.1" 200 -
+2025-05-17 15:28:18,969 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:28:18,980 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:28:19,017 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:28:33,965 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:33] "POST / HTTP/1.1" 200 -
+2025-05-17 15:28:35,004 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:35] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:30:12,725 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:30:12,746 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET / HTTP/1.1" 200 -
+2025-05-17 15:30:12,927 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:30:12,930 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:30:24,320 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:24] "POST / HTTP/1.1" 200 -
+2025-05-17 15:30:24,332 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:24] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:30:25,358 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:09,041 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 15:41:09,041 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 15:41:16,663 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 15:41:16,672 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 15:41:16,674 - werkzeug - INFO -  * Restarting with stat
+2025-05-17 15:41:21,307 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:21] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:22,618 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:22] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:22,624 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:22] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:41:23,020 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:23] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:24,306 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 15:41:24,306 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 15:41:31,709 - werkzeug - WARNING -  * Debugger is active!
+2025-05-17 15:41:31,736 - werkzeug - INFO -  * Debugger PIN: 817-748-206
+2025-05-17 15:41:36,597 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:36,770 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:36,772 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:41:36,816 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:36,932 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:38,586 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:41:38,611 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:38,754 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:38,759 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:01,925 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:01] "[32mGET /switch_conversation/d6ca2a40-e795-4809-a998-9a056a6e733c HTTP/1.1[0m" 302 -
+2025-05-17 15:42:01,953 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:01] "GET / HTTP/1.1" 200 -
+2025-05-17 15:42:02,163 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:42:02,165 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:02,203 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:42:03,938 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:03] "[32mGET /switch_conversation/2dda4e2a-f8f8-4b1a-80b1-3b000a88baaa HTTP/1.1[0m" 302 -
+2025-05-17 15:42:03,961 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:03] "GET / HTTP/1.1" 200 -
+2025-05-17 15:42:04,219 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:42:04,222 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:04] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:18,610 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:18] "POST / HTTP/1.1" 200 -
+2025-05-17 15:42:18,619 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:18] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:42:19,658 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:19] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:46:04,133 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 17:46:04,134 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 17:46:11,401 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 17:46:11,402 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 17:46:11,409 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 17:46:21,954 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 17:46:21,955 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 17:46:28,225 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 17:46:28,233 - werkzeug - INFO -  * Debugger PIN: 492-943-184
+2025-05-22 17:46:28,877 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:28] "GET / HTTP/1.1" 200 -
+2025-05-22 17:46:30,967 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:30] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 17:46:30,975 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:46:43,450 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:43] "POST / HTTP/1.1" 200 -
+2025-05-22 17:46:43,556 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:43] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-22 17:46:44,562 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:47:06,067 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:06] "POST / HTTP/1.1" 200 -
+2025-05-22 17:47:07,937 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:07] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:47:44,363 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:44] "POST / HTTP/1.1" 200 -
+2025-05-22 17:47:45,391 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:53:20,852 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:20] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 17:53:20,871 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:20] "GET / HTTP/1.1" 200 -
+2025-05-22 17:53:21,095 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:21] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:53:21,096 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:21] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 17:54:29,184 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:29] "POST / HTTP/1.1" 200 -
+2025-05-22 17:54:29,245 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:29] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 17:54:30,239 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:56:37,706 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:37] "POST / HTTP/1.1" 200 -
+2025-05-22 17:56:38,729 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:56:44,312 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:44] "POST / HTTP/1.1" 200 -
+2025-05-22 17:56:45,343 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:04:44,161 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:44] "GET / HTTP/1.1" 200 -
+2025-05-22 18:04:45,141 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:04:45,143 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:04:45,207 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:04:45,385 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:05:16,839 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:16] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 18:05:16,862 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:16] "GET / HTTP/1.1" 200 -
+2025-05-22 18:05:37,019 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:37] "GET / HTTP/1.1" 200 -
+2025-05-22 18:05:47,781 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:05:47,782 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:05:47,902 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:11:56,247 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:56] "GET / HTTP/1.1" 200 -
+2025-05-22 18:11:57,206 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:11:57,208 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:11:57,395 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:12:38,876 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:12:38,877 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:12:42,929 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 18:12:42,930 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 18:12:42,931 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 18:12:49,290 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:12:49,291 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:12:54,420 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 18:12:54,430 - werkzeug - INFO -  * Debugger PIN: 492-943-184
+2025-05-22 18:13:07,238 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:07] "GET / HTTP/1.1" 200 -
+2025-05-22 18:13:09,108 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:13:09,109 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:14:59,200 - chatbot - ERROR - Error: Timeout of 600.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:142.250.198.106:443: tcp handshaker shutdown
+2025-05-22 18:14:59,203 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:14:59] "POST / HTTP/1.1" 200 -
+2025-05-22 18:16:52,545 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:16:52,546 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:16:56,589 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 18:16:56,590 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 18:16:56,593 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 18:17:00,630 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:17:00,630 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:17:04,581 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 18:17:04,592 - werkzeug - INFO -  * Debugger PIN: 327-884-330
+2025-05-22 18:17:24,287 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:24] "GET / HTTP/1.1" 200 -
+2025-05-22 18:17:25,235 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:17:25,244 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:25] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:17:57,563 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:57] "POST / HTTP/1.1" 200 -
+2025-05-22 18:17:57,648 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:57] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:17:58,646 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:18:25,202 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:18:25] "POST / HTTP/1.1" 200 -
+2025-05-22 18:18:26,261 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:18:26] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:20:03,023 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:03] "POST / HTTP/1.1" 200 -
+2025-05-22 18:20:03,079 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:20:04,079 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:27,251 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET / HTTP/1.1" 200 -
+2025-05-22 18:23:27,728 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:27,730 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:23:27,967 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:28,439 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:28] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:34,097 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 18:23:34,129 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET / HTTP/1.1" 200 -
+2025-05-22 18:23:34,345 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:34,350 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:23:44,198 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:44] "POST / HTTP/1.1" 200 -
+2025-05-22 18:23:44,222 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:44] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:45,234 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:24:05,870 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:05] "POST / HTTP/1.1" 200 -
+2025-05-22 18:24:06,901 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:24:30,559 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:30] "POST / HTTP/1.1" 200 -
+2025-05-22 18:24:30,573 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:30] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:24:31,575 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:31] "GET /get_conversations HTTP/1.1" 200 -
