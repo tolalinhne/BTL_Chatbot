@@ -9,6 +9,7 @@ from datetime import datetime
 import json
 import uuid
 import numpy as np
+from learning_system import LearningSystem
 
 # Cấu hình logging
 logging.basicConfig(
@@ -55,6 +56,9 @@ else:
     embedding_chunks = []
     embedding_sources = []
     embedding_vectors = None
+
+# Khởi tạo hệ thống học hỏi
+learning_system = LearningSystem(embedding_model)
 
 # Define your 404 error handler to redirect to the index page
 @app.errorhandler(404)
@@ -119,28 +123,46 @@ def create_augmented_prompt(question, context, sources=None, chat_history_text=N
     # Nếu có lịch sử trò chuyện, đưa vào prompt
     history_context = ""
     if chat_history_text:
-        history_context = f"\nLịch sử trò chuyện:\n{chat_history_text}\n"
+        history_context = f"\nLịch sử trò chuyện gần đây:\n{chat_history_text}\n"
     
     if not context.strip():
-        return f"{history_context}Câu hỏi mới: {question}\n\nHãy trả lời: **in đậm** cho nội dung quan trọng, *in nghiêng* cho phần nhấn mạnh, và sử dụng danh sách nếu cần. Nếu câu hỏi mới liên quan đến các câu hỏi trước, hãy chú ý đến lịch sử trò chuyện để và các thông tin liên quan đến câu hỏi đó."
+        return f"""{history_context}Câu hỏi mới: {question}
+
+Hướng dẫn:
+1. Trả lời câu hỏi một cách tự nhiên và chính xác nhất có thể.
+2. Nếu câu hỏi liên quan đến môn Lý Thuyết Thông Tin, hãy ưu tiên sử dụng kiến thức chuyên môn.
+3. Nếu câu hỏi không liên quan đến môn học, hãy trả lời một cách tự nhiên và phù hợp.
+4. Sử dụng định dạng markdown để làm nổi bật:
+   - **In đậm** cho nội dung quan trọng
+   - *In nghiêng* cho phần nhấn mạnh
+   - Danh sách đánh số cho các bước/quy trình
+   - Danh sách không đánh số cho liệt kê thông thường
+   - Bảng cho dữ liệu có cấu trúc
+5. Chỉ tham khảo lịch sử trò chuyện nếu câu hỏi hiện tại thực sự liên quan đến các câu hỏi trước đó.
+
+Câu trả lời:"""
         
     # Tạo prompt với few-shot example, chain-of-thought và lịch sử trò chuyện
-    prompt = f"""{history_context}Thông tin tham khảo: {context}
+    prompt = f"""{history_context}Thông tin tham khảo từ tài liệu môn học: {context}
 
 Câu hỏi mới: {question}
 
 Hướng dẫn:
-1. Đọc kỹ thông tin tham khảo và phân tích những điểm chính liên quan đến câu hỏi, tổng hợp thành câu trả lời chính xác và phù hợp nhất.
-2. Chú ý các câu hỏi liên quan đến môn Lý Thuyết Thông Tin (Information Theory), ưu tiên các kiến thức liên quan đến môn này.
-3. Chú ý các câu hỏi liên quan đến học thuật trả lời chính xác, đầy đủ, đúng nghĩa. Các câu hỏi mang tính giao lưu trả lời gần gũi, tự nhiên.
-4. KHÔNG lặp lại nguyên văn thông tin tham khảo.
+1. Phân tích câu hỏi và xác định xem nó có liên quan đến môn Lý Thuyết Thông Tin không.
+2. Nếu liên quan đến môn học:
+   - Ưu tiên sử dụng thông tin tham khảo từ tài liệu môn học
+   - Kết hợp với kiến thức chuyên môn của bạn để trả lời đầy đủ và chính xác
+3. Nếu không liên quan đến môn học:
+   - Trả lời dựa trên kiến thức chung của bạn
+   - Không cần bắt buộc sử dụng thông tin tham khảo
+4. Trả lời một cách tự nhiên và phù hợp với ngữ cảnh
 5. Sử dụng định dạng markdown để làm nổi bật:
    - **In đậm** cho nội dung quan trọng
    - *In nghiêng* cho phần nhấn mạnh
    - Danh sách đánh số cho các bước/quy trình
    - Danh sách không đánh số cho liệt kê thông thường
    - Bảng cho dữ liệu có cấu trúc
-6. Nếu câu hỏi mới liên quan đến các câu hỏi trước đó trong lịch sử trò chuyện, hãy kết nối thông tin để trả lời đầy đủ hơn.
+6. Chỉ tham khảo lịch sử trò chuyện nếu câu hỏi hiện tại thực sự liên quan đến các câu hỏi trước đó.
 
 Câu trả lời:"""
     return prompt
@@ -254,15 +276,21 @@ def index():
     if request.method == 'POST':
         try:
             prompt = request.form['prompt']
-            # Log câu hỏi của người dùng
             logger.info(f"Nhận câu hỏi: {prompt[:50]}...")
             
-            # Tìm kiếm ngữ cảnh liên quan
+            # Tìm kiếm ngữ cảnh liên quan từ dữ liệu đã lưu
             context, sources_used = semantic_search_context(prompt)
+            
+            # Tìm kiếm câu hỏi tương tự từ kiến thức đã học
+            similar_questions = learning_system.find_similar_questions(prompt)
+            learned_context = ""
+            if similar_questions:
+                learned_context = "\nCác câu hỏi tương tự đã được trả lời:\n"
+                for q in similar_questions:
+                    learned_context += f"Q: {q['question']}\nA: {q['answer']}\n\n"
             
             # Lấy lịch sử trò chuyện
             chat_history_entries = chat_history[session_id]['messages']
-            # Giới hạn lịch sử chỉ lấy 5 tương tác gần nhất
             recent_history = chat_history_entries[-10:] if len(chat_history_entries) > 0 else []
             
             # Định dạng lịch sử cuộc trò chuyện
@@ -273,16 +301,13 @@ def index():
                     chat_history_text += f"Trợ lý: {entry['assistant']}\n\n"
             
             # Chuẩn bị prompt cho Gemini
-            if not context.strip():
+            if not context.strip() and not learned_context:
                 logger.info("Không tìm thấy ngữ cảnh liên quan, để Gemini tự trả lời")
                 full_prompt = create_augmented_prompt(prompt, "", sources_used, chat_history_text)
             else:
-                logger.info(f"Tìm thấy ngữ cảnh ({len(context)} ký tự), yêu cầu Gemini trả lời dựa trên ngữ cảnh")
-                full_prompt = create_augmented_prompt(prompt, context, sources_used, chat_history_text)
-                
-            # Ghi lại thông tin về nguồn được sử dụng
-            if sources_used:
-                logger.info(f"Sử dụng nguồn: {', '.join(sources_used)}")
+                combined_context = f"{context}\n{learned_context}"
+                logger.info(f"Tìm thấy ngữ cảnh ({len(combined_context)} ký tự), yêu cầu Gemini trả lời dựa trên ngữ cảnh")
+                full_prompt = create_augmented_prompt(prompt, combined_context, sources_used, chat_history_text)
             
             # Gọi Gemini API
             response = gemini_model.generate_content(full_prompt)
@@ -414,6 +439,9 @@ def index():
                 # Giới hạn lịch sử trò chuyện để tiết kiệm bộ nhớ (tối đa 20 tương tác)
                 if len(chat_history[session_id]['messages']) > 20:
                     chat_history[session_id]['messages'] = chat_history[session_id]['messages'][-20:]
+                
+                # Học từ cuộc trò chuyện này
+                learning_system.learn_from_conversation(prompt, plain_answer[:500])
                 
             except Exception as e:
                 error_msg = f"Không thể lấy nội dung trả lời từ Gemini: {str(e)}"

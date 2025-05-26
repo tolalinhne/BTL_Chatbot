@@ -19,6 +19,9 @@ Dự án **FIT.Subject Chatbot** là một chatbot học thuật được xây d
 - **Frontend**: HTML, CSS, JavaScript (giao diện tĩnh với template Jinja2)
 - **Logging**: Python `logging` để ghi lại hoạt động của chatbot
 - **Khác**: Markdown, Bleach (làm sạch HTML), NumPy
+- **Hệ thống học hỏi**: Tích hợp với Sentence Transformers để tạo và lưu trữ embedding
+- **Xử lý ngôn ngữ**: Tích hợp với Gemini AI để phân tích và tạo câu trả lời
+- **Quản lý dữ liệu**: JSON cho lưu trữ kiến thức, NumPy cho dữ liệu embedding
 
 ## ⚙️ Cài Đặt
 ### Yêu Cầu Hệ Thống

@@ -333,6 +333,7 @@
       background-color: transparent;
       border-radius: 10px;
       padding: 15px;
+      padding-bottom: 100px;
     }
     
     .list-group-item {
@@ -461,7 +462,7 @@
         <h1><strong>FIT.Subject Chatbot</strong></h1>
         <div id="list-group" class="list-group w-auto"></div>
         <div class="input-group w-sm-100 p-3 fixed-bottom" style="margin: 20px auto;">
-          <input type="text" class="form-control" id="chat-input">
+          <textarea class="form-control" id="chat-input" rows="1" style="resize: none; min-height: 40px; max-height: 200px; overflow-y: auto;"></textarea>
           <div class="input-group-append">
             <button id="gpt-button" class="btn">Ask</button>
           </div>
@@ -513,11 +514,18 @@
     }
     
     function createUserMessageHtml(message) {
+      // Replace newlines with <br> tags and escape HTML
+      const formattedMessage = message
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\n/g, '<br>');
+      
       return `
         <div class="list-group-item user-message d-flex gap-3 py-3">
           <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="user" width="32" height="32" class="rounded-circle flex-shrink-0">
           <div class="d-flex gap-2 w-100 justify-content-between">
-            <div><p class="mb-0">${message}</p></div>
+            <div><p class="mb-0">${formattedMessage}</p></div>
           </div>
         </div>`;
     }
@@ -635,10 +643,31 @@
     });
 
     $("#chat-input").keypress(function(e) {
-      if (e.which === 13 && !e.shiftKey) {
-        e.preventDefault();
-        $("#gpt-button").click();
+      if (e.which === 13) {
+        if (e.altKey) {
+          // Alt + Enter: Insert new line
+          e.preventDefault();
+          const start = this.selectionStart;
+          const end = this.selectionEnd;
+          const value = $(this).val();
+          $(this).val(value.substring(0, start) + '\n' + value.substring(end));
+          this.selectionStart = this.selectionEnd = start + 1;
+          
+          // Auto-resize textarea
+          this.style.height = 'auto';
+          this.style.height = (this.scrollHeight) + 'px';
+        } else if (!e.shiftKey) {
+          // Enter without Alt: Submit
+          e.preventDefault();
+          $("#gpt-button").click();
+        }
       }
+    });
+
+    // Auto-resize textarea on input
+    $("#chat-input").on('input', function() {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
     });
   </script>
 </body>
