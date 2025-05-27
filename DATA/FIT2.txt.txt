@@ -1,0 +1,2176 @@
+BASIC CONCEPTS IN INFORMATION THEORY
+
+Marc URO
+
+CONTENTS
+
+INTRODUCTION................................................................................................................................................. 5 INFORMATION MEASURE ............................................................................................................................ 11
+SELF-INFORMATION, UNCERTAINTY .................................................................................................................. 11 ENTROPY ........................................................................................................................................................... 16
+
+SOURCE CODING............................................................................................................................................. 23
+ENGLISH LANGUAGE .......................................................................................................................................... 23 ENTROPY OF A SOURCE ...................................................................................................................................... 25
+
+entropy rate ................................................................................................................................................. 28
+THE SOURCE CODING PROBLEM ......................................................................................................................... 28 ELEMENTARY PROPERTIES OF CODES ................................................................................................................. 31 SOURCE CODING THEOREM ................................................................................................................................ 39
+
+COMPRESSION ALGORITHMS ................................................................................................................... 46 Shannon-Fano algorithm............................................................................................................................. 47 Huffman algorithm ...................................................................................................................................... 48 LZ 78 algorithm ........................................................................................................................................... 52 LZW algorithm............................................................................................................................................. 54 COMMUNICATION CHANNELS ................................................................................................................... 59
+CHANNEL CAPACITY .......................................................................................................................................... 59 THE NOISY CHANNEL THEOREM ......................................................................................................................... 74
+
+ERROR CORRECTING CODES ..................................................................................................................... 79
+CONSTRUCTION ................................................................................................................................................. 81 NEAREST NEIGHBOUR DECODING....................................................................................................................... 82 LINEAR CODES ................................................................................................................................................... 83 GENERATOR MATRIX ......................................................................................................................................... 85 PARITY-CHECK MATRIX ..................................................................................................................................... 87
+
+EXERCISES ........................................................................................................................................................ 91 INFORMATION MEASURE EXERCISES.................................................................................................................. 91 SOURCE CODING EXERCISES.................................................................................................................... 93 COMMUNICATION CHANNEL EXERCISES ............................................................................................................ 96 ERROR CORRECTING CODES EXERCISES ........................................................................................................... 100 SOLUTIONS ..................................................................................................................................................... 103
+INFORMATION MEASURE SOLUTIONS ............................................................................................................... 103 SOURCE CODING SOLUTIONS ............................................................................................................................ 104 COMMUNICATION CHANNEL SOLUTIONS .......................................................................................................... 105 ERROR CORRECTING CODES SOLUTIONS........................................................................................................... 106
+
+BIBLIOGRAPHY ..............................................................................................................................................109 INDEX.................................................................................................................................................................111
+
+5
+
+INTRODUCTION
+
+Most scientists agree that information theory began in 1948 with Shannon’s famous article. In that paper, he provided answers to the following questions : What is “information” and how to measure it? What are the fundamental limits on the storage and the transmission of information?
+
+The answers were both satisfying and surprising, and moreover striking in their ability to reduce complicated problems to simple analytical forms. Since then, information theory has kept on designing devices that reach or approach these limits. Here are two examples which illustrate the results obtained with information theory methods when storing or transmitting information.
+
+TRANSMISSION OF A FACSIMILE
+
+The page to be transmitted consists of dots represented by binary digits (“1” for a black dot and “0” for a white dot). Its dimensions are 8.5 × 11 inches. The resolution is 200 dots per inch, that is to say 4 × 10 4 dots per square inch. Consequently, the number of binary digits to represent this page is 8.5 × 11× 4 × 10 4 = 3.74 Mbits .
+
+With a modem at the rate of 14.4 kbps , the transmission of the page takes 4 minutes and 20 seconds. Thanks to techniques of coding (run length coding, Huffman coding), the time of transmission is reduced to 17 seconds!
+
+6 ______________________________________________________________ introduction
+
+STORAGE OF MP3 AUDIO FILES MP3 stands for Moving Picture Experts Group 1 layer 3. It is a standard for compressed audio files based on psychoacoustic models of human hearing. By means of masking time and frequency, limiting bandwidth and Huffman coding, it allows one to reduce the amount of information needed to represent an audio signal, as the human ear cannot distinguish between the original sound and the coded sound.
+
+Let us consider a musical stereo analog signal. For CD quality, left channel and right channel are sampled at 44.1 Khz. The samples are quantized to 16 bits. One second of stereo music in CD format generates :
+44.1×10 3 × 16 × 2 = 1.411 Mbits
+
+By using the MP3 encoding algorithm, this value drops to 128 Kbits without perceptible loss of sound quality. Eventually, one minute of stereo music requires : 128 × 103 × 60 ≈ 1 Mbytes 8 A CD ROM, which has a capacity of 650 Mbytes, can store more than 10 hours of MP3 stereo music.
+
+DOWNLOADING MP3 FILES
+
+Over an analogue telephone line An analogue telephone line is made of a pair of copper wires whose bandwidth is limited to B = 4 Khz . Such a line transmits analogue signals with SNR (Signal to Noise Ratio) ≈ 30 dB and can be modelled by a memoryless additive Gaussian noise channel. Information theory allows to compute its capacity (in bits/sec) : C = B log 2 ( + snr ) with SNR = 10 log10 snr 1 To make a long story short, the capacity is the maximum bit rate at which we can transmit information, allowing an arbitrary small probability of error, provided appropriate means are used.
+
+introduction _______________________________________________________________ 7
+
+Then, we obtain :
+C ≈ 33800 bits/sec ≈ 4 Kbytes/sec
+
+Hence, downloading a 3 minute’s MP3 song with a V90 standard modem takes about : 1× 3 × 103 = 750 sec = 12 minutes and 30 seconds 4
+
+At busy hours, the downloading speed may lower to 1 Kbytes/sec and the downloading time can reach 50 minutes!
+
+Over a digital line
+
+As telephone signals are band limited to 4 KHz, the sampling frequency is 8 KHz. In addition, 8 bits are used for quantifying each sample. Then, the bit rate is : 8 × 8 = 64 Kbits/sec = 8 Kbytes/sec Thus, the downloading speed is twice as high as it is in the case of analog lines and it takes 6 minutes 15 seconds to download a 3 minute MP3 song.
+
+With ADSL (Asymmetric Digital Subscriber Line) modem technology Using this technology requires having a USB (Universal Serial Bus) or an ethernet modem. It consists of splitting the available bandwidth into three channels : a high speed downstream channel a medium speed upstream channel a POTS (Plain Old Telephone Service) channel
+
+The main advantage lies in the fact that you can use your phone and be connected to the internet at the same time. With a 512 Kbits/sec modem, the downloading stream rises to 60 Kbytes/sec. Downloading a 3 minute MP3 song takes only : 1× 3 × 103 = 50 seconds . 60
+
+8 ______________________________________________________________ introduction
+
+SHANNON PARADIGM Transmitting a message from a transmitter to a receiver can be sketched as follows :
+
+information source
+
+source encoder
+
+channel encoder c h a n n e l
+
+destination
+
+source decoder
+
+channel decoder
+
+This model, known as the “ Shannon paradigm” , is general and applies to a great variety of situations. An information source is a device which randomly delivers symbols from an alphabet. As an example, a PC (Personal Computer) connected to internet is an information source which produces binary digits from the binary alphabet {0, 1}. A channel is a system which links a transmitter to a receiver. It includes signalling equipment and pair of copper wires or coaxial cable or optical fibre, among other possibilities. Given a received output symbol, you cannot be sure which input symbol has been sent, due to the presence of random ambient noise and the imperfections of the signalling process. A source encoder allows one to represent the data source more compactly by eliminating redundancy : it aims to reduce the data rate. A channel encoder adds redundancy to protect the transmitted signal against transmission errors. Source and channel decoders are converse to source and channel encoders.
+
+-
+
+-
+
+-
+
+-
+
+There is duality between “ source coding” and “ channel coding” , as the former tends to reduce the data rate while the latter raises it.
+
+introduction _______________________________________________________________ 9
+
+The course will be divided into 4 parts : “ information measure” “ source coding” “ communication channel” “ error correcting codes”
+
+The first chapter introduces some definitions to do with information content and entropy.
+
+In the second chapter, we will answer three questions : Given an information source, is it possible to reduce its data rate? If so, By how much can the data rate be reduced? How can we achieve data compression without loss of information?
+
+In the “ communication channel” chapter, we will define the capacity of a channel as its ability to convey information. We will learn to compute the capacity in simple situations. In our attempt to recover the transmitted signal from the received signal, Shannon’s noisy coding theorem will help us answer this fundamental question : Under what conditions can the data of an information source be transmitted reliably?
+
+The chapter entitled “ Error coding codes” deals with redundancy added to the signal to correct transmission errors. At first sight, correcting errors may seem amazing, as added symbols (the redundancy) can be corrupted too. Nevertheless we will learn to detect and correct errors, provided there are not too many of them.
+
+11
+
+INFORMATION MEASURE
+
+We begin by introducing definitions to measure information in the case of events. Afterwards, by analogy, we will extend these notions to random variables.
+
+SELF-INFORMATION, UNCERTAINTY
+When trying to work out the information content of an event, we encounter a difficulty linked with the subjectivity of the information which is effectively brought to us when the event occurs. To overcome this problem, Shannon pursued the idea of defining the information content h(E ) of an event E as a function which depends solely on the probability P{ }. He E added the following axioms: -
+
+h(E ) must be a decreasing function of information its occurrence brings to us.
+
+P{ }: more an event is likely, the less E
+
+-
+
+h(E ) = 0 if P{E}= 1 , since if we are certain (there is no doubt) that E will occur, we get no information from its outcome. h(E  F ) = h(E )+ h(F ) if E and F are independent.
+
+-
+
+The only function satisfying the above axioms is the logarithmic function:
+
+h(E ) = log
+
+1 = − log P{ } E P{ } E
+
+12 _______________________________________________________ information measure
+
+1 represents a measure, it is expressed in different units according to the chosen P{ } E base of logarithm. As log logarithm base 2 e 3 10 unit bit or Sh (Shannon) natural unit or nepers trit decimal digit
+
+The outcome (or not) of E involves an experiment. Before (respectively, after) this experiment we will think of i (E ) as the uncertainty (respectively, the self-information) associated to its outcome.
+
+Example Let us consider a pack of 32 playing cards, one of which is drawn at random. Calculate the amount of uncertainty of the event E = {The card drawn is the king of hearts}. As each card has the same probability of being chosen, we have
+1 32 and we get P{ }= E
+
+h(E ) = log 2 32 = log 2 2 5 = 5 bits Since h(E ) is an integer, we can easily interpret the result: 5 bits are required to specify one playing card among the 32 cards: one bit for the colour (red or black), one bit for the suit (hearts or clubs if the colour is red and diamonds or spades if the colour is black) and so on …
+
+-
+
+At each stage, we divide the set of left cards into two subsets having the same number of elements : we proceed by dichotomy.
+
+information measure _______________________________________________________ 13
+
+As the uncertainty of an event E depends on the probability of E, we can also define the uncertainty of E knowing that another event F has occurred by using the conditional probability P{E / F } :
+
+h(E / F ) = − log P{E / F }
+with P{ / F }= E P{  F } E P{ } F
+
+Example The setting is the same as the previous example. What is the amount of uncertainty of E = {The card drawn is the king of hearts } knowing F = {The card drawn is a heart}? We have : P{E / F }= P{  F } P{ } E E as E ⊂ F = P{ } F P{ } F
+1 1 and P{ }= F 32 4
+
+E and since P{ }=
+
+we obtain h(E / F ) = − log 2 P{ / F }= log 2 E Interpretation: The fact that F has occurred determines two bits: one for the colour (red) and one for the suit (hearts). Consequently, specifying one card, whatever it is, requires only 5 – 2 = 3 bits. The uncertainty of E has been reduced thanks to the knowledge of F. P{ } E 32 = log 2 = log 2 2 3 = 3 bits P{ } F 4
+
+Using the definition of h(E / F ) allows us to express h(E  F ) :
+
+h(E  F ) = − log P{  F }= − log[P{ / F }× P{F } = − log P{ / F }− log P{F } E E ] E
+
+14 _______________________________________________________ information measure
+
+Hence,
+
+h(E  F ) = h(E / F ) + h(F )
+By symmetry, as E  F = F  E , it follows that :
+
+h(E  F ) = h(F  E ) = h(F / E ) + h(E )
+If E and F are independent, then,
+
+P{  F }= P{ }× P{ } E E F P{ / F }= P{ } E E P{ / E}= P{ } F F
+Accordingly,
+
+h(E  F ) = h(E ) + h(F ) (it is one of the axioms we took into account to define the uncertainty) h(E / F ) = h(E ) h(F / E ) = h(F )
+
+In the example of the previous page, we observed that the knowledge of F reduced the uncertainty of E. This leads us to introduce the amount of information provided by F about E, i F → E , as the reduction in the uncertainty of E due to the knowledge of F : i F → E = h(E ) − h(E / F ) Substituting for h(E / F ) from h(E  F ) = h(E / F ) + h(F ) into the previous definition, we get : i F → E = h(E ) − (h(E  F ) − h(F )) = h(E ) + h(F ) − h(E  F ) As the above expression is symmetric with respect to E and F, we obtain iF →E = iE →F This quantity ( i F → E or i E → F ) will be denoted by i (E; F ) and is called the “ mutual information between E and F” .
+
+information measure _______________________________________________________ 15
+
+Let us return to the previous example : The mutual information between E and F is :
+
+i (E; F ) = h(E ) − h(E / F ) = 5 − 3 = 2 bits
+
+From this example, we may hastily deduce that i (E; F ) > 0 for all E and F. However, we have to be very careful as this property is true if and only if h(E / F ) < h(E ), that is to say if P{ / F }> P{ }. Otherwise, we have h(E / F ) > h(E ) and i (E; F ) < 0 . E E
+
+Example Two playing cards are simultaneously drawn from a pack of 32 cards. Let E (respectively F) be the event {At least one of the two drawn cards is red} (respectively { The king of spades is one of the two drawn cards}). What is the amount of mutual information between E and F? We have :
+
+i (E; F ) = h(E )− h(E / F ) in which 16 15 16 16 47 P{ }= E × + 2× × = 32 31 32 31 62 and 16 P{ / F }= E 31
+Thus,
+i (E; F ) = log 2 62 31 − log 2 ≈ −0.5546 bit 47 16
+
+In this case, knowing that F has occurred makes E less likely, and the mutual information is negative.
+
+16 _______________________________________________________ information measure
+
+ENTROPY
+Example A random experiment consists of drawing one card from a pack of 32 playing cards. Let X be the discrete random variable defined as
+⇔ { drawn card is red} The {X = 7} ⇔ {The drawn card is a spade} {X = log π } ⇔ {The drawn card is a diamond}
+
+{X = 3}
+
+We can calculate the uncertainty associated with each of the three occurrences :
+PX = 3 = P{X = 7}=
+
+{
+
+}
+
+1 ⇒ h X = 3 = log 2 2 = 1 bit 2
+
+(
+
+)
+
+1 ⇒ h(X = 7 ) = log 2 4 = 2 bits 4 1 P{X = log π }= ⇒ h(X = log π ) = log 2 4 = 2 bits 4
+
+Then, the average uncertainty becomes
+1× 1 1  + 2 ×  × 2  = 1.5 bit 2 4 
+
+This means that the average number of bits required to represent the possible values of X is 1.5.
+
+In more general terms, the entropy H (X ) of a discrete random variable X taking values in {x1 , x2 ,..., xn } with pi = P{X = xi }, is the average uncertainty in the outcomes {X = x1 }, {X = x2 }, …, {X = xn } :
+H (X ) = −∑ p i log p i
+i =1 n
+
+We note the following: n can be infinite;
+
+information measure _______________________________________________________ 17
+
+-
+
+H (X ) depends only on the probability distribution of X, not on the actual values taken by X;
+If n is finite, the maximum of H (X ) is achieved if and only if X is uniformly distributed 1 over its values (i.e pi = ∀ i ∈ { , n}). Then, we have H (X ) = log n ; 1 n A more formal interpretation of H (X ) consists in considering H (X ) as the expected value of Y = log p (X ) with
+p(X ) = ∑ 1I {X = x } pi
+i =1
+i
+
+-
+
+-
+
+n
+
+where 1I {X = x i } is the indicator function
+
+1 if of {X = xi }= { / X (ω ) = xi } i.e. 1I{X = xi } =  ω 0 if
+
+X = xi X ≠ xi
+
+Example A discrete random variable X takes its values in {0, 1}. The probability distribution is given by :
+
+P{X = 1}= p = 1 − P{X = 0}
+Calculate the entropy of X. By applying the definition, we get :
+
+H (X ) = − p log 2 p − (1 − p) log 2 ( − p ) = H 2 (p ) 1 H 2 (p ) is called the binary entropy function.
+Sketching H 2 (p ) versus p gives the following graph :
+
+1
+
+H2(p)
+
+0
+
+1/2
+
+1
+
+p
+
+18 _______________________________________________________ information measure
+
+From the graph, we observe the following: 1 - the maximum is achieved when p = ; 2 - H 2 (p ) = 0 when p = 0 or p = 1 (there is no uncertainty); - H 2 (p ) is a top convex ( ) (concave) function which satisfies : ∀p ∈ [0,1] H 2 (p ) = H 2 ( − p ). This means that H 2 (p ) is symmetric with respect to the 1 1 vertical line p = . 2
+
+We now extend the notions related with events to random variables. Let us consider X (respectively Y) be a discrete random variable taking on values in {x1 , x2 ,..., xn } (respectively {y1 , y 2 ,..., y m }) with pi. = P{X = xi }, p. j = P{ = y j } and Y
+pij = P{ = xi  Y = y j }. X
+
+As the entropy depends only on the probability distribution, it is natural to define the joint entropy of the pair (X , Y ) as
+
+H (X , Y ) = −∑∑ pij log pij
+i =1 j =1
+
+n
+
+m
+
+Proceeding by analogy, we define: The conditional entropy H (X / Y ) :
+
+H (X / Y ) = ∑ p. j H (X / Y = y j )
+m j =1
+
+where H (X / Y = y j ) = −∑ P{ = xi / Y = y j }log P{ = xi / Y = y j } X X
+n i =1
+
+From this, we have :
+
+H (X / Y ) = −∑∑ pij log P{ = xi / Y = y j } X
+n m i =1 j =1
+
+The average mutual information I (X ; Y ) is the reduction in the entropy of X due to the knowledge of Y :
+
+I (X ; Y ) = H (X )− H (X / Y ) = H (Y )− H (Y / X )
+
+information measure _______________________________________________________ 19
+
+I (X ; Y ) may be expressed as the expected value of the random variable I = log
+Then, we can rewrite :
+I (X ; Y ) = E [I ] = ∑∑ p ij log
+i =1 j =1 n m
+
+P(X , Y ) . P(X )P(Y )
+
+pij p i . p. j
+
+Some elementary calculations show that: -
+
+H (X , Y ) = H (X )+ H (Y / X ) = H (Y )+ H (X / Y ); H (X , Y ) = H (X )+ H (Y )− I (X ; Y ); H (X / Y ) < H (X ) conditional entropy is always smaller than entropy; I (X ; Y ) ≥ 0 .
+The relationship between entropy and mutual information is sketched in the Venn diagram
+
+H(X) H(Y/X)
+
+H(Y)
+
+H(X/Y) I(X ;Y)
+
+below: In the case of independent random variables, the previous relations simplify to : H (X / Y = y j ) = H (X );
+
+H (X / Y ) = H (X ) ; I (X ; Y ) = 0 ; H (X , Y ) = H (X )+ H (Y ) .
+
+20 _______________________________________________________ information measure
+
+Example In the game of mastermind, player A chooses an ordered sequence of four pieces which is concealed from player B. The pieces are of the same shape and may be of different colours. Six colours are available, so that the chosen sequence may consist of one, two, three or four colours. Player B has to guess the sequence by submitting ordered sequences of four pieces. After considering the combination put forth by B, player A tells player B the number of pieces in the correct position and the number of pieces in the wrong position, but without indicating which pieces or positions are correct. 1. What is the average amount of uncertainty in the sequence chosen by player A? 2. The first sequence submitted by player B consists of four pieces of the same colour. What is the average amount of uncertainty in the unknown sequence (the one chosen by player A) resolved by the answer given by player A to the first submitted sequence?
+
+C = a colour
+
+C
+
+C
+
+C
+
+C
+
+1
+
+2
+
+3
+
+4
+
+position numbers Solution 1. As the number of possible sequences is 6 4 = 1,296 , let X be a discrete random variable taking on 1,296 different values according to the chosen sequence (no matter which one). The entropy of X is the answer to the first question. And, since any sequence has the same probability of being chosen, we consider X uniformly distributed over its 1,296 values. The average uncertainty in the unknown sequence is :
+
+H (X ) = log 2 1,296 = 10.34 bits
+
+Another way to solve the problem consists in counting the needed number of bits to specify one ordered sequence. There are four positions, and for each one, log 2 6 bits are required to specify the colour. On the whole, we need 4 × log 2 6 = log 2 6 4 = 10.34 bits , which is identical to the previous result.
+
+information measure _______________________________________________________ 21
+
+2. Let us represent the possible answers of player A by a discrete random variable Y. The reduction in the average uncertainty of the unknown sequence resolved by the answer given by player A is nothing but the mutual information between X and Y, which can be written as :
+
+I (X ; Y ) = H (X ) − H (X / Y ) = H (Y ) − H (Y / X )
+Since knowing X implies knowing Y (if the sequence chosen by player A is known, there is no doubt about the answer to be given by player A), we have :
+
+H (Y / X ) = 0
+Consequently,
+
+I (X ; Y ) = H (Y )
+Let us evaluate the probability distribution of Y. First, we have to notice that player A cannot indicate that some pieces are in the wrong position. Accordingly, we have 5 possible answers according to the number of pieces in the correct position. Let us denote { = j}= {j pieces are in the correct position}. Y - “ four pieces are in the correct position” This means that the unknown sequence is the submitted sequence. The corresponding 1 probability is P{ = 4}= Y . 1,296 - “ three pieces are in the correct position” Let us suppose we have numbered the four different positions as 1, 2, 3, 4. If the three pieces in the right position are in position 1, 2 and 3, then there are 6 − 1 = 5 different possible colours in position 4, which yields 5 possible sequences. Proceeding this way for the three other possibilities according to the possible correct positions, we get : P{ = 3}= 4 × Y 5 20 = 1,296 1,296
+
+Similar calculations lead to: P{ = 2}= Y P{ = 1}= Y 150 1,296 500 1,296
+
+22 _______________________________________________________ information measure
+
+P{ = 0}= Y
+
+625 1,296
+
+Eventually, we obtain :
+H (Y ) = − 150 20 150 1 20 1 log 2 log 2 log 2 − − 1,296 1,296 1,296 1,296 1,296 1,296 625 500 625 500 log 2 log 2 − − 1,296 1,296 1,296 1,296
+
+Then,
+
+I (X ; Y ) = H (Y ) ≈ 1 bit
+
+23
+
+SOURCE CODING
+In this chapter, we will introduce the notion of entropy for an information source. We will be concerned with encoding the outcomes of a source so that we can recover the original data by using a minimum number of letters (for instance bits). This will lead us to study some elementary properties of codes. The source coding theorem will exhibit the entropy of a source as the fundamental limit in data compression. Coding procedures often used in practice as Huffman coding and the Lempel Ziv Welch algorithm, will also be described. An information source is a device which delivers symbols (or letters) randomly from a set of symbols (or letters) called an alphabet. The successive symbols are chosen according to their probabilities in relation to the previous symbols. The best examples are natural written languages such as the English language.
+
+ENGLISH LANGUAGE
+Considering a 27 symbol alphabet (26 letters and the space), Shannon studied different models of the English language. The simulations below are those of Shannon’s original paper. Zero-order letter model
+
+The symbols are chosen independently from each other and are equally likely. We can think of a box from which pieces of paper associated with letters are drawn. There are the same number of pieces of paper for each letter. A random drawing may yield a sequence as the following: XFOML RXKHRJFFJUJ ZLPWCFWKCYJ FFJEYVKCQSGHYD QPAAMKBZAACIBZLHJQD This compares to the result of monkeys strumming unintelligently on type writers.
+
+24 ____________________________________________________________ source coding
+
+-
+
+First-order letter model
+
+The symbols are still independent and their numbers in the box are distributed according to their actual frequencies in the English language. The result may look like this: OCRO HLI RGWR NMIELWIS EU LL NBNESEBYA TH EEI ALHENHTTPA OOBTTVA NAH BRL
+
+-
+
+Second-order letter model
+
+The samples drawn consist of couples of letters. There are 27 boxes (A, B, …, Z, space), each box having pieces of paper associated with couples of letters with the same first letter (A, B, …, Z, space). The numbers of pieces of paper match the frequencies of the English language. For instance, in the box containing the couples beginning with “ A” , the number of “ AR” will be twice as great as the number of “ AL” if we assume “ AR” is twice as frequent as “ AL” in English language. The first letter of the sequence, let us say “ O” , is drawn from the box described in the firstorder letter model. Then, the next letter is obtained by drawing a piece of paper from the box containing the couples beginning with “ O” . Let us suppose we got “ ON” . We take out a couple from the “ N” box; let us suppose “ N space” , and so on…The result may appear as: ON IE ANTSOUTINYS ARE T INCTORE ST BE S DEAMY ACHIN D ILONASIVE TUCOOWE AT TEASONARE FUSO TIZIN ANDY TOBE SEACE CTISBE
+
+-
+
+Third-order letter model
+
+We take into account the probabilities of units consisting of three successive letters, to obtain: IN NO IST LAT WHEY CRATICT FROURE BIRS GROCID PONDENOME OF DEMONSTURES OF THE REPTAGIN IS REGOACTIONA OF CRE We observe that English words begin to appear. In the next stages, we jump to word units.
+
+-
+
+First-order word model
+
+The successive words are chosen independently from each other according to their frequencies in English language. REPRESENTING AND SPEEDILY IS AN GOOD APT OR COME CAN DIFFERENT NATURAL HERE HE THE A IN CAME THE TO OF TO EXPERT GRAY COME TO FURNISHES THE LINE MESSAGE HAD BE THESE
+
+source coding ____________________________________________________________ 25
+
+-
+
+Second-order word model
+
+In addition to the previous conditions, we take into account the word transition probabilities. THE HEAD AND IN FRONTAL ATTACK ON AN ENGLISH WRITER THAT THE CHARACTER OF THIS POINT IS THEREFORE ANOTHER METHOD FOR THE LETTERS THAT THE TIME OF WHO EVER TOLD THE PROBLEM FOR AN UNEXPECTED The more sophisticated the model is, the more simulations will approach understandable English text. This illustrates that, although the sequence of letters or words in English is potentially random, certain sequences of words or letters are far more likely to occur than others, and that natural language may display transition probabilities that do not reveal themselves when monkeys strum on typewriters.
+
+ENTROPY OF A SOURCE
+In this course, we will limit ourselves to discrete stationary sources U, i.e. to discrete random process { 1 ,U 2 ,...} (the successive outputs of the source U) taking on values in the same set U of symbols and whose joint probability distributions are invariant under a translation of the time origin. The simplest case is the discrete memoryless source : U 1 ,U 2 ,... are independent random variables with the same probability distribution.
+
+To take into account the memory of a source U (if the successive outputs of U are dependent), we define the entropy of U, H ∞ (U ), as :
+H ∞ ( ) = lim H (U L / U L −1 , U L − 2 ,..., U 1 ) U
+L → +∞
+
+Another way to estimate H ∞ (U ) consists in calculating the limit of H (U L , U L −1 ,..., U 1 ) H L (U ) = when L increases indefinitely. It turns out that this amounts to L L the same thing, since
+
+lim
+L → +∞
+
+H L (U ) = lim H (U L / U L −1 ,U L −2 ,..., U 1 ) L L → +∞
+
+-
+
+An experiment carried out on the book “ Jefferson the Virginian” by Dumas Malone resulted in 1.34 bit for the entropy of English language. In the special case of a memoryless source, we have H ∞ (U ) = H (U L )
+
+-
+
+26 ____________________________________________________________ source coding
+
+-
+
+For a first-order Markov chain, H ∞ (U ) = H (U L / U L −1 )
+
+Example Let us consider a Markov chain U taking on values in { ,1,2} whose transition graph is 0 sketched below : 1/2 1/2 0 1 2 1/2
+
+1/2
+
+1
+
+The transition matrix is : 0 0 T= 1 1/2 1/2 1 1/2 0 2 0 1/2
+
+2
+
+0
+
+1
+
+0
+
+As there is only one class of recurrent states, U is stationary and the limiting-state probabilities x, y and z satisfy :
+
+(x, y, z ) = (x, y, z )× T with x = P{ = 0} U
+
+(1) y = P{ = 1} U
+⇔
+
+and
+
+z = P{ = 2} U
+
+Solving the equation (1) for x, y and z yields :
+x=y= 2 5 z= 1 5
+
+source coding ____________________________________________________________ 27
+
+As the first row of the transition matrix corresponds to the probability distribution of U L knowing U L −1 = 0 , we get :
+1 1 1 1 1 H (U L / U L −1 = 0 ) = − log 2 − log 2 = H 2   = 1 bit 2 2 2 2  2
+
+Proceeding the same way for the remaining two other rows gives :
+1 1 1 1 1 H (U L / U L −1 = 1) = − log 2 − log 2 = H 2   = 1 bit 2 2 2 2  2
+
+H (U L / U L −1 = 2) = 0 bit
+By applying the formula H (U L / U L −1 ) = ∑ P{ L −1 = i}× H (U L / U L −1 = i ), we obtain : U
+i=0 2
+
+H (U L / U L −1 ) =
+
+2 2 1 4 × 1 + × 1 + × 0 = = 0.8 bit 5 5 5 5
+
+So, the entropy per symbol of U is :
+
+H ∞ (U ) = 0.8 bit
+
+Due to the memory of the source, this value (0.8 bit) is almost twice as small as the maximum entropy of a ternary memoryless source (log 2 3 = 1.585 bit ).
+
+Let U be an information source with memory (the successive outputs of U are dependent). Assuming U can only take on a finite number of values (N), we define the redundancy of U as:
+
+r = 1−
+
+H∞ ( ) U with H MAX
+
+H MAX = log N
+
+where H ∞ (U ) and H MAX are expressed in the same unit (with the same base of logarithm). For a memoryless source U with equally likely values, there is no redundancy and r = 0 ;
+
+-
+
+28 ____________________________________________________________ source coding
+
+-
+
+In the case of the English language, the first-order letter model leads to an entropy of log 2 27 = 4.75 bits . The estimated entropy being 1.34 bit, the redundancy is: 1.34 r = 1− ≈ 72% . A possible interpretation is : 4.75
+
+When choosing letters to write a comprehensible English text, approximately 28% of the letters can be extracted freely whereas the remaining 72% are dictated by the rules of structure of the language.
+
+ENTROPY RATE So far, we have been considering entropy per symbol of a source without taking into account the symbol rate of the source. However, the amount of information delivered by a source for a certain time depends on the symbol rate. This leads us to introduce the entropy rate of a source H ’(U ) as : H ’( ) = H ∞ (U )× DU U where DU is the symbol rate (in symbols per second) Accordingly, H ’(U ) may be interpreted as the average amount of information delivered by the source in one second. This quantity is useful when data are to be transmitted from a transmitter to a receiver over a communication channel.
+
+THE SOURCE CODING PROBLEM
+
+Example Let U be a memoryless quaternary source taking values in {A, B, C, D} with probabilities ½, ¼, 1/8 and 1/8. 1,000 outputs of U are to be stored in the form of a file of binary digits, and one seeks to reduce the file to its smallest possible size.
+
+First solution There are 4 = 2 2 symbols to be encoded. Thus, each of them can be associated with a word of two binary digits as follows:
+
+source coding ____________________________________________________________ 29
+
+A → "00" B → "01" C → "10" D → "11"
+
+All the codewords having the number of bits, i.e. the same length, this code is said to be a fixed length code. The size of the file is : 1000 × 2 = 2,000 bits 2 bits are used to represent one symbol.
+
+Second solution The different symbols do not occur with the same probabilities. Therefore, we can think of a code which assigns shorter words to more frequent symbols as :
+A → "1" B → "01" C → "000" D → "001"
+
+This code is said to be a variable length code, as the codewords do not have the same length. From the weak law of large numbers, we deduce that in the sequence of 1,000 symbols, there are roughly :
+
+1 = 500 symbols of type " A" 2 1 1,000 × = 250 symbols of type " B" 4 1 1,000 × = 125 symbols of type " C" 8 1 1,000 × = 125 symbols of type " D" 8 1,000 ×
+Hence, the size of the file reduces to 500 × 1 + 250 × 2 + 125 × 3 + 125 × 3 = 1,750 bits and is 2,000 − 1,750 = 12.5% smaller than it was in the previous solution, without loss of 2,000 information (each symbol can be recovered reliably). The data have been compressed.
+
+30 ____________________________________________________________ source coding
+
+On average,
+
+1,750 = 1.75 bit are necessary to represent one symbol. 1,000
+
+If the symbol rate of U were 1,000 quaternary symbols per second, using the first code would result in a bit rate of 2,000 bits/sec. With the second code, the bit rate would reduce to 1,750 bits/sec.
+
+We are now faced with three questions : Given an information source, Is it possible to compress its data?
+
+If so, What is the minimum average number of bits necessary to represent one symbol? How do we design algorithms to achieve effective compression of the data?
+
+These three questions constitute the source coding problem.
+
+Example Let us continue the previous example with equally likely symbols A, B, C and D. We will show that there is no suitable code more efficient than the fixed length code related to “ first solution” . By “ more efficient, we mean that the average number of bits used to represent one symbol is smaller.
+
+Let us consider a variable length code with : nA nB nC nD the length of the codeword associated with symbol " A" the length of the codeword associated with symbol " B" the length of the codeword associated with symbol " C" the length of the codeword associated with symbol " D"
+
+source coding ____________________________________________________________ 31
+
+With this code, the average number of bits used to represent one symbol in a sequence of n quaternary symbols, n being very large, is
+n1 = n A × n n n n n + n B × + nC × + n D × = (n A + n B + nC + n D )× 4 4 4 4 4
+
+As n is very large, the weak law of large numbers applies here. By encoding this sequence with the fixed length code of the “ first solution” , the average number of bits is
+n2 = 2 × n n n n n + 2 × + 2 × + 2 × = (2 + 2 + 2 + 2 )× 4 4 4 4 4
+
+If we want to satisfy n1 < n 2 , we can think of taking n A = 1 , n B = nC = n D = 2 . As the symbols are equally likely, it does not matter which one is chosen to have a codeword of length 1. Assuming “ 1” (respectively “ 0” ) is the codeword assigned to symbol “ A” , as the codewords associated with B, C, D must be different (otherwise we could not distinguish between two different symbols), there is one of them which begins with “ 1” (respectively “ 0” ). For instance,
+A → "1" B → "10" C → "00" D → "01"
+
+Let “ 10001” be an encoded sequence. Two interpretations are possible : “ ACD” or “ BCA” Such a code is not suitable to recover the data unambigously. Consequently, it is not possible to design a more efficient code than the one of fixed length 2. This is due to the fact that the probability distribution over the set of symbols {A, B, C, D} is uniform.
+
+ELEMENTARY PROPERTIES OF CODES
+A code C is a set of words c, called codewords, which result in the juxtaposition of symbols (letters) extracted from a code alphabet. We will denote b the size of the alphabet. The number of symbols n(c ) which comprise a codeword is its length.
+
+32 ____________________________________________________________ source coding
+
+The most common codes are binary codes, i.e. codes whose code alphabet is {0, 1}.
+
+Example In anticipation of the spread of communications and data processing technologies, the American Standard Association designed the ASCII code in 1963. ASCII stands for American Standard for Communication Information Interchange. Originally intended to represent the whole set of characters of a typewriter, it had to be used with teletypes, hence some special characters (the first ones listed in the table below) are now somewhat obscure. It consists of 2 7 = 128 binary codewords having the same length (7). Later on, additional and non printing characters were added to meet new demands. This gave birth to the extended ASCII code, a 2 8 = 256 fixed length binary code whose the first 128 characters are common with the ASCII code. Nowadays, keyboards still communicate to computers with ASCII codes and when saving document in “ plain text” , characters are encoded with ASCII codes.
+
+ASCII CODE TABLE
+
+binary characters codes 0000000 NUL 0000001 SOH 0000010 STX 0000011 ETX 0000100 EOT 0000101 0000110 0000111 0001000 0001001 0001010 0001011 0001100 0001101 0001110 0001111 0010000 ENQ ACK BEL BS HT LF VT FF CR SO SI DLE
+
+comments (Null char.) (Start of Header) (Start of Text) (End of Text) (End of Transmission) (Enquiry) (Acknowledgment) (Bell) (Backspace) (Horizontal Tab) (Line Feed) (Vertical Tab) (Form Feed) (Carriage Return) (Shift Out) (Shift In) (Data Link Escape)
+
+binary characters codes 1000000 @ 1000001 A 1000010 B 1000011 C 1000100 D 1000101 1000110 1000111 1001000 1001001 1001010 1001011 1001100 1001101 1001110 1001111 1010000 E F G H I J K L M N O P
+
+comments (AT symbol)
+
+source coding ____________________________________________________________ 33
+
+binary characters comments codes 0010001 DC1 (Device Control 1) 0010010 DC2 (Device Control 2) 0010011 DC3 (Device Control 3) 0010100 DC4 (Device Control 4) 0010101 NAK (Negative Acknowledgement) 0010110 SYN (Synchronous Idle) 0010111 ETB (End of Trans. Block) 0011000 CAN (Cancel) 0011001 EM (End of Medium) 0011010 SUB (Substitute) 0011011 ESC (Escape) 0011100 0011101 0011110 FS GS RS (File Separator) (Group Separator) (Request to Send)(Record Separator) (Unit Separator) (Space) (exclamation mark) (double quote) (number sign) (dollar sign) (percent) (ampersand) (single quote) (left/opening parenthesis) (right/closing parenthesis) (asterisk) (plus) (comma) (minus or dash) (dot) (forward slash)
+
+binary characters codes 1010001 Q 1010010 R 1010011 S 1010100 T 1010101 U 1010110 1010111 1011000 1011001 1011010 1011011 1011100 1011101 1011110 V W X Y Z [ \ ] ^
+
+comments
+
+(left/opening bracket) (back slash) (right/closing bracket) (caret/cirumflex)
+
+0011111 0100000 0100001 0100010 0100011 0100100 0100101 0100110 0100111 0101000 0101001 0101010 0101011 0101100 0101101 0101110 0101111 0110000 0110001 0110010 0110011 0110100
+
+US SP ! " # $ % & ’ ( ) * + , . / 0 1 2 3 4
+
+1011111 1100000 1100001 1100010 1100011 1100100 1100101 1100110 1100111 1101000 1101001 1101010 1101011 1101100 1101101 1101110 1101111 1110000 1110001 1110010 1110011 1110100
+
+_ ‘ a b c d e f g h i j k l m n o p q r s t
+
+(underscore)
+
+34 ____________________________________________________________ source coding
+
+binary codes 0110101 0110110 0110111 0111000 0111001 0111010 0111011 0111100 0111101 0111110 0111111
+
+characters
+
+comments
+
+binary codes 1110101 1110110 1110111 1111000 1111001 1111010 1111011 1111100 1111101 1111110 1111111
+
+characters
+
+comments
+
+5 6 7 8 9 :
+
+(colon) (semi-colon) (less than) (equal sign) (greater than) (question mark)
+
+u v w x y z { | } ~ DEL
+
+< = > ?
+
+(left/opening brace) (vertical bar) (right/closing brace) (tilde) (delete)
+
+(this table has been extracted from http://www.neurophys.wisc.edu/www/comp/docs/ascii.html)
+
+Example Another famous code is the Morse code. Invented by Samuel Morse in the 1840’s, it allows letters of the alphabet {a, b, … , z, “ space” , “ full stop” , “ comma” , … } to be sent as short electrical signals (dots) and long electrical signals (dashes). There are different lapses of time between words, letters of a same word and dots and dashes within letters. Consequently the Morse code is a ternary code with code alphabet {., _, dit (unit of time)}. The value of the unit of time depends on the speed of the operator. Within a letter, the space between code letters is equal to one dit. Between two characters in a word, the space is equal to three dits. The space between two words is equal to seven dits.
+
+Morse code differs from ASCII code in the sense that shorter words are assigned to more frequent letters. On April 15, 1912, the Titanic used the international distress call SOS “ …_ _ _…” (sent in the correct way as one Morse symbol).
+
+source coding ____________________________________________________________ 35
+
+MORSE CODE TABLE letters A B C D E F G H I J K L M Morse code ._ _… _._. _.. . .._. _ _. …. .. ._ _ _ _._ ._.. __ letters N O P Q R S T U V W X Y Z Morse code _. ___ ._ _. _ _._ ._. … _ .._ …_ ._ _ _.._ _._ _ _ _..
+
+numbers 0 1 2 3 4
+
+Morse code _____ ._ _ _ _ .._ _ _ …__ … ._
+
+numbers 5 6 7 8 9
+
+Morse code … .. _… . _ _… _ _ _.. _ _ _ _.
+
+common punctuation . (full stop) , (comma) ? (question mark)
+
+Morse code ._._._ _ _.._ _ .._ _..
+
+common punctuation - (hyphen) / (slash)
+
+Morse code _… _ _.._.
+
+special characters error + (end of message) @ (end of contact) SOS (international distress call)
+
+Morse code … … .. ._._. … _._ … _ _ _…
+
+(source: http://www.wikipedia.org/wiki/Morse_code)
+
+36 ____________________________________________________________ source coding
+
+A code is said to be uniquely decipherable if any sequence of codewords can be interpreted in only one way.
+
+Examples {1, 10, 11} is not uniquely decipherable as the sequence “ 1111” can be interpreted in “ 1” “ 11” “ 1” or “ 1” “ 1” “ 11” or … {1, 10} is uniquely decipherable although for any sequence, we need to consider two symbols at a time to decipher the successive codewords. In the sequence 11011, the first codeword is “ 1” since the following symbol is “ 1” whereas the second codeword is “ 10” since the third symbol is “ 0” and so on …
+
+-
+
+An instantaneous code is a code in which any sequence of codewords can be interpreted codeword by codeword, as soon as they are received.
+
+Examples {0, 10} is instantaneous {1, 10} is not instantaneous. For instance, in the sequence 1110, we need to know whether the second symbol is “ 0” or “ 1” before interpreting the first symbol. This is due to the fact that a codeword (“ 1” ) is the beginning of another codeword (“ 10” ). It motivates the following definition.
+
+A code is a prefix code if and only if no codeword is the beginning of another codeword.
+
+Example {1, 01, 000, 001} is a prefix code.
+
+source coding ____________________________________________________________ 37
+
+-
+
+A prefix code is an instantaneous code and the converse is true. A prefix code is uniquely decipherable but some uniquely decipherable codes do not have the prefix property.
+
+Recovering the original codewords calls for designing uniquely decipherable codes. Kraft’s theorem states the condition which the lengths of codewords must meet to be a prefix codes. It may seem restrictive to limit ourselves to prefix codes, as uniquely decipherable codes are not always prefix codes. However, McMillan’s theorem will show us that we can limit our attention to prefix codes without loss of generality. Kraft’s theorem There exists a b-ary (the size of the code alphabet is b) prefix code { 1 , c 2 ,..., c m } with lengths c n(c1 ), n(c 2 ), ..., n(c m ) if and only if :
+
+∑b
+k =1
+
+m
+
+− n (ck )
+
+≤1
+
+This inequality is known as the Kraft inequality.
+
+Example Let us consider C = { ,11,000,101,111,1100,1101}. This code is not a prefix code as the 10 codeword “ 11” is the beginning of the codewords “ 111” , “ 1100” and “ 1101” . Nevertheless, it satisfies the Kraft inequality :
+
+∑b
+c∈C
+
+− n (c )
+
+= 2 × 2 − 2 + 3 × 2 −3 + 2 × 2 − 4 =
+
+1 3 2 + + =1 2 8 16
+
+According to Kraft’ s theorem, there exists an equivalent binary prefix code with two codewords of length 2, three codewords of length 3 and two codewords of length 4. To build such a code, we can use a tree made of a root, nodes, branches and leaves. A node at level i has one parent at level i-1 and at most b children at level i+1, but the root (level 0) has no parent. At level 0, there is only one node (the root) At level 1, there are at most b nodes
+
+38 ____________________________________________________________ source coding
+
+-
+
+At level 2, there are at most b 2 nodes
+
+And so on … The terminal nodes (with no children) are called leaves.
+
+A codeword is represented by a sequence of branches coming from different levels. Its length is equal to the level of its leaf. To construct a prefix code, we have to make sure that no sequence of branches associated with a codeword is included in any sequence of branches associated with other codewords. In other words, no codeword is an ancestor of any other codeword.
+
+In the example, the construction of a prefix code with a code tree requires that we construct two nodes at level 2 for the two codewords of length 2 three nodes at level 3 for the three codewords of length 3 two nodes at level 4 for the two codewords of length 4
+
+root 0 0 0 1 1 0 0 1
+
+level 0 level 1 1 level 2 1 level 3
+
+leaves nodes branches terminal nodes (codewords)
+
+0
+
+1 level 4
+
+source coding ____________________________________________________________ 39
+
+Eventually we obtain the codewords listed in the table below : codewords 01 10 000 001 111 1100 1101
+
+McMillan’s theorem A uniquely decipherable code satisfies the Kraft inequality Taking into account Kraft’ s theorem, this means that any uniquely decipherable code can be associated with an equivalent prefix code. By “ equivalent” , we mean “ having the same length distribution” .
+
+SOURCE CODING THEOREM
+This theorem states the limits which refer to the coding of the outputs of a source. Let U be a stationary discrete source and b the size of the code alphabet. To take into account the memory of U, we can consider the Lth extension of U. It is a source whose outputs are juxtapositions of L consecutive symbols delivered by U.
+
+Example U is a memoryless ternary source taking values in {0, 1, 2}. The second extension of U consists of the symbols taken two at a time, e.g., { ,01,02,10,11,12,20,21,22}. 00 Assuming the memory of U does not allow a “ 1” to follow a “ 0” and a “ 2” , the second extension is : { ,02,10,11,12,20,22} as the symbols “ 01” and “ 21” cannot occur. 00
+
+40 ____________________________________________________________ source coding
+
+To measure the ability of a code, applied to the Lth extension, to compress information, we define the average number of code symbols used to represent one source symbol as :
+
+n n(L ) = L = L
+
+∑ p n(c )
+i i i
+
+L
+
+where ci are the codewords assigned to the source words of the Lth extension of U and pi = P{ i }. c
+n(L ) is also the average length of the codewords.
+
+The smaller n(L ) is, the more efficient the code is.
+
+The source coding theorem consists of the two following statements : Any uniquely decipherable code used to encode the source words of the Lth extension of a stationary source U satisfies : n L H L (U ) ≥ L log b
+
+n(L ) = -
+
+It is possible to encode the source words of the Lth extension of a stationary source U with a prefix code in such way that :
+
+n(L ) =
+
+nL H L ( ) 1 U < + , L log b L
+
+where H L (U ) and log b are expressed in the same base.
+
+Comments : If L tends to + ∞ , the former inequality becomes :
+n(∞ ) ≥ H ∞ (U ) log b
+
+and as H L (U ) is a decreasing function of L,
+
+H ∞ (U ) appears as the ultimate compression log b H (U ) . limit : we cannot find a uniquely decipherable code with n(L ) smaller than ∞ log b
+
+source coding ____________________________________________________________ 41
+
+This property provides a justification, a posteriori, of the definition of entropy. Expressing all logarithms in base 2 and taking b = 2 , the entropy can be interpreted as the minimum average number of bits required to represent one source symbol.
+
+∀ ε > 0 ∃L0 / ∀ L > L0
+
+1 < ε , since L
+
+lim L = 0 . Hence, for L large enough, we have :
+L → +∞
+
+1
+
+n(L ) =
+
+nL H L ( ) U < +ε L log b
+
+Taking the limits as L tends to + ∞ , we obtain : n(∞ ) < H ∞ (U ) +ε log b
+
+This means that we can achieve a prefix code to encode the outputs of U in such a way that H (U ) . This leads us to pose this the average number of code symbols is arbitrarily close to ∞ log b question : Is it possible to find a prefix code which satisfies n(L ) = H∞ ( ) U ? log b
+
+Such a code exists, provided that the length of each codeword ci is equal to the selfc information of its occurrence, i.e., if ∀ i n(ci ) = − log b P{ i }. To meet this condition, P{ i } must be of the form b − m with m ∈ IN , otherwise − log b P{ i } c c would not be an integer. The code is then said to be optimum.
+
+Example U is a memoryless source taking values in {A, B, C, D, E, F, G} with probabilities 1/3, 1/9, 1/9, 1/9, 1/9, 1/9, 1/9. The outputs of U are to be encoded with a ternary code alphabet {0, 1, 2}. As the probabilities are negative powers of 3, which is the size of the code alphabet, we will assign codewords to the seven source symbols {A, B, C, D, E, F, G} in such a way that the length of a codeword is equal to the self-information (expressed in trits) associated with the corresponding source symbol.
+
+42 ____________________________________________________________ source coding
+
+source symbol A B C D E F G
+
+self-information (in trits) 1 1  log 3 3 1 2  log 3 9 1  log 3 2 9 1 2  log 3 9 1  log 3 2 9 1 2  log 3 9 1  log 3 2 9
+
+length of the codeword 1 2 2 2 2 2 2
+
+ci
+
+∑b
+ci
+
+− n (ci )
+
+= 3−1 + 6 × 3−2 = 1
+
+The Kraft inequality is satisfied. Consequently, there exists a prefix code with codewords 1 having the length distribution { ,2,2,2,2,2,2}. To construct this code, we can use a ternary tree with nodes having three children as the size of the code alphabet is 3.
+
+0
+
+B
+
+ 
+
+Let us calculate
+
+¦b
+
+n ci 
+
+:
+
+0
+
+1
+
+2
+
+A 1 2 0 1 2
+
+C
+
+D
+
+E
+
+F
+
+G
+
+source coding ____________________________________________________________ 43
+
+source symbols A B C D E F G
+
+codewords 1 00 01 02 20 21 22
+
+The average length of the codewords is :
+1 1 5 n = 1× + 6 × 2 × = 3 9 3
+
+and the limit given by the source coding theorem :
+
+H 1 (U ) 1 5 1 1 1 = H ∞ (U ) = − log 3 − 6 × log 3 = trit 9 3 9 3 log 3 3 3
+(here we had to express H ∞ (U ) in trits, since logarithms must be expressed in the same base) Hence, we have n =
+
+H 1 (U ) and the code is optimum. log 3 3
+
+Let U be a source taking N different values. The number of b-ary symbols needed to represent one value is the smallest integer greater than or equal to log b N , denoted log b N , if we encode the outputs of U by a fixed length code. Let DU be the symbol rate of U expressed in N-ary symbols per second. The source coding theorem states that we can find a prefix code whose the average b-ary symbols rate can be arbitrarily close to DU × H ∞ (U ) (logarithms are expressed in base b). Using the fixed length code would result in a b-ary symbol rate equal to DU × log b N  . If H ∞ (U ) < log b N (i.e. U has redundancy), then there exists a prefix code with a b-ary symbol rate smaller than DU × log b N , hence smaller than DU × log b N  , since we can reduce the bary symbol rate as close to DU × H ∞ (U ) as desired.
+
+44 ____________________________________________________________ source coding
+
+Consequently, the source coding theorem answers the two first questions of the source coding problem : Questions Given an information source, Is it possible to compress its data?
+
+If so, What is the minimum average number of code symbols necessary to represent one source symbol?
+
+Answers The compression, which results in a reduction in the symbol rate, is possible as long as H ∞ (U ) < log b N . The minimum average number of code symbols required to represent one source symbol is H ∞ (U ).
+
+Example A binary source U is described by a Markov chain whose state transition graph is sketched below :
+
+1/2 1/2 0 1 1
+
+The transition matrix is : 0 0 T= 1 1 0 1/2 1 1/2
+
+source coding ____________________________________________________________ 45
+
+There is only one class of recurrent states, hence U is stationary and the limiting state probabilities x = P{ = 0} and y = P{ = 1} satisfy : U U
+
+(x, y ) = (x, y )× T
+x  x = 2 + y  x  ⇔ y = 2  x + y =1   
+
+with
+
+x + y =1
+
+Solving this system for x and y, we obtain :
+x= 2 3 and y= 1 3
+
+Interpreting the two rows of the transition matrix, we get :
+1 H (U n / U n −1 = 0 ) = H 2   = 1 bit  2
+
+H (U n / U n −1 = 1) = H 2 ( ) = 0 bit 1 Eventually, we have :
+H ∞ ( ) = H ( n / U n−1 ) = U U 2 1 2 × 1 + × 0 = = 0.66 bit 3 3 3
+
+The maximum entropy for a binary source is log 2 2 = 1 bit . As H ∞ (U ) = 0.66 bit < 1 bit , U has redundancy and its data can be compressed. To take into account the memory of U, let us consider its 2nd extension which consists of the source words : “ 00” , “ 01” , “ 10” . “ 11” is not listed, since a “ 1” cannot follow a “ 1” . Their probabilities are :
+1 2 1 P{ 00"}= P{ n −1 = 0  U n = 0}= P{ n = 0 / U n −1 = 0}× P{ n −1 = 0}= × = " U U U 2 3 3 1 2 1 P{ 01"}= P{ n −1 = 0  U n = 1}= P{ n = 1 / U n −1 = 0}× P{ n −1 = 0}= × = " U U U 2 3 3
+
+46 ____________________________________________________________ source coding
+
+1 1 P{10"}= P{ n −1 = 1  U n = 0}= P{ n = 0 / U n −1 = 1}× P{ n −1 = 1}= 1× = " U U U 3 3
+
+With a ternary code alphabet {0, 1, 2}, we can construct the following code :
+
+"00" → 0   "01" → 1 "10" → 2 
+Then, we have n 2 = 1 and n(2 ) =
+1 . 2
+
+One has to be cautious here as the second extension of U is not memoryless, since “ 10” cannot follow “ 01” . Consequently, although the distribution probability is uniform (P{ 00"}= P{ 01"}= P{10"}), the entropy of the second extension of U is smaller than 1 trit " " " and is not equal to n2 : the code is not optimum.
+
+With a binary code alphabet {0, 1}, we can think of this prefix code :
+
+ "00" → 0  "01" → 10 "10" → 11 
+In this case, the average number of bits necessary to represent one source symbol is :
+n(2 ) = n2 1   1 1  1 = 2 ×  +  + 1 ×  = 0.83 2 2   3 3 3
+
+Using this code results in a reduction of the source symbol rate equal to 1 − 0.83 = 17% , the maximum being 1 − 0.66 = 34% .
+
+COMPRESSION ALGORITHMS
+This section develops a systematic construction of binary codes compressing the data of a source.
+
+source coding ____________________________________________________________ 47
+
+SHANNON-FANO ALGORITHM The Shannon-Fano encoding scheme is based on the principle that each code bit, which can be described by a random variable, must have a maximum entropy. First step We have to list the symbols, for instance from top to bottom, in order of decreasing probability. Second step We divide the whole set of source symbols into two subsets, each one containing only consecutive symbols of the list, in such way that the two probabilities of the subsets are as close as possible. Then, we assign “ 1” (respectively “ 0” ) to the symbols of the top (respectively bottom) subset. Third step We apply the process of the previous step to the subsets containing at least two symbols. The algorithm ends when there are only subsets with one symbol left. The successive binary digits assigned to the subsets have to be arranged from left to right to form the codewords. This amounts to constructing a binary tree from the root to the leaves. We should note that the Shannon-Fano encoding scheme does not always provide the best code, as the optimisation is achieved binary digit by binary digit, but not on the whole of the digits which constitute the codewords.
+
+Example Let U be a memoryless source taking values in {A, B, C , D, E , F , G} with the probabilities {0.4,0.2,0.15,0.1,0.05,0.05,0.05} respectively. The entropy of U is :
+
+H ∞ (U ) = −0.4 × log 2 0.4 − 0.2 × log 2 0.2 − 0.15 × log 2 0.15 − 0.1 × log 2 0.1 − 3 × 0.05 × log 2 0.05 H ∞ ( ) ≈ 2.38 bits U
+The maximum entropy of a source taking on 7 values is log 2 7 ≈ 2.81 bits
+
+48 ____________________________________________________________ source coding
+
+Consequently, U has redundancy and its data can be compressed. With a fixed length code The length n has to be chosen as the smallest integer satisfying :
+2n ≥ 7
+
+We obtain n = 3 With Shannon-Fano code Let us display the successive steps of Shannon-Fano encoding in the table below : 1st step 1 1 0 0 0 0 0 2nd step 1 0 3rd step 4th step 5th step 6th step
+
+symbols A B C D E F G
+
+probabilities 0.4 0.2 0.15 0.1 0.05 0.05 0.05
+
+codewords 11 10 011 010 0011 0010 000
+
+1 1 0 0 0
+
+1 0 1 1 0 1 0
+
+The average number of bits required to represent one source symbol is :
+n = 2 × (0.4 + 0.2 ) + 3 × (0.15 + 0.1 + 0.05) + 4 × (0.05 + 0.05) = 2.5
+
+Compared to the 3 fixed length code, this Shannon-Fano code results in a reduction in the 3 − 2 .5 ≈ 16% . symbol rate of 3
+
+HUFFMAN ALGORITHM This algorithm, invented in 1952 by D.A. Huffman, provides a prefix code whose construction can be achieved by a binary tree. Here are the successive steps :
+
+source coding ____________________________________________________________ 49
+
+First step We arrange the source symbols on a row in order of increasing probability from left to right.
+
+Second step Let us denote A and B the two source symbols of lowest probabilities PA and PB in the list of the source words. We combine A and B together with two branches into a node which replaces A and B with probability assignment equal to PA + PB . A and B are removed from the list and replaced by the node.
+
+Third step We apply the procedure of the second step until the probability assignment is equal to 1. Then, the corresponding node is the root of the binary tree.
+
+Example Let us return to the source of the previous example. Applying the above algorithm results in the following binary tree : (1) 0 (0.6) 0 (0.25) III 0 (0.15) II 0 (0.1) I 0 G (0.05) 1 F (0.05) E (0.05) D (0.1) 1 1 (0.35) IV 0 C (0.15) 1 B (0.2) A (0.4) V 1 VI 1
+
+50 ____________________________________________________________ source coding
+
+symbols A B C D E F G
+
+probabilities 0.4 0.2 0.15 0.1 0.05 0.05 0.05
+
+codewords 1 011 010 001 0001 00001 00000
+
+The average length codewords is :
+n = 5 × (0.05 + 0.05) + 4 × 0.05 + 3 × (0.1 + 0.15 + 0.2 )+ 1 × 0.4 = 2.45
+
+Comments
+
+-
+
+When the source words to be encoded have the same length, the Huffman code is the most efficient among the uniquely decipherable codes. According to the previous comment, a Huffman code always satisfies the conditions stated in the source coding theorem. Applying the Shannon-Fano or Huffman algorithms requires knowledge of the probability distribution of the source words. In practice, the probabilities of the source words are unknown but, as a result of the weak law of large numbers, they may be estimated by the relative frequency of the source word outcomes in the message. As the receiver does not know these values, they have to be sent with the encoded data to allow the message to be decoded. Consequently, the efficiency of the code will be reduced.
+
+-
+
+-
+
+Huffman coding is implemented in the Joint Photographic Experts Group standard to compress images. The algorithm can be sketched as follows :
+
+source image compressed image
+
+8x8 block entropy encoder
+
+DCT
+
+quantizer
+
+source coding ____________________________________________________________ 51
+
+-
+
+The source image is divided into 8x8 pixel input blocks. Each input block can be regarded as a function of the two spatial dimensions x and y. Calculating the Discrete Cosine Transform, which is similar to the Fourier Transform, results in an 8x8 output block containing 64 elements arranged in rows and columns. The term located in the top left-hand corner is called the “ DC” coefficient and the remaining 63, the “ AC” coefficients. The “ DC” coefficient is a measure of the average value of the 64 pixels of the input block. The elements of the 8x8 output blocks are quantized with a number of bits according to their locations in the block : more bits will be allocated to elements near the top left-hand corner. Quantization is lossy. After quantization, “ DC” coefficients are encoded by difference, as there is often strong correlation between “ DC” coefficients of adjacent 8x8 blocks. To facilitate the entropy coding procedure, the “ AC” coefficients are ordered into a “ zigzag” sequence as shown below :
+
+-
+
+-
+
+AC1 DC AC2
+
+AC63
+
+Then, each nonzero coefficient is represented by two symbols : symbol-1 and symbol-2. Symbol-1 consists of two numbers : the number of consecutive zero coefficients in the zigzag sequence preceding the nonzero coefficient to be encoded (RUNLENGTH). The number of bits used to encode the value of the amplitude of the nonzero coefficient (SIZE)
+
+Symbol-2 is a signed integer equal to the amplitude of the nonzero coefficient (AMPLITUDE).
+
+52 ____________________________________________________________ source coding
+
+If there are more than 15 consecutive zero coefficients, symbol-1 is represented by (15, 0). For both “ DC” and “ AC” coefficients, symbol-1 is encoded with a Huffman code, whereas symbol-2 is encoded by a variable length integer code whose codewords lengths (in bits) must satisfy :
+
+codeword length (in bits) 1 2 3 4 5 6 7 8 9 10
+
+amplitude -1,1 -3,-2,2,3 -7,… ,-4,4,… ,7 -15,… ,-8,8,… ,15 -31,… ,-16,16,… ,31 -63,… ,-32,32,… ,63 -127,… ,-64,64,… ,127 -255,… ,-128,128,… ,255 -511,… ,-256,256,… ,511 -1023,… -512,512,… ,1023
+
+(source : The JPEG Still Picture Compression Standard Gregory K. Wallace Multimedia Engineering Digital Equipment Corporation Maynard, Massachussetts)
+
+LZ 78 ALGORITHM
+
+In 1978, Jacob Ziv and Abraham Lempel wrote an article entitled “ Compression of Individual Sequences via Variable Rate Coding” in the IEEE Transactions on Information Theory describing a compression algorithm known as the LZ 78 algorithm.
+
+It consists of constructing a dictionary as the message is being read, character by character. At the beginning, the only string in the dictionary is the empty string “ ” in position 0. If the juxtaposition P ⊕ c of the preceding string P with the last read character c is in the dictionary, the algorithm passes to the next character. Otherwise, the couple (position of P in the dictionary, character c) is sent and the string P ⊕ c is added to the dictionary.
+
+source coding ____________________________________________________________ 53
+
+Example The message to be transmitted is the tongue twister : IF^STU^CHEWS^SHOES,^SHOULD^STU^CHOOSE^THE^SHOES^HE^CHEWS^ ? (“ ^” represents the space). The successive steps of LZ 78 algorithm are described in the table below :
+
+position in the dictionary 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+
+string in the dictionary “” I F ^ S T U ^C H E W S^ SH HO ES , ^S HO L D ^ST U^ C HOO SE ^T HE ^SH O
+
+read characters I F ^ S T U ^C H E W S^ SH O ES , ^S HO L D ^ST U^ C HOO SE ^T HE ^SH O ES^
+
+emitted couple (0,I) (0,F) (0,^) (0,S) (0,T) (0,U) (3,C) (0,H) (0,E) (0,W) (4,^) (4,H) (0,O) (9,S) (0,,) (3,S) (8,O) (0,L) (0,D) (16,T) (6,^) (0,C) (17,O) (4,E) (3,T) (8,E) (16,H) (0,O) (14,^)
+
+54 ____________________________________________________________ source coding
+
+position in the dictionary 29 30 31 32
+
+string in the dictionary ES^ HE^ CH EW
+
+read characters HE^ CH EW S^?
+
+emitted couple (26,^) (22,H) (9,W) (11,?)
+
+If string positions are encoded with one byte, then the dictionary will contain 2 8 = 128 strings, which is not enough. With two bytes to represent string positions, 2 8 × 2 8 = 65536 strings may be strored in the dictionary. If the symbols are transmitted with extended ASCII, the number of bytes used to encode the message is :
+
+33 × (2 + 1) = 99 Bytes
+Transmitting the message by encoding the successive letters into extended ASCII code would result in a file containing 60 Bytes. The longer the message, the more efficient the algorithm.
+
+LZW ALGORITHM In 1984, Terry Welch published “ A technique for High performance Data Compression” in IEEE Computer. The algorithm described in this paper is an improvement of LZ 78, and it is now called the LZW algorithm. In LZW, Before starting the algorithm, the dictionary contains all the strings of length one, As soon as the juxtaposition P ⊕ c is not in the dictionary, only the address of P is transmitted. Then, the string P ⊕ c is added to the dictionary and the character c is used to initialise the next string.
+
+Example Let us resume the message : IF^STU^CHEWS^SHOES,^SHOULD^STU^CHOOSE^THE^SHOES^HE^CHEWS^ ?
+
+source coding ____________________________________________________________ 55
+
+By using the ASCII code table (page 30) to initialise the dictionary and applying the algorithm, we obtain : position in the dictionary 0 … … 8 … … 44 … … 67 68 69 70 … 72 73 … … 76 … … 79 … … 83 84 85 … 87 … … 255 256 257 258 259 260 261 string in the initialisation of P dictionary Nul character … … Backspace … … coma … … C D E F … H I … … L … … O … … S T U … W … … IF F^ ^S ST TU ^C I F ^ S T ^ F ^ S T U C 73 70 8 83 84 8 read characters emitted position
+
+56 ____________________________________________________________ source coding
+
+position in the dictionary 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294
+
+string in the initialisation dictionary of P CH HE EW WS ^SH HO OE ES S, ,^ ^SHO OU UL LD D^ ^ST TU^ ^CH HOO OS SE E^ ^T TH HE^ ^SHOE ES^ ^H HE^C CHE EWS S^ ^? C H E W ^ H O E S , ^ O U L D ^ T ^ H O S E ^ T H ^ E ^ H C E S ^
+
+read characters H E W S SH O E S , ^ SHO U L D ^ ST U^ CH OO S E ^ T H E^ SHOE S^ H E^C HE WS ^ ?
+
+emitted position 67 72 69 87 258 72 79 69 83 44 266 79 85 76 68 8 84 8 72 79 83 69 8 84 72 8 68 8 72 67 69 83 8
+
+The indexes in the dictionary may be coded with a fixed number of bits, but the algorithm is more efficient with a variable number of bits : at the beginning 9 bits are used until 256 entries are added, then 10 bits, 11 bits and so on …
+
+source coding ____________________________________________________________ 57
+
+To compare the performances of some codes, the compression rates have been calculated after applying different algorithms to the same 6MB set of files divided into three parts : text files binary files graphic files size of the compressed file size of the original file
+
+compression rate = 1 −
+
+These files have been extracted from Dr Dobb’ s journal February 1991 (source Mark Nelson).
+
+codes Huffman adaptative Huffman LZW (fixed 12 bits) LZW (variable 12 bits) LZW (variable 15 bits)
+
+graphic 27.22% 32.59% 20.61%
+
+binary 24.79% 26.69% 15.07%
+
+text 40.38% 40.72% 50.32%
+
+on average 31.04% 33.27% 29.20%
+
+46.78% 48.44%
+
+36.61% 36.15%
+
+54.82% 58.28%
+
+45.81% 47.31%
+
+59
+
+COMMUNICATION CHANNELS
+
+This chapter deals with the transmission of information. First, we will consider the transfer of data in terms of information theory. Then, we will state the noisy channel theorem.
+
+CHANNEL CAPACITY
+
+Example Let us consider a baseband digital communication system : binary source transmit filter
+
+A
+
+B c h a n n e l
+
+estimated symbols
+
+F
+
+decision device
+
+sampler E D
+
+receive filter
+
+C
+
+- binary source A binary memoryless source with alphabet { V ,V } (the symbols are equally likely). −
+
+60 ___________________________________________________ communication channels
+
+- transmit filter Its transfer function determines the shape of the power spectrum of the signal to transmit. - channel Optical fibres, pairs of wires, coaxial cables are channels used to link a transmitter to a distant receiver. - receive filter Used to select the bandwidth of the transmitted signal (generally matched to the transmit filter to optimise the signal to noise ratio). - sampler Converts the filtered received signal to a discrete time signal at a sample rate equal to the baud rate of the symbols emitted by the source. - decision device As the symbols are symmetric, equally likely and the noise process has an even probability density, the decision device compares the input sample amplitude to the threshold “ 0” : if it is greater (respectively smaller) than “ 0” , the estimated symbol is V (respectively –V). We will justify this decision rule further.
+
+If we consider the devices between A and E, the resulting device is a channel with a discrete input and a continuous output. Between B and E, the input is continuous and the output continuous. So, the nature, discrete or continuous, of the input and output of a channel depends on the devices it includes.
+
+Let us denote a k the random variable such as :
+
+{ak = V }= { k th symbol emitted by the source is V} the {ak = −V }= { k th symbol emitted by the source is - V} the
+and B(t) the zero mean Gaussian random variable modelling the noise (its power spectrum N density is 0 for any value of the frequency). 2 Let 1 T Π T (t ) be the impulse response of the transmit and receive filters.
+
+communication channels ___________________________________________________ 61
+
+Considering the channel as a perfect channel (i.e. the impulse response is δ (t )), we obtain the signal in D : 1   1 YD =  ∑ ak Π T (t ) Π T (t − kT )+ B(t ) ∗ T  k  T
+
+ 1  1   Π T (t ) + B(t ) ∗ YD =  ∑ ak  δ (t − kT )∗  T Π T (t )  T    k 
+1 1  1  Π T (t )∗ Π T (t ) + B(t )∗ YD = ∑ ak δ (t − kT )∗  Π T (t ) T T  T  k YD = ∑ ak δ (t − kT )∗ (Λ 2T (t ))+ B(t )∗
+k
+
+1 Π T (t ) T
+
+YD = ∑ ak Λ 2T (t − kT )+ B(t )∗
+k
+
+1 Π T (t ) T
+
+In order not to have intersymbol interference, we have to sample at (nT )n∈Z , as shown in the figure below : a 0 = V , a1 = −V , a 2 = −V , a 3 = V , a 4 = V , a 5 = V
+
+0
+
+T
+
+2T
+
+3T
+
+4T
+
+5T
+
+62 ___________________________________________________ communication channels
+
+Π T (t ) and H r ( f ) the transfer function of the receive filter. B’ (t) is T gaussian, its mean is zero and its variance σ 2 can be calculated as the power : Let B’ (t) be B(t )∗ 1
+
+σ = ∫ S B ’ ( f )df = ∫ S B ( f ) H r ( f )
+2 −∞ −∞
+
++∞
+
++∞
+
+2
+
+N df = 0 2
+
++∞
+
+−∞
+
+∫ H (f )
+r
+
+2
+
+N df = 0 2
+
++∞
+
+−∞
+
+∫
+
+1 T
+
+Π T (t ) df =
+
+2
+
+N0 2
+
+After sampling at nT, we obtain : YE = a n + B’(nT ) Then, we can think of a decision rule consisting in choosing the more likely of the two hypothesis (a n = −V or a n = V ) based on the observation (YE ). This is known as the maximum likelihood decision. In other terms, we have to compare the probability densities of YE knowing a n :
+if f YE / an = −V (y ) > (respectively < ) f YE / an =V (y ), then the estimated symbol is - V (respectively V)
+
+As f YE / an = −V (y )
+
+(respectively f
+
+YE / a n =V
+
+(y ))
+
+is a Gaussian random variable with mean –V
+
+(respectively V) and variance
+
+N0 , we have 2
+
+f YE / an =V (y )
+
+f YE / an = −V (y )
+
+-V « -V » is estimated
+
+0
+
+V « V » is estimated
+
+y
+
+communication channels ___________________________________________________ 63
+
+    2V  N  " P{ V " is estimated /"−V " is sent}= P  N  − V ; 0  > 0 = P  N (0;1) > = p 2  N0     
+And, by symmetry :
+
+P{ −V " is estimated /"V " is sent}= P{ V " is estimated /"−V " is sent}= p " "
+Then, the model corresponding to the transmission chain between A and F can be sketched as follows :
+
+1-p -V p -V
+
+p 1-p V V
+
+Such a channel is called a Binary Symmetric Channel with error probability p.
+
+A channel can be specified by an input alphabet {x1 , x 2 ,..., x n }, an output alphabet {y1 , y 2 ,..., y m } and a transition probability distribution : pij = P{ = y j / X = xi } ∀(i, j )∈ [ , n ]× [ , m] Y 1 1
+
+In this course, we will limit ourselves to discrete memoryless channels, i.e., channels whose input and output alphabets are finite and for which the output symbol at a certain time depends statistically only on the most recent input symbol.
+
+The transition probability distribution can be expressed as a transition probability matrix.
+
+64 ___________________________________________________ communication channels
+
+Example Returning to the preceding example, we have the transition probability matrix
+
+-V
+
+V
+
+Y
+
+-V
+
+1-p
+
+p
+
+V
+
+p
+
+1-p
+
+X
+
+As we will attempt to recover the input symbol from the output symbol, we can consider the average mutual information between X and Y :
+
+I (X ; Y ) = H (X ) − H (X / Y ) = H (Y ) − H (Y / X )
+This quantity, I (X ; Y ), depends on the input probability distribution p(X ). Accordingly, it is not intrinsic to the channel itself. Thus, we define the capacity C as follows :
+
+C = Max I (X ; Y )
+p (X )
+
+Examples A noiseless channel
+
+communication channels ___________________________________________________ 65
+
+A B C D X We have :
+
+1 1 1 1
+
+A’ B’ C’ D’ Y
+
+I (X ; Y ) = H (X )− H (X / Y )
+The occurrence of Y uniquely specifies the input X. Consequently, H (X / Y ) = 0 and
+
+C = Max H (X )
+p (X )
+
+As X is a random variable taking on 4 different values, the maximum of H (X ) is (log 2 4) bits . This value is achieved for a uniform probability distribution on the input alphabet. Finally, we get :
+
+C = log 2 4 = 2 bits
+
+A noisy channel A 1 1 Y X B 1 C B’ A’
+
+D
+
+1
+
+66 ___________________________________________________ communication channels
+
+I (X ; Y ) = H (Y ) − H (Y / X )
+In this case, the input value uniquely determines the output value. Accordingly, knowing X, there is no uncertainty on Y. Then, we have :
+
+I (X ; Y ) = H (Y )
+And :
+
+C = Max H (Y )
+p (X )
+
+Here, we could think of C = 1 bit as the maximum entropy of Y should be 1 bit. However, we are not sure there exists an input probability distribution such as the corresponding output probability distribution is uniform. Thus, we have to carry out the following calculations : Let us denote : p A = P{X = A} p B = P{X = B}
+
+pC = P{X = C }
+
+p D = P{X = D} Considering the possible transitions from the input to the output, we have :
+
+P{ = A’ = P{X = A  Y = A’ + P{X = B  Y = A’ Y } } } P{ = A’ = P{X = A}× P{ = A’/ X = A}+ P{X = B}× P{ = A’/ X = B} Y } Y Y P{ = A’ = p A + p B Y }
+As Y can only take two values, we deduce :
+
+P{ = B’ = 1 − (p A + pB ) Y }
+And :
+
+H (Y ) = H 2 (p A + p B )
+The maximum of H 2 (p A + pB ), 1 bit, is achieved when p A + p B = Thus, the capacity is 1 bit.
+1 . 2
+
+communication channels ___________________________________________________ 67
+
+Computing the capacity of a channel may be tricky as it consists of finding the maximum of a function of (n − 1) variables if the input alphabet contains n symbols. Nevertheless, when a channel is symmetric (to be defined below), there is no difficulty in calculating the capacity.
+
+Definition A channel is said to be symmetric if the set of output symbols can be partitioned into subsets in such a way that for each subset, the probability transition matrix has the following two properties each row is a permutation of each remaining row, each column (if there are more than one) is a permutation of each remaining column.
+
+Comment Usually the probability transition matrices related to the subsets are not stochastic matrices as some output symbols are missing. By stochastic matrix, we mean a matrix for which each row sum equals 1.
+
+Example 1 Let us consider a channel with the probability transition matrix :
+
+D
+
+E
+
+F
+
+G
+
+Y
+
+A
+
+0.1
+
+0.5
+
+0.1
+
+0.3
+
+B
+
+0.5
+
+0.1
+
+0.1
+
+0.3
+
+C
+
+0.1
+
+0.1
+
+0.5
+
+0.3
+
+X
+
+68 ___________________________________________________ communication channels
+
+The output symbols {D, E, F, G} can be partitioned into two subsets {D, E, F} and {G}. The two probability transition matrices are :
+
+ 0.1 0.5 0.1  0.3     T1 =  0.5 0.1 0.1 and T2 =  0.3  0.1 0.1 0.5   0.3    
+
+Each of them meets the required properties to make the channel symmetric.
+
+Example 2 Let the probability transition matrix be :
+
+0.1 0.4
+
+0.6 0.1
+
+0.3 0.5
+
+T=
+
+0.5
+
+0.2
+
+0.3
+
+As not one of the three columns has the same value on its three rows, there is no partition containing one input symbol for which the symmetry properties are met. Neither does the global probability transition matrix meet the properties. Consequently, the channel is not symmetric.
+
+Calculating the capacity of a symmetric channel is easy by applying the following theorem : Theorem For a symmetric channel, the capacity is achieved for a uniform input probability distribution.
+
+communication channels ___________________________________________________ 69
+
+Example 1 Let us consider a Binary Symmetric Channel :
+
+1-p 0 p 0
+
+p 1-p 1 1
+
+The probability transition matrix is :
+
+0
+
+1
+
+Y
+
+0
+
+1-p
+
+p
+
+1
+
+p
+
+1-p
+
+X This matrix meets the requirements to make the channel symmetric. Thus, the capacity is 1 achieved for P{X = 0}= P{X = 1}= 2
+
+70 ___________________________________________________ communication channels
+
+I (X ; Y ) = H (Y ) − H (Y / X ) P{ = 0}= P{ = 0  X = 0}+ P{ = 0  X = 1} Y Y Y P{ = 0}= P{X = 0}× P{ = 0 / X = 0}+ P{X = 1}× P{ = 0 / X = 1} Y Y Y
+P{ = 0}= Y 1 1 1 × ( − p )+ × p = 1 2 2 2 1 and H (Y ) = 1 bit 2
+
+Thus, P{ = 1}= Y
+
+Interpreting the rows of the probability transition matrix, we have :
+
+H (Y / X = 0 ) = − p × log p − ( − p )× log( − p ) = H 2 (p ) 1 1 H (Y / X = 1) = − p × log p − ( − p )× log( − p ) = H 2 (p ) 1 1
+H (Y / X ) = 1 1 × H 2 ( p ) + × H 2 ( p ) = H 2 (p ) 2 2
+
+Finally, we obtain :
+
+C = 1 − H 2 (p ) . C can be sketched as a function of p :
+
+1 C(p)
+
+H2(p)
+
+0
+
+1/2
+
+1
+
+p
+
+-H2(p)
+
+communication channels ___________________________________________________ 71
+
+Comments 1 1 is an axis of symmetry for C (p ). Accordingly, we have C (p ) = C ( − p ) : changing 2 p into ( − p ) amounts to permuting the output symbols. 1 p= 1 1 , C   = 0 : knowing the output symbol does not provide any information 2  2 about the input symbol, as the input and output random variables become independent.
+
+-
+
+For p =
+
+-
+
+The cases p = 1 or p = 0 can be easily interpreted : knowing the output symbol implies knowing the input symbol, which may be represented by one bit.
+
+Example 2 The Binary Erasure Channel. Let us resume the example of page 57. We can think of a decision device such that the estimated symbol is V (respectively –V) if the input sample amplitude is greater (respectively smaller) than αV (respectively − αV );, otherwise the estimated symbol is ε (an erasure symbol, i.e. neither –V nor V).
+
+f YE / an =V (y )
+
+f YE / an = −V (y )
+
+DV « -V » is estimated
+
+-V
+
+0 no decision
+
+V
+
+DV
+
+y
+
+« V » is estimated
+
+72 ___________________________________________________ communication channels
+
+If αV is chosen such as : P{ E < −αV / a k = V } and P{ E > αV / ak = −V } are negligible, then the channel can be Y Y sketched as follows :
+
+1-p -V -V
+
+p H p V 1-p     N  (1 − α )V 2    with p = P  N  − V ; 0  > −αV  = P  N (0;1) >  2  N0        After receiving ε, we may consider that the transmitted symbol is lost or ask the transmitter to re-send the symbol until the decision device delivers “ -V” or “ V” . Let us write the probability transition matrix : V
+
+-V -V 1-p
+
+H p
+
+V 0
+
+V
+
+0
+
+p
+
+1-p
+
+communication channels ___________________________________________________ 73
+
+The set of output symbols can be partitioned into { V ,V } and { }. The two probability − ε transition matrices meet the requirements to make the channel symmetric. The capacity is I (X ; Y ) with a uniform input probability distribution.
+
+I (X ; Y ) = H (Y ) − H (Y / X )
+P{ = −V }= P{X = −V  Y = −V }= P{X = −V }× P{ = −V / X = −V }= Y Y 1 × ( − p) 1 2
+
+By symmetry, we have :
+P{ = V }= Y 1 × ( − p) 1 2
+
+Then, we deduce :
+1 P{ = ε }= 1 − 2 × × ( − p ) = p Y 1 2
+
+1 1  H (Y ) = −2 × × ( − p )log × ( − p ) − p log p 1 1 2 2 
+
+H (Y ) = −( − p )(− 1 + log( − p )) − p log p 1 1 H (Y ) = ( − p ) + H 2 (p ) 1
+
+Interpreting the terms of the probability transition matrix, we obtain :
+
+H (Y / X = −V ) = H (Y / X = V ) = H 2 (p )
+Eventually, we get :
+
+C = ( − p ) bit 1
+For p = 0 , the channel is the noiseless channel whose capacity is one bit : when –V (respectively V) is transmitted, -V (respectively V) is estimated.
+
+74 ___________________________________________________ communication channels
+
+THE NOISY CHANNEL THEOREM
+Let S be an information source whose the entropy per symbol is H ∞ (S ) and the symbol rate DS . We want to transmit reliably the outcomes of S over a channel of capacity per use C at a symbol rate DC . Is it possible? The answer is given by the noisy channel theorem : If the entropy rate is smaller than the capacity per time unit, i.e.: H ∞ ’(S ) = H ∞ (S )× DS < C × DC = C ’ (entropy and capacity must be expressed in the same unit) then, ∀ ε > 0 , there exists a code to transmit the outcomes of S over the channel in such a way that, after decoding, we have :
+
+P{ error}< ε .
+In other words, if H ∞ ’(S ) < C ’, it is possible to transmit the outcomes of S over the channel with an arbitrarily low probability of error, provided appropriate means are used. This theorem is the most important result in information theory. Comments unlike the source coding theorem, the noisy channel theorem does not state how to construct the code, we only know that such a code exists, what is surprising is that we can transmit as reliably as desired with a noisy channel, a posteriori, the noisy channel theorem justifies the definition of capacity as the ability of the channel to transmit information reliably.
+
+-
+
+Example Let S be a memoryless binary source such that
+
+P{ = 0}= 0.98 and P{ = 1}= 0.02 S S
+
+communication channels ___________________________________________________ 75
+
+The symbol rate is DS = 600 Kbits / sec To link the emitter to the receiver, we have a binary symmetric channel with crossover probability p = 10 −3 . Its maximum symbol rate is DC = 450 Kbits / sec . We will try to answer the questions : Is it possible to transmit the outcomes of the source over the channel with an arbitrarily low probability of error? To reduce the probability of error due to the noisy channel, we can think of using the repetition code of length 3 consisting of repeating the information digit twice. In other words, each information digit is encoded into a codeword made of three digits : the information digit plus two check digits identical to the information digit. As a decision rule, we can decide “ 0” has been emitted if the received codeword contains at least two “ 0” s and “ 1” otherwise.
+
+-
+
+information digits
+
+0 1/DC
+
+0
+
+0
+
+1
+
+1
+
+1
+
+check digits 1/DS
+
+Which source coding algorithm must we use to be able to implement the repetition code without loss of information?
+
+To answer the first question, we have to know whether the condition of the noisy channel theorem is satisfied or not. S being memoryless, we have :
+
+H ∞ (S ) = H 2 (0.02 ) = 0.1414 bit
+
+76 ___________________________________________________ communication channels
+
+Thus, the entropy rate is :
+H ∞ ’(S ) = H ∞ (S )× DS = 0.1414 × 600 × 10 3 = 84864 bits/sec
+
+The capacity (per use) of the channel is : C = 1 − H 2 10 −3 = 0.9886 bit And the capacity per time unit :
+C ’= C × DC = 0.9886 × 450 × 10 3 = 444870 bits/sec
+
+( )
+
+As H ∞ ’(S ) < C ’, the answer to the first question is “ yes” .
+
+The initial symbol rate of S being greater than the maximum symbol rate of the channel, we cannot connect directly the output of S with the input of the channel. We have to reduce the symbol rate of S by applying a compression algorithm. Taking into account the repetition code we want to use to transmit the outcomes of S over the channel, if DS ’ denotes the symbol rate of the compressed source, we have to satisfy :
+1 1 ≥ 3× DS ’ DC
+DS ’≤ DC 450 600 DS = = 150 Kbits/sec = = = 0.25 × DS 3 3 4 4
+
+Hence, the source coding should result in an average number of code bits by source bit smaller than 0.25. After the source coding theorem, we know that there exists a prefix code applied to the Lth extension satisfying :
+H L (S ) ≤ n < H L (S ) + 1 L
+
+As S is a memoryless source, we have :
+
+H L (S ) = H ∞ (S ) = 0.1414 bit
+
+communication channels ___________________________________________________ 77
+
+Thus,
+0.1414 ≤ n < 0.1414 + 1 L 1 < 0.25 i.e. L
+
+To make sure that n < 0.25 , we have to chose L so that 0.1414 + L> 1 ≈ 9.2 (0.25 − 0.1414 )
+
+Conclusion Encoding the 10th extension of S by a Huffman code will result in a reduction in the symbol rate of at least 75%. Then, the repetition code of length 3 can be implemented to transmit the outcomes of S’ (the compressed source) over the channel.
+
+79
+
+ERROR CORRECTING CODES
+
+Example The outcomes { ,1} of a binary memoryless source with P{1"}= q and P{ 0"}= 1 − q have to 0 " " be transmitted over a binary symmetric channel whose the probability of error is p. We think of two ways to transmit the digits : directly (without coding) and using a repetition code consisting of sending three times the same information bit. We will calculate the average probability of error in both cases.
+
+-
+
+without coding
+
+Let ε be the event that an error occurs. Letting X (respectively, Y) denote the input (respectively, the output), we have
+
+P{ }= P{ X = 1  Y = 0)* (X = 0  Y = 1)} ε ( P{ }= P{X = 1  Y = 0}+ P{X = 0  Y = 1} ε
+and
+
+P{X = 1 Y = 0}= P{X = 1} { = 0 / X = 1}= qp PY P{X = 0  Y = 1}= P{X = 0} { = 1 / X = 0}= ( − q )p PY 1 P{ }= qp + ( − q )p = p ε 1
+
+80 ______________________________________________________ error correcting codes
+
+-
+
+with the repetition code
+
+There are two codewords :
+"0" → "000" "1" → "111"
+
+As some errors may occur while transmitting, the possible received words are : 000, 001, 010, 011, 100, 101, 110, 111. The decoding rule (majority logic) consists of deciding “ 0” has been emitted if the received word contains at least two “ 0” , otherwise “ 1” is decided. Setting E = { least two bits are corrupted}, we have : at
+
+ε = {"0" emitted ) E}* {"1" emitted ) E} ( (
+P{ }= P{"0" emitted ) E}+ P{"1" emitted ) E} ε ( ( P{ }= P{ 0" emitted} { /"0" emitted}+ P{1" emitted} { /"1" emitted} ε " PE " PE
+P{ }= ( − q ) C 32 p 2 ( − p ) + p 3 + q C 32 p 2 ( − p ) + p 3 ε 1 1 1
+
+(
+
+) (
+
+)
+
+P{ }= 3 p 2 ( − p )+ p 3 = −2 p 3 + 3 p 2 1 ε To compare the performances, we may sketch P{ } versus p for both cases (without coding ε and using the repetition code) :
+
+P{H} 1 without coding
+
+1/2 with the repetition code
+
+0
+
+1/2
+
+1
+
+p
+
+error correcting codes ______________________________________________________ 81
+
+Comments 1 , the probability of error resulting from using the repetition code is 2 1 smaller while in the range < p < 1 it is greater. To clear up this paradox, one only has to 2 1 notice that for p > , the outputs “ 0” and “ 1” have to be exchanged (otherwise corrupted 2 bits are more frequent than correct bits). Then, the probability of error becomes p ’= 1 − p 1 with p ’< . 2
+
+As long as p <
+
+-
+
+Error detection
+
+This repetition code can detect one or two errors. If one or two errors occur, the received word contains one “ 1” and two “ 0” or one “ 0” and two “ 1” . However, it is not possible to know the exact number of errors (1 or 2). When three errors occur, the received word is a codeword and it is similar to the case where there is no error. The code is said to be two-error-detecting. Error correction
+
+If the received word contains one error, this error is corrected by applying the decision rule (majority logic). This repetition code is said to be one-error-correcting.
+
+CONSTRUCTION
+Without loss of generality, we will limit ourselves to systematic binary codes. By “ systematic binary codes” , we mean codes with a binary alphabet and whose codewords consist of information bits and check bits in such a way that check bits are linear combinations of information bits, which information bits appear directly in the codeword. codeword of length n = m+k
+
+a1
+
+a2
+
+am
+
+am+1
+
+am+k
+
+m information digits
+
+k check digits
+
+82 ______________________________________________________ error correcting codes
+
+Example The repetition code is a systematic code with m = 1 and k = 2 .
+
+a1 is the information digit
+The two check digits a 2 and a3 satisfy : a 2 = a1 a3 = a1
+
+NEAREST NEIGHBOUR DECODING
+We will assume the codewords are transmitted over a binary symmetric channel of probability 1  of error p  p <  . 2  The received word is denoted y and we have to decide which codeword (c) has been sent. To work out a solution to this problem, the most natural method is maximum a posteriori decoding. However, implementing this algorithm requires the knowledge of the a priori probability distribution. Consequently, we will apply maximum likelihood decoding which consists of finding the codeword c such as P{y received / c emitted} is as great as possible, for the received y. Given y and c, let us suppose they differ in l positions. Then, we have :
+P{ received / c emitted}= p l ( − p ) y 1
+n −l
+
+= g (l )
+
+To make the calculations easier, we may consider :
+
+log(g (l )) = l log p + (n − l )log( − p ) 1
+Differentiating g (l ) with respect to l gives : p dg (l ) = log p − log( − p ) = log 1 dl 1− p
+
+error correcting codes ______________________________________________________ 83
+
+p<
+
+p 1 d log g (l ) < 1 and <0 implies 1− p 2 dl
+
+Consequently log(g (l )) is a decreasing function of l and as log(g (l )) is an increasing function of g (l ), g (l ) is a decreasing function of l. Also, the maximum of g (l ) is achieved for l minimum. To summarise, we have to choose the codeword c closest to the received word y. Accordingly, maximum likelihood decoding is equivalent to minimum distance decoding.
+
+LINEAR CODES
+Linear codes have advantages over non linear codes: coding and decoding are easier to implement. Let us consider V = { ,1} consisting of n-tuples of binary elements. V is a vector space of 0 dimension n over K = { ,1}. The sum of two vectors is obtained by adding (binary addition) 0 the components in the same position: the addition table for each element follows the “ modulo2” rule: 0 + 0 = 0, 1 + 0 = 0 + 1 = 1, 1 + 1 = 0 .
+n
+
+The 2 n elements of V are the possible received words, as a word can be associated with a vector. C is said to be a linear code if C is a subspace of V.
+
+For instance, the repetition code is a linear code since C = { 000" , "111"} is a subspace of " dimension 2 of V = { ,1} . Each codeword is its own opposite as 0 + 0 = 1 + 1 = 0 . 0
+3
+
+001 101 111
+
+011 C
+
+000 100 110
+
+010
+
+84 ______________________________________________________ error correcting codes
+
+V corresponds to the 8 vertices of the cube whereas C is represented by two of these vertices.
+
+Some definitions : The vectors u and v are possible received words which are elements of V.
+
+Weight The weight of u, w(u ), is the number of “ 1” in u.
+
+w("101") = 2 w("000") = 0
+
+Hamming distance The Hamming distance from u to v, d (u, v ), is the number of positions in which u and v differ. Consequently, d (u, v ) is the weight of u + v . Let u and v be respectively “ 01011” and “ 00110” . d (u, v ) = 3 since the two vectors differ in three positions. Moreover, w(u + v ) = w("01101") = 3 = d (u , v ).
+
+Minimum distance The minimum distance d m of a code C is the minimum distance between distinct codewords of C. And, since V is a vector space, it is a group and we have :
+d m = inf d (u , v ) = inf w(u + v ) = inf* w(x )
+u ≠v u ≠v x∈V
+
+Minimum distance = minimum weight, once the all-zero codeword is removed The minimum distance is a fundamental parameter and, as we shall see, the greater the minimum distance, the more powerful the code in terms of error detecting and error correcting. Indeed, with simple geometric considerations, the two following properties can easily be established:
+
+error correcting codes ______________________________________________________ 85
+
+Error detecting ability A linear code C of minimum distance d m is able to detect a maximum of d m − 1 errors.
+
+Error correcting ability  d − 1 A linear code C of minimum distance d m is able to correct a maximum of int  m  errors.  2  We should keep in mind that, whatever the number of supposed errors corrected, we never know the number of errors which actually occurred and the decided codeword may not be the right one. To make this clear, we will examine the different possible situations. Let us suppose the codeword C 0 has been sent. There are several possibilities No error occurs. C 0 is received and decided. Some errors occur which result in a codeword C1 received. Then no error is corrected since C1 is decided.  d − 1 The number of errors is smaller than or equal to int  m  . Then, the received word is  2  not a codeword but the errors are corrected and C 0 is decided.  d − 1 The number of errors is greater than int  m  . If the codeword the closest to the  2  received word is C 0 ,all the errors are corrected although their number is greater than  d −1 int  m  . Otherwise a codeword distinct from C 0 is decided : some errors can be  2  corrected but others may be added too.
+
+-
+
+-
+
+GENERATOR MATRIX
+Let C be a linear code whose codewords consist of m information digits followed by k check m digits (n = m + k ). As C is a subspace of V = { ,1} , there exists a matrix G such : 0
+
+C = { ∈ V / u = Gv ∀ v ∈ V } u
+
+86 ______________________________________________________ error correcting codes
+
+As the first m digits of u are identical to the m digits of v, G has the following structure : m columns
+
+Im G= P n rows
+
+The (n − m ) rows of the submatrix P express the linear combinations corresponding to the check digits.
+
+Example
+m = k = 3 . a1 , a 2 , a 3 are the three information bits. The check bits a 4 , a5 , a 6 satisfy :
+
+ 1 1 0  a1     a5 = a2 + a3 =  0 1 1  a2  a6 = a1 + a3  1 0 1  a3    
+The generator matrix is : 1 0 0 G= 1 0 1 1 1 0 0 1 1 P 0 1 0 0 0 1
+
+a4 = a1 + a2
+
+Id3
+
+error correcting codes ______________________________________________________ 87
+
+After multiplying the generator matrix by the 2 3 = 8 vectors consisting of the three information digits, we obtain the codewords :
+
+source words 000 001 010 011 100 101 110 111
+
+codewords 000000 001011 010110 011101 100101 101110 110011 111000
+
+The minimum weight of the codewords is 3. Therefore, the minimum distance is 3 and this code is 2-error-detecting and one-error-correcting.
+
+PARITY-CHECK MATRIX
+Implementing maximum likelihood decoding involves finding the codeword closest to the received word. Let us consider a systematic linear code C and its generator matrix G m columns
+
+Im G= P n rows
+
+Then, the orthogonal complement of C, C ⊥ = v ∈ V / v T u = 0 ∀ u ∈ C , is a linear code and its generator matrix is :
+
+{
+
+}
+
+88 ______________________________________________________ error correcting codes
+
+(n-m) columns
+
+PT H= In-m n rows
+
+In addition, here is an important property useful for decoding : A necessary and sufficient condition for a received word to be a codeword, is to verify : HT y = 0 Syndrome The syndrome S (y ) associated with the received word y is defined as S (y ) = H T y .
+
+Let us suppose the sent codeword is c and the corresponding received word y. We have y = c + e where e is the error vector. The syndrome then takes the form
+
+S (y ) = S (c + e ) = S (c ) + S (e ) = S (e ) since c is a codeword.
+This equality can be interpreted as follows : The syndrome of a received word depends only on the actual error. This property will help us when decoding.
+
+Minimum distance decoding process y is the received word. If S (y ) = 0 , y is a codeword and y is decided.
+
+If S (y ) ≠ 0 , we have to find a codeword c such as d (y, c ) is minimum. As y is not a codeword, we have y = c + z and z = y + c (each vector is its own opposite). S (z ) = S (y + c ) = S (y ).Now from z = y + c , we deduce w(z ) = w(y + c ) = d (y, c ) . As such, finding the codeword c closest to y is the same as finding a vector z of minimum weight satisfying S (z ) = S (y ). Then the codeword c is given by c = z + y .
+
+error correcting codes ______________________________________________________ 89
+
+In practice, a decoding table is constructed. It contains all the syndrome values associated with the minimum weight sequences.
+
+Example Let us resume the preceding code C with generator matrix G :
+
+1 0 0 G= 1 0 1
+
+0 1 0 1 1 0
+
+0 0 1 0 0 1
+
+The generator matrix of the orthogonal complement of C is : 1 1 0 H= 1 0 0 The parity-check matrix is : 1 HT = 0 1 1 1 0 0 1 1 1 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 1 1 1 0 1
+
+90 ______________________________________________________ error correcting codes
+
+The dimension of H T is 3× 6 and the sequences z have 6 components. Consequently, the syndromes are vectors with 3 components. There are 2 3 = 8 different possible values for the syndrome. The syndrome 000 is associated with the sequence 000000. By multiplying H T by the sequences z, we obtain :
+
+S (000001) = 001 S (000010) = 010 S (000100) = 100 S (001000) = 011 S (010000) = 110 S( 100000) = 101
+There is 8 − 6 − 1 = 1 remaining value (111). We may associate this value with a sequence of weight equal to 2. For instance :
+
+S( 100010) = 111
+Decoding table
+
+syndrome values 000 001 010 011 100 101 110 111
+
+Sequences z (minimum weight) 000000 000001 000010 001000 000100 100000 010000 100010 (for instance)
+
+Using this decoding table allows us to correct one error (wherever it is) and two errors if located in the second and fifth positions.
+
+91
+
+EXERCISES
+
+INFORMATION MEASURE EXERCISES
+
+EXERCISE 1 Two cards are simultaneously drawn at random from a pack of 52 playing cards. 1. Calculate the uncertainty of the events : - {the king of hearts is one of the two drawn cards} - {at least one of the two drawn cards is a heart} 2. What is the amount of information provided by E = {at least one of the two drawn cards is a diamond} about F = {there is exactly one heart among the two drawn cards}? 3. Are the events E and F independent?
+
+EXERCISE 2 Evaluate, in two different ways, the exact number of bits required to describe four cards simultaneously drawn from a pack of 32 playing cards.
+
+EXERCISE 3 (after Robert Gallager) Let {X = a1 } denote the event that the ball in a roulette game comes to rest in a red compartment, and {X = a 2 } similarly denote a ball coming to rest in black.
+
+92 ________________________________________________________________ exercises
+
+1 . 2 The croupier of the roulette table has developed a scheme to defraud the house. After years of patient study, he has learned to partially predict the coulour that will turn up by observing the path of the ball up to the last instant that bets may be placed. By communicating this knowledge to an accomplice, the croupier expects to use his inside knowledge to gain a tidy sum for his retirement.
+
+We suppose that P{X = a1 }= P{X = a 2 }=
+
+Let Y denote the croupier’ s signal : a cough, Y = b1 , indicates a red prediction and a blink, 3 Y = b2 , indicates a black prediction. Assuming P{X = a1 / Y = b1 }= P{X = a 2 / Y = b2 }= , 4 calculate the average information provided by Y about X.
+
+EXERCISE 4 Suppose we have n coins, with one of them counterfeit: it is lighter than the others. 1. What is the average uncertainty associated with finding the counterfeit coin? A Roman balance is available on which two groups of coins A and B may be compared. Each weighing results in three possibilities : A is heavier than B, A and B have the same weight, A is lighter than B.
+
+2. Express the average information provided by a weighing towards finding the counterfeit coin in terms of the average uncertainty associated with the weighing. Extend this result to the case of m weighings. 3. What is the maximum average information provided by a weighing towards finding the counterfeit coin? When do we come across such a situation? 4. Let us suppose a procedure has been worked out to find the counterfeit coin with at most m weighings. What is the smallest value of m as function of n? When n is a power of 3, describe the procedure for which the average information provided by each weighing is maximum.
+
+5. We now consider that the number of counterfeit coins is unknown : 0, 1, … or n. The balance is a weighing machine. The weight f of a counterfeit coin is smaller than the weight v of the other coins.
+
+exercises ________________________________________________________________ 93
+
+-
+
+Demonstrate that a weighing of coins allows us to know the number of counterfeit coins among the weighed coins. Let us suppose a procedure has been worked out to find the counterfeit coin (s) in at most m weighings. What is the minimum value of m as function of n?
+
+SOURCE CODING EXERCISES
+EXERCISE 1 (after Robert Gallager) The weatherman’ s record in a given city is given in the table below, the numbers indicating the relative frequency of the indicated event.
+
+actual prediction no rain rain no rain 5/8 3/16 rain 1/16 1/8
+
+1. A clever student notices that he could be right more frequently than the weatherman by always predicting no rain. The student explains the situation and applies for the weatherman’ s job, but the weatherman’ s boss, who is an information theorist, turns him down. Why? 2. The weatherman’ s boss wants to store the predictions, M, and the actual weather, T, of 1,000 days in a computer file. How many bits are required? 3. Using a Huffman code for the value pairs (M,T), what is, approximately, the size of the file?
+
+EXERCISE 2
+1 1 1 Let X be a random variable taking values in {x1 , x 2 ,..., x n } with probabilities  , 2 ,..., n  . 2  2 2
+
+1. Construct a Huffman code for the values of X. 2. Compare the average length of the codewords to the entropy of X. How can we explain such a result?
+
+94 ________________________________________________________________ exercises
+
+EXERCISE 3 (after Robert Gallager) Let U be a discrete memoryless source taking on values in { 1 , a 2 ,..., ai ,...} with probabilities a P{ 1 } P{ 2 } P{ i } . We suppose: a , a ,..., a ,...
+∀ k > j ≥ 1 P{ k }≤ P{ j } a a
+
+Let us define Qi = ∑ P{ k } ∀ k > 1 and Q1 = 0 associated with the message a i . a
+k =1
+
+i −1
+
+The codeword assigned to message a i is formed by finding the “ decimal” expansion of
+5 1 1   Qi < 1 in the binary system  i.e. → 100, → 0100, → 10100,... and then 8 4 2   truncating this expansion to the first ni digits, where ni is the integer equal to or just larger than the self-information of the event { = a i } expressed in bits. U
+
+1. Does this code satisfy the Kraft inequality? 2. Let n denote the average length of the codewords. Show that n satisfies the double inequality : H (U ) ≤ n < H (U )+ 1 with H (U ) the entropy of U Application 3. Construct the code for 1 1 1 1 1 1 1 1 , , , , , , , . 4 4 8 8 16 16 16 16 a source U taking 8 values with probabilities
+
+4. Compare the average length of the codewords to the entropy of U. How can we explain this result?
+
+EXERCISE 4 Player A rolls a pair of fair dice. After the throw, the sum of the two faces is denoted S. 1. Construct a Huffman code to encode the possible values of S. 2. Player B has to guess the number S by asking questions whose answers must be “ yes” or “ no” . We call an optimum procedure any set of successive questions which allows player B to determine S in a minimum average number of questions. What is the average number of questions of an optimum procedure? What is the first question of the optimum procedure?
+
+exercises ________________________________________________________________ 95
+
+-
+
+Calculate the average information provided by player A about the number S when answering the first question of an optimum procedure.
+
+EXERCISE 5 A ternary information source U is represented by a Markov chain whose state transition graph is sketched below : 1/2
+
+0 1 1/2 2 1/2
+
+1
+
+1/2
+
+1. If U delivers 3,000 ternary symbols per second, calculate, in bits per second, the entropy rate of U. 2. Construct a Huffman code for the second extension of U. Calculate the resulting average number of bits used to represent one ternary symbol of U.
+
+EXERCISE 6 A memoryless source S delivers symbols A, B, C, D, E, F and G with probabilities 1/16, 1/16, 1/16, 1/16,1/4,1/4 and 1/4 . 1. Construct a Huffman code for the 7 values of S. Compare the average number of bits used to represent one value of S to the entropy of S. Let U denote the binary source obtained by the preceding coding of S. 2. Calculate the entropy of U.
+
+96 ________________________________________________________________ exercises
+
+3. By applying the law of large numbers, calculate the probability distribution of U. 4. What can be said about the memory of U? 5. By generalising the preceding results, give a signification to an optimum source coding.
+
+EXERCISE 7 (after David MacKay) A poverty-stricken student communicates for free with a friend using a telephone by selecting a positive integer n and making the friend’ s phone ring n times then hanging up in the middle of the nth ring. This process is repeated so that a string of symbols n1 , n2 ,... is received. Let l (n ) denote the lapse of time necessary to transmit the integer n. Setting pn = P{ integer n is emitted} ∀ n ∈ IN * and p = (p1 , p2 ,...), it can be shown that the the information rate β (p ) transmitted over the telephone line is maximum when we have: p n = 2 − β M l (n ) ∀ n ∈ IN * with β M = Max β (p )
+p
+
+Now we will suppose that ∀ n ∈ IN * l (n ) = n seconds. 1. Calculate β M and the corresponding optimum probability distribution (p). 2. If p were the uniform distribution over { ,2}, what would be the value of the information 1 rate? Compare with the value given by the preceding question.
+
+3. Let S be a binary memoryless source whose entropy is maximum. We have to transmit the outcomes of S over the telephone line. Construct a prefix code so that the preceding procedure will achieve a maximum information rate transmitted. What is, in seconds, the average duration in transmitting a codeword? What is, in seconds, the average duration in transmitting one bit of S?
+
+COMMUNICATION CHANNEL EXERCISES
+EXERCISE 1 Calculate the capacity of the channels :
+
+exercises ________________________________________________________________ 97
+
+1 A 1 B 1 C C B A
+
+1 A B C D 1/3 1 D 1 2/3 A B C
+
+A B
+
+1/2 1 1/2 1/2
+
+A B C
+
+C
+
+1/2
+
+EXERCISE 2 1. Calculate the capacity of the two channels : A B C 1 1-p channel 1 1 p E E q 1-q channel 2 C B D D 1 A
+
+98 ________________________________________________________________ exercises
+
+2. Calculate the capacity of the channel obtained when the outputs D and E of channel 1 are connected with the inputs D and E of channel 2.
+
+EXERCISE 3 We consider the channel below : 1-p A B 1-p p C D 1. Calculate its capacity. Consider transmitting the outcomes of a binary source S over this channel. 2. If we want to transmit directly (without coding) the outcomes of S, how many source symbols must be taken at a time? 3. Let us suppose S is memoryless. Calculate the probability for a source word to be received without error. 4. Suppose the source symbols equally likely. Depending on DS , the source symbol rate, what is the maximum channel symbol rate DU so that the probability of error is arbitrarily low, provided appropriate means are used? 1-p p B p p 1-p C D E A
+
+EXERCISE 4 Let S be a memoryless source taking on 8 equally likely values. Its symbol rate is 1,000 symbols per second. The outcomes of S are to be transmitted over a binary symmetric channel of crossover probability equal to 0.001. The maximum channel symbol rate is 3,000 bits per second. Is it possible to transmit the outcomes of S with an arbitrarily low probability of error?
+
+exercises ________________________________________________________________ 99
+
+EXERCISE 5 1. Calculate the capacity of the channel : A B C D E F p 1-p 1-p p 1-p 1-p 1-p p p p 1-p p A B C D E F
+
+Consider transmitting the outcomes of a source S over the channel. The possible values of S 1 1 1 1 1  a are { , b, c, d , e} with probabilities  , , , ,  . We suppose p = 0.01 and the channel 3 3 9 9 9  symbol rate equal to 5,000 (6-ary) symbols per second. 2. What is the maximum source symbol rate if we want to transmit S over the channel with an arbitrarily low probability of error? We encode the possible values of S by a ternary code such as :
+a→0 b →1 c → 20 d → 21 e → 22
+
+3. Is this code uniquely decipherable? 4. Calculate the average length of the codewords. Is this code optimum? Why or why not? 5. Deduce from the preceding questions a procedure to connect the source to the channel so that the probability of error is zero.
+
+100 _______________________________________________________________ exercises
+
+ERROR CORRECTING CODE EXERCISES
+EXERCISE 1 Let us consider the following code :
+
+source words 00 01 10 11
+
+codewords 00000 01101 10111 11010
+
+1. Give the generator matrix and the parity-check matrix. Construct a decoding table associated with the code. 2. We suppose the codewords are transmitted over a binary symmetric channel of crossover probability p. Calculate the probability of error by codeword when using the decoding table.
+
+EXERCISE 2 We consider the systematic linear code : source words 000 001 0?? 011 100 101 110 111 codewords ?00?? 00101 010?? ??1?1 1001? 101?1 1100? 111??
+
+1. Complete the table by replacing the question marks with the correct bits. 2. Calculate the generator matrix and the parity check matrix. 3. Is it possible to construct a decoding table able to correct one error on any of the three information bits? 4. Is it possible to construct a decoding table to correct one error on any of the check bits?
+
+exercises _______________________________________________________________ 101
+
+EXERCISE 3 A memoryless binary source S delivers “ 0” and “ 1” with probabilities 0.98 and 0.02 at a symbol rate of 300 Kbits/sec. A binary symmetric channel of crossover probability equal to 0.05 and whose the maximum symbol rate is 280 Kbits/sec is available. 1. Is it possible to transmit the outcomes of S over the channel with an arbitrarily low probability of error? SOURCE CODING
+
+2. Consider reducing the symbol rate of S by at least 50% by encoding the outputs of S with a Huffman code. What is the minimum extension of S to be encoded to meet such conditions? 3. Construct a Huffman code for the third extension of S. What is the average symbol rate of the binary source which results from this code? How many check bits have to be juxtaposed to one information digit so that the symbol rate over the channel is equal to 280 Kbits/sec? CHANNEL CODING 4. The second extension of the binary source obtained after coding S is to be encoded by a systematic linear code whose codewords consist of two information bits and three check digits. If we want the code to correct one error by codeword, what is the smallest acceptable value of the minimum distance? 5. We consider a code that meets the preceding conditions. Construct the corresponding generator matrix. 6. List the codewords by assigning to each codeword its weight. 7. Construct a decoding table. How many patterns of two errors can be corrected? 8. Compare the probability of error resulting from using the decoding table to the probability of error when transmitting directly (without coding) the source words.
+
+103
+
+SOLUTIONS
+
+INFORMATION MEASURE SOLUTIONS
+EXERCISE 1 1. 4.70 bits and 1.18 bit. 2. –0.404 bit 3. No EXERCISE 2 15.134 bits
+
+EXERCISE 3 0.188 bit
+
+EXERCISE 4 1. log 2 n 2. X i : result of the ith weighing and X random variable taking on n values with a uniform probability distribution. I (X i ; X ) = H (X i ) 3. log 2 3 bits. At the first weighing when n is a multiple of 3. 4. log 3 n n 5. log 2 (n + 1)
+
+104 _______________________________________________________________ exercises
+
+SOURCE CODING SOLUTIONS
+EXERCISE 1 1. The student does not provide any information about the actual weather. 2. At least 696 + 896 = 1,592 bits. 3. Approximately 1,562 bits
+
+EXERCISE 2 2. n = H (X )
+
+EXERCISE 3 1. Yes. 4. n = H (U )
+
+EXERCISE 4 2. 3.3 questions. 0.98 bit.
+
+EXERCISE 5 1. 2 Kbits/sec 2. 1.166
+
+EXERCISE 6 1. n = H ∞ (S ) 2. H ∞ (U ) = 1 bit
+U U 3. P{ = 0}= P{ = 1}= 1 2
+
+4. U is memoryless.
+
+exercises _______________________________________________________________ 105
+
+EXERCISE 7 1. β M = 1 bit/sec and p n = 2 − n 2. 0,666 bit/sec 3. one second.
+∀ n ≥1
+
+TRANSMISSION CHANNELS SOLUTIONS
+EXERCISE 1 C1 = C 2 = 1.585 bit and C 3 = 1.23 bit
+
+EXERCISE 2 1. C1 = C 2 = 1 bit 2. C1
+
+EXERCISE 3 1. 2( − p )bit 1 2. Two bits at a time. 3. 4.
+
+(1 − p )
+DS 2( − p ) 1
+
+EXERCISE 4 No
+
+EXERCISE 5 1. log 2 6 − H 2 (p ) 2. 5,936 symbols/sec
+
+106 _______________________________________________________________ exercises
+
+3. Yes 4.
+4 . Yes. 3
+
+5. By linking 0 with A, 1 with C and 2 with E.
+
+ERROR CORRECTING CODES SOLUTIONS
+EXERCISE 1 1  0 1. G =  1  1 1  0  1 1 1 1 0 0    T 1  and H = 1 0 0 1 0   1 1 0 0 1  0    1 Decoding table syndromes 000 001 010 011 100 101 110 111 minimum weight sequences 00000 00001 00010 00011 00100 01000 00110 10000 number of errors 0 1 1 2 1 1 2 1
+
+2. P{ error}= 1 − ( − p ) + 5 p ( − p ) + 2 p 2 ( − p ) 1 1 1
+5 4
+
+{
+
+3
+
+}
+
+exercises _______________________________________________________________ 107
+
+EXERCISE 2 1. source words 000 001 010 011 100 101 110 111 1  0 2. G =  0  1 0  3. No. 4. Yes. 0 1 0 1 0 0  0  1 1 0 1 0  1  and H T =      0 0 1 0 1 0 1  codewords 00000 00101 01010 01111 10010 10111 11000 11101
+
+EXERCISE 3 1. Yes. 2. 3.
+
+3. 111.78 Kbits/sec. 1.5. 4. 3. 1  0 5. G =  1  1 0  0  1 0  1 1 
+
+108 _______________________________________________________________ exercises
+
+6. codewords 00000 01011 10110 11101 weight 0 3 3 4
+
+7. Decoding table syndromes 000 001 010 011 100 101 110 111 One pattern of two errors can be corrected. 8. P{ error with coding}= 0.018 P{ error without coding}= 0.097 minimum weight sequences 00000 00001 00010 01000 00100 11000 10000 10001
+
+109
+
+BIBLIOGRAPHY
+
+Thomas M.Cover Joy A.Thomas
+
+Elements of Information Theory (John Wiley & Sons)
+
+Robert G. Gallager
+
+Information Theory and Reliable Communication (John Wiley & Sons)
+
+David J.C MacKay
+
+Information Theory, Inference and Learning Algorithms
+
+Mark Nelson
+
+La Compression de Données (Dunod)
+
+John G. Proakis Masoud Salehi
+
+Communications Systems Engineering (Mac Graw Hill)
+
+111
+
+INDEX
+ASCII code ..........................................................................................................................32 Average mutual information................................................................................................18 Binary erasure channel ........................................................................................................71 Binary symmetric channel ...................................................................................................69 Capacity ...............................................................................................................................64 Compression rate .................................................................................................................57 Conditional entropy .............................................................................................................18 Decoding table.....................................................................................................................90 Entropy (of a random variable) ...........................................................................................16 Entropy (of a source) ...........................................................................................................25 Entropy rate .........................................................................................................................28 Extension of a source...........................................................................................................39 Generator matrix..................................................................................................................85 Hamming distance ...............................................................................................................84 Huffman algorithm ..............................................................................................................48 Information source...............................................................................................................23 Instantaneous (- code)..........................................................................................................36 JPEG ....................................................................................................................................50 Kraft inequality....................................................................................................................37 Kraft theorem.......................................................................................................................37 Linear code ..........................................................................................................................83 LZ 78 algorithm...................................................................................................................52 LZW algorithm ....................................................................................................................54 Mac Millan theorem ............................................................................................................39 Mastermind (game of -).......................................................................................................20 Minimum distance ...............................................................................................................84 Minimum distance decoding ...............................................................................................88 Morse code ..........................................................................................................................34 Nearest neighbour decoding ................................................................................................82 Noisy channel theorem ........................................................................................................74 Optimum (- code) ................................................................................................................41 Parity-check matrix..............................................................................................................87 Prefix (- code)......................................................................................................................36 Repetition (- code) ...............................................................................................................79 Self-information...................................................................................................................12 Shannon-Fano algorithm .....................................................................................................47 Shannon paradigm ...............................................................................................................8 Source coding problem ........................................................................................................30 Source coding theorem ........................................................................................................40 Symmetric channel ..............................................................................................................67 Syndrome.............................................................................................................................88 Uncertainty ..........................................................................................................................12 Weight .................................................................................................................................84
+
+

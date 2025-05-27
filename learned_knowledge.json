@@ -1,0 +1,44 @@
+[
+  {
+    "question": "Cha đẻ của bộ môn lý thuyết thông tin là ai?",
+    "answer": "Câu hỏi \"Cha đẻ của bộ môn lý thuyết thông tin là ai?\" có liên quan trực tiếp đến môn học \"Lý thuyết thông tin\".Dựa vào thông tin tham khảo, ta có thể đưa ra câu trả lời như sau:Mặc dù có nhiều đóng góp quan trọng từ các nhà khoa học khác nhau, không có một cá nhân duy nhất được coi là \"cha đẻ\" của lý thuyết thông tin một cách tuyệt đối. Tuy nhiên, Claude Shannonthường được công nhận là người đặt nền móng và phát triển lý thuyết thông tin hiện đại với công trình \"A Mathematical Theory of Communi",
+    "timestamp": "2025-05-27T00:12:29.064824",
+    "embedding_index": 0
+  },
+  {
+    "question": "Cha đẻ của bộ môn lý thuyết thông tin là Claude Shannon",
+    "answer": "Câu hỏi \"Cha đẻ của bộ môn lý thuyết thông tin là Claude Shannon\" có liên quan trực tiếp đến môn học \"Lý thuyết Thông tin\".Dựa trên thông tin tham khảo từ tài liệu môn học và kiến thức chuyên môn, có thể trả lời như sau:Mặc dù có nhiều nhà khoa học đóng góp vào sự phát triển của lý thuyết thông tin, Claude Elwood Shannonthường được công nhận là người đặt nền móng và phát triển lý thuyết thông tin hiện đại. Bài báo mang tính bước ngoặt của ông,“A Mathematical Theory of Communication”, xuất bản nă",
+    "timestamp": "2025-05-27T00:13:07.121530",
+    "embedding_index": 1
+  },
+  {
+    "question": "Cha đẻ của bộ môn lý thuyết thông tin là ai?",
+    "answer": "Câu hỏi \"Cha đẻ của bộ môn lý thuyết thông tin là ai?\" có liên quan trực tiếp đến môn học \"Lý thuyết Thông tin\".Dựa trên thông tin tham khảo từ tài liệu môn học và kiến thức chuyên môn, ta có thể trả lời như sau:Mặc dù có nhiều nhà khoa học đóng góp vào sự phát triển của lý thuyết thông tin, Claude Elwood Shannonthường được công nhận là người đặt nền móng và phát triển lý thuyết thông tin hiện đại. Bài báo mang tính bước ngoặt của ông,\"A Mathematical Theory of Communication\", xuất bản năm 1948, ",
+    "timestamp": "2025-05-27T00:13:40.255897",
+    "embedding_index": 2
+  },
+  {
+    "question": "Cross Entropy",
+    "answer": "Dựa trên thông tin tài liệu môn học, có vẻ như câu hỏi về \"Cross Entropy\" có liên quan đến môn Lý Thuyết Thông Tin, đặc biệt khi tài liệu đề cập đến Entropy và Maximum Entropy. Dưới đây là giải thích về Cross Entropy:Cross Entropy là gì?*Cross Entropy là một độ đo về sự khác biệt giữa hai phân phối xác suất.  Cụ thể, nó đo lường số bit trung bình cần thiết để xác định các sự kiện từ một tập hợp, khi sử dụng một phân phối xác suất qđể mã hóa, thay vì sử dụng phân phối \"thực\"p.  Nó thường được sử ",
+    "timestamp": "2025-05-27T00:29:22.439494",
+    "embedding_index": 3
+  },
+  {
+    "question": "Cross Entropy",
+    "answer": "## Trả lời\n\n<p>Dựa trên thông tin tài liệu môn học, có vẻ như câu hỏi về \"Cross Entropy\" có liên quan đến môn Lý Thuyết Thông Tin, đặc biệt khi tài liệu đề cập đến Entropy và Maximum Entropy.\nDưới đây là giải thích về Cross Entropy:</p><br><ul class=\"nested-list\"><br><li><em>Cross Entropy là gì?</em>*</li></ul><br><p>Cross Entropy là một độ đo về sự khác biệt giữa hai phân phối xác suất.\nCụ thể, nó đo lường số bit trung bình cần thiết để xác định các sự kiện từ một tập hợp, khi sử dụng một phân phối xác suất <em>q</em>để mã hóa, thay vì sử dụng phân phối \"thực\"<em>p</em>.\nNó thường được sử dụng như một hàm mất mát (loss function) trong các bài toán học máy, đặc biệt là trong các bài toán phân loại.</p><br><ul class=\"nested-list\"><br><li><em>Công thức:</em>*</li></ul><br><p>Cho hai phân phối xác suất <em>p</em>và<em>q</em> trên cùng một tập hợp các sự kiện, cross entropy được định nghĩa là:</p><br><ul class=\"nested-list\"><br><li>H(p, q) = - Σ p(x) log(q(x))*</li></ul><br><p>Trong đó:</p><br><ul class=\"nested-list\"><br><li><em>p(x)</em>là xác suất của sự kiện<em>x</em>theo phân phối<em>p</em>.</li><br><li><em>q(x)</em>là xác suất của sự kiện<em>x</em>theo phân phối<em>q</em>.</li><br><li>Tổng được tính trên tất cả các sự kiện<em>x</em>.</li><br><li><p>Cơ số của logarit thường là 2 (cho kết quả tính bằng bits) hoặc<em>e</em> (cho kết quả tính bằng nats).</p></li><br><li><p><em>Ý nghĩa và Ứng dụng:</em>*</p></li><br><li><p><strong>Đo lường sự khác biệt:</strong>Cross entropy càng nhỏ, phân phối<em>q</em>càng gần với phân phối<em>p</em>.</p></li><br><li><strong>Hàm mất mát:</strong>Trong học máy,<em>p</em>thường là phân phối \"thực\" (ví dụ: nhãn đúng của dữ liệu huấn luyện), và<em>q</em>là phân phối dự đoán của mô hình.\nMục tiêu là<em>giảm thiểu</em>cross entropy, tức là làm cho phân phối dự đoán<em>q</em>càng gần với phân phối thực<em>p</em> càng tốt.</li><br><li><p><strong>Phân loại:</strong>Cross entropy loss là một lựa chọn phổ biến cho các bài toán phân loại, đặc biệt là phân loại đa lớp (multi-class classification).\nVí dụ, trong bài toán phân loại ảnh,<em>p</em>có thể là một vector one-hot biểu thị lớp đúng của ảnh, và<em>q</em> là vector xác suất dự đoán của mô hình cho từng lớp.</p></li><br><li><p><em>Ví dụ:</em>*</p></li></ul><br><p>Giả sử ta có hai phân phối:</p><br><ul class=\"nested-list\"><br><li><em>p(x)</em> = [0.8, 0.2] (Phân phối thực)</li><br><li><em>q(x)</em> = [0.6, 0.4] (Phân phối dự đoán)</li></ul><br><p>Khi đó, cross entropy là:</p><br><ul class=\"nested-list\"><br><li><p>H(p, q) = - (0.8 <em>log(0.6) + 0.2</em> log(0.4))*</p></li><br><li><p><em>Mối quan hệ với Entropy và KL Divergence:</em>*</p></li></ul><br><p>Cross entropy có mối quan hệ chặt chẽ với entropy và Kullback-Leibler (KL) divergence:</p><br><ul class=\"nested-list\"><br><li>H(p, q) = H(p) + D<sub>KL</sub>(p || q)*</li></ul><br><p>Trong đó:</p><br><ul class=\"nested-list\"><br><li><em>H(p)</em>là entropy của phân phối<em>p</em>.</li><br><li><em>D<sub>KL</sub>(p || q)</em>là KL divergence (hay relative entropy) giữa<em>p</em>và<em>q</em>, đo lường thông tin mất mát khi sử dụng <em>q</em>để xấp xỉ<em>p</em>.</li></ul><br><p>Trong các bài toán học máy, khi <em>p</em>là cố định (phân phối thực của dữ liệu huấn luyện), việc giảm thiểu cross entropy tương đương với việc giảm thiểu KL divergence, vì<em>H(p)</em> là một hằng số.</p><br><ul class=\"nested-list\"><br><li><em>Tóm tắt:</em>*</li></ul><br><p>Cross entropy là một độ đo quan trọng trong lý thuyết thông tin và học máy, đặc biệt hữu ích để đo lường sự khác biệt giữa các phân phối xác suất và làm hàm mất mát trong các bài toán phân loại.\nNó có mối quan hệ mật thiết với entropy và KL divergence, cung cấp một cái nhìn sâu sắc về việc xấp xỉ một phân phối xác suất bằng một phân phối khác.</p>",
+    "timestamp": "2025-05-27T00:29:22.655536",
+    "embedding_index": 4
+  },
+  {
+    "question": "Cha đẻ của bộ môn lý thuyết thông tin là ai?",
+    "answer": "Câu hỏi \"Cha đẻ của bộ môn lý thuyết thông tin là ai?\" có liên quan trực tiếp đến môn học \"Lý thuyết Thông tin\".Dựa trên thông tin tham khảo từ tài liệu môn học và kiến thức chuyên môn, có thể trả lời như sau:Mặc dù có nhiều nhà khoa học đóng góp vào sự phát triển của lý thuyết thông tin (ví dụ như Nyquist, Hartley, Wiener), Claude Elwood Shannonthường được công nhận làngười đặt nền móng và phát triển lý thuyết thông tin hiện đại. Bài báo mang tính bước ngoặt của ông, \"A Mathematical Theory of C",
+    "timestamp": "2025-05-27T00:29:48.012633",
+    "embedding_index": 5
+  },
+  {
+    "question": "Cha đẻ của bộ môn lý thuyết thông tin là ai?",
+    "answer": "## Trả lời\n\n<p>Câu hỏi \"Cha đẻ của bộ môn lý thuyết thông tin là ai?\" có liên quan trực tiếp đến môn học \"Lý thuyết Thông tin\".</p><br><p>Dựa trên thông tin tham khảo từ tài liệu môn học và kiến thức chuyên môn, có thể trả lời như sau:</p><br><p>Mặc dù có nhiều nhà khoa học đóng góp vào sự phát triển của lý thuyết thông tin (ví dụ như Nyquist, Hartley, Wiener), <strong>Claude Elwood Shannon</strong>thường được công nhận là<em>người đặt nền móng và phát triển lý thuyết thông tin hiện đại</em>.\nBài báo mang tính bước ngoặt của ông, \"<strong>A Mathematical Theory of Communication</strong>\", xuất bản năm 1948, đã đưa ra một khuôn khổ toán học cho việc định lượng, lưu trữ và truyền thông tin, tạo nên cơ sở cho nhiều ứng dụng trong kỹ thuật và khoa học máy tính.</p>",
+    "timestamp": "2025-05-27T00:29:48.146826",
+    "embedding_index": 6
+  }
+]

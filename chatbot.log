@@ -1,0 +1,1549 @@
+2025-05-06 21:44:55,060 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:44:55,061 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:45:01,759 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.52:5000
+2025-05-06 21:45:01,761 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 21:45:01,771 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 21:45:18,866 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:45:18,867 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:45:24,227 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:45:24,240 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 21:45:59,026 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:45:59] "GET / HTTP/1.1" 200 -
+2025-05-06 21:46:04,733 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:46:04] "POST / HTTP/1.1" 200 -
+2025-05-06 21:46:04,757 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:46:04] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 21:47:10,866 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:47:10] "GET / HTTP/1.1" 200 -
+2025-05-06 21:47:11,510 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:47:11] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-06 21:47:16,769 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:47:16] "POST / HTTP/1.1" 200 -
+2025-05-06 21:47:16,791 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:47:16] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 21:47:31,222 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:47:31] "POST / HTTP/1.1" 200 -
+2025-05-06 21:47:43,773 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:47:43] "POST / HTTP/1.1" 200 -
+2025-05-06 21:48:19,139 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:48:19] "POST / HTTP/1.1" 200 -
+2025-05-06 21:48:22,116 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:48:22] "POST / HTTP/1.1" 200 -
+2025-05-06 21:49:09,216 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:49:09] "POST / HTTP/1.1" 200 -
+2025-05-06 21:49:14,598 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:49:14] "POST / HTTP/1.1" 200 -
+2025-05-06 21:50:04,455 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:50:04] "POST / HTTP/1.1" 200 -
+2025-05-06 21:50:08,420 - werkzeug - INFO - 192.168.1.52 - - [06/May/2025 21:50:08] "POST / HTTP/1.1" 200 -
+2025-05-06 21:51:48,911 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 21:51:53,141 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 21:52:09,822 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:52:09,823 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:52:14,880 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:52:14,884 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 21:53:14,485 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 21:53:16,312 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 21:53:28,903 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:53:28,904 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:53:35,017 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:53:35,022 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 21:57:08,608 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:57:08,609 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:57:14,159 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 21:57:14,159 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 21:57:14,164 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 21:57:25,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 21:57:25,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 21:57:30,811 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:57:30,814 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 21:57:30,865 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:57:30] "GET / HTTP/1.1" 200 -
+2025-05-06 21:57:45,930 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:57:45] "POST / HTTP/1.1" 200 -
+2025-05-06 21:57:45,951 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:57:45] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 22:03:05,159 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:03:05,160 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:03:10,663 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 22:03:10,663 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 22:03:10,668 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 22:03:23,801 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:03:23,802 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:03:28,740 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 22:03:28,750 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 22:03:28,796 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:03:28] "GET / HTTP/1.1" 200 -
+2025-05-06 22:03:35,517 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:03:35] "POST / HTTP/1.1" 200 -
+2025-05-06 22:03:35,534 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:03:35] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 22:04:56,519 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 22:05:00,552 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 22:07:01,834 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:07:01,835 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:07:07,329 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 22:07:07,330 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 22:07:07,334 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 22:07:19,543 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:07:19,544 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:07:25,787 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 22:07:25,790 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 22:07:25,828 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:07:25] "GET / HTTP/1.1" 200 -
+2025-05-06 22:07:32,449 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:07:32] "POST / HTTP/1.1" 200 -
+2025-05-06 22:07:32,466 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:07:32] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 22:08:02,709 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:08:02] "POST / HTTP/1.1" 200 -
+2025-05-06 22:09:17,291 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:09:17] "POST / HTTP/1.1" 200 -
+2025-05-06 22:09:41,685 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:09:41] "POST / HTTP/1.1" 200 -
+2025-05-06 22:10:08,181 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:10:08] "POST / HTTP/1.1" 200 -
+2025-05-06 22:10:46,877 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:10:46] "POST / HTTP/1.1" 200 -
+2025-05-06 22:35:57,807 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:35:57,809 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:36:03,942 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 22:36:03,943 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 22:36:03,947 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 22:36:22,309 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 22:36:22,309 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 22:36:27,368 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 22:36:27,377 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 22:36:27,461 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:36:27] "GET / HTTP/1.1" 200 -
+2025-05-06 22:36:28,026 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:36:28] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 22:36:40,383 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:36:40] "POST / HTTP/1.1" 200 -
+2025-05-06 22:36:40,428 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:36:40] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 22:36:53,865 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:36:53] "POST / HTTP/1.1" 200 -
+2025-05-06 22:37:04,123 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:04] "[32mPOST /clear_history HTTP/1.1[0m" 302 -
+2025-05-06 22:37:04,148 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:04] "GET / HTTP/1.1" 200 -
+2025-05-06 22:37:04,529 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:04] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 22:37:09,282 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:09] "POST / HTTP/1.1" 200 -
+2025-05-06 22:37:09,291 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 22:37:19,109 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:19] "POST / HTTP/1.1" 200 -
+2025-05-06 22:37:30,489 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:30] "[32mPOST /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 22:37:30,508 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:30] "GET / HTTP/1.1" 200 -
+2025-05-06 22:37:30,861 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:30] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 22:37:33,396 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:33] "[32mPOST /clear_history HTTP/1.1[0m" 302 -
+2025-05-06 22:37:33,416 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:33] "GET / HTTP/1.1" 200 -
+2025-05-06 22:37:33,758 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:33] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 22:37:34,402 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:34] "[32mPOST /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 22:37:34,423 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:34] "GET / HTTP/1.1" 200 -
+2025-05-06 22:37:34,766 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 22:37:34] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:33:02,150 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:33:02,152 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:33:08,203 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 23:33:08,204 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 23:33:08,209 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:33:25,601 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:33:25,602 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:33:30,659 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:33:30,676 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:33:30,803 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:33:30] "GET / HTTP/1.1" 200 -
+2025-05-06 23:33:31,271 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:33:31] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:33:31,275 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:33:31] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:33:47,693 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:33:47] "POST / HTTP/1.1" 200 -
+2025-05-06 23:33:47,713 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:33:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:34:05,848 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:34:05] "POST / HTTP/1.1" 200 -
+2025-05-06 23:34:26,568 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:34:26] "POST / HTTP/1.1" 200 -
+2025-05-06 23:34:36,986 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:34:36] "[31m[1mGET /new_conversation HTTP/1.1[0m" 405 -
+2025-05-06 23:34:37,081 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:34:37] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-05-06 23:34:37,098 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:34:37] "GET / HTTP/1.1" 200 -
+2025-05-06 23:35:05,623 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:35:05] "[31m[1mGET /new_conversation HTTP/1.1[0m" 405 -
+2025-05-06 23:35:05,718 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:35:05] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2025-05-06 23:35:05,731 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:35:05] "GET / HTTP/1.1" 200 -
+2025-05-06 23:36:13,998 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:36:13] "POST / HTTP/1.1" 200 -
+2025-05-06 23:36:21,116 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:36:21] "POST / HTTP/1.1" 200 -
+2025-05-06 23:36:27,425 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:36:32,046 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:36:48,576 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:36:48,577 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:36:53,491 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:36:53,495 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:37:00,539 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:37:00] "POST / HTTP/1.1" 200 -
+2025-05-06 23:37:17,976 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:37:17] "POST / HTTP/1.1" 200 -
+2025-05-06 23:38:24,233 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:38:28,440 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:38:42,032 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:38:42,033 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:38:47,526 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:38:47,529 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:40:25,720 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:40:25,724 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:40:31,579 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 23:40:31,580 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 23:40:31,582 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:40:43,661 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:40:43,661 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:40:49,556 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:40:49,558 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:40:49,637 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:49] "GET / HTTP/1.1" 200 -
+2025-05-06 23:40:50,132 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:40:50,134 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:50] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:40:52,735 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:52] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:40:52,754 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:52] "GET / HTTP/1.1" 200 -
+2025-05-06 23:40:53,116 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:40:53,120 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:40:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:41:00,694 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:41:00] "POST / HTTP/1.1" 200 -
+2025-05-06 23:41:00,711 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:41:00] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:41:25,929 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:41:25] "POST / HTTP/1.1" 200 -
+2025-05-06 23:41:55,311 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:41:55] "POST / HTTP/1.1" 200 -
+2025-05-06 23:42:06,497 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:06] "POST / HTTP/1.1" 200 -
+2025-05-06 23:42:16,443 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:16] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:42:16,499 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:16] "GET / HTTP/1.1" 200 -
+2025-05-06 23:42:16,829 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:16] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:42:16,834 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:16] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:42:18,911 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:18] "[32mGET /switch_conversation/7f9dd11a-9dc1-46d4-a78d-83ac29051ef5 HTTP/1.1[0m" 302 -
+2025-05-06 23:42:18,928 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:18] "GET / HTTP/1.1" 200 -
+2025-05-06 23:42:19,279 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:19] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:42:19,282 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:19] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:42:19,294 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:42:36,895 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:36] "[32mGET /switch_conversation/bb4a5554-1d22-4a4f-8650-8002d7c7ea5b HTTP/1.1[0m" 302 -
+2025-05-06 23:42:36,914 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:36] "GET / HTTP/1.1" 200 -
+2025-05-06 23:42:37,280 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:42:37,285 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:42:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:44:42,508 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:44:47,718 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:45:03,746 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:45:03,747 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:45:08,646 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:45:08,651 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:50:59,619 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:51:01,183 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:51:27,160 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:51:27,161 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:51:32,544 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 23:51:32,545 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 23:51:32,548 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:51:49,254 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:51:49,254 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:51:55,637 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:51:55,645 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:51:55,834 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:51:55] "GET / HTTP/1.1" 200 -
+2025-05-06 23:51:56,285 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:51:56] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:51:56,288 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:51:56] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:52:12,112 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:12] "POST / HTTP/1.1" 200 -
+2025-05-06 23:52:12,135 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:12] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:52:13,149 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:13] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:52:44,464 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:44] "POST / HTTP/1.1" 200 -
+2025-05-06 23:52:45,504 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:52:49,437 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:49] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:52:49,454 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:49] "GET / HTTP/1.1" 200 -
+2025-05-06 23:52:49,813 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:49] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:52:49,817 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:49] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:52:56,006 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:56] "POST / HTTP/1.1" 200 -
+2025-05-06 23:52:56,015 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:56] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:52:57,030 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:52:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:53:53,974 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:53:59,284 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:54:13,378 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:54:13,379 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:54:19,650 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:54:19,656 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:54:21,079 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:54:21] "POST / HTTP/1.1" 200 -
+2025-05-06 23:54:22,100 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:54:22] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:54:42,752 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:54:42] "POST / HTTP/1.1" 200 -
+2025-05-06 23:54:43,776 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:54:43] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:55:17,627 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:55:17] "POST / HTTP/1.1" 200 -
+2025-05-06 23:55:18,682 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:55:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:55:44,958 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:55:44] "POST / HTTP/1.1" 200 -
+2025-05-06 23:55:45,982 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:55:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:56:16,754 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:56:16] "POST / HTTP/1.1" 200 -
+2025-05-06 23:56:17,782 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:56:17] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:56:33,965 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:56:33] "POST / HTTP/1.1" 200 -
+2025-05-06 23:56:34,981 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:56:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:57:48,176 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-06 23:57:52,061 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:58:20,417 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:58:20,418 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:58:26,784 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-06 23:58:26,787 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 23:58:26,791 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 23:58:44,614 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-06 23:58:44,615 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-06 23:58:49,724 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 23:58:49,730 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-06 23:58:49,900 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:49] "GET / HTTP/1.1" 200 -
+2025-05-06 23:58:50,405 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:58:50,409 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:50] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:58:50,571 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:50] "[32mGET /delete_conversation/9f91dae2-6bd3-4b89-b71d-f5ef85e74c71 HTTP/1.1[0m" 302 -
+2025-05-06 23:58:50,593 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:50] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:58:50,616 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:50] "GET / HTTP/1.1" 200 -
+2025-05-06 23:58:51,001 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:51] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:58:51,005 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:51] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:58:54,317 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:54] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:58:54,336 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:54] "GET / HTTP/1.1" 200 -
+2025-05-06 23:58:54,697 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:54] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:58:54,701 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:54] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:58:58,566 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:58] "[32mGET /delete_conversation/3acc271f-7a23-4eda-b1e5-de97bb9e7abe HTTP/1.1[0m" 302 -
+2025-05-06 23:58:58,586 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:58] "GET / HTTP/1.1" 200 -
+2025-05-06 23:58:58,944 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:58:58,950 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:58:58] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:59:21,542 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:21] "POST / HTTP/1.1" 200 -
+2025-05-06 23:59:21,578 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:21] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:59:22,588 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:22] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:59:40,615 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:40] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-06 23:59:40,637 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:40] "GET / HTTP/1.1" 200 -
+2025-05-06 23:59:41,003 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-06 23:59:41,007 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:41] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-06 23:59:56,853 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:56] "POST / HTTP/1.1" 200 -
+2025-05-06 23:59:56,865 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:56] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-06 23:59:57,888 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 23:59:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:00:04,152 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:04] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 00:00:04,170 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:04] "GET / HTTP/1.1" 200 -
+2025-05-07 00:00:04,527 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:00:04,531 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:04] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:00:05,615 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:05] "[32mGET /switch_conversation/4075b89b-0398-46b2-87f1-b585e7f16f51 HTTP/1.1[0m" 302 -
+2025-05-07 00:00:05,632 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:05] "GET / HTTP/1.1" 200 -
+2025-05-07 00:00:05,981 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:05] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:00:05,984 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:05] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:00:05,995 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:05] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:00:09,397 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:09] "[32mGET /switch_conversation/43762494-7b44-4c56-b093-dcdea5318a06 HTTP/1.1[0m" 302 -
+2025-05-07 00:00:09,415 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:09] "GET / HTTP/1.1" 200 -
+2025-05-07 00:00:09,762 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:00:09,767 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:00:09,779 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:00:12,892 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:12] "[32mGET /switch_conversation/8db21f97-4933-4d81-9ac5-159c8d0caee8 HTTP/1.1[0m" 302 -
+2025-05-07 00:00:12,910 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:12] "GET / HTTP/1.1" 200 -
+2025-05-07 00:00:13,269 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:13] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:00:13,273 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:00:13] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:01:39,950 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:01:39] "POST / HTTP/1.1" 200 -
+2025-05-07 00:01:39,991 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:01:39] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:01:40,998 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:01:40] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:01:59,886 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-07 00:02:05,695 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 00:02:22,711 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 00:02:22,712 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 00:02:28,796 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 00:02:28,807 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-07 00:03:39,616 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-07 00:03:42,660 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 00:12:32,928 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 00:12:32,930 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 00:12:39,358 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-07 00:12:39,359 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 00:12:39,366 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 00:12:56,975 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 00:12:56,975 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 00:13:03,457 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 00:13:03,465 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-07 00:13:34,669 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:34] "GET / HTTP/1.1" 200 -
+2025-05-07 00:13:35,152 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:35] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:13:35,157 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:35] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:13:35,202 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:35] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:13:36,683 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:36] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 00:13:36,703 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:36] "GET / HTTP/1.1" 200 -
+2025-05-07 00:13:37,110 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:13:37,112 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:13:54,855 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:54] "POST / HTTP/1.1" 200 -
+2025-05-07 00:13:54,885 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:13:55,898 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:13:55] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:14:19,170 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:14:19] "POST / HTTP/1.1" 200 -
+2025-05-07 00:14:20,186 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:14:20] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:14:44,462 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-07 00:15:11,326 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 00:15:11,327 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 00:15:17,163 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-07 00:15:17,164 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 00:15:17,167 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 00:15:33,021 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 00:15:33,022 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 00:15:38,519 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 00:15:38,523 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-07 00:15:38,647 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:38] "GET / HTTP/1.1" 200 -
+2025-05-07 00:15:39,266 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:39] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:15:39,269 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:39] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:15:55,090 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:55] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 00:15:55,108 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:55] "GET / HTTP/1.1" 200 -
+2025-05-07 00:15:55,463 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:55] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:15:55,468 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:15:55] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:16:08,578 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:08] "POST / HTTP/1.1" 200 -
+2025-05-07 00:16:08,615 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:08] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:16:09,631 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:16:13,748 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:13] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 00:16:13,765 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:13] "GET / HTTP/1.1" 200 -
+2025-05-07 00:16:14,121 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:16:14,126 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:14] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:16:29,688 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:29] "POST / HTTP/1.1" 200 -
+2025-05-07 00:16:29,698 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:29] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 00:16:30,709 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:16:54,511 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:54] "POST / HTTP/1.1" 200 -
+2025-05-07 00:16:55,544 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:16:55] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:17:02,890 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:17:02] "[32mGET /switch_conversation/b4707824-3cfc-43b1-bfec-d871d57f010d HTTP/1.1[0m" 302 -
+2025-05-07 00:17:02,910 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:17:02] "GET / HTTP/1.1" 200 -
+2025-05-07 00:17:03,273 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:17:03] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 00:17:03,276 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:17:03] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 00:17:03,293 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 00:17:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:01:16,878 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 18:01:16,879 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 18:01:23,083 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-07 18:01:23,084 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 18:01:23,088 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 18:01:34,559 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-07 18:01:34,560 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-07 18:01:38,897 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 18:01:38,901 - werkzeug - INFO -  * Debugger PIN: 651-735-169
+2025-05-07 18:01:39,140 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:01:39] "GET / HTTP/1.1" 200 -
+2025-05-07 18:01:39,519 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:01:39] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:01:39,521 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:01:39] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 18:03:17,957 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:17] "POST / HTTP/1.1" 200 -
+2025-05-07 18:03:18,009 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:18] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:03:18,990 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:03:26,686 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:26] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 18:03:26,708 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:26] "GET / HTTP/1.1" 200 -
+2025-05-07 18:03:27,025 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:27] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:03:27,029 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:27] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 18:03:40,074 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:40] "POST / HTTP/1.1" 200 -
+2025-05-07 18:03:40,087 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:40] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:03:41,104 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:03:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:04:01,524 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:01] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 18:04:01,551 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:01] "GET / HTTP/1.1" 200 -
+2025-05-07 18:04:01,864 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:01] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:04:01,867 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:01] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 18:04:21,977 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:21] "POST / HTTP/1.1" 200 -
+2025-05-07 18:04:21,988 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:21] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:04:23,010 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:23] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:04:38,387 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:38] "POST / HTTP/1.1" 200 -
+2025-05-07 18:04:39,414 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:39] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:04:49,844 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:49] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-07 18:04:49,872 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:49] "GET / HTTP/1.1" 200 -
+2025-05-07 18:04:50,191 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:04:50,196 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:04:50] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-07 18:05:15,144 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:05:15] "POST / HTTP/1.1" 200 -
+2025-05-07 18:05:15,157 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:05:15] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:05:16,164 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:05:16] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:05:40,006 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:05:40] "POST / HTTP/1.1" 200 -
+2025-05-07 18:05:41,028 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:05:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:06:15,856 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:06:15] "POST / HTTP/1.1" 200 -
+2025-05-07 18:06:15,880 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:06:15] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-07 18:06:16,886 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:06:16] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:08:06,682 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:08:06] "POST / HTTP/1.1" 200 -
+2025-05-07 18:08:07,712 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:08:07] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-07 18:09:35,554 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:09:35] "POST / HTTP/1.1" 200 -
+2025-05-07 18:09:36,592 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 18:09:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 10:26:44,055 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 10:26:44,056 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-08 10:26:48,451 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 10:26:48,452 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 10:26:48,457 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 10:26:56,311 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 10:26:56,311 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-08 10:27:02,076 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 10:27:02,080 - werkzeug - INFO -  * Debugger PIN: 695-618-448
+2025-05-08 10:27:02,279 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:02] "GET / HTTP/1.1" 200 -
+2025-05-08 10:27:02,805 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 10:27:02,809 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-08 10:27:56,892 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:56] "POST / HTTP/1.1" 200 -
+2025-05-08 10:27:56,935 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:56] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-08 10:27:57,932 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:27:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 10:28:41,137 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:28:41] "POST / HTTP/1.1" 200 -
+2025-05-08 10:28:42,175 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 10:28:42] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:41:37,009 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 17:41:37,010 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-08 17:41:42,061 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 17:41:42,062 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 17:41:42,066 - werkzeug - INFO -  * Restarting with stat
+2025-05-08 17:41:50,514 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-08 17:41:50,514 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-08 17:41:58,659 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 17:41:58,664 - werkzeug - INFO -  * Debugger PIN: 695-618-448
+2025-05-08 17:41:59,059 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:41:59] "GET / HTTP/1.1" 200 -
+2025-05-08 17:41:59,533 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:41:59] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:41:59,535 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:41:59] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-08 17:43:04,678 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:43:04] "POST / HTTP/1.1" 200 -
+2025-05-08 17:43:04,726 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:43:04] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-08 17:43:05,712 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:43:05] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:45:27,864 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:45:27] "POST / HTTP/1.1" 200 -
+2025-05-08 17:45:28,885 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:45:28] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:45:58,999 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:45:58] "POST / HTTP/1.1" 200 -
+2025-05-08 17:46:00,024 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:46:00] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:46:42,512 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:46:42] "POST / HTTP/1.1" 200 -
+2025-05-08 17:46:43,529 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:46:43] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:50:01,761 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:50:01] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-08 17:50:01,790 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:50:01] "GET / HTTP/1.1" 200 -
+2025-05-08 17:50:02,145 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:50:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:50:02,148 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:50:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-08 17:52:04,226 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:52:04] "POST / HTTP/1.1" 200 -
+2025-05-08 17:52:04,256 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:52:04] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-08 17:52:05,260 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:52:05] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:53:06,521 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:06] "[32mGET /delete_conversation/e74f164a-b805-4e10-9497-6de5272c9a3f HTTP/1.1[0m" 302 -
+2025-05-08 17:53:06,539 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:06] "GET / HTTP/1.1" 200 -
+2025-05-08 17:53:06,891 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:06] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-08 17:53:06,892 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:53:06,927 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:06] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-08 17:53:08,022 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:08] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-08 17:53:08,050 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:08] "GET / HTTP/1.1" 200 -
+2025-05-08 17:53:08,386 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-08 17:53:08,390 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 17:53:08] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 12:19:41,405 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 12:19:41,407 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 12:19:48,517 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 12:19:48,519 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 12:19:48,525 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 12:20:03,056 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 12:20:03,057 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 12:20:10,434 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 12:20:10,444 - werkzeug - INFO -  * Debugger PIN: 296-239-873
+2025-05-10 12:20:10,712 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:20:10] "GET / HTTP/1.1" 200 -
+2025-05-10 12:20:11,124 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:20:11] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 12:20:11,126 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 12:20:11] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 13:10:05,057 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 13:10:05,058 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 13:10:12,311 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 13:10:12,312 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 13:10:12,316 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 13:10:28,412 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 13:10:28,413 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 13:10:35,648 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 13:10:35,653 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 13:10:35,907 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:10:35] "GET / HTTP/1.1" 200 -
+2025-05-10 13:10:36,454 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:10:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 13:10:36,460 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 13:10:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:16:47,388 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-10 14:16:57,303 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:17:18,565 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:17:18,565 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:17:26,472 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:17:26,479 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:17:36,646 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-10 14:17:39,338 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:17:56,679 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:17:56,680 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:18:04,251 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:18:04,257 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:23:02,588 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-10 14:23:05,136 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:23:26,038 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:23:26,039 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:23:53,335 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:23:53,335 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:24:01,617 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:24:01,618 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:24:01,623 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:24:23,982 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:24:23,983 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:24:32,846 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:24:32,854 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:24:33,053 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:24:33] "GET / HTTP/1.1" 200 -
+2025-05-10 14:24:33,691 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:24:33] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:24:33,694 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:24:33] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:25:53,756 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:25:53] "GET / HTTP/1.1" 200 -
+2025-05-10 14:25:54,428 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:25:54] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:25:54,448 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:25:54] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:27:41,180 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:27:41] "GET / HTTP/1.1" 200 -
+2025-05-10 14:27:43,963 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:27:43] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:27:43,972 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:27:43] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:39:06,817 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:39:06,818 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:39:13,855 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:39:13,855 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:39:13,859 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:39:26,585 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:39:26,586 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:39:32,570 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:39:32,576 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:39:32,684 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:39:32] "GET / HTTP/1.1" 200 -
+2025-05-10 14:39:33,435 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:39:33] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:39:33,437 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:39:33] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:49:43,946 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:49:43,947 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:49:47,220 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:49:47,221 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:49:47,227 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:50:03,285 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:50:03,286 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:50:05,674 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:50:05,680 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:50:05,828 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:05] "GET / HTTP/1.1" 200 -
+2025-05-10 14:50:06,010 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:50:06,015 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:06] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:50:14,907 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:14] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 14:50:14,936 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:14] "GET / HTTP/1.1" 200 -
+2025-05-10 14:50:15,062 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:15] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:50:15,075 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:50:15] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:52:15,728 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:52:15,729 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:52:17,317 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:52:17,318 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:52:17,322 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:52:33,706 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:52:33,707 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:52:37,103 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:52:37,111 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:52:37,215 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:37] "GET / HTTP/1.1" 200 -
+2025-05-10 14:52:37,463 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:52:37,467 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:52:41,657 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:41] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 14:52:41,685 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:41] "GET / HTTP/1.1" 200 -
+2025-05-10 14:52:41,803 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:52:41,807 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:52:41] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:53:36,824 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:53:36] "[32mGET /switch_conversation/5a115bfe-9739-4243-a139-54ca7e3ef866 HTTP/1.1[0m" 302 -
+2025-05-10 14:53:36,865 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:53:36] "GET / HTTP/1.1" 200 -
+2025-05-10 14:53:37,249 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:53:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:53:37,252 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:53:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:54:36,418 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:36] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 14:54:36,447 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:36] "GET / HTTP/1.1" 200 -
+2025-05-10 14:54:36,837 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:54:36,841 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:54:39,274 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:39] "[32mGET /switch_conversation/5a115bfe-9739-4243-a139-54ca7e3ef866 HTTP/1.1[0m" 302 -
+2025-05-10 14:54:39,296 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:39] "GET / HTTP/1.1" 200 -
+2025-05-10 14:54:39,649 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:39] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:54:39,651 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:39] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:54:40,441 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:40] "[32mGET /switch_conversation/abbcb016-09bb-48c8-8114-b70d5c2e188d HTTP/1.1[0m" 302 -
+2025-05-10 14:54:40,466 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:40] "GET / HTTP/1.1" 200 -
+2025-05-10 14:54:40,826 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:40] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:54:40,840 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:54:40] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:55:44,795 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:55:44,795 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:55:50,757 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:55:50,758 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:55:50,764 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:56:02,953 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:56:02,954 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:56:08,353 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:56:08,359 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:56:08,456 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:08] "GET / HTTP/1.1" 200 -
+2025-05-10 14:56:08,927 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:08] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:56:08,929 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:56:21,140 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:21] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 14:56:21,167 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:21] "GET / HTTP/1.1" 200 -
+2025-05-10 14:56:21,533 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:21] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:56:21,536 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:21] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:56:36,991 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:36] "POST / HTTP/1.1" 200 -
+2025-05-10 14:56:37,056 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:37] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-10 14:56:38,042 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:56:51,450 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:51] "POST / HTTP/1.1" 200 -
+2025-05-10 14:56:52,479 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:56:52] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:57:27,019 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:57:27] "POST / HTTP/1.1" 200 -
+2025-05-10 14:57:28,067 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:57:28] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:57:53,565 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot\\app.py', reloading
+2025-05-10 14:58:15,620 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:58:15,621 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:58:22,599 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 14:58:22,600 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 14:58:22,604 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 14:58:39,145 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 14:58:39,146 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 14:58:47,251 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 14:58:47,255 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 14:58:47,318 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:47] "GET / HTTP/1.1" 200 -
+2025-05-10 14:58:47,772 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:47] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:58:47,773 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:47] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:58:51,303 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:51] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 14:58:51,325 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:51] "GET / HTTP/1.1" 200 -
+2025-05-10 14:58:51,686 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:51] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:58:51,691 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:58:51] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 14:59:09,687 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:59:09] "POST / HTTP/1.1" 200 -
+2025-05-10 14:59:09,722 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:59:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 14:59:10,726 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:59:10] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 14:59:24,950 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:59:24] "POST / HTTP/1.1" 200 -
+2025-05-10 14:59:25,987 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 14:59:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:15:23,794 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:23] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 15:15:23,823 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:23] "GET / HTTP/1.1" 200 -
+2025-05-10 15:15:24,264 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:24] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:15:24,266 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:24] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:15:25,376 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:25] "[32mGET /switch_conversation/f67d9ad8-5b34-4b90-b490-2fe43b543664 HTTP/1.1[0m" 302 -
+2025-05-10 15:15:25,394 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:25] "GET / HTTP/1.1" 200 -
+2025-05-10 15:15:25,751 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:15:25,755 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:25] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:15:25,787 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:25] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:15:27,766 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:27] "[32mGET /switch_conversation/a57630e6-3e93-426c-be11-fb47d3d44439 HTTP/1.1[0m" 302 -
+2025-05-10 15:15:27,788 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:27] "GET / HTTP/1.1" 200 -
+2025-05-10 15:15:28,160 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:28] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:15:28,164 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:15:28] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:16:05,034 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:16:05] "POST / HTTP/1.1" 200 -
+2025-05-10 15:16:05,090 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:16:05] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:16:06,101 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:16:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:17:02,451 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:02] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 15:17:02,474 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:02] "GET / HTTP/1.1" 200 -
+2025-05-10 15:17:02,947 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:17:02,949 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:17:17,121 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:17] "POST / HTTP/1.1" 200 -
+2025-05-10 15:17:17,136 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:17] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:17:18,199 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:17:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:05,956 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:05] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 15:20:05,978 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:05] "GET / HTTP/1.1" 200 -
+2025-05-10 15:20:06,428 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:06,432 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:06] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:20:07,940 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:07] "[32mGET /switch_conversation/a57630e6-3e93-426c-be11-fb47d3d44439 HTTP/1.1[0m" 302 -
+2025-05-10 15:20:07,960 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:07] "GET / HTTP/1.1" 200 -
+2025-05-10 15:20:08,329 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:08,337 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:08] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:20:08,374 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:08] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:20:09,080 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:09] "[32mGET /switch_conversation/2338c08f-e1b2-43a9-bf4d-0a5acdfb70ec HTTP/1.1[0m" 302 -
+2025-05-10 15:20:09,100 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:09] "GET / HTTP/1.1" 200 -
+2025-05-10 15:20:09,457 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:09,464 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:20:09,482 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:20:11,945 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:11] "[32mGET /switch_conversation/f67d9ad8-5b34-4b90-b490-2fe43b543664 HTTP/1.1[0m" 302 -
+2025-05-10 15:20:11,975 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:11] "GET / HTTP/1.1" 200 -
+2025-05-10 15:20:12,338 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:12,344 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:20:12,360 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:12] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:20:14,540 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:14] "[32mGET /switch_conversation/0b153967-4adf-4038-9779-babb37b84799 HTTP/1.1[0m" 302 -
+2025-05-10 15:20:14,562 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:14] "GET / HTTP/1.1" 200 -
+2025-05-10 15:20:14,916 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:20:14,920 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:14] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:20:19,308 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:19] "POST / HTTP/1.1" 200 -
+2025-05-10 15:20:19,329 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:20:20,336 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:20:20] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:50:20,195 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 15:50:20,195 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 15:50:25,914 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-10 15:50:25,914 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-10 15:50:25,918 - werkzeug - INFO -  * Restarting with stat
+2025-05-10 15:50:43,348 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-10 15:50:43,349 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-10 15:50:49,896 - werkzeug - WARNING -  * Debugger is active!
+2025-05-10 15:50:49,904 - werkzeug - INFO -  * Debugger PIN: 579-217-153
+2025-05-10 15:50:50,184 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:50:50] "GET / HTTP/1.1" 200 -
+2025-05-10 15:50:50,975 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:50:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:50:50,980 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:50:50] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:50:51,084 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:50:51] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-10 15:51:00,786 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:00] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-10 15:51:00,827 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:00] "GET / HTTP/1.1" 200 -
+2025-05-10 15:51:01,255 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:01] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-10 15:51:01,262 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:01] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-10 15:51:23,435 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:23] "POST / HTTP/1.1" 200 -
+2025-05-10 15:51:23,476 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:23] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-10 15:51:24,491 - werkzeug - INFO - 127.0.0.1 - - [10/May/2025 15:51:24] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:13:55,360 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 17:13:55,361 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 17:13:59,378 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-13 17:13:59,378 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 17:13:59,384 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 17:14:07,503 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 17:14:07,503 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 17:14:12,035 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 17:14:12,042 - werkzeug - INFO -  * Debugger PIN: 451-380-658
+2025-05-13 17:14:12,244 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:12] "GET / HTTP/1.1" 200 -
+2025-05-13 17:14:12,628 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:14:12,630 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 17:14:13,870 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:13] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 17:14:13,881 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:13] "GET / HTTP/1.1" 200 -
+2025-05-13 17:14:14,209 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:14:14,214 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:14] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 17:14:19,119 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:19] "POST / HTTP/1.1" 200 -
+2025-05-13 17:14:19,152 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 17:14:20,137 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:20] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:14:54,247 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:54] "POST / HTTP/1.1" 200 -
+2025-05-13 17:14:55,283 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:14:55] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:15:37,176 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:37] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 17:15:37,188 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:37] "GET / HTTP/1.1" 200 -
+2025-05-13 17:15:37,525 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 17:15:37,528 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 17:15:49,324 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:49] "POST / HTTP/1.1" 200 -
+2025-05-13 17:15:49,334 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:49] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 17:15:50,348 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 17:15:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:14:39,664 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 18:14:39,665 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 18:14:46,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-13 18:14:46,231 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 18:14:46,234 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 18:14:56,561 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 18:14:56,562 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 18:15:01,892 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 18:15:01,898 - werkzeug - INFO -  * Debugger PIN: 451-380-658
+2025-05-13 18:15:02,048 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:02] "GET / HTTP/1.1" 200 -
+2025-05-13 18:15:02,493 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:15:02,495 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:15:11,339 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:11] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 18:15:11,351 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:11] "GET / HTTP/1.1" 200 -
+2025-05-13 18:15:11,663 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:11] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:15:11,665 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:11] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:15:14,620 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:14] "[32mGET /delete_conversation/03afa74b-dcf4-4364-a912-54e609f91f08 HTTP/1.1[0m" 302 -
+2025-05-13 18:15:14,634 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:14] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 18:15:14,650 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:14] "GET / HTTP/1.1" 200 -
+2025-05-13 18:15:14,957 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:15:14,959 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:14] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:15:21,259 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:21] "POST / HTTP/1.1" 200 -
+2025-05-13 18:15:21,310 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:21] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 18:15:22,296 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:22] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:15:29,559 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:29] "POST / HTTP/1.1" 200 -
+2025-05-13 18:15:30,585 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:15:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:16:34,231 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:34] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 18:16:34,245 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:34] "GET / HTTP/1.1" 200 -
+2025-05-13 18:16:34,572 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:16:34,577 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:34] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:16:40,275 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:40] "POST / HTTP/1.1" 200 -
+2025-05-13 18:16:40,282 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:40] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 18:16:41,299 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:16:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:17:24,336 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 18:17:24,336 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 18:17:29,078 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-13 18:17:29,078 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 18:17:29,081 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 18:17:36,687 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-13 18:17:36,687 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-13 18:17:41,148 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 18:17:41,153 - werkzeug - INFO -  * Debugger PIN: 451-380-658
+2025-05-13 18:17:41,227 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:41] "GET / HTTP/1.1" 200 -
+2025-05-13 18:17:41,593 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:17:41,595 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:41] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:17:47,563 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:47] "POST / HTTP/1.1" 200 -
+2025-05-13 18:17:47,574 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 18:17:48,580 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:17:50,993 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:50] "POST / HTTP/1.1" 200 -
+2025-05-13 18:17:52,021 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:52] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:17:56,776 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:56] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-13 18:17:56,790 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:56] "GET / HTTP/1.1" 200 -
+2025-05-13 18:17:57,098 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:17:57,101 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:17:57] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-13 18:18:03,316 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:18:03] "POST / HTTP/1.1" 200 -
+2025-05-13 18:18:03,325 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:18:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-13 18:18:04,333 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 18:18:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-13 18:18:25,619 - werkzeug - INFO -  * Detected change in 'D:\\Gemini-AI-chatbot - Copy\\app.py', reloading
+2025-05-17 13:58:02,129 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 13:58:02,130 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 13:58:11,037 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 13:58:11,038 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 13:58:11,049 - werkzeug - INFO -  * Restarting with stat
+2025-05-17 13:58:43,440 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 13:58:43,441 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 13:58:52,248 - werkzeug - WARNING -  * Debugger is active!
+2025-05-17 13:58:52,261 - werkzeug - INFO -  * Debugger PIN: 695-618-448
+2025-05-17 13:58:52,458 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:58:52] "GET / HTTP/1.1" 200 -
+2025-05-17 13:58:53,406 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:58:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 13:58:53,409 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:58:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 13:59:08,463 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:08] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 13:59:08,511 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:08] "GET / HTTP/1.1" 200 -
+2025-05-17 13:59:09,090 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 13:59:09,099 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 13:59:43,017 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:43] "POST / HTTP/1.1" 200 -
+2025-05-17 13:59:43,118 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:43] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-17 13:59:44,081 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 13:59:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:44:57,940 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 14:44:57,940 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 14:45:04,455 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 14:45:04,455 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 14:45:04,458 - werkzeug - INFO -  * Restarting with stat
+2025-05-17 14:45:11,710 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 14:45:11,711 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 14:45:17,660 - werkzeug - WARNING -  * Debugger is active!
+2025-05-17 14:45:17,671 - werkzeug - INFO -  * Debugger PIN: 106-618-583
+2025-05-17 14:45:17,770 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:17] "GET / HTTP/1.1" 200 -
+2025-05-17 14:45:18,667 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:45:18,675 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:45:18] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 14:46:23,357 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:23] "POST / HTTP/1.1" 200 -
+2025-05-17 14:46:23,414 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:23] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-17 14:46:24,418 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:24] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:46:47,138 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 14:46:47,152 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET / HTTP/1.1" 200 -
+2025-05-17 14:46:47,616 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 14:46:47,618 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 14:46:47] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:52,647 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:52] "GET / HTTP/1.1" 200 -
+2025-05-17 15:05:53,318 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:05:53,321 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:53,893 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:53] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:05:56,266 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:05:56,287 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET / HTTP/1.1" 200 -
+2025-05-17 15:05:56,564 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:05:56,567 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:05:56,733 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:05:56] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:15,504 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:15] "POST / HTTP/1.1" 200 -
+2025-05-17 15:06:16,556 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:16] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:53,478 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET / HTTP/1.1" 200 -
+2025-05-17 15:06:53,974 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:53,975 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:06:54,036 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:54,144 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:06:58,184 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:06:58,210 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET / HTTP/1.1" 200 -
+2025-05-17 15:06:58,636 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:06:58,639 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:06:58,690 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:06:58] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:07:00,167 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "[32mGET /switch_conversation/94874450-11f9-4254-b53a-6617ad18d521 HTTP/1.1[0m" 302 -
+2025-05-17 15:07:00,192 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET / HTTP/1.1" 200 -
+2025-05-17 15:07:00,602 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:07:00,607 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:00] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:07:02,782 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:02] "[32mGET /switch_conversation/c62f34bb-8a4b-4f37-8b7b-c63129cca5c9 HTTP/1.1[0m" 302 -
+2025-05-17 15:07:02,808 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:02] "GET / HTTP/1.1" 200 -
+2025-05-17 15:07:03,367 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:07:03,371 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:07:03,429 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:07:16,158 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:16] "POST / HTTP/1.1" 200 -
+2025-05-17 15:07:17,200 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:07:17] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:15:19,412 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET / HTTP/1.1" 200 -
+2025-05-17 15:15:19,613 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:15:19,615 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:15:19,668 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:19,986 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:41,357 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:41] "POST / HTTP/1.1" 200 -
+2025-05-17 15:15:41,395 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:15:42,407 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:15:42] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:20:41,042 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET / HTTP/1.1" 200 -
+2025-05-17 15:20:41,201 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:20:41,204 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:20:41,287 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:20:41,464 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:20:41] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:08,749 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:08,916 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:08,918 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:08,949 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:08] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,019 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,638 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:09,799 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:09,801 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:09,835 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:09,922 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:09] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:11,065 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:21:11,078 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET / HTTP/1.1" 200 -
+2025-05-17 15:21:11,232 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:21:11,234 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:11] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:21:48,831 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:48] "POST / HTTP/1.1" 200 -
+2025-05-17 15:21:51,244 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:51] "POST / HTTP/1.1" 200 -
+2025-05-17 15:21:51,302 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:51] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:21:52,303 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:21:52] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:54,087 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET / HTTP/1.1" 200 -
+2025-05-17 15:26:54,725 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:54,726 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:26:54,765 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:26:54,917 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:54] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:26:55,958 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:55] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:26:55,974 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:55] "GET / HTTP/1.1" 200 -
+2025-05-17 15:26:56,163 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:56] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:26:56,168 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:26:56] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:27:11,773 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:11] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:11,799 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:11] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:27:12,809 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:29,369 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:29] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:30,395 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:35,895 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:35] "[32mGET /switch_conversation/486dc352-d555-4616-a139-080ea163961f HTTP/1.1[0m" 302 -
+2025-05-17 15:27:35,913 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:35] "GET / HTTP/1.1" 200 -
+2025-05-17 15:27:36,110 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:27:36,113 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:27:36,150 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:27:58,018 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:58] "POST / HTTP/1.1" 200 -
+2025-05-17 15:27:59,061 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:27:59] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:28:18,786 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "[32mGET /switch_conversation/62020209-61c8-4be8-a94b-5f1544cfe70c HTTP/1.1[0m" 302 -
+2025-05-17 15:28:18,814 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET / HTTP/1.1" 200 -
+2025-05-17 15:28:18,969 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:28:18,980 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:18] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:28:19,017 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:19] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:28:33,965 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:33] "POST / HTTP/1.1" 200 -
+2025-05-17 15:28:35,004 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:28:35] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:30:12,725 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:30:12,746 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET / HTTP/1.1" 200 -
+2025-05-17 15:30:12,927 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:30:12,930 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:30:24,320 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:24] "POST / HTTP/1.1" 200 -
+2025-05-17 15:30:24,332 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:24] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:30:25,358 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:30:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:09,041 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 15:41:09,041 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 15:41:16,663 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-17 15:41:16,672 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-17 15:41:16,674 - werkzeug - INFO -  * Restarting with stat
+2025-05-17 15:41:21,307 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:21] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:22,618 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:22] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:22,624 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:22] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:41:23,020 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:23] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:24,306 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-17 15:41:24,306 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-17 15:41:31,709 - werkzeug - WARNING -  * Debugger is active!
+2025-05-17 15:41:31,736 - werkzeug - INFO -  * Debugger PIN: 817-748-206
+2025-05-17 15:41:36,597 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:36,770 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:36,772 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:41:36,816 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:36,932 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:36] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:41:38,586 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-17 15:41:38,611 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET / HTTP/1.1" 200 -
+2025-05-17 15:41:38,754 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:41:38,759 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:41:38] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:01,925 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:01] "[32mGET /switch_conversation/d6ca2a40-e795-4809-a998-9a056a6e733c HTTP/1.1[0m" 302 -
+2025-05-17 15:42:01,953 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:01] "GET / HTTP/1.1" 200 -
+2025-05-17 15:42:02,163 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:42:02,165 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:02,203 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:02] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:42:03,938 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:03] "[32mGET /switch_conversation/2dda4e2a-f8f8-4b1a-80b1-3b000a88baaa HTTP/1.1[0m" 302 -
+2025-05-17 15:42:03,961 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:03] "GET / HTTP/1.1" 200 -
+2025-05-17 15:42:04,219 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-17 15:42:04,222 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:04] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-17 15:42:18,610 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:18] "POST / HTTP/1.1" 200 -
+2025-05-17 15:42:18,619 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:18] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-17 15:42:19,658 - werkzeug - INFO - 127.0.0.1 - - [17/May/2025 15:42:19] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:46:04,133 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 17:46:04,134 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 17:46:11,401 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 17:46:11,402 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 17:46:11,409 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 17:46:21,954 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 17:46:21,955 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 17:46:28,225 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 17:46:28,233 - werkzeug - INFO -  * Debugger PIN: 492-943-184
+2025-05-22 17:46:28,877 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:28] "GET / HTTP/1.1" 200 -
+2025-05-22 17:46:30,967 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:30] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 17:46:30,975 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:46:43,450 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:43] "POST / HTTP/1.1" 200 -
+2025-05-22 17:46:43,556 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:43] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-22 17:46:44,562 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:46:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:47:06,067 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:06] "POST / HTTP/1.1" 200 -
+2025-05-22 17:47:07,937 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:07] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:47:44,363 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:44] "POST / HTTP/1.1" 200 -
+2025-05-22 17:47:45,391 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:47:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:53:20,852 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:20] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 17:53:20,871 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:20] "GET / HTTP/1.1" 200 -
+2025-05-22 17:53:21,095 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:21] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:53:21,096 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:53:21] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 17:54:29,184 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:29] "POST / HTTP/1.1" 200 -
+2025-05-22 17:54:29,245 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:29] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 17:54:30,239 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:54:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:56:37,706 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:37] "POST / HTTP/1.1" 200 -
+2025-05-22 17:56:38,729 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 17:56:44,312 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:44] "POST / HTTP/1.1" 200 -
+2025-05-22 17:56:45,343 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 17:56:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:04:44,161 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:44] "GET / HTTP/1.1" 200 -
+2025-05-22 18:04:45,141 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:04:45,143 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:04:45,207 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:04:45,385 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:04:45] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:05:16,839 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:16] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 18:05:16,862 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:16] "GET / HTTP/1.1" 200 -
+2025-05-22 18:05:37,019 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:37] "GET / HTTP/1.1" 200 -
+2025-05-22 18:05:47,781 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:05:47,782 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:05:47,902 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:05:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:11:56,247 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:56] "GET / HTTP/1.1" 200 -
+2025-05-22 18:11:57,206 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:11:57,208 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:11:57,395 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:11:57] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:12:38,876 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:12:38,877 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:12:42,929 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 18:12:42,930 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 18:12:42,931 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 18:12:49,290 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:12:49,291 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:12:54,420 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 18:12:54,430 - werkzeug - INFO -  * Debugger PIN: 492-943-184
+2025-05-22 18:13:07,238 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:07] "GET / HTTP/1.1" 200 -
+2025-05-22 18:13:09,108 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:13:09,109 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:13:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:14:59,200 - chatbot - ERROR - Error: Timeout of 600.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:142.250.198.106:443: tcp handshaker shutdown
+2025-05-22 18:14:59,203 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:14:59] "POST / HTTP/1.1" 200 -
+2025-05-22 18:16:52,545 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:16:52,546 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:16:56,589 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-22 18:16:56,590 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 18:16:56,593 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 18:17:00,630 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-22 18:17:00,630 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-22 18:17:04,581 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 18:17:04,592 - werkzeug - INFO -  * Debugger PIN: 327-884-330
+2025-05-22 18:17:24,287 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:24] "GET / HTTP/1.1" 200 -
+2025-05-22 18:17:25,235 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:25] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:17:25,244 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:25] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:17:57,563 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:57] "POST / HTTP/1.1" 200 -
+2025-05-22 18:17:57,648 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:57] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:17:58,646 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:17:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:18:25,202 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:18:25] "POST / HTTP/1.1" 200 -
+2025-05-22 18:18:26,261 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:18:26] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:20:03,023 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:03] "POST / HTTP/1.1" 200 -
+2025-05-22 18:20:03,079 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:20:04,079 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:20:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:27,251 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET / HTTP/1.1" 200 -
+2025-05-22 18:23:27,728 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:27,730 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:23:27,967 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:27] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:28,439 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:28] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:34,097 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-22 18:23:34,129 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET / HTTP/1.1" 200 -
+2025-05-22 18:23:34,345 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:23:34,350 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:34] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-22 18:23:44,198 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:44] "POST / HTTP/1.1" 200 -
+2025-05-22 18:23:44,222 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:44] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:23:45,234 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:23:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:24:05,870 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:05] "POST / HTTP/1.1" 200 -
+2025-05-22 18:24:06,901 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-22 18:24:30,559 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:30] "POST / HTTP/1.1" 200 -
+2025-05-22 18:24:30,573 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:30] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-22 18:24:31,575 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 18:24:31] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:06:27,516 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:06:27,517 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:06:33,562 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:06:33,563 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:06:33,566 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:06:45,512 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:06:45,513 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:06:50,372 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:06:50,380 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:06:50,484 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:06:50] "GET / HTTP/1.1" 200 -
+2025-05-26 23:06:51,012 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:06:51] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:06:51,013 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:06:51] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:06:51,066 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:06:51] "GET /static/images/iba_logo.png HTTP/1.1" 200 -
+2025-05-26 23:07:12,531 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:07:12] "POST / HTTP/1.1" 200 -
+2025-05-26 23:07:12,555 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:07:12] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:07:13,568 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:07:13] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:07:41,048 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:07:41] "POST / HTTP/1.1" 200 -
+2025-05-26 23:07:42,072 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:07:42] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:08:13,276 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:13] "POST / HTTP/1.1" 200 -
+2025-05-26 23:08:14,299 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:08:47,936 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:47] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:08:47,956 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:47] "GET / HTTP/1.1" 200 -
+2025-05-26 23:08:48,154 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:08:48,157 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:48] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:08:51,305 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:51] "[32mGET /switch_conversation/e7af2858-9f93-4d17-b759-25b75a12b926 HTTP/1.1[0m" 302 -
+2025-05-26 23:08:51,317 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:51] "GET / HTTP/1.1" 200 -
+2025-05-26 23:08:51,448 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:51] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:08:51,452 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:51] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:08:51,464 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:51] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:08:55,109 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:55] "[32mGET /switch_conversation/dd4a5536-27ff-41e4-94f1-b5071ec488b6 HTTP/1.1[0m" 302 -
+2025-05-26 23:08:55,121 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:55] "GET / HTTP/1.1" 200 -
+2025-05-26 23:08:55,264 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:55] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:08:55,268 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:08:55] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:09:33,277 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:09:33] "POST / HTTP/1.1" 200 -
+2025-05-26 23:09:33,303 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:09:33] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:09:34,311 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:09:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:11:04,388 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:04] "POST / HTTP/1.1" 200 -
+2025-05-26 23:11:05,411 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:05] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:11:53,626 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:53] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:11:53,638 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:53] "GET / HTTP/1.1" 200 -
+2025-05-26 23:11:53,782 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:11:53,786 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:11:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:12:16,752 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:12:16] "POST / HTTP/1.1" 200 -
+2025-05-26 23:12:16,767 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:12:16] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:12:17,766 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:12:17] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:12:49,947 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:12:49] "POST / HTTP/1.1" 200 -
+2025-05-26 23:12:50,973 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:12:50] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:15:38,618 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:15:38,618 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:15:43,995 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:15:43,996 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:15:44,001 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:15:52,989 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:15:52,990 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:15:58,094 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:15:58,102 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:15:58,123 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:15:58] "[32mGET /switch_conversation/dd4a5536-27ff-41e4-94f1-b5071ec488b6 HTTP/1.1[0m" 302 -
+2025-05-26 23:15:58,125 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:15:58] "[32mGET /switch_conversation/e7af2858-9f93-4d17-b759-25b75a12b926 HTTP/1.1[0m" 302 -
+2025-05-26 23:15:58,152 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:15:58] "GET / HTTP/1.1" 200 -
+2025-05-26 23:15:58,378 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:15:58] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:15:58,380 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:15:58] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:16:03,267 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:03] "GET / HTTP/1.1" 200 -
+2025-05-26 23:16:03,408 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:03] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:16:03,411 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:03] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:16:03,418 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:03] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:16:12,704 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:12] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:16:12,719 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:12] "GET / HTTP/1.1" 200 -
+2025-05-26 23:16:12,843 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:16:12,845 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:16:47,048 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:47] "POST / HTTP/1.1" 200 -
+2025-05-26 23:16:47,064 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:16:48,077 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:16:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:18:29,770 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:18:29,770 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:18:35,563 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:18:35,563 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:18:35,566 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:18:44,755 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:18:44,756 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:18:51,711 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:18:51,719 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:18:51,807 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:18:51] "GET / HTTP/1.1" 200 -
+2025-05-26 23:18:52,427 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:18:52] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:18:52,430 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:18:52] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:19:14,956 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:14] "POST / HTTP/1.1" 200 -
+2025-05-26 23:19:14,976 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:14] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:19:15,980 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:15] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:19:43,214 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:43] "POST / HTTP/1.1" 200 -
+2025-05-26 23:19:44,238 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:19:56,951 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:56] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:19:56,963 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:56] "GET / HTTP/1.1" 200 -
+2025-05-26 23:19:57,122 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:57] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:19:57,124 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:19:57] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:21:22,764 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:21:22,765 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:21:27,980 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:21:27,981 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:21:27,983 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:21:37,823 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:21:37,823 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:21:44,587 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:21:44,592 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:22:14,229 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:14] "GET / HTTP/1.1" 200 -
+2025-05-26 23:22:14,469 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:14] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:22:14,471 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:14] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:22:34,177 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:34] "POST / HTTP/1.1" 200 -
+2025-05-26 23:22:34,192 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:34] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:22:35,205 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:22:35] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:23:07,478 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:23:07] "POST / HTTP/1.1" 200 -
+2025-05-26 23:23:08,520 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:23:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:24:29,235 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:24:29,236 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:24:33,067 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:24:33,068 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:24:33,071 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:24:40,893 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:24:40,893 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:24:45,632 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:24:45,635 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:24:45,677 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:24:45,897 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:45] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:24:45,904 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:45] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:24:48,567 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:48] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:24:48,578 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:48] "GET / HTTP/1.1" 200 -
+2025-05-26 23:24:48,723 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:48] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:24:48,724 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:24:49,780 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:49] "[32mGET /switch_conversation/226a6f0d-0c1b-41f5-921a-36d699e67629 HTTP/1.1[0m" 302 -
+2025-05-26 23:24:49,790 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:49] "GET / HTTP/1.1" 200 -
+2025-05-26 23:24:49,919 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:49] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:24:49,925 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:49] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:24:51,194 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:51] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:24:51,206 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:51] "GET / HTTP/1.1" 200 -
+2025-05-26 23:24:51,325 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:51] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:24:51,327 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:24:51] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:25:43,098 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:25:44,992 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:25:53,044 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:25:53,045 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:25:56,941 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:25:56,944 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:26:13,079 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:26:13,080 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:26:18,584 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:26:18,585 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:26:18,587 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:26:27,222 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:26:27,223 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:26:32,021 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:26:32,026 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:26:32,113 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:32] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:32,354 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:32] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:32,361 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:32] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:26:35,299 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:35] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:26:35,312 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:35] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:35,499 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:35] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:35,513 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:35] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:26:36,476 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:36] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:26:36,486 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:36] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:36,615 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:36] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:36,618 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:36] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:26:37,110 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:26:37,129 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:37,270 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:37,272 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:26:37,822 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:26:37,834 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:37,963 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:37,965 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:26:42,466 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:42] "[32mGET /delete_conversation/90d6d2bb-226d-4179-8dd6-5095f6fa402b HTTP/1.1[0m" 302 -
+2025-05-26 23:26:42,475 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:42] "GET / HTTP/1.1" 200 -
+2025-05-26 23:26:42,609 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:42] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:26:42,612 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:26:42] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:27:06,477 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:27:08,823 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:27:19,728 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:27:19,729 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:27:24,862 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:27:24,867 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:29:30,049 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app\\config.py', reloading
+2025-05-26 23:29:32,308 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:29:46,087 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:29:46,088 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:29:52,576 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:29:52,580 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:30:10,743 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app\\services\\ai_service.py', reloading
+2025-05-26 23:30:12,416 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:30:22,443 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:30:22,443 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:30:28,194 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:30:28,199 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:30:40,351 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app\\routes\\chat_routes.py', reloading
+2025-05-26 23:30:42,276 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:30:53,622 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:30:53,623 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:30:57,913 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:30:57,916 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:33:04,800 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:33:04,801 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:33:10,338 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:33:10,338 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:33:10,340 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:33:18,714 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:33:18,714 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:33:24,660 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:33:24,663 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:33:53,004 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:53] "GET / HTTP/1.1" 200 -
+2025-05-26 23:33:53,421 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:53] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:33:53,430 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:53] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:33:58,625 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:58] "POST / HTTP/1.1" 200 -
+2025-05-26 23:33:58,659 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:58] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:33:59,652 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:33:59] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:34:07,161 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:07] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:34:07,178 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:07] "GET / HTTP/1.1" 200 -
+2025-05-26 23:34:07,326 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:07] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:34:07,329 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:07] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:34:14,136 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:14] "POST / HTTP/1.1" 200 -
+2025-05-26 23:34:14,145 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:14] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:34:15,161 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:34:15] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:43:33,744 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:43:37,773 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:43:48,112 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:43:48,112 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:43:53,936 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:43:53,938 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:46:52,220 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:46:53,371 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:47:10,822 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:47:10,823 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:47:16,641 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:47:16,642 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:47:16,645 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:47:25,218 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:47:25,219 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:47:30,839 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:47:30,842 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:47:37,281 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:37] "GET / HTTP/1.1" 200 -
+2025-05-26 23:47:37,546 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:37] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:47:37,549 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:37] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:47:38,614 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:38] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:47:38,632 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:38] "GET / HTTP/1.1" 200 -
+2025-05-26 23:47:38,793 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:38] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:47:38,796 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:38] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:47:47,799 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:47] "POST / HTTP/1.1" 200 -
+2025-05-26 23:47:47,834 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:47] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:47:48,849 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:47:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:48:05,949 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:05] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:48:05,965 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:05] "GET / HTTP/1.1" 200 -
+2025-05-26 23:48:06,097 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:48:06,100 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:06] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:48:22,554 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:22] "POST / HTTP/1.1" 200 -
+2025-05-26 23:48:22,565 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:22] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:48:23,575 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:23] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:48:31,497 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:31] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-26 23:48:31,513 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:31] "GET / HTTP/1.1" 200 -
+2025-05-26 23:48:31,647 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:31] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:48:31,651 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:31] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-26 23:48:43,227 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:43] "POST / HTTP/1.1" 200 -
+2025-05-26 23:48:43,239 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:43] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-26 23:48:44,274 - werkzeug - INFO - 127.0.0.1 - - [26/May/2025 23:48:44] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-26 23:54:27,094 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:54:31,581 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:54:45,245 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:54:45,245 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:54:51,414 - werkzeug - WARNING -  * Debugger is active!
+2025-05-26 23:54:51,417 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-26 23:58:30,913 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-26 23:58:32,210 - werkzeug - INFO -  * Restarting with stat
+2025-05-26 23:59:50,306 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-26 23:59:50,306 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-26 23:59:55,555 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 23:59:55,556 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-26 23:59:55,558 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:00:03,708 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:00:03,708 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:00:08,613 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:00:08,616 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:00:08,689 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:08] "GET / HTTP/1.1" 200 -
+2025-05-27 00:00:09,167 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:09] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:00:09,169 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:09] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:00:11,326 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:11] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:00:11,337 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:11] "GET / HTTP/1.1" 200 -
+2025-05-27 00:00:11,485 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:11] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:00:11,489 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:11] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:00:28,276 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:28] "POST / HTTP/1.1" 200 -
+2025-05-27 00:00:28,291 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:28] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:00:29,305 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:00:29] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:01:33,769 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:33] "POST / HTTP/1.1" 200 -
+2025-05-27 00:01:34,789 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:34] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:01:46,762 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:46] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:01:46,774 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:46] "GET / HTTP/1.1" 200 -
+2025-05-27 00:01:46,900 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:46] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:01:46,905 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:46] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:01:48,711 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:48] "[32mGET /switch_conversation/d618f266-fec5-4917-925d-1e3e64de454c HTTP/1.1[0m" 302 -
+2025-05-27 00:01:48,720 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:48] "GET / HTTP/1.1" 200 -
+2025-05-27 00:01:48,859 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:48] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:01:48,865 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:48] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:01:59,547 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:59] "[32mGET /switch_conversation/d618f266-fec5-4917-925d-1e3e64de454c HTTP/1.1[0m" 302 -
+2025-05-27 00:01:59,563 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:59] "GET / HTTP/1.1" 200 -
+2025-05-27 00:01:59,680 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:59] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:01:59,685 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:01:59] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:02:00,393 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:00] "[32mGET /switch_conversation/d2d5b7ff-cbc2-46bd-8ee6-0ae82f437af1 HTTP/1.1[0m" 302 -
+2025-05-27 00:02:00,403 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:00] "GET / HTTP/1.1" 200 -
+2025-05-27 00:02:00,522 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:00] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:02:00,525 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:00] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:02:20,096 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:20] "POST / HTTP/1.1" 200 -
+2025-05-27 00:02:20,104 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:20] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:02:21,114 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:21] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:02:40,594 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:40] "POST / HTTP/1.1" 200 -
+2025-05-27 00:02:41,618 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:02:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:03:27,178 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:03:31,041 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:03:42,621 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:03:42,621 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:03:47,986 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:03:47,988 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:04:03,107 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:04:04,542 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:04:13,435 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:04:13,436 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:04:18,549 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:04:18,553 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:04:32,695 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:04:34,263 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:04:42,075 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:04:42,075 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:04:45,929 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:04:45,932 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:06:17,638 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\learning_system.py', reloading
+2025-05-27 00:06:19,417 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:06:28,448 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:06:28,448 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:06:33,738 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:06:33,741 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:06:35,780 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:06:37,711 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:06:46,154 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:06:46,154 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:06:52,161 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:06:52,162 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:06:55,851 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:06:55,854 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:08:28,521 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:08:30,075 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:08:38,673 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:08:38,673 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:08:44,916 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:08:44,916 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:08:48,342 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:08:48,345 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:09:52,862 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:09:56,367 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:10:04,693 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:10:04,694 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:10:10,588 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:10:10,591 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:10:24,707 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:10:26,077 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:10:33,785 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:10:33,785 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:10:38,015 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:10:38,017 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:11:31,434 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\learning_system.py', reloading
+2025-05-27 00:11:32,838 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:11:50,506 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:11:50,507 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:11:55,831 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-27 00:11:55,832 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-27 00:11:55,834 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:12:04,148 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:12:04,148 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:12:09,753 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:12:09,756 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:12:09,834 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:09] "GET / HTTP/1.1" 200 -
+2025-05-27 00:12:10,321 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:10] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:12:10,326 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:10] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:12:12,739 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:12] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:12:12,751 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:12] "GET / HTTP/1.1" 200 -
+2025-05-27 00:12:12,901 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:12] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:12:12,904 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:12] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:12:29,068 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:29] "POST / HTTP/1.1" 200 -
+2025-05-27 00:12:29,087 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:29] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:12:30,095 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:12:30] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:13:07,123 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:07] "POST / HTTP/1.1" 200 -
+2025-05-27 00:13:08,146 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:08] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:13:24,211 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:24] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:13:24,228 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:24] "GET / HTTP/1.1" 200 -
+2025-05-27 00:13:24,388 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:24] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:13:24,391 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:24] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:13:40,258 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:40] "POST / HTTP/1.1" 200 -
+2025-05-27 00:13:40,267 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:40] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:13:41,275 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:13:41] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:24:27,820 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\answer_optimizer.py', reloading
+2025-05-27 00:24:33,683 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:24:48,749 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:24:48,750 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:24:54,915 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:24:54,921 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:24:59,001 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:25:00,759 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:25:08,880 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:25:08,880 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:25:15,973 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:25:15,976 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:27:05,858 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:27:06,974 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:27:15,805 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:27:15,805 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:27:19,796 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:27:19,799 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:28:43,239 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:28:43,239 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:28:47,574 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-27 00:28:47,575 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-27 00:28:47,577 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:28:58,486 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:28:58,487 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:29:04,204 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:29:04,210 - werkzeug - INFO -  * Debugger PIN: 121-303-097
+2025-05-27 00:29:04,295 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:04] "GET / HTTP/1.1" 200 -
+2025-05-27 00:29:04,660 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:04] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:29:04,664 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:04] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:29:06,025 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:06] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:29:06,038 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:06] "GET / HTTP/1.1" 200 -
+2025-05-27 00:29:06,185 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:06] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:29:06,187 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:06] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:29:22,444 - answer_optimizer - INFO - Answer structure analysis: {'length': 3772, 'paragraphs': 1, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}
+2025-05-27 00:29:22,445 - answer_optimizer - INFO - Answer structure analysis: {'length': 3777, 'paragraphs': 2, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}
+2025-05-27 00:29:22,473 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 0, 'content_score': 1, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:22,481 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 1, 'content_score': 1, 'missing_patterns': ['structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:22,481 - answer_optimizer - INFO - 
+        Answer optimization:
+        Original length: 3772
+        Optimized length: 3777
+        Changes made: {'length_change': 5, 'structure_changes': {'original': {'length': 3772, 'paragraphs': 1, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}, 'optimized': {'length': 3777, 'paragraphs': 2, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}}, 'formatting_changes': {'original': {'structure_score': 0, 'content_score': 1, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}, 'optimized': {'structure_score': 1, 'content_score': 1, 'missing_patterns': ['structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}}}
+        
+2025-05-27 00:29:22,482 - answer_optimizer - INFO - Answer structure analysis: {'length': 3777, 'paragraphs': 2, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}
+2025-05-27 00:29:22,492 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 1, 'content_score': 1, 'missing_patterns': ['structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:22,615 - answer_optimizer - INFO - Answer evaluation: {'timestamp': '2025-05-27T00:29:22.614863', 'structure_analysis': {'length': 3777, 'paragraphs': 2, 'sentences': 28, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': True}, 'quality_metrics': {'structure_score': 1, 'content_score': 1, 'missing_patterns': ['structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: ```.*```', 'content: `.*`']}, 'embedding': [-0.13798806071281433, 0.14372408390045166, 0.2412952333688736, 0.08944312483072281, 0.2658504545688629, -0.15021732449531555, 0.1898088902235031, 0.004204385913908482, -0.11761873960494995, 0.0205133818089962, 0.10688421130180359, -0.35580819845199585, -0.08945394307374954, -0.054201364517211914, 0.07025590538978577, -0.018218567594885826, 0.05587884038686752, -0.10583680868148804, -0.1868841052055359, -0.009907913394272327, -0.05516498163342476, 0.20876307785511017, 0.15940634906291962, 0.03168051317334175, -0.23456299304962158, 0.2394227534532547, -0.3118988573551178, -0.004967806860804558, -0.04374197870492935, 0.0026141658890992403, 0.02024761587381363, -0.015878908336162567, -0.10587537288665771, -0.12260057777166367, -0.1801644116640091, 0.21258020401000977, -0.22528091073036194, -0.0843254029750824, -0.1730509102344513, 0.20571893453598022, -0.19052769243717194, -0.08756622672080994, -0.03715777397155762, 0.08800872415304184, -0.07205983996391296, 0.1562594473361969, -0.04395466297864914, -0.06087999790906906, -0.27945709228515625, -0.2861153185367584, 0.01679970696568489, 0.05051109939813614, -0.3009573519229889, 0.10575273633003235, -0.08042319118976593, 0.011217242106795311, -0.016296396031975746, -0.41670775413513184, 0.031161220744252205, -0.3880312442779541, 0.07954675704240799, 0.28094780445098877, -0.12282223254442215, 0.18284235894680023, 0.4054885804653168, 0.0745028629899025, 0.25414666533470154, 0.2976605296134949, 0.01574929617345333, 0.19274607300758362, -0.11721004545688629, -0.13668930530548096, -0.12298166006803513, 0.18033170700073242, 0.26309439539909363, 0.047993216663599014, 0.05355823412537575, 0.08407086133956909, 0.13283853232860565, -0.1408356875181198, -0.1492641270160675, -0.04482197016477585, -0.0817418023943901, -0.16006805002689362, -0.045757267624139786, 0.09974314272403717, -0.21588586270809174, -0.00664057582616806, 0.07979224622249603, 0.14340278506278992, 0.16482804715633392, -0.14188851416110992, -0.12161626666784286, 0.07664545625448227, 0.2096925675868988, 0.16876545548439026, -0.06036141887307167, 0.05070915073156357, 0.17828911542892456, 0.3275967240333557, -0.12168128043413162, 0.19841182231903076, -0.12950710952281952, 0.009063279256224632, -0.057772815227508545, -0.08412890136241913, 0.11289358884096146, -0.33423909544944763, 0.10013637691736221, 0.04682384058833122, 0.20481213927268982, -0.24325133860111237, 0.20485857129096985, -0.013107226230204105, 0.002501070499420166, 0.008329899981617928, -0.0005626669153571129, 0.07920092344284058, 0.06793634593486786, 0.3661968410015106, 0.05138911306858063, -0.13169774413108826, -0.050356801599264145, 0.11712642759084702, 0.0883110836148262, -0.010935228317975998, -0.1363196074962616, -0.10556226968765259, -0.08669402450323105, -0.37334883213043213, 0.45033228397369385, 0.02460823394358158, -0.13921454548835754, -0.015169219113886356, -0.15070272982120514, 0.18030120432376862, 0.08906590193510056, 0.2403239905834198, -0.017271555960178375, 0.1529870629310608, -0.04794656112790108, -0.045550838112831116, -0.09106499701738358, -0.13371744751930237, -0.23812757432460785, 0.16755452752113342, -0.00042197899892926216, 0.02400169149041176, 0.04265217110514641, -0.04507439211010933, 0.16834865510463715, 0.1463751494884491, 0.03654136508703232, -0.011764475144445896, -0.042703792452812195, -0.16371965408325195, 0.2980881631374359, -0.16325810551643372, -0.14937423169612885, -0.035168204456567764, 0.11418826878070831, 0.1832752227783203, -0.05272156000137329, -0.1318085938692093, -0.002202591858804226, 0.30232158303260803, -0.0015209318371489644, -0.2887132167816162, 0.14130209386348724, -0.09251740574836731, 0.13695846498012543, -0.06810777634382248, -0.11330214887857437, 0.011130250990390778, 0.3281521201133728, -0.017587214708328247, 0.15889368951320648, 0.1462223380804062, 0.2712775766849518, -0.26596513390541077, -0.02115585282444954, -0.3696403205394745, -0.03156237304210663, 0.19482356309890747, -0.02880004234611988, -0.04188094660639763, -0.31830888986587524, -0.04746359959244728, -0.18026545643806458, 0.38795921206474304, 0.29477712512016296, -0.1475892961025238, 0.19251762330532074, 0.024812396615743637, -0.23801837861537933, 0.1142718642950058, 0.2556656002998352, 0.13804492354393005, -0.08578259497880936, -0.2755894958972931, -0.16796237230300903, 0.23403717577457428, 0.005165821872651577, 0.02016614004969597, -0.2574658691883087, -0.23113475739955902, 0.18248385190963745, -0.16151952743530273, -0.20236745476722717, 0.08646415174007416, 0.009816392324864864, -0.2642870247364044, -0.2589888572692871, -0.08884268999099731, 0.058590926229953766, -0.17988595366477966, 0.11034166067838669, -0.04450377821922302, 0.16939154267311096, -0.038904331624507904, -0.0736854076385498, -0.12422134727239609, 0.08168049901723862, -0.13196615874767303, -0.1757921576499939, -0.27164390683174133, -0.2692521810531616, -0.03374772518873215, -0.3029118776321411, 0.0020006136037409306, -0.3559427261352539, -0.13404570519924164, 0.01766045019030571, 0.0778978168964386, 0.07292920351028442, 0.19938696920871735, -0.048226576298475266, 0.20327305793762207, -0.06377414613962173, -0.05865081772208214, 0.05172700062394142, -0.017971865832805634, 0.03578343242406845, 0.0721123069524765, -0.08301502466201782, 0.28208935260772705, 0.09807994961738586, 0.02163640409708023, -0.12434263527393341, -0.028079096227884293, 0.24280275404453278, 0.11681008338928223, 0.2548069357872009, 0.13541992008686066, -0.1427818089723587, -0.052833136171102524, -0.012686561793088913, 0.3507869839668274, 0.14301356673240662, -0.07039662450551987, 0.18211017549037933, -0.11768338829278946, -0.0345248207449913, -0.08017890155315399, 0.07796547561883926, 0.12463494390249252, -0.016887333244085312, -0.12211988121271133, -0.17239730060100555, 0.009641218930482864, -0.2669876217842102, 0.09833966195583344, -0.021805033087730408, -0.4061547815799713, 0.12791885435581207, -0.093563973903656, 0.17244519293308258, -0.11282229423522949, -0.050728097558021545, 0.2823752164840698, -0.08236867934465408, -0.1458318531513214, 0.23133830726146698, 0.08132874220609665, 0.07602732628583908, -0.13047102093696594, 0.10141406953334808, 0.00391424261033535, -0.21454587578773499, -0.23144477605819702, 0.07902863621711731, -0.2219129502773285, -0.07343694567680359, 0.09258809685707092, 0.0029261475428938866, 0.14818373322486877, 0.00324088241904974, -0.24997511506080627, -0.0564097985625267, 0.46085846424102783, 0.2912660539150238, 0.04343794658780098, -0.14502644538879395, -0.2730829119682312, -0.16478851437568665, 0.08059585839509964, -0.054097551852464676, 0.286805659532547, 0.022313551977276802, -0.1631530225276947, -0.12406092137098312, 0.025348510593175888, 0.04864858090877533, 0.14081445336341858, 0.09100981056690216, -0.19391635060310364, -0.3447534739971161, 0.18712343275547028, 0.20964771509170532, -0.11140091717243195, 0.10621471703052521, -0.07629799097776413, 0.1515382081270218, -0.03673364967107773, 0.26167920231819153, 0.04716880992054939, -0.1018829271197319, -0.08542509377002716, -0.12432428449392319, 0.27605146169662476, 0.02570158988237381, -0.11255356669425964, -0.03621318191289902, 0.13284046947956085, 0.18339471518993378, 0.005271669011563063, 0.06409122049808502, 0.19412176311016083, 0.004968281835317612, 0.041304681450128555, 0.13623371720314026, -0.024824488908052444, -0.0878683477640152, 0.14356683194637299, 0.2950690984725952, 0.11056499928236008, 0.08128239214420319, 0.06191541999578476, -0.21005095541477203, -0.16889287531375885, -0.16544289886951447, 0.058449290692806244, -0.19822987914085388, -0.0005679947789758444, 0.10189108550548553, 0.09671125560998917, 0.1685590296983719, 0.06017298623919487, -0.03050803206861019, 0.08363229781389236, -0.10371466726064682, -0.321837842464447, 0.06562262028455734, 0.04706059396266937, 0.16151264309883118, -0.07193204015493393, -0.20565442740917206, 0.1698031723499298, -0.08190909028053284, -0.11716754734516144, -0.22233571112155914, -0.012987365946173668, 0.17082390189170837, -0.030868766829371452, 0.05065440014004707, -0.07592087984085083, 0.004658048041164875, 0.22253140807151794, -0.20268699526786804, -0.019140301272273064, -0.029167506843805313, 0.08380091190338135, -0.0774526596069336, 0.09463240951299667], 'overall_score': 45.0}
+2025-05-27 00:29:22,659 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:22] "POST / HTTP/1.1" 200 -
+2025-05-27 00:29:22,678 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:22] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:29:23,692 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:23] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:29:29,292 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:29] "[32mGET /new_conversation HTTP/1.1[0m" 302 -
+2025-05-27 00:29:29,308 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:29] "GET / HTTP/1.1" 200 -
+2025-05-27 00:29:29,428 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:29] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:29:29,431 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:29] "GET /get_chat_history HTTP/1.1" 200 -
+2025-05-27 00:29:48,014 - answer_optimizer - INFO - Answer structure analysis: {'length': 758, 'paragraphs': 1, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}
+2025-05-27 00:29:48,014 - answer_optimizer - INFO - Answer structure analysis: {'length': 770, 'paragraphs': 2, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}
+2025-05-27 00:29:48,015 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:48,016 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:48,017 - answer_optimizer - INFO - 
+        Answer optimization:
+        Original length: 758
+        Optimized length: 770
+        Changes made: {'length_change': 12, 'structure_changes': {'original': {'length': 758, 'paragraphs': 1, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}, 'optimized': {'length': 770, 'paragraphs': 2, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}}, 'formatting_changes': {'original': {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}, 'optimized': {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}}}
+        
+2025-05-27 00:29:48,017 - answer_optimizer - INFO - Answer structure analysis: {'length': 770, 'paragraphs': 2, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}
+2025-05-27 00:29:48,019 - answer_optimizer - INFO - Quality pattern check: {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}
+2025-05-27 00:29:48,108 - answer_optimizer - INFO - Answer evaluation: {'timestamp': '2025-05-27T00:29:48.107573', 'structure_analysis': {'length': 770, 'paragraphs': 2, 'sentences': 5, 'has_lists': False, 'has_numbered_lists': False, 'has_code_blocks': False, 'has_emphasis': False}, 'quality_metrics': {'structure_score': 0, 'content_score': 0, 'missing_patterns': ['structure: ^[A-Z].*[.!?]$', 'structure: .*:\\s*$', 'structure: ^\\d+\\.\\s', 'structure: ^[-*]\\s', 'content: \\*\\*.*\\*\\*', 'content: \\*.*\\*', 'content: ```.*```', 'content: `.*`']}, 'embedding': [-0.08763552457094193, 0.007015453651547432, -0.23986126482486725, 0.03185650333762169, 0.0050090644508600235, 0.06693954765796661, -0.015765603631734848, 0.06661984324455261, 0.012870172038674355, -0.059776440262794495, 0.0651920810341835, -0.3021220266819, -0.11465123295783997, -0.08223117142915726, -0.2506333291530609, 0.015218198299407959, 0.11500497907400131, -0.09396584331989288, -0.13753890991210938, -0.07331277430057526, -0.06325355917215347, 0.16375721991062164, 0.08878429979085922, 0.012476049363613129, -0.1917828768491745, -0.11495661735534668, 0.06081124767661095, -0.08126268535852432, -0.14244556427001953, -0.15705397725105286, -0.005689703859388828, -0.09128652513027191, 0.30471158027648926, 0.2785245478153229, -0.07837966084480286, 0.1121770590543747, 0.1511496901512146, 0.044220443814992905, -0.07649874687194824, 0.1399858444929123, 0.09597989171743393, -0.12511228024959564, 0.18681597709655762, 0.10299494117498398, 0.2552345097064972, 0.1475900411605835, -0.09135570377111435, -0.04316829890012741, -0.21789710223674774, -0.2495722770690918, -0.22603778541088104, -0.053053732961416245, -0.23509785532951355, -0.0322590135037899, -0.014757003635168076, 0.16028642654418945, -0.003971678204834461, -0.052373357117176056, -0.11269289255142212, -0.1258426457643509, -0.029619187116622925, -0.04000304639339447, -0.17883092164993286, 0.04279524087905884, 0.21027517318725586, 0.1390714794397354, 0.057914383709430695, -0.009504169225692749, -0.04592330753803253, 0.0055815731175243855, 0.12358321249485016, 0.10664918273687363, -0.08123267441987991, 0.048607680946588516, 0.0014893361367285252, -0.05711352080106735, -0.05161023139953613, 0.0875316932797432, 0.11064784228801727, -0.1397225558757782, 0.17746062576770782, -0.03426158055663109, -0.1980186551809311, 0.1299981027841568, -0.09075487405061722, 0.21479448676109314, -0.08843472599983215, -0.1976267695426941, -0.18832290172576904, -0.04233699291944504, 0.08026418834924698, -0.3135190010070801, 0.17614290118217468, 0.026438739150762558, 0.1519855111837387, 0.03400221839547157, 0.05157402157783508, -0.05142711102962494, 0.0068465061485767365, 0.24182036519050598, -0.2603200376033783, 0.04135643690824509, -0.19669736921787262, -0.17917616665363312, 0.05763125419616699, 0.018853357061743736, -0.06320515275001526, -0.17962148785591125, 0.05686343461275101, -0.20329919457435608, 0.15975642204284668, -0.06352411210536957, -0.03626840561628342, -0.019336769357323647, 0.3153929114341736, -0.24271628260612488, 0.17100945115089417, 0.057665206491947174, -0.017493443563580513, 0.06060018390417099, -0.020844802260398865, 0.12127788364887238, 0.2126881331205368, 0.039586134254932404, -5.8006029576063156e-05, -0.23028245568275452, -0.35328176617622375, -0.05751722678542137, -0.10883219540119171, -0.19236332178115845, 0.19344645738601685, 0.2166433036327362, -0.1900043487548828, -0.026533357799053192, -0.20681807398796082, 0.05561230331659317, 0.23021328449249268, -0.0012898631393909454, -0.06741015613079071, 0.16889674961566925, 0.060082998126745224, -0.05637781322002411, -0.010086173191666603, 0.14611180126667023, -0.3034309148788452, 0.06023586168885231, 0.15692326426506042, -0.1812344491481781, 0.08761651813983917, 0.1893133521080017, -0.03711976483464241, 0.02810821868479252, 0.020834866911172867, -0.08572914451360703, 0.14613507688045502, -0.05969392880797386, 0.1115896999835968, -0.0739389955997467, -0.03592343628406525, 0.02569918893277645, -0.04965683072805405, 0.05178891494870186, 0.10176696628332138, -0.011383076198399067, -0.047978512942790985, -0.08564696460962296, 0.04282473027706146, -0.05512862652540207, 0.2196780890226364, 0.028304141014814377, 0.08592720329761505, -0.1578335016965866, -0.032211072742938995, 0.19951801002025604, 0.136720210313797, -0.03131281957030296, 0.10815490037202835, -0.16995778679847717, 0.08196098357439041, -0.1590818464756012, 0.15980741381645203, -0.29298630356788635, 0.23443372547626495, -0.07162503898143768, -0.030288297683000565, 0.06534061580896378, -0.06215392425656319, 0.12556864321231842, -0.05733232945203781, 0.2526940703392029, 0.18394894897937775, 0.2165261209011078, 0.10019989311695099, -0.08010251075029373, -0.12557078897953033, 0.027539297938346863, 0.19785064458847046, 0.11301572620868683, -0.19843126833438873, -0.14997360110282898, -0.3983221650123596, 0.0056436751037836075, -0.246173694729805, -0.0576603002846241, -0.251280277967453, -0.13003721833229065, 0.10664694011211395, 0.1734420210123062, -0.10026754438877106, 0.10154038667678833, 0.10804440081119537, -0.05422337353229523, -0.353407621383667, -0.05218502879142761, -0.2166152447462082, 0.12721270322799683, -0.06117638200521469, 0.11694009602069855, -0.030019039288163185, 0.03520442917943001, -0.035915009677410126, 0.01587216928601265, 0.025373831391334534, -0.07915715873241425, -0.29363924264907837, -0.0987948328256607, -0.23845118284225464, 0.14854852855205536, 0.13832581043243408, 0.01432046014815569, -0.28034478425979614, -0.19687172770500183, 0.29543212056159973, -0.1349654346704483, -0.03306956589221954, -0.10292124003171921, 0.1227581650018692, -0.057741016149520874, 0.20048700273036957, -0.10216823220252991, -0.2765752673149109, -0.03895048052072525, -0.05621369183063507, 0.25664234161376953, -0.1089056208729744, -0.14059245586395264, -0.37604475021362305, -0.18976269662380219, 0.12275981158018112, 0.08222569525241852, 0.33090439438819885, 0.048618048429489136, 0.045005977153778076, 0.022481681779026985, -0.01146896556019783, -0.07302682101726532, 0.027601351961493492, -0.09689246863126755, -0.14848464727401733, 0.19075897336006165, 0.20716069638729095, -0.11849795281887054, 0.022711848840117455, -0.026404831558465958, 0.10300172120332718, 0.19033169746398926, -0.03676453232765198, 0.04623004421591759, -0.05285879224538803, -0.005642624571919441, -0.20842880010604858, 0.035097911953926086, 0.04791156202554703, -0.14171282947063446, 0.06295167654752731, -0.155755877494812, 0.13452452421188354, -0.257666677236557, 0.02622295916080475, 0.15336531400680542, 0.0660400241613388, 0.03728074952960014, 0.28102630376815796, 0.02315792441368103, 0.13998758792877197, -0.10781468451023102, 0.07526330649852753, 0.05216945335268974, -0.2603817880153656, -0.015207910910248756, -0.04913549870252609, 0.21640285849571228, -0.09647902846336365, 0.03629716485738754, 0.2501939535140991, -0.09640111774206161, 0.06170821189880371, -0.10881632566452026, -0.1807524859905243, 0.41871213912963867, -0.11823847889900208, 0.12184968590736389, -0.0007914234884083271, -0.0896010473370552, 0.1097126305103302, -0.04531733691692352, 0.024328649044036865, 0.08054123818874359, 0.10768979787826538, 0.12670516967773438, 0.04017060622572899, -0.21094340085983276, 0.12441699951887131, -0.10504314303398132, 0.05679141730070114, -0.23301659524440765, -0.27519673109054565, 0.03164238482713699, 0.05713440477848053, -0.12113241106271744, 0.19976241886615753, 0.12059597671031952, 0.008404592052102089, 0.07963410764932632, 0.42088058590888977, 0.2422865480184555, -0.07786911725997925, 0.04474703222513199, -0.04361821338534355, 0.16988931596279144, -0.13484561443328857, 0.07352226227521896, -0.19521334767341614, 0.05021647736430168, 0.17637623846530914, 0.0835132747888565, -0.23409080505371094, -0.07074256241321564, 0.14643800258636475, 0.17794592678546906, 0.6156235933303833, -0.020473390817642212, -0.060082223266363144, 0.04099752753973007, 0.06052340194582939, -0.14884322881698608, 0.2331179678440094, 0.3663969933986664, -0.14810465276241302, 0.2704871892929077, 0.015314207412302494, -0.008193464949727058, -0.20603394508361816, 0.029352888464927673, -0.06011010706424713, -0.08557462692260742, -0.05829526484012604, 0.038392625749111176, 0.08342265337705612, 0.09150584042072296, -0.14864017069339752, -0.10744743794202805, 0.049630071967840195, 0.14129431545734406, 0.08720636367797852, 0.16862227022647858, -0.03218059614300728, -0.02731402777135372, -0.08236982673406601, 0.1400500237941742, -0.17672283947467804, 0.014509022235870361, 0.1632440686225891, -0.07823753356933594, 0.06251008808612823, 0.24995844066143036, 0.12948940694332123, 0.02173680253326893, -0.3164752423763275, -0.19222526252269745, -0.012615317478775978, 0.20400018990039825, 0.2429388165473938, -0.067316934466362], 'overall_score': 30.0}
+2025-05-27 00:29:48,150 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:48] "POST / HTTP/1.1" 200 -
+2025-05-27 00:29:48,160 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:48] "[36mGET /static/images/iba_logo.png HTTP/1.1[0m" 304 -
+2025-05-27 00:29:49,176 - werkzeug - INFO - 127.0.0.1 - - [27/May/2025 00:29:49] "GET /get_conversations HTTP/1.1" 200 -
+2025-05-27 00:30:01,825 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BTL_Chatbot\\app.py', reloading
+2025-05-27 00:30:06,798 - werkzeug - INFO -  * Restarting with stat
+2025-05-27 00:30:17,105 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-05-27 00:30:17,106 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-multilingual-MiniLM-L12-v2
+2025-05-27 00:30:21,580 - werkzeug - WARNING -  * Debugger is active!
+2025-05-27 00:30:21,583 - werkzeug - INFO -  * Debugger PIN: 121-303-097
